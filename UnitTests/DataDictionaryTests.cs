@@ -543,5 +543,23 @@ namespace UnitTests
             Assert.True(news.IsGroup(33)); // LinesOfText
             Assert.True(news.GetGroup(33).IsField(355)); // EncodedText
         }
+
+        [Test] // Issue #313 investigation
+        public void Issue313()
+        {
+            QuickFix.DataDictionary.DataDictionary dd = new QuickFix.DataDictionary.DataDictionary("../../../spec/fix/FIX44.xml");
+            QuickFix.FIX44.MessageFactory f = new QuickFix.FIX44.MessageFactory();
+
+            string msgStr = "8=FIX.4.4|9=575|35=J|56=USER1|115=USER2|50=USER2|627=1|628=ATR|629=20150428-19:23:42|630=2624|34=1869|49=TRANSPORT|52=20150428-19:23:43|70=1358804370|71=0|626=1|857=0|54=2|55=FHLMC_38-79-LT|48=US3137ACNA31|22=4|167=CMO|541=20410115|225=20110601|223=2.5|107=FHLMC_38-79LT|53=12940000|423=1|6=100.00000000|15=USD|453=2|448=USER3|447=D|452=13|448=LEI123456|447=D|452=1|75=20150428|60=20150428-00:00:00.000|64=20150501|381=2509555.91|118=2509555.91|157=0|235=CURRENT|236=0.000000|78=1|79=TST-TRD3|80=12940000|467=3574-4696|12=0.00|13=3|154=2509555.91|742=0.00|136=1|137=0.00|138=USD|139=7|891=0|10=089|".Replace("|", Message.SOH);
+
+            string msgType = "J";
+            string beginString = "FIX.4.4";
+
+            Message message = f.Create(beginString, msgType);
+            message.FromString(msgStr, true, dd, dd);
+
+            dd.Validate(message, beginString, msgType);
+            Assert.DoesNotThrow(delegate { dd.Validate(message, beginString, msgType); });
+        }
     }
 }
