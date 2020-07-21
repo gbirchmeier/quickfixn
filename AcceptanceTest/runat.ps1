@@ -124,9 +124,9 @@ AppDataDictionary=..\spec\fix\FIX50SP1.xml
     $AtProcess = Start-Process -FilePath dotnet.exe -ArgumentList "run -c $Configuration -f $Framework --no-build --no-restore -- $Conf" -NoNewWindow -PassThru
 
     if ($UseWsl -and $UseWsl.IsPresent) {
-        wsl ruby Runner.rb '127.0.0.1' $Port "$Tests" > TestResult.xml
+        wsl ruby rubyrunner\Runner.rb '127.0.0.1' $Port "$Tests" > TestResult.xml
     } else {
-        ruby Runner.rb '127.0.0.1' $Port "$Tests" > TestResult.xml
+        ruby rubyrunner\Runner.rb '127.0.0.1' $Port "$Tests" > TestResult.xml
     }
 
     if ($LASTEXITCODE -ne 0) { $Result = $LASTEXITCODE }
