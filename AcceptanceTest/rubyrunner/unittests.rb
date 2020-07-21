@@ -1,6 +1,6 @@
 require 'test/unit'
 require_relative 'ComparatorTestCase'
-#require_relative 'FixParserTestCase'
+require_relative 'FixParserTestCase'
 require_relative 'SocketServerTestCase'
 
 #broke

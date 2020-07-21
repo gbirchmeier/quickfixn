@@ -26,17 +26,20 @@ class SocketServer
     addr = @gs.addr
     addr.shift
 
-    while !@gs.closed?
-      ns = @gs.accept
-      Thread.start do
-	s = ns
-	connectAction(s)
-	receiveAction(s)
-	s.close
-	disconnectAction(s)
+    begin
+      while !@gs.closed?
+        ns = @gs.accept
+        Thread.start do
+          s = ns
+          connectAction(s)
+          receiveAction(s)
+          s.close
+          disconnectAction(s)
+        end
       end
+    rescue Errno::ENOTSOCK
+      # ignore; socket was terminated
     end
-
   end
 
   def stop
