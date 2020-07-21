@@ -21,7 +21,7 @@ require "socket"
 class SocketServer
 
   def listen(port)
-    
+
     @gs = TCPServer.open(port)
     addr = @gs.addr
     addr.shift
@@ -50,7 +50,14 @@ class SocketServer
   end
 
   def wait
-    while( closed? ) 
+    10.times do
+      break unless @gs.nil?
+      sleep 0.1
+    end
+    raise "TCPServer did not start" if @gs.nil?
+
+    while( closed? )
+      sleep 0.01
     end
   end
 
