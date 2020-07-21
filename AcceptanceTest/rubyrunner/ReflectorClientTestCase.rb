@@ -1,9 +1,12 @@
-require 'ReflectorClient'
-require 'runit/testcase'
-require 'ReflectorServer'
+require 'test/unit'
 require "thread"
+require_relative 'Reflector'
+require_relative 'ReflectorClient'
+require_relative 'ReflectorServer'
 
-class ReflectorClientTestCase < RUNIT::TestCase
+class ReflectorClientTestCase < Test::Unit::TestCase
+
+  PORT = 5001
 
   def test_reflectMessages
 
@@ -20,7 +23,7 @@ class ReflectorClientTestCase < RUNIT::TestCase
     clientMessages += "iDISCONNECT\n"
 
     server = ReflectorServer.new(serverMessages)
-    client = ReflectorClient.new(clientMessages, "localhost", RUNIT::TestCase.port)
+    client = ReflectorClient.new(clientMessages, "localhost", PORT)
 
     def client.next
       begin
@@ -39,7 +42,7 @@ class ReflectorClientTestCase < RUNIT::TestCase
     end
     
     Thread.start do
-      server.listen(RUNIT::TestCase.port)
+      server.listen(PORT)
     end
     server.wait
 

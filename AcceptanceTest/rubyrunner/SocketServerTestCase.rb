@@ -1,8 +1,10 @@
-require 'SocketServer'
-require 'runit/testcase'
+require 'test/unit'
 require "thread"
+require_relative 'SocketServer'
 
-class SocketServerTestCase < RUNIT::TestCase
+class SocketServerTestCase < Test::Unit::TestCase
+
+  PORT = 5001
 
   def test_listen
     socketServer = SocketServer.new
@@ -50,16 +52,16 @@ class SocketServerTestCase < RUNIT::TestCase
     socketServer.disconnectQueue = disconnectQueue
 
     Thread.start do
-      socketServer.listen(RUNIT::TestCase.port)
+      socketServer.listen(PORT)
     end
     socketServer.wait
 
-    s = TCPSocket.open("localhost", RUNIT::TestCase.port)
+    s = TCPSocket.open("localhost", PORT)
     assert(connectQueue.pop)
     s.write("test\r\n")
     s.write("test2\r\n")
-    assert_equals("test\r\n", receiveQueue.pop)
-    assert_equals("test2\r\n", receiveQueue.pop)
+    assert_equal("test\r\n", receiveQueue.pop)
+    assert_equal("test2\r\n", receiveQueue.pop)
     s.close
     assert(disconnectQueue.pop)
     socketServer.stop()

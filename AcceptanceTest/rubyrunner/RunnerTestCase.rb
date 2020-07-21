@@ -1,7 +1,8 @@
-require 'Runner'
-require 'runit/testcase'
+require 'test/unit'
+require_relative 'Runner'
+require_relative 'ReflectorServer'
 
-class RunnerTestCase < RUNIT::TestCase
+class RunnerTestCase < Test::Unit::TestCase
   def test_createProcess
     process = createProcess("foo\nbar\niCONNECT\nbaz", "localhost", 39333)
     assert process.kind_of?(ReflectorClient)

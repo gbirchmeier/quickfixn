@@ -16,8 +16,8 @@
 # not clear to you.
 #****************************************************************************
 
-require 'SocketServer'
-require 'Reflector'
+require_relative 'SocketServer'
+require_relative 'Reflector'
 
 class ReflectorServer < SocketServer
 

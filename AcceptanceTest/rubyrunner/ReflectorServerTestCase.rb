@@ -1,8 +1,8 @@
-require 'ReflectorServer'
-require 'runit/testcase'
-require "thread"
+require 'test/unit'
+require 'thread'
+require_relative 'ReflectorServer'
 
-class ReflectorServerTestCase < RUNIT::TestCase
+class ReflectorServerTestCase < Test::Unit::TestCase
 
   def test_reflectMessages
     messages = "E8=FIX.4.2\0019=12\00135=A\001108=30\00110=31\001\n"
@@ -21,9 +21,9 @@ class ReflectorServerTestCase < RUNIT::TestCase
 
     begin
       s.write("8=FIX.4.2\0019=12\00135=A\001108=30\00110=31\001")
-      assert_equals("8=FIX.4.2\0019=12\00135=A\001108=10\00110=31\001", parser.readFixMessage)
+      assert_equal("8=FIX.4.2\0019=12\00135=A\001108=10\00110=31\001", parser.readFixMessage)
       s.write("8=FIX.4.2\0019=12\00135=A\001108=30\00125=31\001")
-      assert_equals("8=FIX.4.2\0019=12\00135=A\001108=15\00110=31\001", parser.readFixMessage)
+      assert_equal("8=FIX.4.2\0019=12\00135=A\001108=15\00110=31\001", parser.readFixMessage)
     rescue IOError
     end
     

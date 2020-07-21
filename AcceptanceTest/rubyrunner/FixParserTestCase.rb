@@ -1,9 +1,11 @@
-require 'FixParser'
-require 'runit/testcase'
-require "thread"
-require 'SocketServer'
+require 'test/unit'
+require 'thread'
+require_relative 'FixParser'
+require_relative 'SocketServer'
 
-class FixParserTestCase < RUNIT::TestCase
+class FixParserTestCase < Test::Unit::TestCase
+
+  PORT = 5001
 
   def test_readFixMessage
     fixMsg1 = "8=FIX.4.2\0019=12\00135=A\001108=30\00110=31\001"
@@ -26,15 +28,15 @@ class FixParserTestCase < RUNIT::TestCase
 
     server.message = fixMsg1 + fixMsg2
     Thread.start do
-      server.listen(RUNIT::TestCase.port)
+      server.listen(PORT)
     end
     server.wait
 
-    s = TCPSocket.open("localhost", RUNIT::TestCase.port)
+    s = TCPSocket.open("localhost", PORT)
     parser = FixParser.new(s)
     begin
-      assert_equals(fixMsg1, parser.readFixMessage)
-      assert_equals(fixMsg2, parser.readFixMessage)
+      assert_equal(fixMsg1, parser.readFixMessage)
+      assert_equal(fixMsg2, parser.readFixMessage)
     rescue IOError
       # I have no idea why this is being thrown
     end
