@@ -1,8 +1,10 @@
 require 'test/unit'
 require 'thread'
+require_relative 'FixParser'
 require_relative 'ReflectorServer'
 
 class ReflectorServerTestCase < Test::Unit::TestCase
+  PORT = 5001
 
   def test_reflectMessages
     messages = "E8=FIX.4.2\0019=12\00135=A\001108=30\00110=31\001\n"
@@ -12,11 +14,11 @@ class ReflectorServerTestCase < Test::Unit::TestCase
 
     server = ReflectorServer.new(messages)
     Thread.start do
-      server.listen(RUNIT::TestCase.port)
+      server.listen(PORT)
     end
     server.wait
 
-    s = TCPSocket.open("localhost", RUNIT::TestCase.port)
+    s = TCPSocket.open("localhost", PORT)
     parser = FixParser.new(s)
 
     begin
