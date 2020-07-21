@@ -5,12 +5,8 @@ install:
 - set PATH=C:\Ruby26-x64\bin;%PATH%
 - ruby -v
 - ps: |
-    ruby -v
     gem install nokogiri
     ruby generator\generate.rb
-
-before_test:
-- ruby -v
 
 build_script:
 - ps: dotnet build -c Release
