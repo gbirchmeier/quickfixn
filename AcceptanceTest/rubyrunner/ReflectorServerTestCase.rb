@@ -12,7 +12,7 @@ class ReflectorServerTestCase < Test::Unit::TestCase
     messages += "E8=FIX.4.2\0019=12\00135=A\001108=25\00110=31\001\n"
     messages += "R8=FIX.4.2\0019=12\00135=A\001108=15\00110=31\001\n"
 
-    server = ReflectorServer.new(messages)
+    server = ReflectorServer.new(messages) # need port number here?  (it didn't fix the test)
     Thread.start do
       server.listen(PORT)
     end
