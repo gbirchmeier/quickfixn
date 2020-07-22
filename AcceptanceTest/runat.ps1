@@ -121,7 +121,7 @@ AppDataDictionary=..\spec\fix\FIX50SP1.xml
 
     # Start the acceptor...
     # (this runs the exe or dll in AcceptanceTest/bin/)
-    $AtProcess = Start-Process -FilePath dotnet.exe -ArgumentList "run -c $Configuration -f $Framework --no-build --no-restore -- $Conf" -NoNewWindow -PassThru
+    $AtProcess = Start-Process -FilePath dotnet -ArgumentList "run -c $Configuration -f $Framework --no-build --no-restore -- $Conf" -NoNewWindow -PassThru
 
     if ($UseWsl -and $UseWsl.IsPresent) {
         wsl ruby rubyrunner\Runner.rb '127.0.0.1' $Port "$Tests" > TestResult.xml
