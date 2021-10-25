@@ -647,7 +647,7 @@ namespace QuickFix
             }
             public class NoOrdersGroup : Group
             {
-                public static int[] fieldOrder = {Tags.ClOrdID, Tags.SecondaryClOrdID, Tags.ListSeqNo, Tags.ClOrdLinkID, Tags.SettlInstMode, Tags.NoPartyIDs, Tags.TradeOriginationDate, Tags.TradeDate, Tags.Account, Tags.AcctIDSource, Tags.AccountType, Tags.DayBookingInst, Tags.BookingUnit, Tags.AllocID, Tags.PreallocMethod, Tags.NoAllocs, Tags.SettlType, Tags.SettlDate, Tags.CashMargin, Tags.ClearingFeeIndicator, Tags.HandlInst, Tags.ExecInst, Tags.MinQty, Tags.MaxFloor, Tags.ExDestination, Tags.NoTradingSessions, Tags.ProcessCode, Tags.Symbol, Tags.SymbolSfx, Tags.SecurityID, Tags.SecurityIDSource, Tags.NoSecurityAltID, Tags.Product, Tags.CFICode, Tags.SecurityType, Tags.SecuritySubType, Tags.MaturityMonthYear, Tags.MaturityDate, Tags.CouponPaymentDate, Tags.IssueDate, Tags.RepoCollateralSecurityType, Tags.RepurchaseTerm, Tags.RepurchaseRate, Tags.Factor, Tags.CreditRating, Tags.InstrRegistry, Tags.CountryOfIssue, Tags.StateOrProvinceOfIssue, Tags.LocaleOfIssue, Tags.RedemptionDate, Tags.StrikePrice, Tags.StrikeCurrency, Tags.OptAttribute, Tags.ContractMultiplier, Tags.CouponRate, Tags.SecurityExchange, Tags.Issuer, Tags.EncodedIssuerLen, Tags.EncodedIssuer, Tags.SecurityDesc, Tags.EncodedSecurityDescLen, Tags.EncodedSecurityDesc, Tags.Pool, Tags.ContractSettlMonth, Tags.CPProgram, Tags.CPRegType, Tags.NoEvents, Tags.DatedDate, Tags.InterestAccrualDate, Tags.SecurityStat, Tags.SettleOnOpenFlag, Tags.InstrmtAssignmentMethod, Tags.StrikeMultiplier, Tags.StrikeValue, Tags.MinPriceIncrement, Tags.PositionLimit, Tags.NTPositionLimit, Tags.NoInstrumentParties, Tags.UnitOfMeasure, Tags.TimeUnit, Tags.MaturityTime, Tags.NoUnderlyings, Tags.PrevClosePx, Tags.Side, Tags.SideValueInd, Tags.LocateReqd, Tags.TransactTime, Tags.NoStipulations, Tags.QtyType, Tags.OrderQty, Tags.CashOrderQty, Tags.OrderPercent, Tags.RoundingDirection, Tags.RoundingModulus, Tags.OrdType, Tags.PriceType, Tags.Price, Tags.StopPx, Tags.Spread, Tags.BenchmarkCurveCurrency, Tags.BenchmarkCurveName, Tags.BenchmarkCurvePoint, Tags.BenchmarkPrice, Tags.BenchmarkPriceType, Tags.BenchmarkSecurityID, Tags.BenchmarkSecurityIDSource, Tags.YieldType, Tags.Yield, Tags.YieldCalcDate, Tags.YieldRedemptionDate, Tags.YieldRedemptionPrice, Tags.YieldRedemptionPriceType, Tags.Currency, Tags.ComplianceID, Tags.SolicitedFlag, Tags.IOIID, Tags.QuoteID, Tags.TimeInForce, Tags.EffectiveTime, Tags.ExpireDate, Tags.ExpireTime, Tags.GTBookingInst, Tags.Commission, Tags.CommType, Tags.CommCurrency, Tags.FundRenewWaiv, Tags.OrderCapacity, Tags.OrderRestrictions, Tags.CustOrderCapacity, Tags.ForexReq, Tags.SettlCurrency, Tags.BookingType, Tags.Text, Tags.EncodedTextLen, Tags.EncodedText, Tags.SettlDate2, Tags.OrderQty2, Tags.Price2, Tags.PositionEffect, Tags.CoveredOrUncovered, Tags.MaxShow, Tags.PegOffsetValue, Tags.PegMoveType, Tags.PegOffsetType, Tags.PegLimitType, Tags.PegRoundDirection, Tags.PegScope, Tags.PegPriceType, Tags.PegSecurityIDSource, Tags.PegSecurityID, Tags.PegSymbol, Tags.PegSecurityDesc, Tags.DiscretionInst, Tags.DiscretionOffsetValue, Tags.DiscretionMoveType, Tags.DiscretionOffsetType, Tags.DiscretionLimitType, Tags.DiscretionRoundDirection, Tags.DiscretionScope, Tags.TargetStrategy, Tags.TargetStrategyParameters, Tags.ParticipationRate, Tags.Designation, Tags.NoStrategyParameters, Tags.MatchIncrement, Tags.MaxPriceLevels, Tags.SecondaryDisplayQty, Tags.DisplayWhen, Tags.DisplayMethod, Tags.DisplayLowQty, Tags.DisplayHighQty, Tags.DisplayMinIncr, Tags.RefreshQty, Tags.DisplayQty, Tags.PriceProtectionScope, Tags.TriggerType, Tags.TriggerAction, Tags.TriggerPrice, Tags.TriggerSymbol, Tags.TriggerSecurityID, Tags.TriggerSecurityIDSource, Tags.TriggerSecurityDesc, Tags.TriggerPriceType, Tags.TriggerPriceTypeScope, Tags.TriggerPriceDirection, Tags.TriggerNewPrice, Tags.TriggerOrderType, Tags.TriggerNewQty, Tags.TriggerTradingSessionID, Tags.TriggerTradingSessionSubID, Tags.RefOrderID, Tags.RefOrderIDSource, Tags.PreTradeAnonymity, Tags.ExDestinationIDSource, 0};
+                public static int[] fieldOrder = {Tags.ClOrdID, Tags.SecondaryClOrdID, Tags.ListSeqNo, Tags.ClOrdLinkID, Tags.SettlInstMode, Tags.NoPartyIDs, Tags.TradeOriginationDate, Tags.TradeDate, Tags.Account, Tags.AcctIDSource, Tags.AccountType, Tags.DayBookingInst, Tags.BookingUnit, Tags.AllocID, Tags.PreallocMethod, Tags.NoAllocs, Tags.SettlType, Tags.SettlDate, Tags.CashMargin, Tags.ClearingFeeIndicator, Tags.HandlInst, Tags.ExecInst, Tags.MinQty, Tags.MaxFloor, Tags.ExDestination, Tags.NoTradingSessions, Tags.ProcessCode, Tags.Symbol, Tags.SymbolSfx, Tags.SecurityID, Tags.SecurityIDSource, Tags.NoSecurityAltID, Tags.Product, Tags.CFICode, Tags.SecurityType, Tags.SecuritySubType, Tags.MaturityMonthYear, Tags.MaturityDate, Tags.CouponPaymentDate, Tags.IssueDate, Tags.RepoCollateralSecurityType, Tags.RepurchaseTerm, Tags.RepurchaseRate, Tags.Factor, Tags.CreditRating, Tags.InstrRegistry, Tags.CountryOfIssue, Tags.StateOrProvinceOfIssue, Tags.LocaleOfIssue, Tags.RedemptionDate, Tags.StrikePrice, Tags.StrikeCurrency, Tags.OptAttribute, Tags.ContractMultiplier, Tags.CouponRate, Tags.SecurityExchange, Tags.Issuer, Tags.EncodedIssuerLen, Tags.EncodedIssuer, Tags.SecurityDesc, Tags.EncodedSecurityDescLen, Tags.EncodedSecurityDesc, Tags.Pool, Tags.ContractSettlMonth, Tags.CPProgram, Tags.CPRegType, Tags.NoEvents, Tags.DatedDate, Tags.InterestAccrualDate, Tags.SecurityStatus, Tags.SettleOnOpenFlag, Tags.InstrmtAssignmentMethod, Tags.StrikeMultiplier, Tags.StrikeValue, Tags.MinPriceIncrement, Tags.PositionLimit, Tags.NTPositionLimit, Tags.NoInstrumentParties, Tags.UnitofMeasure, Tags.TimeUnit, Tags.MaturityTime, Tags.NoUnderlyings, Tags.PrevClosePx, Tags.Side, Tags.SideValueInd, Tags.LocateReqd, Tags.TransactTime, Tags.NoStipulations, Tags.QtyType, Tags.OrderQty, Tags.CashOrderQty, Tags.OrderPercent, Tags.RoundingDirection, Tags.RoundingModulus, Tags.OrdType, Tags.PriceType, Tags.Price, Tags.StopPx, Tags.Spread, Tags.BenchmarkCurveCurrency, Tags.BenchmarkCurveName, Tags.BenchmarkCurvePoint, Tags.BenchmarkPrice, Tags.BenchmarkPriceType, Tags.BenchmarkSecurityID, Tags.BenchmarkSecurityIDSource, Tags.YieldType, Tags.Yield, Tags.YieldCalcDate, Tags.YieldRedemptionDate, Tags.YieldRedemptionPrice, Tags.YieldRedemptionPriceType, Tags.Currency, Tags.ComplianceID, Tags.SolicitedFlag, Tags.IOIid, Tags.QuoteID, Tags.TimeInForce, Tags.EffectiveTime, Tags.ExpireDate, Tags.ExpireTime, Tags.GTBookingInst, Tags.Commission, Tags.CommType, Tags.CommCurrency, Tags.FundRenewWaiv, Tags.OrderCapacity, Tags.OrderRestrictions, Tags.CustOrderCapacity, Tags.ForexReq, Tags.SettlCurrency, Tags.BookingType, Tags.Text, Tags.EncodedTextLen, Tags.EncodedText, Tags.SettlDate2, Tags.OrderQty2, Tags.Price2, Tags.PositionEffect, Tags.CoveredOrUncovered, Tags.MaxShow, Tags.PegOffsetValue, Tags.PegMoveType, Tags.PegOffsetType, Tags.PegLimitType, Tags.PegRoundDirection, Tags.PegScope, Tags.PegPriceType, Tags.PegSecurityIDSource, Tags.PegSecurityID, Tags.PegSymbol, Tags.PegSecurityDesc, Tags.DiscretionInst, Tags.DiscretionOffsetValue, Tags.DiscretionMoveType, Tags.DiscretionOffsetType, Tags.DiscretionLimitType, Tags.DiscretionRoundDirection, Tags.DiscretionScope, Tags.TargetStrategy, Tags.TargetStrategyParameters, Tags.ParticipationRate, Tags.Designation, Tags.NoStrategyParameters, Tags.MatchIncrement, Tags.MaxPriceLevels, Tags.SecondaryDisplayQty, Tags.DisplayWhen, Tags.DisplayMethod, Tags.DisplayLowQty, Tags.DisplayHighQty, Tags.DisplayMinIncr, Tags.RefreshQty, Tags.DisplayQty, Tags.PriceProtectionScope, Tags.TriggerType, Tags.TriggerAction, Tags.TriggerPrice, Tags.TriggerSymbol, Tags.TriggerSecurityID, Tags.TriggerSecurityIDSource, Tags.TriggerSecurityDesc, Tags.TriggerPriceType, Tags.TriggerPriceTypeScope, Tags.TriggerPriceDirection, Tags.TriggerNewPrice, Tags.TriggerOrderType, Tags.TriggerNewQty, Tags.TriggerTradingSessionID, Tags.TriggerTradingSessionSubID, Tags.RefOrderID, Tags.RefOrderIDSource, Tags.PreTradeAnonymity, Tags.ExDestinationIDSource, 0};
             
                 public NoOrdersGroup() 
                   :base( Tags.NoOrders, Tags.ClOrdID, fieldOrder)
@@ -2800,36 +2800,36 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.InterestAccrualDate);
                 }
-                public QuickFix.Fields.SecurityStat SecurityStat
+                public QuickFix.Fields.SecurityStatus SecurityStatus
                 { 
                     get 
                     {
-                        QuickFix.Fields.SecurityStat val = new QuickFix.Fields.SecurityStat();
+                        QuickFix.Fields.SecurityStatus val = new QuickFix.Fields.SecurityStatus();
                         GetField(val);
                         return val;
                     }
                     set { SetField(value); }
                 }
                 
-                public void Set(QuickFix.Fields.SecurityStat val) 
+                public void Set(QuickFix.Fields.SecurityStatus val) 
                 { 
-                    this.SecurityStat = val;
+                    this.SecurityStatus = val;
                 }
                 
-                public QuickFix.Fields.SecurityStat Get(QuickFix.Fields.SecurityStat val) 
+                public QuickFix.Fields.SecurityStatus Get(QuickFix.Fields.SecurityStatus val) 
                 { 
                     GetField(val);
                     return val;
                 }
                 
-                public bool IsSet(QuickFix.Fields.SecurityStat val) 
+                public bool IsSet(QuickFix.Fields.SecurityStatus val) 
                 { 
-                    return IsSetSecurityStat();
+                    return IsSetSecurityStatus();
                 }
                 
-                public bool IsSetSecurityStat() 
+                public bool IsSetSecurityStatus() 
                 { 
-                    return IsSetField(Tags.SecurityStat);
+                    return IsSetField(Tags.SecurityStatus);
                 }
                 public QuickFix.Fields.SettleOnOpenFlag SettleOnOpenFlag
                 { 
@@ -3079,36 +3079,36 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.NoInstrumentParties);
                 }
-                public QuickFix.Fields.UnitOfMeasure UnitOfMeasure
+                public QuickFix.Fields.UnitofMeasure UnitofMeasure
                 { 
                     get 
                     {
-                        QuickFix.Fields.UnitOfMeasure val = new QuickFix.Fields.UnitOfMeasure();
+                        QuickFix.Fields.UnitofMeasure val = new QuickFix.Fields.UnitofMeasure();
                         GetField(val);
                         return val;
                     }
                     set { SetField(value); }
                 }
                 
-                public void Set(QuickFix.Fields.UnitOfMeasure val) 
+                public void Set(QuickFix.Fields.UnitofMeasure val) 
                 { 
-                    this.UnitOfMeasure = val;
+                    this.UnitofMeasure = val;
                 }
                 
-                public QuickFix.Fields.UnitOfMeasure Get(QuickFix.Fields.UnitOfMeasure val) 
+                public QuickFix.Fields.UnitofMeasure Get(QuickFix.Fields.UnitofMeasure val) 
                 { 
                     GetField(val);
                     return val;
                 }
                 
-                public bool IsSet(QuickFix.Fields.UnitOfMeasure val) 
+                public bool IsSet(QuickFix.Fields.UnitofMeasure val) 
                 { 
-                    return IsSetUnitOfMeasure();
+                    return IsSetUnitofMeasure();
                 }
                 
-                public bool IsSetUnitOfMeasure() 
+                public bool IsSetUnitofMeasure() 
                 { 
-                    return IsSetField(Tags.UnitOfMeasure);
+                    return IsSetField(Tags.UnitofMeasure);
                 }
                 public QuickFix.Fields.TimeUnit TimeUnit
                 { 
@@ -4226,36 +4226,36 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.SolicitedFlag);
                 }
-                public QuickFix.Fields.IOIID IOIID
+                public QuickFix.Fields.IOIid IOIid
                 { 
                     get 
                     {
-                        QuickFix.Fields.IOIID val = new QuickFix.Fields.IOIID();
+                        QuickFix.Fields.IOIid val = new QuickFix.Fields.IOIid();
                         GetField(val);
                         return val;
                     }
                     set { SetField(value); }
                 }
                 
-                public void Set(QuickFix.Fields.IOIID val) 
+                public void Set(QuickFix.Fields.IOIid val) 
                 { 
-                    this.IOIID = val;
+                    this.IOIid = val;
                 }
                 
-                public QuickFix.Fields.IOIID Get(QuickFix.Fields.IOIID val) 
+                public QuickFix.Fields.IOIid Get(QuickFix.Fields.IOIid val) 
                 { 
                     GetField(val);
                     return val;
                 }
                 
-                public bool IsSet(QuickFix.Fields.IOIID val) 
+                public bool IsSet(QuickFix.Fields.IOIid val) 
                 { 
-                    return IsSetIOIID();
+                    return IsSetIOIid();
                 }
                 
-                public bool IsSetIOIID() 
+                public bool IsSetIOIid() 
                 { 
-                    return IsSetField(Tags.IOIID);
+                    return IsSetField(Tags.IOIid);
                 }
                 public QuickFix.Fields.QuoteID QuoteID
                 { 
@@ -7845,7 +7845,7 @@ namespace QuickFix
                 }
                 public class NoUnderlyingsGroup : Group
                 {
-                    public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSymbolSfx, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityIDSource, Tags.NoUnderlyingSecurityAltID, Tags.UnderlyingProduct, Tags.UnderlyingCFICode, Tags.UnderlyingSecurityType, Tags.UnderlyingSecuritySubType, Tags.UnderlyingMaturityMonthYear, Tags.UnderlyingMaturityDate, Tags.UnderlyingCouponPaymentDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepoCollateralSecurityType, Tags.UnderlyingRepurchaseTerm, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingCountryOfIssue, Tags.UnderlyingStateOrProvinceOfIssue, Tags.UnderlyingLocaleOfIssue, Tags.UnderlyingRedemptionDate, Tags.UnderlyingStrikePrice, Tags.UnderlyingStrikeCurrency, Tags.UnderlyingOptAttribute, Tags.UnderlyingContractMultiplier, Tags.UnderlyingCouponRate, Tags.UnderlyingSecurityExchange, Tags.UnderlyingIssuer, Tags.EncodedUnderlyingIssuerLen, Tags.EncodedUnderlyingIssuer, Tags.UnderlyingSecurityDesc, Tags.EncodedUnderlyingSecurityDescLen, Tags.EncodedUnderlyingSecurityDesc, Tags.UnderlyingCPProgram, Tags.UnderlyingCPRegType, Tags.UnderlyingCurrency, Tags.UnderlyingQty, Tags.UnderlyingPx, Tags.UnderlyingDirtyPrice, Tags.UnderlyingEndPrice, Tags.UnderlyingStartValue, Tags.UnderlyingCurrentValue, Tags.UnderlyingEndValue, Tags.NoUnderlyingStips, Tags.UnderlyingAllocationPercent, Tags.UnderlyingSettlementType, Tags.UnderlyingCashAmount, Tags.UnderlyingCashType, Tags.UnderlyingUnitOfMeasure, Tags.UnderlyingTimeUnit, Tags.UnderlyingCapValue, Tags.NoUndlyInstrumentParties, Tags.UnderlyingSettlMethod, Tags.UnderlyingAdjustedQuantity, Tags.UnderlyingFXRate, Tags.UnderlyingFXRateCalc, 0};
+                    public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSymbolSfx, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityIDSource, Tags.NoUnderlyingSecurityAltID, Tags.UnderlyingProduct, Tags.UnderlyingCFICode, Tags.UnderlyingSecurityType, Tags.UnderlyingSecuritySubType, Tags.UnderlyingMaturityMonthYear, Tags.UnderlyingMaturityDate, Tags.UnderlyingCouponPaymentDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepoCollateralSecurityType, Tags.UnderlyingRepurchaseTerm, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingCountryOfIssue, Tags.UnderlyingStateOrProvinceOfIssue, Tags.UnderlyingLocaleOfIssue, Tags.UnderlyingRedemptionDate, Tags.UnderlyingStrikePrice, Tags.UnderlyingStrikeCurrency, Tags.UnderlyingOptAttribute, Tags.UnderlyingContractMultiplier, Tags.UnderlyingCouponRate, Tags.UnderlyingSecurityExchange, Tags.UnderlyingIssuer, Tags.EncodedUnderlyingIssuerLen, Tags.EncodedUnderlyingIssuer, Tags.UnderlyingSecurityDesc, Tags.EncodedUnderlyingSecurityDescLen, Tags.EncodedUnderlyingSecurityDesc, Tags.UnderlyingCPProgram, Tags.UnderlyingCPRegType, Tags.UnderlyingCurrency, Tags.UnderlyingQty, Tags.UnderlyingPx, Tags.UnderlyingDirtyPrice, Tags.UnderlyingEndPrice, Tags.UnderlyingStartValue, Tags.UnderlyingCurrentValue, Tags.UnderlyingEndValue, Tags.NoUnderlyingStips, Tags.UnderlyingAllocationPercent, Tags.UnderlyingSettlementType, Tags.UnderlyingCashAmount, Tags.UnderlyingCashType, Tags.UnderlyingUnitofMeasure, Tags.UnderlyingTimeUnit, Tags.UnderlyingCapValue, Tags.NoUndlyInstrumentParties, Tags.UnderlyingSettlMethod, Tags.UnderlyingAdjustedQuantity, Tags.UnderlyingFXRate, Tags.UnderlyingFXRateCalc, 0};
                 
                     public NoUnderlyingsGroup() 
                       :base( Tags.NoUnderlyings, Tags.UnderlyingSymbol, fieldOrder)
@@ -9409,36 +9409,36 @@ namespace QuickFix
                     { 
                         return IsSetField(Tags.UnderlyingCashType);
                     }
-                    public QuickFix.Fields.UnderlyingUnitOfMeasure UnderlyingUnitOfMeasure
+                    public QuickFix.Fields.UnderlyingUnitofMeasure UnderlyingUnitofMeasure
                     { 
                         get 
                         {
-                            QuickFix.Fields.UnderlyingUnitOfMeasure val = new QuickFix.Fields.UnderlyingUnitOfMeasure();
+                            QuickFix.Fields.UnderlyingUnitofMeasure val = new QuickFix.Fields.UnderlyingUnitofMeasure();
                             GetField(val);
                             return val;
                         }
                         set { SetField(value); }
                     }
                     
-                    public void Set(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                    public void Set(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                     { 
-                        this.UnderlyingUnitOfMeasure = val;
+                        this.UnderlyingUnitofMeasure = val;
                     }
                     
-                    public QuickFix.Fields.UnderlyingUnitOfMeasure Get(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                    public QuickFix.Fields.UnderlyingUnitofMeasure Get(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                     { 
                         GetField(val);
                         return val;
                     }
                     
-                    public bool IsSet(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                    public bool IsSet(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                     { 
-                        return IsSetUnderlyingUnitOfMeasure();
+                        return IsSetUnderlyingUnitofMeasure();
                     }
                     
-                    public bool IsSetUnderlyingUnitOfMeasure() 
+                    public bool IsSetUnderlyingUnitofMeasure() 
                     { 
-                        return IsSetField(Tags.UnderlyingUnitOfMeasure);
+                        return IsSetField(Tags.UnderlyingUnitofMeasure);
                     }
                     public QuickFix.Fields.UnderlyingTimeUnit UnderlyingTimeUnit
                     { 

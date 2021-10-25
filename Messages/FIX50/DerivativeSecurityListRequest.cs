@@ -1635,36 +1635,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.UnderlyingCashType);
             }
-            public QuickFix.Fields.UnderlyingUnitOfMeasure UnderlyingUnitOfMeasure
+            public QuickFix.Fields.UnderlyingUnitofMeasure UnderlyingUnitofMeasure
             { 
                 get 
                 {
-                    QuickFix.Fields.UnderlyingUnitOfMeasure val = new QuickFix.Fields.UnderlyingUnitOfMeasure();
+                    QuickFix.Fields.UnderlyingUnitofMeasure val = new QuickFix.Fields.UnderlyingUnitofMeasure();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public void Set(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
-                this.UnderlyingUnitOfMeasure = val;
+                this.UnderlyingUnitofMeasure = val;
             }
             
-            public QuickFix.Fields.UnderlyingUnitOfMeasure Get(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public QuickFix.Fields.UnderlyingUnitofMeasure Get(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public bool IsSet(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
-                return IsSetUnderlyingUnitOfMeasure();
+                return IsSetUnderlyingUnitofMeasure();
             }
             
-            public bool IsSetUnderlyingUnitOfMeasure() 
+            public bool IsSetUnderlyingUnitofMeasure() 
             { 
-                return IsSetField(Tags.UnderlyingUnitOfMeasure);
+                return IsSetField(Tags.UnderlyingUnitofMeasure);
             }
             public QuickFix.Fields.UnderlyingTimeUnit UnderlyingTimeUnit
             { 

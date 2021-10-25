@@ -5,152 +5,16 @@ namespace QuickFix
 {
     namespace FIX44 
     {
-        public class RegistrationInstructionsResponse : Message
+        public class UserCompanyResponse : Message
         {
-            public const string MsgType = "p";
+            public const string MsgType = "UCR";
 
-            public RegistrationInstructionsResponse() : base()
+            public UserCompanyResponse() : base()
             {
-                this.Header.SetField(new QuickFix.Fields.MsgType("p"));
+                this.Header.SetField(new QuickFix.Fields.MsgType("UCR"));
             }
 
-            public RegistrationInstructionsResponse(
-                    QuickFix.Fields.RegistID aRegistID,
-                    QuickFix.Fields.RegistTransType aRegistTransType,
-                    QuickFix.Fields.RegistRefID aRegistRefID,
-                    QuickFix.Fields.RegistStatus aRegistStatus
-                ) : this()
-            {
-                this.RegistID = aRegistID;
-                this.RegistTransType = aRegistTransType;
-                this.RegistRefID = aRegistRefID;
-                this.RegistStatus = aRegistStatus;
-            }
 
-            public QuickFix.Fields.RegistID RegistID
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistID val = new QuickFix.Fields.RegistID();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistID val) 
-            { 
-                this.RegistID = val;
-            }
-            
-            public QuickFix.Fields.RegistID Get(QuickFix.Fields.RegistID val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistID val) 
-            { 
-                return IsSetRegistID();
-            }
-            
-            public bool IsSetRegistID() 
-            { 
-                return IsSetField(Tags.RegistID);
-            }
-            public QuickFix.Fields.RegistTransType RegistTransType
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistTransType val = new QuickFix.Fields.RegistTransType();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistTransType val) 
-            { 
-                this.RegistTransType = val;
-            }
-            
-            public QuickFix.Fields.RegistTransType Get(QuickFix.Fields.RegistTransType val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistTransType val) 
-            { 
-                return IsSetRegistTransType();
-            }
-            
-            public bool IsSetRegistTransType() 
-            { 
-                return IsSetField(Tags.RegistTransType);
-            }
-            public QuickFix.Fields.RegistRefID RegistRefID
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistRefID val = new QuickFix.Fields.RegistRefID();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistRefID val) 
-            { 
-                this.RegistRefID = val;
-            }
-            
-            public QuickFix.Fields.RegistRefID Get(QuickFix.Fields.RegistRefID val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistRefID val) 
-            { 
-                return IsSetRegistRefID();
-            }
-            
-            public bool IsSetRegistRefID() 
-            { 
-                return IsSetField(Tags.RegistRefID);
-            }
-            public QuickFix.Fields.ClOrdID ClOrdID
-            { 
-                get 
-                {
-                    QuickFix.Fields.ClOrdID val = new QuickFix.Fields.ClOrdID();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.ClOrdID val) 
-            { 
-                this.ClOrdID = val;
-            }
-            
-            public QuickFix.Fields.ClOrdID Get(QuickFix.Fields.ClOrdID val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.ClOrdID val) 
-            { 
-                return IsSetClOrdID();
-            }
-            
-            public bool IsSetClOrdID() 
-            { 
-                return IsSetField(Tags.ClOrdID);
-            }
             public QuickFix.Fields.NoPartyIDs NoPartyIDs
             { 
                 get 
@@ -182,160 +46,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.NoPartyIDs);
             }
-            public QuickFix.Fields.Account Account
+            public QuickFix.Fields.Text Text
             { 
                 get 
                 {
-                    QuickFix.Fields.Account val = new QuickFix.Fields.Account();
+                    QuickFix.Fields.Text val = new QuickFix.Fields.Text();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.Account val) 
+            public void Set(QuickFix.Fields.Text val) 
             { 
-                this.Account = val;
+                this.Text = val;
             }
             
-            public QuickFix.Fields.Account Get(QuickFix.Fields.Account val) 
+            public QuickFix.Fields.Text Get(QuickFix.Fields.Text val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.Account val) 
+            public bool IsSet(QuickFix.Fields.Text val) 
             { 
-                return IsSetAccount();
+                return IsSetText();
             }
             
-            public bool IsSetAccount() 
+            public bool IsSetText() 
             { 
-                return IsSetField(Tags.Account);
-            }
-            public QuickFix.Fields.AcctIDSource AcctIDSource
-            { 
-                get 
-                {
-                    QuickFix.Fields.AcctIDSource val = new QuickFix.Fields.AcctIDSource();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.AcctIDSource val) 
-            { 
-                this.AcctIDSource = val;
-            }
-            
-            public QuickFix.Fields.AcctIDSource Get(QuickFix.Fields.AcctIDSource val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.AcctIDSource val) 
-            { 
-                return IsSetAcctIDSource();
-            }
-            
-            public bool IsSetAcctIDSource() 
-            { 
-                return IsSetField(Tags.AcctIDSource);
-            }
-            public QuickFix.Fields.RegistStatus RegistStatus
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistStatus val = new QuickFix.Fields.RegistStatus();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistStatus val) 
-            { 
-                this.RegistStatus = val;
-            }
-            
-            public QuickFix.Fields.RegistStatus Get(QuickFix.Fields.RegistStatus val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistStatus val) 
-            { 
-                return IsSetRegistStatus();
-            }
-            
-            public bool IsSetRegistStatus() 
-            { 
-                return IsSetField(Tags.RegistStatus);
-            }
-            public QuickFix.Fields.RegistRejReasonCode RegistRejReasonCode
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistRejReasonCode val = new QuickFix.Fields.RegistRejReasonCode();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistRejReasonCode val) 
-            { 
-                this.RegistRejReasonCode = val;
-            }
-            
-            public QuickFix.Fields.RegistRejReasonCode Get(QuickFix.Fields.RegistRejReasonCode val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistRejReasonCode val) 
-            { 
-                return IsSetRegistRejReasonCode();
-            }
-            
-            public bool IsSetRegistRejReasonCode() 
-            { 
-                return IsSetField(Tags.RegistRejReasonCode);
-            }
-            public QuickFix.Fields.RegistRejReasonText RegistRejReasonText
-            { 
-                get 
-                {
-                    QuickFix.Fields.RegistRejReasonText val = new QuickFix.Fields.RegistRejReasonText();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.RegistRejReasonText val) 
-            { 
-                this.RegistRejReasonText = val;
-            }
-            
-            public QuickFix.Fields.RegistRejReasonText Get(QuickFix.Fields.RegistRejReasonText val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.RegistRejReasonText val) 
-            { 
-                return IsSetRegistRejReasonText();
-            }
-            
-            public bool IsSetRegistRejReasonText() 
-            { 
-                return IsSetField(Tags.RegistRejReasonText);
+                return IsSetField(Tags.Text);
             }
             public class NoPartyIDsGroup : Group
             {

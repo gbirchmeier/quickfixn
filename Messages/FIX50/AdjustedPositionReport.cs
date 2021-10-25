@@ -1511,36 +1511,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.InterestAccrualDate);
             }
-            public QuickFix.Fields.SecurityStat SecurityStat
+            public QuickFix.Fields.SecurityStatus SecurityStatus
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityStat val = new QuickFix.Fields.SecurityStat();
+                    QuickFix.Fields.SecurityStatus val = new QuickFix.Fields.SecurityStatus();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityStat val) 
+            public void Set(QuickFix.Fields.SecurityStatus val) 
             { 
-                this.SecurityStat = val;
+                this.SecurityStatus = val;
             }
             
-            public QuickFix.Fields.SecurityStat Get(QuickFix.Fields.SecurityStat val) 
+            public QuickFix.Fields.SecurityStatus Get(QuickFix.Fields.SecurityStatus val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityStat val) 
+            public bool IsSet(QuickFix.Fields.SecurityStatus val) 
             { 
-                return IsSetSecurityStat();
+                return IsSetSecurityStatus();
             }
             
-            public bool IsSetSecurityStat() 
+            public bool IsSetSecurityStatus() 
             { 
-                return IsSetField(Tags.SecurityStat);
+                return IsSetField(Tags.SecurityStatus);
             }
             public QuickFix.Fields.SettleOnOpenFlag SettleOnOpenFlag
             { 
@@ -1790,36 +1790,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.NoInstrumentParties);
             }
-            public QuickFix.Fields.UnitOfMeasure UnitOfMeasure
+            public QuickFix.Fields.UnitofMeasure UnitofMeasure
             { 
                 get 
                 {
-                    QuickFix.Fields.UnitOfMeasure val = new QuickFix.Fields.UnitOfMeasure();
+                    QuickFix.Fields.UnitofMeasure val = new QuickFix.Fields.UnitofMeasure();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.UnitOfMeasure val) 
+            public void Set(QuickFix.Fields.UnitofMeasure val) 
             { 
-                this.UnitOfMeasure = val;
+                this.UnitofMeasure = val;
             }
             
-            public QuickFix.Fields.UnitOfMeasure Get(QuickFix.Fields.UnitOfMeasure val) 
+            public QuickFix.Fields.UnitofMeasure Get(QuickFix.Fields.UnitofMeasure val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.UnitOfMeasure val) 
+            public bool IsSet(QuickFix.Fields.UnitofMeasure val) 
             { 
-                return IsSetUnitOfMeasure();
+                return IsSetUnitofMeasure();
             }
             
-            public bool IsSetUnitOfMeasure() 
+            public bool IsSetUnitofMeasure() 
             { 
-                return IsSetField(Tags.UnitOfMeasure);
+                return IsSetField(Tags.UnitofMeasure);
             }
             public QuickFix.Fields.TimeUnit TimeUnit
             { 

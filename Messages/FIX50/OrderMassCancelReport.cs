@@ -1668,36 +1668,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.InterestAccrualDate);
             }
-            public QuickFix.Fields.SecurityStat SecurityStat
+            public QuickFix.Fields.SecurityStatus SecurityStatus
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityStat val = new QuickFix.Fields.SecurityStat();
+                    QuickFix.Fields.SecurityStatus val = new QuickFix.Fields.SecurityStatus();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityStat val) 
+            public void Set(QuickFix.Fields.SecurityStatus val) 
             { 
-                this.SecurityStat = val;
+                this.SecurityStatus = val;
             }
             
-            public QuickFix.Fields.SecurityStat Get(QuickFix.Fields.SecurityStat val) 
+            public QuickFix.Fields.SecurityStatus Get(QuickFix.Fields.SecurityStatus val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityStat val) 
+            public bool IsSet(QuickFix.Fields.SecurityStatus val) 
             { 
-                return IsSetSecurityStat();
+                return IsSetSecurityStatus();
             }
             
-            public bool IsSetSecurityStat() 
+            public bool IsSetSecurityStatus() 
             { 
-                return IsSetField(Tags.SecurityStat);
+                return IsSetField(Tags.SecurityStatus);
             }
             public QuickFix.Fields.SettleOnOpenFlag SettleOnOpenFlag
             { 
@@ -1947,36 +1947,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.NoInstrumentParties);
             }
-            public QuickFix.Fields.UnitOfMeasure UnitOfMeasure
+            public QuickFix.Fields.UnitofMeasure UnitofMeasure
             { 
                 get 
                 {
-                    QuickFix.Fields.UnitOfMeasure val = new QuickFix.Fields.UnitOfMeasure();
+                    QuickFix.Fields.UnitofMeasure val = new QuickFix.Fields.UnitofMeasure();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.UnitOfMeasure val) 
+            public void Set(QuickFix.Fields.UnitofMeasure val) 
             { 
-                this.UnitOfMeasure = val;
+                this.UnitofMeasure = val;
             }
             
-            public QuickFix.Fields.UnitOfMeasure Get(QuickFix.Fields.UnitOfMeasure val) 
+            public QuickFix.Fields.UnitofMeasure Get(QuickFix.Fields.UnitofMeasure val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.UnitOfMeasure val) 
+            public bool IsSet(QuickFix.Fields.UnitofMeasure val) 
             { 
-                return IsSetUnitOfMeasure();
+                return IsSetUnitofMeasure();
             }
             
-            public bool IsSetUnitOfMeasure() 
+            public bool IsSetUnitofMeasure() 
             { 
-                return IsSetField(Tags.UnitOfMeasure);
+                return IsSetField(Tags.UnitofMeasure);
             }
             public QuickFix.Fields.TimeUnit TimeUnit
             { 
@@ -3590,36 +3590,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.UnderlyingCashType);
             }
-            public QuickFix.Fields.UnderlyingUnitOfMeasure UnderlyingUnitOfMeasure
+            public QuickFix.Fields.UnderlyingUnitofMeasure UnderlyingUnitofMeasure
             { 
                 get 
                 {
-                    QuickFix.Fields.UnderlyingUnitOfMeasure val = new QuickFix.Fields.UnderlyingUnitOfMeasure();
+                    QuickFix.Fields.UnderlyingUnitofMeasure val = new QuickFix.Fields.UnderlyingUnitofMeasure();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public void Set(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
-                this.UnderlyingUnitOfMeasure = val;
+                this.UnderlyingUnitofMeasure = val;
             }
             
-            public QuickFix.Fields.UnderlyingUnitOfMeasure Get(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public QuickFix.Fields.UnderlyingUnitofMeasure Get(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+            public bool IsSet(QuickFix.Fields.UnderlyingUnitofMeasure val) 
             { 
-                return IsSetUnderlyingUnitOfMeasure();
+                return IsSetUnderlyingUnitofMeasure();
             }
             
-            public bool IsSetUnderlyingUnitOfMeasure() 
+            public bool IsSetUnderlyingUnitofMeasure() 
             { 
-                return IsSetField(Tags.UnderlyingUnitOfMeasure);
+                return IsSetField(Tags.UnderlyingUnitofMeasure);
             }
             public QuickFix.Fields.UnderlyingTimeUnit UnderlyingTimeUnit
             { 
@@ -4023,117 +4023,6 @@ namespace QuickFix
             public bool IsSetNoPartyIDs() 
             { 
                 return IsSetField(Tags.NoPartyIDs);
-            }
-            public class NoAffectedOrdersGroup : Group
-            {
-                public static int[] fieldOrder = {Tags.OrigClOrdID, Tags.AffectedOrderID, Tags.AffectedSecondaryOrderID, 0};
-            
-                public NoAffectedOrdersGroup() 
-                  :base( Tags.NoAffectedOrders, Tags.OrigClOrdID, fieldOrder)
-                {
-                }
-            
-                public override Group Clone()
-                {
-                    var clone = new NoAffectedOrdersGroup();
-                    clone.CopyStateFrom(this);
-                    return clone;
-                }
-            
-                public QuickFix.Fields.OrigClOrdID OrigClOrdID
-                { 
-                    get 
-                    {
-                        QuickFix.Fields.OrigClOrdID val = new QuickFix.Fields.OrigClOrdID();
-                        GetField(val);
-                        return val;
-                    }
-                    set { SetField(value); }
-                }
-                
-                public void Set(QuickFix.Fields.OrigClOrdID val) 
-                { 
-                    this.OrigClOrdID = val;
-                }
-                
-                public QuickFix.Fields.OrigClOrdID Get(QuickFix.Fields.OrigClOrdID val) 
-                { 
-                    GetField(val);
-                    return val;
-                }
-                
-                public bool IsSet(QuickFix.Fields.OrigClOrdID val) 
-                { 
-                    return IsSetOrigClOrdID();
-                }
-                
-                public bool IsSetOrigClOrdID() 
-                { 
-                    return IsSetField(Tags.OrigClOrdID);
-                }
-                public QuickFix.Fields.AffectedOrderID AffectedOrderID
-                { 
-                    get 
-                    {
-                        QuickFix.Fields.AffectedOrderID val = new QuickFix.Fields.AffectedOrderID();
-                        GetField(val);
-                        return val;
-                    }
-                    set { SetField(value); }
-                }
-                
-                public void Set(QuickFix.Fields.AffectedOrderID val) 
-                { 
-                    this.AffectedOrderID = val;
-                }
-                
-                public QuickFix.Fields.AffectedOrderID Get(QuickFix.Fields.AffectedOrderID val) 
-                { 
-                    GetField(val);
-                    return val;
-                }
-                
-                public bool IsSet(QuickFix.Fields.AffectedOrderID val) 
-                { 
-                    return IsSetAffectedOrderID();
-                }
-                
-                public bool IsSetAffectedOrderID() 
-                { 
-                    return IsSetField(Tags.AffectedOrderID);
-                }
-                public QuickFix.Fields.AffectedSecondaryOrderID AffectedSecondaryOrderID
-                { 
-                    get 
-                    {
-                        QuickFix.Fields.AffectedSecondaryOrderID val = new QuickFix.Fields.AffectedSecondaryOrderID();
-                        GetField(val);
-                        return val;
-                    }
-                    set { SetField(value); }
-                }
-                
-                public void Set(QuickFix.Fields.AffectedSecondaryOrderID val) 
-                { 
-                    this.AffectedSecondaryOrderID = val;
-                }
-                
-                public QuickFix.Fields.AffectedSecondaryOrderID Get(QuickFix.Fields.AffectedSecondaryOrderID val) 
-                { 
-                    GetField(val);
-                    return val;
-                }
-                
-                public bool IsSet(QuickFix.Fields.AffectedSecondaryOrderID val) 
-                { 
-                    return IsSetAffectedSecondaryOrderID();
-                }
-                
-                public bool IsSetAffectedSecondaryOrderID() 
-                { 
-                    return IsSetField(Tags.AffectedSecondaryOrderID);
-                }
-            
             }
             public class NoSecurityAltIDGroup : Group
             {

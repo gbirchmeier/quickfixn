@@ -3,18 +3,18 @@
 using QuickFix.Fields;
 namespace QuickFix
 {
-    namespace FIX44 
+    namespace FIX50 
     {
-        public class ConfirmationAck : Message
+        public class Confirmation_Ack : Message
         {
             public const string MsgType = "AU";
 
-            public ConfirmationAck() : base()
+            public Confirmation_Ack() : base()
             {
                 this.Header.SetField(new QuickFix.Fields.MsgType("AU"));
             }
 
-            public ConfirmationAck(
+            public Confirmation_Ack(
                     QuickFix.Fields.ConfirmID aConfirmID,
                     QuickFix.Fields.TradeDate aTradeDate,
                     QuickFix.Fields.TransactTime aTransactTime,

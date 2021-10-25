@@ -1841,36 +1841,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.InterestAccrualDate);
             }
-            public QuickFix.Fields.SecurityStat SecurityStat
+            public QuickFix.Fields.SecurityStatus SecurityStatus
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityStat val = new QuickFix.Fields.SecurityStat();
+                    QuickFix.Fields.SecurityStatus val = new QuickFix.Fields.SecurityStatus();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityStat val) 
+            public void Set(QuickFix.Fields.SecurityStatus val) 
             { 
-                this.SecurityStat = val;
+                this.SecurityStatus = val;
             }
             
-            public QuickFix.Fields.SecurityStat Get(QuickFix.Fields.SecurityStat val) 
+            public QuickFix.Fields.SecurityStatus Get(QuickFix.Fields.SecurityStatus val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityStat val) 
+            public bool IsSet(QuickFix.Fields.SecurityStatus val) 
             { 
-                return IsSetSecurityStat();
+                return IsSetSecurityStatus();
             }
             
-            public bool IsSetSecurityStat() 
+            public bool IsSetSecurityStatus() 
             { 
-                return IsSetField(Tags.SecurityStat);
+                return IsSetField(Tags.SecurityStatus);
             }
             public QuickFix.Fields.SettleOnOpenFlag SettleOnOpenFlag
             { 
@@ -2120,36 +2120,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.NoInstrumentParties);
             }
-            public QuickFix.Fields.UnitOfMeasure UnitOfMeasure
+            public QuickFix.Fields.UnitofMeasure UnitofMeasure
             { 
                 get 
                 {
-                    QuickFix.Fields.UnitOfMeasure val = new QuickFix.Fields.UnitOfMeasure();
+                    QuickFix.Fields.UnitofMeasure val = new QuickFix.Fields.UnitofMeasure();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.UnitOfMeasure val) 
+            public void Set(QuickFix.Fields.UnitofMeasure val) 
             { 
-                this.UnitOfMeasure = val;
+                this.UnitofMeasure = val;
             }
             
-            public QuickFix.Fields.UnitOfMeasure Get(QuickFix.Fields.UnitOfMeasure val) 
+            public QuickFix.Fields.UnitofMeasure Get(QuickFix.Fields.UnitofMeasure val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.UnitOfMeasure val) 
+            public bool IsSet(QuickFix.Fields.UnitofMeasure val) 
             { 
-                return IsSetUnitOfMeasure();
+                return IsSetUnitofMeasure();
             }
             
-            public bool IsSetUnitOfMeasure() 
+            public bool IsSetUnitofMeasure() 
             { 
-                return IsSetField(Tags.UnitOfMeasure);
+                return IsSetField(Tags.UnitofMeasure);
             }
             public QuickFix.Fields.TimeUnit TimeUnit
             { 
@@ -6067,7 +6067,7 @@ namespace QuickFix
             }
             public class NoUnderlyingsGroup : Group
             {
-                public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSymbolSfx, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityIDSource, Tags.NoUnderlyingSecurityAltID, Tags.UnderlyingProduct, Tags.UnderlyingCFICode, Tags.UnderlyingSecurityType, Tags.UnderlyingSecuritySubType, Tags.UnderlyingMaturityMonthYear, Tags.UnderlyingMaturityDate, Tags.UnderlyingCouponPaymentDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepoCollateralSecurityType, Tags.UnderlyingRepurchaseTerm, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingCountryOfIssue, Tags.UnderlyingStateOrProvinceOfIssue, Tags.UnderlyingLocaleOfIssue, Tags.UnderlyingRedemptionDate, Tags.UnderlyingStrikePrice, Tags.UnderlyingStrikeCurrency, Tags.UnderlyingOptAttribute, Tags.UnderlyingContractMultiplier, Tags.UnderlyingCouponRate, Tags.UnderlyingSecurityExchange, Tags.UnderlyingIssuer, Tags.EncodedUnderlyingIssuerLen, Tags.EncodedUnderlyingIssuer, Tags.UnderlyingSecurityDesc, Tags.EncodedUnderlyingSecurityDescLen, Tags.EncodedUnderlyingSecurityDesc, Tags.UnderlyingCPProgram, Tags.UnderlyingCPRegType, Tags.UnderlyingCurrency, Tags.UnderlyingQty, Tags.UnderlyingPx, Tags.UnderlyingDirtyPrice, Tags.UnderlyingEndPrice, Tags.UnderlyingStartValue, Tags.UnderlyingCurrentValue, Tags.UnderlyingEndValue, Tags.NoUnderlyingStips, Tags.UnderlyingAllocationPercent, Tags.UnderlyingSettlementType, Tags.UnderlyingCashAmount, Tags.UnderlyingCashType, Tags.UnderlyingUnitOfMeasure, Tags.UnderlyingTimeUnit, Tags.UnderlyingCapValue, Tags.NoUndlyInstrumentParties, Tags.UnderlyingSettlMethod, Tags.UnderlyingAdjustedQuantity, Tags.UnderlyingFXRate, Tags.UnderlyingFXRateCalc, 0};
+                public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSymbolSfx, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityIDSource, Tags.NoUnderlyingSecurityAltID, Tags.UnderlyingProduct, Tags.UnderlyingCFICode, Tags.UnderlyingSecurityType, Tags.UnderlyingSecuritySubType, Tags.UnderlyingMaturityMonthYear, Tags.UnderlyingMaturityDate, Tags.UnderlyingCouponPaymentDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepoCollateralSecurityType, Tags.UnderlyingRepurchaseTerm, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingCountryOfIssue, Tags.UnderlyingStateOrProvinceOfIssue, Tags.UnderlyingLocaleOfIssue, Tags.UnderlyingRedemptionDate, Tags.UnderlyingStrikePrice, Tags.UnderlyingStrikeCurrency, Tags.UnderlyingOptAttribute, Tags.UnderlyingContractMultiplier, Tags.UnderlyingCouponRate, Tags.UnderlyingSecurityExchange, Tags.UnderlyingIssuer, Tags.EncodedUnderlyingIssuerLen, Tags.EncodedUnderlyingIssuer, Tags.UnderlyingSecurityDesc, Tags.EncodedUnderlyingSecurityDescLen, Tags.EncodedUnderlyingSecurityDesc, Tags.UnderlyingCPProgram, Tags.UnderlyingCPRegType, Tags.UnderlyingCurrency, Tags.UnderlyingQty, Tags.UnderlyingPx, Tags.UnderlyingDirtyPrice, Tags.UnderlyingEndPrice, Tags.UnderlyingStartValue, Tags.UnderlyingCurrentValue, Tags.UnderlyingEndValue, Tags.NoUnderlyingStips, Tags.UnderlyingAllocationPercent, Tags.UnderlyingSettlementType, Tags.UnderlyingCashAmount, Tags.UnderlyingCashType, Tags.UnderlyingUnitofMeasure, Tags.UnderlyingTimeUnit, Tags.UnderlyingCapValue, Tags.NoUndlyInstrumentParties, Tags.UnderlyingSettlMethod, Tags.UnderlyingAdjustedQuantity, Tags.UnderlyingFXRate, Tags.UnderlyingFXRateCalc, 0};
             
                 public NoUnderlyingsGroup() 
                   :base( Tags.NoUnderlyings, Tags.UnderlyingSymbol, fieldOrder)
@@ -7631,36 +7631,36 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.UnderlyingCashType);
                 }
-                public QuickFix.Fields.UnderlyingUnitOfMeasure UnderlyingUnitOfMeasure
+                public QuickFix.Fields.UnderlyingUnitofMeasure UnderlyingUnitofMeasure
                 { 
                     get 
                     {
-                        QuickFix.Fields.UnderlyingUnitOfMeasure val = new QuickFix.Fields.UnderlyingUnitOfMeasure();
+                        QuickFix.Fields.UnderlyingUnitofMeasure val = new QuickFix.Fields.UnderlyingUnitofMeasure();
                         GetField(val);
                         return val;
                     }
                     set { SetField(value); }
                 }
                 
-                public void Set(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                public void Set(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                 { 
-                    this.UnderlyingUnitOfMeasure = val;
+                    this.UnderlyingUnitofMeasure = val;
                 }
                 
-                public QuickFix.Fields.UnderlyingUnitOfMeasure Get(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                public QuickFix.Fields.UnderlyingUnitofMeasure Get(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                 { 
                     GetField(val);
                     return val;
                 }
                 
-                public bool IsSet(QuickFix.Fields.UnderlyingUnitOfMeasure val) 
+                public bool IsSet(QuickFix.Fields.UnderlyingUnitofMeasure val) 
                 { 
-                    return IsSetUnderlyingUnitOfMeasure();
+                    return IsSetUnderlyingUnitofMeasure();
                 }
                 
-                public bool IsSetUnderlyingUnitOfMeasure() 
+                public bool IsSetUnderlyingUnitofMeasure() 
                 { 
-                    return IsSetField(Tags.UnderlyingUnitOfMeasure);
+                    return IsSetField(Tags.UnderlyingUnitofMeasure);
                 }
                 public QuickFix.Fields.UnderlyingTimeUnit UnderlyingTimeUnit
                 { 
@@ -8263,7 +8263,7 @@ namespace QuickFix
             }
             public class NoLegsGroup : Group
             {
-                public static int[] fieldOrder = {Tags.LegSymbol, Tags.LegSymbolSfx, Tags.LegSecurityID, Tags.LegSecurityIDSource, Tags.NoLegSecurityAltID, Tags.LegProduct, Tags.LegCFICode, Tags.LegSecurityType, Tags.LegSecuritySubType, Tags.LegMaturityMonthYear, Tags.LegMaturityDate, Tags.LegCouponPaymentDate, Tags.LegIssueDate, Tags.LegRepoCollateralSecurityType, Tags.LegRepurchaseTerm, Tags.LegRepurchaseRate, Tags.LegFactor, Tags.LegCreditRating, Tags.LegInstrRegistry, Tags.LegCountryOfIssue, Tags.LegStateOrProvinceOfIssue, Tags.LegLocaleOfIssue, Tags.LegRedemptionDate, Tags.LegStrikePrice, Tags.LegStrikeCurrency, Tags.LegOptAttribute, Tags.LegContractMultiplier, Tags.LegCouponRate, Tags.LegSecurityExchange, Tags.LegIssuer, Tags.EncodedLegIssuerLen, Tags.EncodedLegIssuer, Tags.LegSecurityDesc, Tags.EncodedLegSecurityDescLen, Tags.EncodedLegSecurityDesc, Tags.LegRatioQty, Tags.LegSide, Tags.LegCurrency, Tags.LegPool, Tags.LegDatedDate, Tags.LegContractSettlMonth, Tags.LegInterestAccrualDate, Tags.LegUnitOfMeasure, Tags.LegTimeUnit, 0};
+                public static int[] fieldOrder = {Tags.LegSymbol, Tags.LegSymbolSfx, Tags.LegSecurityID, Tags.LegSecurityIDSource, Tags.NoLegSecurityAltID, Tags.LegProduct, Tags.LegCFICode, Tags.LegSecurityType, Tags.LegSecuritySubType, Tags.LegMaturityMonthYear, Tags.LegMaturityDate, Tags.LegCouponPaymentDate, Tags.LegIssueDate, Tags.LegRepoCollateralSecurityType, Tags.LegRepurchaseTerm, Tags.LegRepurchaseRate, Tags.LegFactor, Tags.LegCreditRating, Tags.LegInstrRegistry, Tags.LegCountryOfIssue, Tags.LegStateOrProvinceOfIssue, Tags.LegLocaleOfIssue, Tags.LegRedemptionDate, Tags.LegStrikePrice, Tags.LegStrikeCurrency, Tags.LegOptAttribute, Tags.LegContractMultiplier, Tags.LegCouponRate, Tags.LegSecurityExchange, Tags.LegIssuer, Tags.EncodedLegIssuerLen, Tags.EncodedLegIssuer, Tags.LegSecurityDesc, Tags.EncodedLegSecurityDescLen, Tags.EncodedLegSecurityDesc, Tags.LegRatioQty, Tags.LegSide, Tags.LegCurrency, Tags.LegPool, Tags.LegDatedDate, Tags.LegContractSettlMonth, Tags.LegInterestAccrualDate, Tags.LegUnitofMeasure, Tags.LegTimeUnit, 0};
             
                 public NoLegsGroup() 
                   :base( Tags.NoLegs, Tags.LegSymbol, fieldOrder)
@@ -9579,36 +9579,36 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.LegInterestAccrualDate);
                 }
-                public QuickFix.Fields.LegUnitOfMeasure LegUnitOfMeasure
+                public QuickFix.Fields.LegUnitofMeasure LegUnitofMeasure
                 { 
                     get 
                     {
-                        QuickFix.Fields.LegUnitOfMeasure val = new QuickFix.Fields.LegUnitOfMeasure();
+                        QuickFix.Fields.LegUnitofMeasure val = new QuickFix.Fields.LegUnitofMeasure();
                         GetField(val);
                         return val;
                     }
                     set { SetField(value); }
                 }
                 
-                public void Set(QuickFix.Fields.LegUnitOfMeasure val) 
+                public void Set(QuickFix.Fields.LegUnitofMeasure val) 
                 { 
-                    this.LegUnitOfMeasure = val;
+                    this.LegUnitofMeasure = val;
                 }
                 
-                public QuickFix.Fields.LegUnitOfMeasure Get(QuickFix.Fields.LegUnitOfMeasure val) 
+                public QuickFix.Fields.LegUnitofMeasure Get(QuickFix.Fields.LegUnitofMeasure val) 
                 { 
                     GetField(val);
                     return val;
                 }
                 
-                public bool IsSet(QuickFix.Fields.LegUnitOfMeasure val) 
+                public bool IsSet(QuickFix.Fields.LegUnitofMeasure val) 
                 { 
-                    return IsSetLegUnitOfMeasure();
+                    return IsSetLegUnitofMeasure();
                 }
                 
-                public bool IsSetLegUnitOfMeasure() 
+                public bool IsSetLegUnitofMeasure() 
                 { 
-                    return IsSetField(Tags.LegUnitOfMeasure);
+                    return IsSetField(Tags.LegUnitofMeasure);
                 }
                 public QuickFix.Fields.LegTimeUnit LegTimeUnit
                 { 
@@ -9641,86 +9641,7 @@ namespace QuickFix
                 { 
                     return IsSetField(Tags.LegTimeUnit);
                 }
-                            public class NoLegSecurityAltIDGroup : Group
-                {
-                    public static int[] fieldOrder = {Tags.LegSecurityAltID, Tags.LegSecurityAltIDSource, 0};
-                
-                    public NoLegSecurityAltIDGroup() 
-                      :base( Tags.NoLegSecurityAltID, Tags.LegSecurityAltID, fieldOrder)
-                    {
-                    }
-                
-                    public override Group Clone()
-                    {
-                        var clone = new NoLegSecurityAltIDGroup();
-                        clone.CopyStateFrom(this);
-                        return clone;
-                    }
-                
-                    public QuickFix.Fields.LegSecurityAltID LegSecurityAltID
-                    { 
-                        get 
-                        {
-                            QuickFix.Fields.LegSecurityAltID val = new QuickFix.Fields.LegSecurityAltID();
-                            GetField(val);
-                            return val;
-                        }
-                        set { SetField(value); }
-                    }
-                    
-                    public void Set(QuickFix.Fields.LegSecurityAltID val) 
-                    { 
-                        this.LegSecurityAltID = val;
-                    }
-                    
-                    public QuickFix.Fields.LegSecurityAltID Get(QuickFix.Fields.LegSecurityAltID val) 
-                    { 
-                        GetField(val);
-                        return val;
-                    }
-                    
-                    public bool IsSet(QuickFix.Fields.LegSecurityAltID val) 
-                    { 
-                        return IsSetLegSecurityAltID();
-                    }
-                    
-                    public bool IsSetLegSecurityAltID() 
-                    { 
-                        return IsSetField(Tags.LegSecurityAltID);
-                    }
-                    public QuickFix.Fields.LegSecurityAltIDSource LegSecurityAltIDSource
-                    { 
-                        get 
-                        {
-                            QuickFix.Fields.LegSecurityAltIDSource val = new QuickFix.Fields.LegSecurityAltIDSource();
-                            GetField(val);
-                            return val;
-                        }
-                        set { SetField(value); }
-                    }
-                    
-                    public void Set(QuickFix.Fields.LegSecurityAltIDSource val) 
-                    { 
-                        this.LegSecurityAltIDSource = val;
-                    }
-                    
-                    public QuickFix.Fields.LegSecurityAltIDSource Get(QuickFix.Fields.LegSecurityAltIDSource val) 
-                    { 
-                        GetField(val);
-                        return val;
-                    }
-                    
-                    public bool IsSet(QuickFix.Fields.LegSecurityAltIDSource val) 
-                    { 
-                        return IsSetLegSecurityAltIDSource();
-                    }
-                    
-                    public bool IsSetLegSecurityAltIDSource() 
-                    { 
-                        return IsSetField(Tags.LegSecurityAltIDSource);
-                    }
-                
-                }
+            
             }
             public class NoCapacitiesGroup : Group
             {
