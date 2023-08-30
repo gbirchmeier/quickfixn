@@ -335,6 +335,37 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.UnderlyingStrategySymbol);
             }
+            public QuickFix.Fields.SecurityType SecurityType
+            { 
+                get 
+                {
+                    QuickFix.Fields.SecurityType val = new QuickFix.Fields.SecurityType();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.SecurityType val) 
+            { 
+                this.SecurityType = val;
+            }
+            
+            public QuickFix.Fields.SecurityType Get(QuickFix.Fields.SecurityType val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.SecurityType val) 
+            { 
+                return IsSetSecurityType();
+            }
+            
+            public bool IsSetSecurityType() 
+            { 
+                return IsSetField(Tags.SecurityType);
+            }
             public QuickFix.Fields.MaturityDate MaturityDate
             { 
                 get 
@@ -613,6 +644,68 @@ namespace QuickFix
             public bool IsSetIncrementQty() 
             { 
                 return IsSetField(Tags.IncrementQty);
+            }
+            public QuickFix.Fields.MinPrice MinPrice
+            { 
+                get 
+                {
+                    QuickFix.Fields.MinPrice val = new QuickFix.Fields.MinPrice();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.MinPrice val) 
+            { 
+                this.MinPrice = val;
+            }
+            
+            public QuickFix.Fields.MinPrice Get(QuickFix.Fields.MinPrice val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.MinPrice val) 
+            { 
+                return IsSetMinPrice();
+            }
+            
+            public bool IsSetMinPrice() 
+            { 
+                return IsSetField(Tags.MinPrice);
+            }
+            public QuickFix.Fields.MaxPrice MaxPrice
+            { 
+                get 
+                {
+                    QuickFix.Fields.MaxPrice val = new QuickFix.Fields.MaxPrice();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.MaxPrice val) 
+            { 
+                this.MaxPrice = val;
+            }
+            
+            public QuickFix.Fields.MaxPrice Get(QuickFix.Fields.MaxPrice val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.MaxPrice val) 
+            { 
+                return IsSetMaxPrice();
+            }
+            
+            public bool IsSetMaxPrice() 
+            { 
+                return IsSetField(Tags.MaxPrice);
             }
             public QuickFix.Fields.NumOfDecimalPrice NumOfDecimalPrice
             { 

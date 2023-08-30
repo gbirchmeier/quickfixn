@@ -1009,6 +1009,8 @@ namespace QuickFix.Fields
         public const int LegDealsSuppressed = 9011;
         public const int IncrementPrice = 9013;
         public const int IncrementQty = 9014;
+        public const int MinPrice = 9015;
+        public const int MaxPrice = 9016;
         public const int LotSize = 9017;
         public const int NumOfLots = 9018;
         public const int LegNumOfLots = 9019;
@@ -1048,6 +1050,8 @@ namespace QuickFix.Fields
         public const int NumOfDecimalPrice = 9083;
         public const int NumOfDecimalQty = 9084;
         public const int Granularity = 9085;
+        public const int ScreenLastTradeDate = 9086;
+        public const int ContractSize = 9087;
         public const int ClearedAlias = 9091;
         public const int Denominator = 9092;
         public const int InitialMargin = 9093;
@@ -1101,10 +1105,10 @@ namespace QuickFix.Fields
         public const int CombiLegPrice = 9505;
         public const int TermsQualityComments = 9510;
         public const int QuantityMax = 9512;
-        public const int OptolMinQuantity = 9513;
-        public const int OptolMaxQuantity = 9514;
+        public const int PlattsMinQuantity = 9513;
+        public const int PlattsMaxQuantity = 9514;
         public const int OptolPriceBasis = 9515;
-        public const int OptolPriceBasisPeriod = 9516;
+        public const int PlattsTerms = 9516;
         public const int OptolPrice = 9517;
         public const int OptolPriceBasisSubLevel = 9518;
         public const int DeliveryStartDate = 9520;

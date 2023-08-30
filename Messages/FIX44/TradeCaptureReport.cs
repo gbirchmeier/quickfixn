@@ -1023,6 +1023,99 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.LastParPx);
             }
+            public QuickFix.Fields.PriceType PriceType
+            { 
+                get 
+                {
+                    QuickFix.Fields.PriceType val = new QuickFix.Fields.PriceType();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.PriceType val) 
+            { 
+                this.PriceType = val;
+            }
+            
+            public QuickFix.Fields.PriceType Get(QuickFix.Fields.PriceType val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.PriceType val) 
+            { 
+                return IsSetPriceType();
+            }
+            
+            public bool IsSetPriceType() 
+            { 
+                return IsSetField(Tags.PriceType);
+            }
+            public QuickFix.Fields.BenchmarkPrice BenchmarkPrice
+            { 
+                get 
+                {
+                    QuickFix.Fields.BenchmarkPrice val = new QuickFix.Fields.BenchmarkPrice();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.BenchmarkPrice val) 
+            { 
+                this.BenchmarkPrice = val;
+            }
+            
+            public QuickFix.Fields.BenchmarkPrice Get(QuickFix.Fields.BenchmarkPrice val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.BenchmarkPrice val) 
+            { 
+                return IsSetBenchmarkPrice();
+            }
+            
+            public bool IsSetBenchmarkPrice() 
+            { 
+                return IsSetField(Tags.BenchmarkPrice);
+            }
+            public QuickFix.Fields.BenchmarkPriceType BenchmarkPriceType
+            { 
+                get 
+                {
+                    QuickFix.Fields.BenchmarkPriceType val = new QuickFix.Fields.BenchmarkPriceType();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.BenchmarkPriceType val) 
+            { 
+                this.BenchmarkPriceType = val;
+            }
+            
+            public QuickFix.Fields.BenchmarkPriceType Get(QuickFix.Fields.BenchmarkPriceType val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.BenchmarkPriceType val) 
+            { 
+                return IsSetBenchmarkPriceType();
+            }
+            
+            public bool IsSetBenchmarkPriceType() 
+            { 
+                return IsSetField(Tags.BenchmarkPriceType);
+            }
             public QuickFix.Fields.NumOfLots NumOfLots
             { 
                 get 
@@ -1860,67 +1953,67 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.QuantityMax);
             }
-            public QuickFix.Fields.OptolMinQuantity OptolMinQuantity
+            public QuickFix.Fields.PlattsMinQuantity PlattsMinQuantity
             { 
                 get 
                 {
-                    QuickFix.Fields.OptolMinQuantity val = new QuickFix.Fields.OptolMinQuantity();
+                    QuickFix.Fields.PlattsMinQuantity val = new QuickFix.Fields.PlattsMinQuantity();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.OptolMinQuantity val) 
+            public void Set(QuickFix.Fields.PlattsMinQuantity val) 
             { 
-                this.OptolMinQuantity = val;
+                this.PlattsMinQuantity = val;
             }
             
-            public QuickFix.Fields.OptolMinQuantity Get(QuickFix.Fields.OptolMinQuantity val) 
+            public QuickFix.Fields.PlattsMinQuantity Get(QuickFix.Fields.PlattsMinQuantity val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.OptolMinQuantity val) 
+            public bool IsSet(QuickFix.Fields.PlattsMinQuantity val) 
             { 
-                return IsSetOptolMinQuantity();
+                return IsSetPlattsMinQuantity();
             }
             
-            public bool IsSetOptolMinQuantity() 
+            public bool IsSetPlattsMinQuantity() 
             { 
-                return IsSetField(Tags.OptolMinQuantity);
+                return IsSetField(Tags.PlattsMinQuantity);
             }
-            public QuickFix.Fields.OptolMaxQuantity OptolMaxQuantity
+            public QuickFix.Fields.PlattsMaxQuantity PlattsMaxQuantity
             { 
                 get 
                 {
-                    QuickFix.Fields.OptolMaxQuantity val = new QuickFix.Fields.OptolMaxQuantity();
+                    QuickFix.Fields.PlattsMaxQuantity val = new QuickFix.Fields.PlattsMaxQuantity();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.OptolMaxQuantity val) 
+            public void Set(QuickFix.Fields.PlattsMaxQuantity val) 
             { 
-                this.OptolMaxQuantity = val;
+                this.PlattsMaxQuantity = val;
             }
             
-            public QuickFix.Fields.OptolMaxQuantity Get(QuickFix.Fields.OptolMaxQuantity val) 
+            public QuickFix.Fields.PlattsMaxQuantity Get(QuickFix.Fields.PlattsMaxQuantity val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.OptolMaxQuantity val) 
+            public bool IsSet(QuickFix.Fields.PlattsMaxQuantity val) 
             { 
-                return IsSetOptolMaxQuantity();
+                return IsSetPlattsMaxQuantity();
             }
             
-            public bool IsSetOptolMaxQuantity() 
+            public bool IsSetPlattsMaxQuantity() 
             { 
-                return IsSetField(Tags.OptolMaxQuantity);
+                return IsSetField(Tags.PlattsMaxQuantity);
             }
             public QuickFix.Fields.OptolPriceBasis OptolPriceBasis
             { 
@@ -1953,36 +2046,36 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.OptolPriceBasis);
             }
-            public QuickFix.Fields.OptolPriceBasisPeriod OptolPriceBasisPeriod
+            public QuickFix.Fields.PlattsTerms PlattsTerms
             { 
                 get 
                 {
-                    QuickFix.Fields.OptolPriceBasisPeriod val = new QuickFix.Fields.OptolPriceBasisPeriod();
+                    QuickFix.Fields.PlattsTerms val = new QuickFix.Fields.PlattsTerms();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.OptolPriceBasisPeriod val) 
+            public void Set(QuickFix.Fields.PlattsTerms val) 
             { 
-                this.OptolPriceBasisPeriod = val;
+                this.PlattsTerms = val;
             }
             
-            public QuickFix.Fields.OptolPriceBasisPeriod Get(QuickFix.Fields.OptolPriceBasisPeriod val) 
+            public QuickFix.Fields.PlattsTerms Get(QuickFix.Fields.PlattsTerms val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.OptolPriceBasisPeriod val) 
+            public bool IsSet(QuickFix.Fields.PlattsTerms val) 
             { 
-                return IsSetOptolPriceBasisPeriod();
+                return IsSetPlattsTerms();
             }
             
-            public bool IsSetOptolPriceBasisPeriod() 
+            public bool IsSetPlattsTerms() 
             { 
-                return IsSetField(Tags.OptolPriceBasisPeriod);
+                return IsSetField(Tags.PlattsTerms);
             }
             public QuickFix.Fields.OptolPriceBasisSubLevel OptolPriceBasisSubLevel
             { 

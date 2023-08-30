@@ -15999,7 +15999,6 @@ namespace QuickFix.Fields
         public const int REPURCHASE_AGREEMENT = 53;
         public const int OTC = 54;
         public const int EXCHANGE_BASIS_FACILITY = 55;
-        public const int BLOCK_TRADE = 1;
     }
 
 
@@ -18680,6 +18679,36 @@ namespace QuickFix.Fields
 
 
     /// <summary>
+    /// MinPrice Field
+    /// </summary>/
+    public sealed class MinPrice : DecimalField
+    {
+        public const int TAG = 9015;
+
+        public MinPrice()
+            :base(Tags.MinPrice) {}
+        public MinPrice(Decimal val)
+            :base(Tags.MinPrice, val) {}
+
+    }
+
+
+    /// <summary>
+    /// MaxPrice Field
+    /// </summary>/
+    public sealed class MaxPrice : DecimalField
+    {
+        public const int TAG = 9016;
+
+        public MaxPrice()
+            :base(Tags.MaxPrice) {}
+        public MaxPrice(Decimal val)
+            :base(Tags.MaxPrice, val) {}
+
+    }
+
+
+    /// <summary>
     /// LotSize Field
     /// </summary>/
     public sealed class LotSize : DecimalField
@@ -19057,13 +19086,13 @@ namespace QuickFix.Fields
     /// <summary>
     /// UnderlyingStrategySymbol Field
     /// </summary>/
-    public sealed class UnderlyingStrategySymbol : StringField
+    public sealed class UnderlyingStrategySymbol : IntField
     {
         public const int TAG = 9055;
 
         public UnderlyingStrategySymbol()
             :base(Tags.UnderlyingStrategySymbol) {}
-        public UnderlyingStrategySymbol(string val)
+        public UnderlyingStrategySymbol(int val)
             :base(Tags.UnderlyingStrategySymbol, val) {}
 
     }
@@ -19228,13 +19257,13 @@ namespace QuickFix.Fields
     /// <summary>
     /// NumOfDecimalPrice Field
     /// </summary>/
-    public sealed class NumOfDecimalPrice : IntField
+    public sealed class NumOfDecimalPrice : DecimalField
     {
         public const int TAG = 9083;
 
         public NumOfDecimalPrice()
             :base(Tags.NumOfDecimalPrice) {}
-        public NumOfDecimalPrice(int val)
+        public NumOfDecimalPrice(Decimal val)
             :base(Tags.NumOfDecimalPrice, val) {}
 
     }
@@ -19243,13 +19272,13 @@ namespace QuickFix.Fields
     /// <summary>
     /// NumOfDecimalQty Field
     /// </summary>/
-    public sealed class NumOfDecimalQty : IntField
+    public sealed class NumOfDecimalQty : DecimalField
     {
         public const int TAG = 9084;
 
         public NumOfDecimalQty()
             :base(Tags.NumOfDecimalQty) {}
-        public NumOfDecimalQty(int val)
+        public NumOfDecimalQty(Decimal val)
             :base(Tags.NumOfDecimalQty, val) {}
 
     }
@@ -19266,6 +19295,36 @@ namespace QuickFix.Fields
             :base(Tags.Granularity) {}
         public Granularity(string val)
             :base(Tags.Granularity, val) {}
+
+    }
+
+
+    /// <summary>
+    /// ScreenLastTradeDate Field
+    /// </summary>/
+    public sealed class ScreenLastTradeDate : StringField
+    {
+        public const int TAG = 9086;
+
+        public ScreenLastTradeDate()
+            :base(Tags.ScreenLastTradeDate) {}
+        public ScreenLastTradeDate(string val)
+            :base(Tags.ScreenLastTradeDate, val) {}
+
+    }
+
+
+    /// <summary>
+    /// ContractSize Field
+    /// </summary>/
+    public sealed class ContractSize : DecimalField
+    {
+        public const int TAG = 9087;
+
+        public ContractSize()
+            :base(Tags.ContractSize) {}
+        public ContractSize(Decimal val)
+            :base(Tags.ContractSize, val) {}
 
     }
 
@@ -20066,31 +20125,31 @@ namespace QuickFix.Fields
 
 
     /// <summary>
-    /// OptolMinQuantity Field
+    /// PlattsMinQuantity Field
     /// </summary>/
-    public sealed class OptolMinQuantity : DecimalField
+    public sealed class PlattsMinQuantity : DecimalField
     {
         public const int TAG = 9513;
 
-        public OptolMinQuantity()
-            :base(Tags.OptolMinQuantity) {}
-        public OptolMinQuantity(Decimal val)
-            :base(Tags.OptolMinQuantity, val) {}
+        public PlattsMinQuantity()
+            :base(Tags.PlattsMinQuantity) {}
+        public PlattsMinQuantity(Decimal val)
+            :base(Tags.PlattsMinQuantity, val) {}
 
     }
 
 
     /// <summary>
-    /// OptolMaxQuantity Field
+    /// PlattsMaxQuantity Field
     /// </summary>/
-    public sealed class OptolMaxQuantity : DecimalField
+    public sealed class PlattsMaxQuantity : DecimalField
     {
         public const int TAG = 9514;
 
-        public OptolMaxQuantity()
-            :base(Tags.OptolMaxQuantity) {}
-        public OptolMaxQuantity(Decimal val)
-            :base(Tags.OptolMaxQuantity, val) {}
+        public PlattsMaxQuantity()
+            :base(Tags.PlattsMaxQuantity) {}
+        public PlattsMaxQuantity(Decimal val)
+            :base(Tags.PlattsMaxQuantity, val) {}
 
     }
 
@@ -20111,16 +20170,16 @@ namespace QuickFix.Fields
 
 
     /// <summary>
-    /// OptolPriceBasisPeriod Field
+    /// PlattsTerms Field
     /// </summary>/
-    public sealed class OptolPriceBasisPeriod : StringField
+    public sealed class PlattsTerms : StringField
     {
         public const int TAG = 9516;
 
-        public OptolPriceBasisPeriod()
-            :base(Tags.OptolPriceBasisPeriod) {}
-        public OptolPriceBasisPeriod(string val)
-            :base(Tags.OptolPriceBasisPeriod, val) {}
+        public PlattsTerms()
+            :base(Tags.PlattsTerms) {}
+        public PlattsTerms(string val)
+            :base(Tags.PlattsTerms, val) {}
 
     }
 

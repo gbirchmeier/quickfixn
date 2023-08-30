@@ -368,7 +368,7 @@ namespace QuickFix
             }
             public class NoUnderlyingsGroup : Group
             {
-                public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityExchange, Tags.UnderlyingSecurityIDSource, Tags.IncrementPrice, Tags.ScreenTickValue, Tags.BlockTickValue, Tags.OffExchangeIncrementPrice, Tags.OffExchangeIncrementQty, Tags.UnderlyingSecurityDesc, Tags.UnderlyingSecuritySubType, Tags.UnderlyingSettlMethod, Tags.NoUnderlyingSecurityAltID, Tags.IncrementQty, Tags.LotSize, Tags.SecurityTradingStatus, Tags.UnderlyingUnitofMeasure, Tags.UnderlyingCurrency, Tags.NumOfDecimalPrice, Tags.NumOfDecimalQty, Tags.Granularity, Tags.ProductId, Tags.ProductName, Tags.ProductDescription, Tags.HedgeProductID, Tags.HedgeMarketID, Tags.TickValue, Tags.BaseNumLots, Tags.LegacyTickValue, Tags.ClearedAlias, Tags.Denominator, Tags.InitialMargin, Tags.ProductType, Tags.MiFIDRegulatedMarket, Tags.TestMarketIndicator, Tags.GTAllowed, Tags.UnderlyingContractMultiplier, Tags.MarketTransparencyType, Tags.ProductGroup, Tags.AONAllowed, Tags.UnderlyingCFICode, Tags.UnderlyingMaturityDate, Tags.PriceDenomination, Tags.PriceUnit, Tags.NumOfCycles, Tags.LotSizeMultiplier, Tags.UDSAllowed, Tags.BlockOnly, Tags.ImpliedType, Tags.PrimaryLegSymbol, Tags.SecondaryLegSymbol, Tags.Clearable, Tags.StartDate, Tags.EndDate, Tags.StripId, Tags.StripType, Tags.StripName, Tags.HubId, Tags.HubName, Tags.HubAlias, Tags.PhysicalCode, Tags.OverrideBlockMin, Tags.NoBlockDetails, Tags.UnderlyingCouponRate, Tags.UnderlyingDatedDate, Tags.UnderlyingInterestAccrualDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingPutOrCall, Tags.UnderlyingStrikePrice, Tags.StrikeExerciseStyle, Tags.HedgeOnly, Tags.HomeExchange, Tags.IsDividendAdjusted, Tags.NumOfDecimalStrikePrice, Tags.FlexAllowed, Tags.IncrementStrike, Tags.MinStrike, Tags.MaxStrike, Tags.UnderlyingAccruedPremiumAmt, Tags.UnderlyingEventPaymentAmt, Tags.UnderlyingAlignmentInterestRate, Tags.UnderlyingRepurchaseDate, Tags.UnderlyingInterpolationFactor, Tags.NonCommoditizedMarket, 0};
+                public static int[] fieldOrder = {Tags.UnderlyingSymbol, Tags.UnderlyingSecurityID, Tags.UnderlyingSecurityExchange, Tags.UnderlyingSecurityIDSource, Tags.IncrementPrice, Tags.MinPrice, Tags.MaxPrice, Tags.ScreenTickValue, Tags.BlockTickValue, Tags.OffExchangeIncrementPrice, Tags.OffExchangeIncrementQty, Tags.UnderlyingSecurityDesc, Tags.UnderlyingSecuritySubType, Tags.UnderlyingSettlMethod, Tags.NoUnderlyingSecurityAltID, Tags.IncrementQty, Tags.LotSize, Tags.ContractSize, Tags.SecurityTradingStatus, Tags.UnderlyingUnitofMeasure, Tags.UnderlyingCurrency, Tags.NumOfDecimalPrice, Tags.NumOfDecimalQty, Tags.Granularity, Tags.ProductId, Tags.ProductName, Tags.ProductDescription, Tags.HedgeProductID, Tags.HedgeMarketID, Tags.TickValue, Tags.BaseNumLots, Tags.LegacyTickValue, Tags.ClearedAlias, Tags.Denominator, Tags.InitialMargin, Tags.ProductType, Tags.MiFIDRegulatedMarket, Tags.TestMarketIndicator, Tags.GTAllowed, Tags.UnderlyingContractMultiplier, Tags.MarketTransparencyType, Tags.ProductGroup, Tags.AONAllowed, Tags.UnderlyingCFICode, Tags.UnderlyingMaturityDate, Tags.ScreenLastTradeDate, Tags.PriceDenomination, Tags.PriceUnit, Tags.NumOfCycles, Tags.LotSizeMultiplier, Tags.UDSAllowed, Tags.BlockOnly, Tags.ImpliedType, Tags.PrimaryLegSymbol, Tags.SecondaryLegSymbol, Tags.Clearable, Tags.StartDate, Tags.EndDate, Tags.StripId, Tags.StripType, Tags.StripName, Tags.HubId, Tags.HubName, Tags.HubAlias, Tags.PhysicalCode, Tags.OverrideBlockMin, Tags.NoBlockDetails, Tags.UnderlyingCouponRate, Tags.UnderlyingDatedDate, Tags.UnderlyingInterestAccrualDate, Tags.UnderlyingIssueDate, Tags.UnderlyingRepurchaseRate, Tags.UnderlyingFactor, Tags.UnderlyingCreditRating, Tags.UnderlyingInstrRegistry, Tags.UnderlyingPutOrCall, Tags.UnderlyingStrikePrice, Tags.StrikeExerciseStyle, Tags.HedgeOnly, Tags.HomeExchange, Tags.IsDividendAdjusted, Tags.NumOfDecimalStrikePrice, Tags.FlexAllowed, Tags.IncrementStrike, Tags.MinStrike, Tags.MaxStrike, Tags.UnderlyingAccruedPremiumAmt, Tags.UnderlyingEventPaymentAmt, Tags.UnderlyingAlignmentInterestRate, Tags.UnderlyingRepurchaseDate, Tags.UnderlyingInterpolationFactor, Tags.NonCommoditizedMarket, 0};
             
                 public NoUnderlyingsGroup() 
                   :base( Tags.NoUnderlyings, Tags.UnderlyingSymbol, fieldOrder)
@@ -536,6 +536,68 @@ namespace QuickFix
                 public bool IsSetIncrementPrice() 
                 { 
                     return IsSetField(Tags.IncrementPrice);
+                }
+                public QuickFix.Fields.MinPrice MinPrice
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.MinPrice val = new QuickFix.Fields.MinPrice();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.MinPrice val) 
+                { 
+                    this.MinPrice = val;
+                }
+                
+                public QuickFix.Fields.MinPrice Get(QuickFix.Fields.MinPrice val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.MinPrice val) 
+                { 
+                    return IsSetMinPrice();
+                }
+                
+                public bool IsSetMinPrice() 
+                { 
+                    return IsSetField(Tags.MinPrice);
+                }
+                public QuickFix.Fields.MaxPrice MaxPrice
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.MaxPrice val = new QuickFix.Fields.MaxPrice();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.MaxPrice val) 
+                { 
+                    this.MaxPrice = val;
+                }
+                
+                public QuickFix.Fields.MaxPrice Get(QuickFix.Fields.MaxPrice val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.MaxPrice val) 
+                { 
+                    return IsSetMaxPrice();
+                }
+                
+                public bool IsSetMaxPrice() 
+                { 
+                    return IsSetField(Tags.MaxPrice);
                 }
                 public QuickFix.Fields.ScreenTickValue ScreenTickValue
                 { 
@@ -846,6 +908,37 @@ namespace QuickFix
                 public bool IsSetLotSize() 
                 { 
                     return IsSetField(Tags.LotSize);
+                }
+                public QuickFix.Fields.ContractSize ContractSize
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.ContractSize val = new QuickFix.Fields.ContractSize();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.ContractSize val) 
+                { 
+                    this.ContractSize = val;
+                }
+                
+                public QuickFix.Fields.ContractSize Get(QuickFix.Fields.ContractSize val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.ContractSize val) 
+                { 
+                    return IsSetContractSize();
+                }
+                
+                public bool IsSetContractSize() 
+                { 
+                    return IsSetField(Tags.ContractSize);
                 }
                 public QuickFix.Fields.SecurityTradingStatus SecurityTradingStatus
                 { 
@@ -1683,6 +1776,37 @@ namespace QuickFix
                 public bool IsSetUnderlyingMaturityDate() 
                 { 
                     return IsSetField(Tags.UnderlyingMaturityDate);
+                }
+                public QuickFix.Fields.ScreenLastTradeDate ScreenLastTradeDate
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.ScreenLastTradeDate val = new QuickFix.Fields.ScreenLastTradeDate();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.ScreenLastTradeDate val) 
+                { 
+                    this.ScreenLastTradeDate = val;
+                }
+                
+                public QuickFix.Fields.ScreenLastTradeDate Get(QuickFix.Fields.ScreenLastTradeDate val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.ScreenLastTradeDate val) 
+                { 
+                    return IsSetScreenLastTradeDate();
+                }
+                
+                public bool IsSetScreenLastTradeDate() 
+                { 
+                    return IsSetField(Tags.ScreenLastTradeDate);
                 }
                 public QuickFix.Fields.PriceDenomination PriceDenomination
                 { 

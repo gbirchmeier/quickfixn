@@ -1,10 +1,14 @@
 <fix major="4" minor="4">
 
-<!-- 
-     Last update: Aug 3, for ICE 4.17 spec
+<!-- To Connamara developers:
+     Edit this file in config/ICE-FIX44.xml
+     That file will overwrite all other locations.
 
-     For QF/n code generation, copy this over
-       spec/fix/FIX44.xml
+     CORRESPONDS TO ICE SPEC VERSION 4.14
+     plus some changes Curt Rettenmier made
+
+     open question: Curt changed UnderlyingStrategySymbol to numeric?
+                    Are we sure it will never be non-numeric?
 -->
 
 <!-- Important notes:
@@ -154,8 +158,6 @@
       <field name="TransactTime" required="N"/>
       <field name="IncrementPrice" required="N"/>	  	  
       <field name="IncrementQty" required="N"/>
-      <field name="MinPrice" requried="N"/>
-      <field name="MaxPrice" requried="N"/>
       <field name="NumOfDecimalPrice" required="N"/> <!-- 9083 -->
       <field name="NumOfDecimalQty" required="N"/> <!-- 9084 -->
       <field name="ProductId" required="N"/> <!-- 9061 -->
@@ -163,34 +165,34 @@
       <field name="ClearedAlias" required="N"/> <!-- 9091 -->
       <field name="Denominator" required="N"/> <!-- 9092 -->
       <field name="ImpliedType" required="N"/> <!-- 9002 --> <!-- confirmed: 9002,9004,9005 -->
-      <field name="OffExchangeIncrementPrice" required="N"/> <!-- 9040 -->
-      <field name="OffExchangeIncrementQty" required="N"/> <!-- 9041 -->
-      <field name="PriceDenomination" required="N"/> <!-- 9100 -->
-      <field name="PriceUnit" required="N"/> <!-- 9101 -->
-      <field name="NumOfDecimalStrikePrice" required="N"/>	  		
-      <field name="NumOfCycles" required="N"/> <!-- 9022 -->
-      <field name="LotSizeMultiplier" required="N"/> <!-- 9024 -->
-      <field name="BlockOnly" required="N"/> <!-- 9203 --> <!-- definitely follows 9049 --> 
-      <field name="FlexAllowed" required="N"/> <!-- 9204 -->
+        <field name="OffExchangeIncrementPrice" required="N"/> <!-- 9040 -->
+        <field name="OffExchangeIncrementQty" required="N"/> <!-- 9041 -->
+        <field name="PriceDenomination" required="N"/> <!-- 9100 -->
+        <field name="PriceUnit" required="N"/> <!-- 9101 -->
+        <field name="NumOfDecimalStrikePrice" required="N"/>	  		
+        <field name="NumOfCycles" required="N"/> <!-- 9022 -->
+        <field name="LotSizeMultiplier" required="N"/> <!-- 9024 -->
+        <field name="BlockOnly" required="N"/> <!-- 9203 --> <!-- definitely follows 9049 --> 
+        <field name="FlexAllowed" required="N"/> <!-- 9204 -->
       <field name="GTAllowed" required="N"/>	  
       <field name="MiFIDRegulatedMarket" required="N"/>	  
       <field name="LegDealsSuppressed" required="N"/>	  
       <field name="ProductName" required="N"/>	  
-      <field name="StripType" required="N"/> <!-- 9200 -->
-      <field name="StripName" required="N"/> <!-- 9202 -->
-      <field name="HubId" required="N"/> <!-- 9300 -->
-      <field name="HubName" required="N"/> <!-- 9301 -->
-      <field name="HubAlias" required="N"/> <!-- 9302 -->
-      <field name="PhysicalCode" required="N"/> <!-- 9303 -->
-      <field name="OverrideBlockMin" required="N"/> <!-- 9034 -->
-      <group name="NoBlockDetails" required="N"> <!-- 9070 -->
-        <field name="BlockDetailsBlockType" required="N"/> <!-- 9071 -->
-        <field name="BlockDetailsTradeType" required="N"/> <!-- 9072 -->
-        <field name="BlockDetailsMinQty" required="N"/> <!-- 9073 -->
-      </group>
+        <field name="StripType" required="N"/> <!-- 9200 -->
+        <field name="StripName" required="N"/> <!-- 9202 -->
+        <field name="HubId" required="N"/> <!-- 9300 -->
+        <field name="HubName" required="N"/> <!-- 9301 -->
+        <field name="HubAlias" required="N"/> <!-- 9302 -->
+        <field name="PhysicalCode" required="N"/> <!-- 9303 -->
+        <field name="OverrideBlockMin" required="N"/> <!-- 9034 -->
+        <group name="NoBlockDetails" required="N"> <!-- 9070 -->
+          <field name="BlockDetailsBlockType" required="N"/> <!-- 9071 -->
+          <field name="BlockDetailsTradeType" required="N"/> <!-- 9072 -->
+          <field name="BlockDetailsMinQty" required="N"/> <!-- 9073 -->
+        </group>
       <field name="TestMarketIndicator" required="N"/>	  	 	
-      <field name="ScreenTickValue" required="N"/> <!-- 9133 --> 
-      <field name="BlockTickValue" required="N"/> <!-- 9134 -->  
+       <field name="ScreenTickValue" required="N"/> <!-- 9133 --> 
+        <field name="BlockTickValue" required="N"/> <!-- 9134 -->  
         <group name="NoUnderlyingSecurityAltID" required="N"> <!-- 457 -->
           <field name="UnderlyingSecurityAltID" required="N"/> <!-- 458 -->
           <field name="UnderlyingSecurityAltIDSource" required="N"/> <!-- 459 -->
@@ -235,8 +237,6 @@
         <field name="UnderlyingSecurityExchange" required="N"/> <!-- 308 -->
         <field name="UnderlyingSecurityIDSource" required="N"/> <!-- 305 -->
         <field name="IncrementPrice" required="N"/> <!-- 9013 -->
-        <field name="MinPrice" required="N"/> <!-- 9015 --> <!-- POSITION UNCONFIRMED, this is a wild guess -->
-        <field name="MaxPrice" required="N"/> <!-- 9016 --> <!-- POSITION UNCONFIRMED, this is a wild guess -->
         <field name="ScreenTickValue" required="N"/> <!-- 9133 --> <!-- POSITION UNCONFIRMED, this is based on doc which is untrustworthy -->
         <field name="BlockTickValue" required="N"/> <!-- 9134 --> <!-- POSITION UNCONFIRMED, this is based on doc which is untrustworthy -->
         <field name="OffExchangeIncrementPrice" required="N"/> <!-- 9040 -->
@@ -250,7 +250,6 @@
         </group>
         <field name="IncrementQty" required="N"/> <!-- 9014 -->
         <field name="LotSize" required="N"/> <!-- 9017 -->
-        <field name="ContractSize" required="N"/> <!-- 9087 --> <!-- POSITION UNCONFIRMED, this is a guess -->
         <field name="SecurityTradingStatus" required="N"/> <!-- 326 -->
         <field name="UnderlyingUnitofMeasure" required="N"/> <!-- 998 -->
         <field name="UnderlyingCurrency" required="N"/> <!-- 318 -->
@@ -278,7 +277,6 @@
         <field name="AONAllowed" required="N"/> <!-- 9216 -->
         <field name="UnderlyingCFICode" required="N"/> <!-- 463 -->
         <field name="UnderlyingMaturityDate" required="N"/> <!-- 542 -->
-        <field name="ScreenLastTradeDate" required="N"/> <!-- 9086 --> <!-- POSITION UNCONFIRMED, this is just a guess -->
         <field name="PriceDenomination" required="N"/> <!-- 9100 -->
         <field name="PriceUnit" required="N"/> <!-- 9101 -->
         <field name="NumOfCycles" required="N"/> <!-- 9022 -->
@@ -408,9 +406,6 @@
       <field name="LastQty" required="Y"/>
       <field name="LastPx" required="Y"/>
       <field name="LastParPx" required="N"/>
-      <field name="PriceType" required="N"/>
-      <field name="BenchmarkPrice" required="N"/>
-      <field name="BenchmarkPriceType" required="N"/>
       <field name="NumOfLots" required="N"/>
       <field name="NumOfCycles" required="N"/>
       <field name="TradeDate" required="Y"/>
@@ -444,10 +439,10 @@
       <field name="SelfMatchPreventionID" required="N"/>
       <field name="SelfMatchPreventionInstruction" required="N"/>
       <field name="QuantityMax" required="N"/>
-      <field name="PlattsMinQuantity" required="N"/>
-      <field name="PlattsMaxQuantity" required="N"/>
+      <field name="OptolMinQuantity" required="N"/>
+      <field name="OptolMaxQuantity" required="N"/>
       <field name="OptolPriceBasis" required="N"/>
-      <field name="PlattsTerms" required="N"/>
+      <field name="OptolPriceBasisPeriod" required="N"/>
       <field name="OptolPriceBasisSubLevel" required="N"/>
       <field name="OptolPrice" required="N"/>
       <group name="NoSides" required="Y">
@@ -1964,7 +1959,17 @@
     <field number="420" name="NoBidComponents" type="NUMINGROUP"/>
     <field number="421" name="Country" type="COUNTRY"/>
     <field number="422" name="TotNoStrikes" type="INT"/>
-    <field number="423" name="PriceType" type="INT"/>
+    <field number="423" name="PriceType" type="INT">
+      <value enum="1" description="PERCENTAGE"/>
+      <value enum="2" description="PER_UNIT"/>
+      <value enum="3" description="FIXED_AMOUNT"/>
+      <value enum="4" description="DISCOUNT"/>
+      <value enum="5" description="PREMIUM"/>
+      <value enum="6" description="SPREAD"/>
+      <value enum="7" description="TED_PRICE"/>
+      <value enum="8" description="TED_YIELD"/>
+      <value enum="9" description="YIELD"/>
+    </field>
     <field number="424" name="DayOrderQty" type="QTY"/>
     <field number="425" name="DayCumQty" type="QTY"/>
     <field number="426" name="DayAvgPx" type="PRICE"/>
@@ -3330,8 +3335,6 @@
     <field number="9011" name="LegDealsSuppressed" type="INT"/>
     <field number="9013" name="IncrementPrice" type="FLOAT"/>
     <field number="9014" name="IncrementQty" type="FLOAT"/>
-    <field number="9015" name="MinPrice" type="PRICE"/>
-    <field number="9016" name="MaxPrice" type="PRICE"/>
     <field number="9017" name="LotSize" type="FLOAT"/>
     <field number="9018" name="NumOfLots" type="INT"/>
     <field number="9019" name="LegNumOfLots" type="INT"/>
@@ -3376,8 +3379,6 @@
     <field number="9083" name="NumOfDecimalPrice" type="FLOAT"/>
     <field number="9084" name="NumOfDecimalQty" type="FLOAT"/>
     <field number="9085" name="Granularity" type="STRING"/>
-    <field number="9086" name="ScreenLastTradeDate" type="LOCALMKTDATE"/>
-    <field number="9087" name="ContractSize" type="QTY"/>
     <field number="9091" name="ClearedAlias" type="STRING"/>
     <field number="9092" name="Denominator" type="INT"/>
     <field number="9093" name="InitialMargin" type="INT"/>
@@ -3431,10 +3432,10 @@
     <field number="9505" name="CombiLegPrice" type="PRICE"/>
     <field number="9510" name="TermsQualityComments" type="STRING"/>
     <field number="9512" name="QuantityMax" type="INT"/>
-    <field number="9513" name="PlattsMinQuantity" type="QTY"/>
-    <field number="9514" name="PlattsMaxQuantity" type="QTY"/>
+    <field number="9513" name="OptolMinQuantity" type="QTY"/>
+    <field number="9514" name="OptolMaxQuantity" type="QTY"/>
     <field number="9515" name="OptolPriceBasis" type="STRING"/>
-    <field number="9516" name="PlattsTerms" type="STRING"/>
+    <field number="9516" name="OptolPriceBasisPeriod" type="STRING"/>
     <field number="9517" name="OptolPrice" type="PRICE"/>
     <field number="9518" name="OptolPriceBasisSubLevel" type="STRING"/>
     <field number="9520" name="DeliveryStartDate" type="UTCTIMESTAMP"/>
