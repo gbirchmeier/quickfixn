@@ -1029,8 +1029,11 @@ public class SessionTest
     }
 
     [Test]
-    public void TestGapFillShouldNotBeIgnoredIfPossDup()
+    public void TestGapFillShouldNotBeIgnoredAfterQueuedMessage()
     {
+        // issue #309: If a ResendRequest series ends with an admin
+        //   message being read off the Session Queue,  a GapFill follows a
+
         Assert.That(_session!.IgnorePossDupResendRequests, Is.EqualTo(false));
         _session.RequiresOrigSendingTime = false; // default is true
         Logon();
@@ -1046,12 +1049,16 @@ public class SessionTest
         Assert.That(resendRequest.EndSeqNo.Value, Is.EqualTo(0));
 
         Assert.That(_session.NextTargetMsgSeqNum, Is.EqualTo(3));
+        Assert.That(_session.IsResendRequested);
 
         // Resends
         SendNOSMessage(3, possDupFlag: true);
+        Assert.That(_session.IsResendRequested, Is.True);
+
         SendNOSMessage(4, possDupFlag: true);
         // Now the session processes the Heartbeat/seq=5 from its queue.
         Assert.That(_session.NextTargetMsgSeqNum, Is.EqualTo(6));
+        Assert.That(_session.IsResendRequested, Is.False); // ended when 4 was processed
 
         // But the counterparty still needs to resend the seq=5!
         // The 5 is a Heartbeat, an admin message, so it's a gapfill.
