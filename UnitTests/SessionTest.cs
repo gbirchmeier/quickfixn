@@ -926,8 +926,10 @@ public class SessionTest
             }
             _session.Next(msg.ConstructString());
 
-            // When EndSeqNo is 0, we mark the ResendResend as 'finished' after the first resent message is received
-            Assert.That(_session.IsResendRequested, Is.False, $"seq num {i}");
+            if (i < 5)
+                Assert.That(_session.IsResendRequested, Is.True, $"seq num {i}");
+            else
+                Assert.That(_session.IsResendRequested, Is.False, $"seq num {i}");
         }
     }
 
@@ -1060,7 +1062,7 @@ public class SessionTest
         SendTheMessage(sr, 5);
 
         // Even though client already processed the original Heartbeat/seq=5,
-        //   it must not discard the GapFill 5.
+        //   it must not discard the GapFill/seq=5.
         Assert.That(_session.NextTargetMsgSeqNum, Is.EqualTo(7));
     }
 }

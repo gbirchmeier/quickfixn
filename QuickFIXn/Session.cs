@@ -220,7 +220,7 @@ namespace QuickFix
         /// false after the first resent message is received.
         /// Else it remains true until EndSeqNo is received.
         /// </summary>
-        internal bool IsResendRequested => _state.ResendRequested();
+        internal bool IsResendRequested => _state.IsResendRequested();
 
         #endregion
 
@@ -379,6 +379,8 @@ namespace QuickFix
         /// <summary>
         /// Sets some internal state variables to disable the session.
         /// Users will be disconnected on next cycle.
+        /// (This function is for actively initiating a logout,
+        /// it is NOT for processing a logout request from the counterparty.)
         /// </summary>
         public void Logout(string reason = "")
         {
@@ -419,7 +421,7 @@ namespace QuickFix
                 _state.LogoutReason = "";
                 if (ResetOnDisconnect)
                     _state.Reset("ResetOnDisconnect");
-                _state.SetResendRange(0, 0);
+                _state.ResetResendRange();
             }
         }
 
@@ -879,26 +881,24 @@ namespace QuickFix
         protected void NextSequenceReset(Message sequenceReset)
         {
             bool isGapFill = false;
-            if (sequenceReset.IsSetField(Fields.Tags.GapFillFlag))
-                isGapFill = sequenceReset.GetBoolean(Fields.Tags.GapFillFlag);
+            if (sequenceReset.IsSetField(Tags.GapFillFlag))
+                isGapFill = sequenceReset.GetBoolean(Tags.GapFillFlag);
+
+            SeqNumType newSeqNo = sequenceReset.GetULong(Tags.NewSeqNo);
+            Log.OnEvent($"Received SequenceReset FROM: {_state.NextTargetMsgSeqNum} TO: {newSeqNo}");
+
+            if (newSeqNo < _state.NextTargetMsgSeqNum)
+            {
+               GenerateReject(sequenceReset, FixValues.SessionRejectReason.VALUE_IS_INCORRECT);
+               return;
+            }
 
             if (!Verify(sequenceReset, isGapFill, isGapFill))
                 return;
 
-            if (sequenceReset.IsSetField(Fields.Tags.NewSeqNo))
+            if (newSeqNo > _state.NextTargetMsgSeqNum)
             {
-                SeqNumType newSeqNo = sequenceReset.GetULong(Fields.Tags.NewSeqNo);
-                Log.OnEvent("Received SequenceReset FROM: " + _state.NextTargetMsgSeqNum + " TO: " + newSeqNo);
-
-                if (newSeqNo > _state.NextTargetMsgSeqNum)
-                {
-                    _state.NextTargetMsgSeqNum = newSeqNo;
-                }
-                else
-                {
-                    if (newSeqNo < _state.NextTargetMsgSeqNum)
-                        GenerateReject(sequenceReset, FixValues.SessionRejectReason.VALUE_IS_INCORRECT);
-                }
+                _state.NextTargetMsgSeqNum = newSeqNo;
             }
         }
 
@@ -909,6 +909,7 @@ namespace QuickFix
             try
             {
                 msgType = msg.Header.GetString(Fields.Tags.MsgType);
+
                 string senderCompId = msg.Header.GetString(Fields.Tags.SenderCompID);
                 string targetCompId = msg.Header.GetString(Fields.Tags.TargetCompID);
 
@@ -931,25 +932,23 @@ namespace QuickFix
                     if (checkTooLow && IsTargetTooLow(msgSeqNum))
                     {
                         DoTargetTooLow(msg, msgSeqNum);
+                        Console.WriteLine("Verify failed, too low: " + msg);
                         return false;
                     }
 
                     if (IsResendRequested)
                     {
                         ResendRange range = _state.GetResendRange();
-                        if (msgSeqNum >= range.EndSeqNo)
+                        if (msgSeqNum >= Math.Max(range.EndSeqNo, range.TriggerSeqNo))
                         {
-                            Log.OnEvent(
-                                range.EndSeqNo == 0
-                                    ? $"ResendRequest for messages FROM: {range.BeginSeqNo} TO: {range.EndSeqNo} has been satisfied."
-                                    : $"ResendRequest for messages FROM: {range.BeginSeqNo} TO: {range.EndSeqNo} has been started.");
-                            _state.SetResendRange(0, 0);
+                            Log.OnEvent($"ResendRequest for messages FROM: {range.BeginSeqNo} TO: {range.EndSeqNo} has been satisfied.");
+                            _state.ResetResendRange();
                         }
                         else if (msgSeqNum >= range.ChunkEndSeqNo)
                         {
-                            Log.OnEvent("Chunked ResendRequest for messages FROM: " + range.BeginSeqNo + " TO: " + range.ChunkEndSeqNo + " has been satisfied.");
+                            Log.OnEvent($"Chunked ResendRequest for messages FROM: {range.BeginSeqNo} TO: {range.ChunkEndSeqNo} has been satisfied.");
                             SeqNumType newStart = range.ChunkEndSeqNo + 1;
-                            SeqNumType newChunkEndSeqNo = Math.Min(range.EndSeqNo, range.ChunkEndSeqNo + MaxMessagesInResendRequest);
+                            SeqNumType newChunkEndSeqNo = Math.Min(range.EndSeqNo, range.ChunkEndSeqNo + MaxMessagesInResendRequest); // TODO we can +1 this
 
                             Message resendRequest = CreateResendRequest(msg.Header.GetString(Tags.BeginString),
                                 newStart, newChunkEndSeqNo);
@@ -961,7 +960,11 @@ namespace QuickFix
                             else
                                 Log.OnEvent($"Error sending ResendRequest ({newStart}, {newChunkEndSeqNo})");
 
-                            range.ChunkEndSeqNo = newChunkEndSeqNo;
+                            range.UpdateChunk(newStart, newChunkEndSeqNo);
+                        }
+                        else if (msgSeqNum >= range.BeginSeqNo)
+                        {
+                            range.MarkAsStarted();
                         }
                     }
                 }
@@ -1194,11 +1197,12 @@ namespace QuickFix
             if (SendRaw(resendRequest))
             {
                 Log.OnEvent($"Sent ResendRequest FROM: {beginSeqNum} TO: {endChunkSeqNum}");
-                _state.SetResendRange(beginSeqNum, endRangeSeqNum, endChunkSeqNum);
+                _state.SetResendRange(beginSeqNum, endRangeSeqNum, msgSeqNum, resendRequest,
+                    endChunkSeqNum==0 ? ResendRange.NOT_SET : endChunkSeqNum);
                 return;
             }
 
-            Log.OnEvent("Error sending ResendRequest (" + beginSeqNum + " ," + endChunkSeqNum + ")");
+            Log.OnEvent($"Error sending ResendRequest ({beginSeqNum}, {endChunkSeqNum})");
         }
 
         /// <summary>
