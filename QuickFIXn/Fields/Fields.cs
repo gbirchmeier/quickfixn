@@ -998,7 +998,6 @@ public sealed class OrigTime : DateTimeField
         : base(Tags.OrigTime, val, showMilliseconds) {}
     public OrigTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.OrigTime, val, precision) {}
-
 }
 
 
@@ -1187,7 +1186,6 @@ public sealed class SendingTime : DateTimeField
         : base(Tags.SendingTime, val, showMilliseconds) {}
     public SendingTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.SendingTime, val, precision) {}
-
 }
 
 
@@ -1334,7 +1332,6 @@ public sealed class TransactTime : DateTimeField
         : base(Tags.TransactTime, val, showMilliseconds) {}
     public TransactTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TransactTime, val, precision) {}
-
 }
 
 
@@ -1372,7 +1369,6 @@ public sealed class ValidUntilTime : DateTimeField
         : base(Tags.ValidUntilTime, val, showMilliseconds) {}
     public ValidUntilTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ValidUntilTime, val, precision) {}
-
 }
 
 
@@ -2398,7 +2394,6 @@ public sealed class OrigSendingTime : DateTimeField
         : base(Tags.OrigSendingTime, val, showMilliseconds) {}
     public OrigSendingTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.OrigSendingTime, val, precision) {}
-
 }
 
 
@@ -2469,7 +2464,6 @@ public sealed class ExpireTime : DateTimeField
         : base(Tags.ExpireTime, val, showMilliseconds) {}
     public ExpireTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ExpireTime, val, precision) {}
-
 }
 
 
@@ -3310,7 +3304,6 @@ public sealed class EffectiveTime : DateTimeField
         : base(Tags.EffectiveTime, val, showMilliseconds) {}
     public EffectiveTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.EffectiveTime, val, precision) {}
-
 }
 
 
@@ -4339,7 +4332,7 @@ public sealed class MDEntryDate : DateOnlyField
 
     public MDEntryDate()
         : base(Tags.MDEntryDate) {}
-    public MDEntryDate(DateTime val)
+    public MDEntryDate(DateOnly val)
         : base(Tags.MDEntryDate, val) {}
 }
 
@@ -4353,13 +4346,10 @@ public sealed class MDEntryTime : TimeOnlyField
 
     public MDEntryTime()
         : base(Tags.MDEntryTime) {}
-    public MDEntryTime(DateTime val)
+    public MDEntryTime(TimeOnly val)
         : base(Tags.MDEntryTime, val) {}
-    public MDEntryTime(DateTime val, bool showMilliseconds)
-        : base(Tags.MDEntryTime, val, showMilliseconds) {}
-    public MDEntryTime(DateTime val, Converters.TimeStampPrecision precision)
+    public MDEntryTime(TimeOnly val, Converters.TimeStampPrecision precision)
         : base(Tags.MDEntryTime, val, precision) {}
-
 }
 
 
@@ -5706,7 +5696,6 @@ public sealed class TradSesStartTime : DateTimeField
         : base(Tags.TradSesStartTime, val, showMilliseconds) {}
     public TradSesStartTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TradSesStartTime, val, precision) {}
-
 }
 
 
@@ -5725,7 +5714,6 @@ public sealed class TradSesOpenTime : DateTimeField
         : base(Tags.TradSesOpenTime, val, showMilliseconds) {}
     public TradSesOpenTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TradSesOpenTime, val, precision) {}
-
 }
 
 
@@ -5744,7 +5732,6 @@ public sealed class TradSesPreCloseTime : DateTimeField
         : base(Tags.TradSesPreCloseTime, val, showMilliseconds) {}
     public TradSesPreCloseTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TradSesPreCloseTime, val, precision) {}
-
 }
 
 
@@ -5763,7 +5750,6 @@ public sealed class TradSesCloseTime : DateTimeField
         : base(Tags.TradSesCloseTime, val, showMilliseconds) {}
     public TradSesCloseTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TradSesCloseTime, val, precision) {}
-
 }
 
 
@@ -5782,7 +5768,6 @@ public sealed class TradSesEndTime : DateTimeField
         : base(Tags.TradSesEndTime, val, showMilliseconds) {}
     public TradSesEndTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TradSesEndTime, val, precision) {}
-
 }
 
 
@@ -6101,7 +6086,6 @@ public sealed class QuoteSetValidUntilTime : DateTimeField
         : base(Tags.QuoteSetValidUntilTime, val, showMilliseconds) {}
     public QuoteSetValidUntilTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.QuoteSetValidUntilTime, val, precision) {}
-
 }
 
 
@@ -6164,7 +6148,6 @@ public sealed class OnBehalfOfSendingTime : DateTimeField
         : base(Tags.OnBehalfOfSendingTime, val, showMilliseconds) {}
     public OnBehalfOfSendingTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.OnBehalfOfSendingTime, val, precision) {}
-
 }
 
 
@@ -7329,7 +7312,6 @@ public sealed class ContraTradeTime : DateTimeField
         : base(Tags.ContraTradeTime, val, showMilliseconds) {}
     public ContraTradeTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ContraTradeTime, val, precision) {}
-
 }
 
 
@@ -7410,7 +7392,6 @@ public sealed class StrikeTime : DateTimeField
         : base(Tags.StrikeTime, val, showMilliseconds) {}
     public StrikeTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.StrikeTime, val, precision) {}
-
 }
 
 
@@ -8426,7 +8407,7 @@ public sealed class TotalVolumeTradedDate : DateOnlyField
 
     public TotalVolumeTradedDate()
         : base(Tags.TotalVolumeTradedDate) {}
-    public TotalVolumeTradedDate(DateTime val)
+    public TotalVolumeTradedDate(DateOnly val)
         : base(Tags.TotalVolumeTradedDate, val) {}
 }
 
@@ -8440,13 +8421,10 @@ public sealed class TotalVolumeTradedTime : TimeOnlyField
 
     public TotalVolumeTradedTime()
         : base(Tags.TotalVolumeTradedTime) {}
-    public TotalVolumeTradedTime(DateTime val)
+    public TotalVolumeTradedTime(TimeOnly val)
         : base(Tags.TotalVolumeTradedTime, val) {}
-    public TotalVolumeTradedTime(DateTime val, bool showMilliseconds)
-        : base(Tags.TotalVolumeTradedTime, val, showMilliseconds) {}
-    public TotalVolumeTradedTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TotalVolumeTradedTime(TimeOnly val, Converters.TimeStampPrecision precision)
         : base(Tags.TotalVolumeTradedTime, val, precision) {}
-
 }
 
 
@@ -9070,7 +9048,6 @@ public sealed class TransBkdTime : DateTimeField
         : base(Tags.TransBkdTime, val, showMilliseconds) {}
     public TransBkdTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TransBkdTime, val, precision) {}
-
 }
 
 
@@ -9636,7 +9613,6 @@ public sealed class ExecValuationPoint : DateTimeField
         : base(Tags.ExecValuationPoint, val, showMilliseconds) {}
     public ExecValuationPoint(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ExecValuationPoint, val, precision) {}
-
 }
 
 
@@ -10938,7 +10914,6 @@ public sealed class OrigOrdModTime : DateTimeField
         : base(Tags.OrigOrdModTime, val, showMilliseconds) {}
     public OrigOrdModTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.OrigOrdModTime, val, precision) {}
-
 }
 
 
@@ -11589,7 +11564,6 @@ public sealed class HopSendingTime : DateTimeField
         : base(Tags.HopSendingTime, val, showMilliseconds) {}
     public HopSendingTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.HopSendingTime, val, precision) {}
-
 }
 
 
@@ -14068,7 +14042,6 @@ public sealed class TrdRegTimestamp : DateTimeField
         : base(Tags.TrdRegTimestamp, val, showMilliseconds) {}
     public TrdRegTimestamp(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TrdRegTimestamp, val, precision) {}
-
 }
 
 
@@ -14237,7 +14210,6 @@ public sealed class LastUpdateTime : DateTimeField
         : base(Tags.LastUpdateTime, val, showMilliseconds) {}
     public LastUpdateTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.LastUpdateTime, val, precision) {}
-
 }
 
 
@@ -17411,7 +17383,6 @@ public sealed class SideTimeInForce : DateTimeField
         : base(Tags.SideTimeInForce, val, showMilliseconds) {}
     public SideTimeInForce(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.SideTimeInForce, val, precision) {}
-
 }
 
 
@@ -18145,7 +18116,6 @@ public sealed class SideTrdRegTimestamp : DateTimeField
         : base(Tags.SideTrdRegTimestamp, val, showMilliseconds) {}
     public SideTrdRegTimestamp(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.SideTrdRegTimestamp, val, precision) {}
-
 }
 
 
@@ -20016,7 +19986,6 @@ public sealed class TZTransactTime : DateTimeField
         : base(Tags.TZTransactTime, val, showMilliseconds) {}
     public TZTransactTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.TZTransactTime, val, precision) {}
-
 }
 
 
@@ -20237,7 +20206,6 @@ public sealed class EventTime : DateTimeField
         : base(Tags.EventTime, val, showMilliseconds) {}
     public EventTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.EventTime, val, precision) {}
-
 }
 
 
@@ -22313,7 +22281,6 @@ public sealed class DerivativeEventTime : DateTimeField
         : base(Tags.DerivativeEventTime, val, showMilliseconds) {}
     public DerivativeEventTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.DerivativeEventTime, val, precision) {}
-
 }
 
 
@@ -25601,7 +25568,6 @@ public sealed class ComplexEventStartDate : DateTimeField
         : base(Tags.ComplexEventStartDate, val, showMilliseconds) {}
     public ComplexEventStartDate(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ComplexEventStartDate, val, precision) {}
-
 }
 
 
@@ -25620,7 +25586,6 @@ public sealed class ComplexEventEndDate : DateTimeField
         : base(Tags.ComplexEventEndDate, val, showMilliseconds) {}
     public ComplexEventEndDate(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.ComplexEventEndDate, val, precision) {}
-
 }
 
 
@@ -25647,13 +25612,10 @@ public sealed class ComplexEventStartTime : TimeOnlyField
 
     public ComplexEventStartTime()
         : base(Tags.ComplexEventStartTime) {}
-    public ComplexEventStartTime(DateTime val)
+    public ComplexEventStartTime(TimeOnly val)
         : base(Tags.ComplexEventStartTime, val) {}
-    public ComplexEventStartTime(DateTime val, bool showMilliseconds)
-        : base(Tags.ComplexEventStartTime, val, showMilliseconds) {}
-    public ComplexEventStartTime(DateTime val, Converters.TimeStampPrecision precision)
+    public ComplexEventStartTime(TimeOnly val, Converters.TimeStampPrecision precision)
         : base(Tags.ComplexEventStartTime, val, precision) {}
-
 }
 
 
@@ -25666,13 +25628,10 @@ public sealed class ComplexEventEndTime : TimeOnlyField
 
     public ComplexEventEndTime()
         : base(Tags.ComplexEventEndTime) {}
-    public ComplexEventEndTime(DateTime val)
+    public ComplexEventEndTime(TimeOnly val)
         : base(Tags.ComplexEventEndTime, val) {}
-    public ComplexEventEndTime(DateTime val, bool showMilliseconds)
-        : base(Tags.ComplexEventEndTime, val, showMilliseconds) {}
-    public ComplexEventEndTime(DateTime val, Converters.TimeStampPrecision precision)
+    public ComplexEventEndTime(TimeOnly val, Converters.TimeStampPrecision precision)
         : base(Tags.ComplexEventEndTime, val, precision) {}
-
 }
 
 
@@ -25804,7 +25763,6 @@ public sealed class RelSymTransactTime : DateTimeField
         : base(Tags.RelSymTransactTime, val, showMilliseconds) {}
     public RelSymTransactTime(DateTime val, Converters.TimeStampPrecision precision)
         : base(Tags.RelSymTransactTime, val, precision) {}
-
 }
 
 

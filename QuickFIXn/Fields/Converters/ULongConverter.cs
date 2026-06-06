@@ -11,6 +11,7 @@ public static class ULongConverter
     /// </summary>
     /// <param name="i"></param>
     /// <returns></returns>
+    /// <exception cref="FieldConvertError"></exception>
     public static ulong Convert(string i)
     {
         try

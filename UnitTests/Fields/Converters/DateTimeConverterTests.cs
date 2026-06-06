@@ -8,8 +8,6 @@ namespace UnitTests.Fields.Converters;
 
 [TestFixture]
 public class DateTimeConverterTests {
-    
-    private const string TimeOnlyFormatWithMicroseconds = "{0:HH:mm:ss.ffffff}";
 
     [SetUp]
     public void SetUp() {
@@ -63,20 +61,26 @@ public class DateTimeConverterTests {
     [Test]
     public void ParseToDateOnlyTest_ReturnsDateOnly() {
         ReadOnlySpan<char> ros = "20100912";
+#pragma warning disable CS0618
         DateOnly rv = DateTimeConverter.ParseToDateOnly(ros);
+#pragma warning restore CS0618
         Assert.That(rv, Is.EqualTo(new DateOnly(2010, 9, 12)));
     }
 
     [Test]
     public void ParseToDateOnlyTest_ReturnsDateTime() {
+#pragma warning disable CS0618
         DateTime rv = DateTimeConverter.ParseToDateOnly("20100912");
+#pragma warning restore CS0618
         Assert.That(rv, Is.EqualTo(new DateTime(2010, 9, 12, 0, 0, 0, DateTimeKind.Utc)));
     }
 
     [Test]
     public void ParseToDateOnlyTest_Exceptions() {
+#pragma warning disable CS0618
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.ParseToDateOnly(""); });
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.ParseToDateOnly("20021201-11:03:00"); });
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -86,6 +90,7 @@ public class DateTimeConverterTests {
 
         TimeSpan? timeSpan;
 
+#pragma warning disable CS0618
         TimeOnly rv = DateTimeConverter.ParseToTimeOnly("04:22:01", out timeSpan);
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(timeSpan, Is.Null);
@@ -96,6 +101,7 @@ public class DateTimeConverterTests {
         rv = DateTimeConverter.ParseToTimeOnly("04:22:01-03:00", out timeSpan);
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(timeSpan, Is.EqualTo(new TimeSpan(-3, 0, 0)));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -103,17 +109,21 @@ public class DateTimeConverterTests {
         var targetTicks = new DateTime(1980, 1, 1, 4, 22, 1, 0, DateTimeKind.Utc).Ticks;
         Assert.That(targetTicks, Is.EqualTo(624511453210000000)); // for human reader reference
 
+#pragma warning disable CS0618
         DateTime rv = DateTimeConverter.InternalParseToTimeOnly("04:22:01");
 
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(DateTimeConverter.InternalParseToTimeOnly("04:22:01.123").Ticks, Is.EqualTo(targetTicks + 1230000));
         Assert.That(DateTimeConverter.InternalParseToTimeOnly("04:22:01.123456").Ticks, Is.EqualTo(targetTicks + 1234560));
+#pragma warning restore CS0618
     }
 
     [Test]
     public void ParseToTimeOnlyTest_Exceptions() {
+#pragma warning disable CS0618
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.InternalParseToTimeOnly(""); });
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.InternalParseToTimeOnly("20021201-11:03:00"); });
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -152,6 +162,7 @@ public class DateTimeConverterTests {
 
     [Test]
     public void ToFIXDateOnlyTest() {
+#pragma warning disable CS0618
         // ToFIXDateOnly(DateOnly)
         Assert.That(DateTimeConverter.ToFIXDateOnly(new DateOnly(2002, 12, 01)), Is.EqualTo("20021201"));
 
@@ -160,6 +171,7 @@ public class DateTimeConverterTests {
             TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 123, 654, 700),
             DateTimeKind.Utc);
         Assert.That(DateTimeConverter.ToFIXDateOnly(dt), Is.EqualTo("20021201"));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -170,6 +182,7 @@ public class DateTimeConverterTests {
         var tNanoFull = TimeHelper.MakeTimeOnly(11, 03, 05, 123, 654, 700);
         var tNano100 = TimeHelper.MakeTimeOnly(11, 03, 05, 000, 000, 100);
 
+#pragma warning disable CS0618
         // ToFIXTimeOnly(TimeOnly time, TimeStampPrecision precision)
         Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
@@ -194,6 +207,7 @@ public class DateTimeConverterTests {
         Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -204,6 +218,7 @@ public class DateTimeConverterTests {
         var dtNanoFull = DateTime.SpecifyKind(TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 123, 654, 700), DateTimeKind.Utc);
         var dtNano100 = DateTime.SpecifyKind(TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 000, 000, 100), DateTimeKind.Utc);
 
+#pragma warning disable CS0618
         // string ToFIXTimeOnly(DateTime dt, TimeStampPrecision precision)
         Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
@@ -228,5 +243,6 @@ public class DateTimeConverterTests {
         Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
         Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+#pragma warning restore CS0618
     }
 }

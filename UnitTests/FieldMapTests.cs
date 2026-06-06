@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using QuickFix;
 using QuickFix.Fields;
+using QuickFix.Fields.Converters;
 
 namespace UnitTests;
 
@@ -111,14 +112,14 @@ public class FieldMapTests
     public void DateOnlyFieldTest()
     {
         FieldMap fm = new();
-        fm.SetField(new DateOnlyField(Tags.MDEntryDate, new DateTime(2009, 12, 10, 1, 2, 3)));
+        fm.SetField(new DateOnlyField(Tags.MDEntryDate, new DateOnly(2009, 12, 10)));
         MDEntryDate ed = new MDEntryDate();
         fm.GetField(ed);
-        Assert.That(ed.Value, Is.EqualTo(new DateTime(2009, 12, 10)));
+        Assert.That(ed.Value, Is.EqualTo(new DateOnly(2009, 12, 10)));
 
-        fm.SetField(new MDEntryDate(new DateTime(2010, 12, 10)));
+        fm.SetField(new MDEntryDate(new DateOnly(2010, 12, 10)));
         DateOnlyField r = fm.GetField(ed);
-        Assert.That(ed.Value, Is.EqualTo(new DateTime(2010, 12, 10)));
+        Assert.That(ed.Value, Is.EqualTo(new DateOnly(2010, 12, 10)));
 
         Assert.That(ed, Is.SameAs(r));
         Assert.That(ed.ToString(), Is.EqualTo("20101210"));
@@ -128,17 +129,19 @@ public class FieldMapTests
     public void TimeOnlyFieldTest()
     {
         FieldMap fm = new();
-        fm.SetField(new TimeOnlyField(Tags.MDEntryTime, new DateTime(1, 1, 1, 1, 2, 3), false));
+        fm.SetField(
+            new TimeOnlyField(Tags.MDEntryTime, new TimeOnly(15, 16, 17, 500, 999), TimeStampPrecision.Microsecond));
         MDEntryTime et = new MDEntryTime();
         fm.GetField(et);
-        Assert.That(et.Value, Is.EqualTo(new DateTime(1980, 01, 01, 1, 2, 3)));
+        Assert.That(et.Value, Is.EqualTo(new TimeOnly(15, 16, 17, 500, 999)));
 
-        fm.SetField(new MDEntryTime(new DateTime(1, 1, 1, 1, 2, 5)));
-        TimeOnlyField r = fm.GetField(et);
-        Assert.That(et.Value, Is.EqualTo(new DateTime(1980, 01, 01, 1, 2, 5)));
+        fm.SetField(new MDEntryTime(new TimeOnly(12, 30, 59), TimeStampPrecision.Second));
+        TimeOnlyField r = fm.GetField(et); // IMPORTANT!  et retains its original TimePrecision!
+        Assert.That(r.ToString(), Is.EqualTo("12:30:59.000"));  // see?  TimePrecision is still milliseconds!
+        Assert.That(et.Value, Is.EqualTo(new TimeOnly(12, 30, 59)));
 
         Assert.That(et, Is.SameAs(r));
-        Assert.That(et.ToString(), Is.EqualTo("01:02:05.000"));
+        Assert.That(et.ToString(), Is.EqualTo("12:30:59.000"));
     }
 
     [Test]
@@ -148,8 +151,20 @@ public class FieldMapTests
         fm.SetField(new DateTimeField(Tags.TransactTime, new DateTime(2009, 12, 10)));
         Assert.That(fm.GetDateTime(Tags.TransactTime), Is.EqualTo(new DateTime(2009, 12, 10)));
 
+        fm.SetField(new DateOnlyField(Tags.TransactTime, new DateOnly(2009, 12, 10)));
+        Assert.That(fm.GetDateTime(Tags.TransactTime), Is.EqualTo(new DateTime(2009, 12, 10)));
+
+        fm.SetField(new TimeOnlyField(Tags.MDEntryTime, new TimeOnly(1, 2, 3)));
+        Assert.That(fm.GetDateTime(Tags.MDEntryTime), Is.EqualTo(new DateTime(1980, 01, 01, 1, 2, 3)));
+
         fm.SetField(new StringField(Tags.TransactTime, "20091211-12:12:44"));
         Assert.That(fm.GetDateTime(Tags.TransactTime), Is.EqualTo(new DateTime(2009, 12, 11, 12, 12, 44)));
+
+        fm.SetField(new StringField(Tags.TransactTime, "pants"));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetDateTime(Tags.TransactTime); });
+
+        fm.SetField(new IntField(Tags.TransactTime, 999));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetDateTime(Tags.TransactTime); });
 
         Assert.Throws(typeof(FieldNotFoundException),
                 delegate { fm.GetDateTime(99900); });
@@ -159,11 +174,23 @@ public class FieldMapTests
     public void GetDateOnlyTest()
     {
         FieldMap fm = new();
+        fm.SetField(new DateOnlyField(Tags.MDEntryDate, new DateOnly(2009, 12, 10)));
+        Assert.That(fm.GetDateOnly(Tags.MDEntryDate), Is.EqualTo(new DateOnly(2009, 12, 10)));
+
+#pragma warning disable CS0618
+        // Legacy ctor, will be deleted in 1.15
         fm.SetField(new DateOnlyField(Tags.MDEntryDate, new DateTime(2009, 12, 10, 1, 2, 3)));
-        Assert.That(fm.GetDateTime(Tags.MDEntryDate), Is.EqualTo(new DateTime(2009, 12, 10)));
+        Assert.That(fm.GetDateOnly(Tags.MDEntryDate), Is.EqualTo(new DateOnly(2009, 12, 10)));
+#pragma warning restore CS0618
 
         fm.SetField(new StringField(Tags.MDEntryDate, "20091211"));
-        Assert.That(fm.GetDateOnly(Tags.MDEntryDate), Is.EqualTo(new DateTime(2009, 12, 11)));
+        Assert.That(fm.GetDateOnly(Tags.MDEntryDate), Is.EqualTo(new DateOnly(2009, 12, 11)));
+
+        fm.SetField(new StringField(Tags.MDEntryDate, "pants"));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetDateOnly(Tags.MDEntryDate); });
+
+        fm.SetField(new IntField(Tags.MDEntryDate, 999));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetDateOnly(Tags.MDEntryDate); });
 
         Assert.Throws(typeof(FieldNotFoundException),
             delegate { fm.GetDateOnly(99900); });
@@ -173,11 +200,14 @@ public class FieldMapTests
     public void GetTimeOnlyTest()
     {
         FieldMap fm = new();
-        fm.SetField(new TimeOnlyField(Tags.MDEntryTime, new DateTime(2009, 12, 10, 1, 2, 3)));
-        Assert.That(fm.GetDateTime(Tags.MDEntryTime), Is.EqualTo(new DateTime(1980, 01, 01, 1, 2, 3)));
-
         fm.SetField(new StringField(Tags.MDEntryTime, "07:30:47"));
-        Assert.That(fm.GetTimeOnly(Tags.MDEntryTime), Is.EqualTo(new DateTime(1980, 01, 01, 7, 30, 47)));
+        Assert.That(fm.GetTimeOnly(Tags.MDEntryTime), Is.EqualTo(new TimeOnly(7, 30, 47)));
+
+        fm.SetField(new StringField(Tags.MDEntryTime, "pants"));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetTimeOnly(Tags.MDEntryTime); });
+
+        fm.SetField(new IntField(Tags.MDEntryTime, 999));
+        Assert.Throws<FieldConvertError>(delegate { fm.GetTimeOnly(Tags.MDEntryTime); });
 
         Assert.Throws(typeof(FieldNotFoundException),
             delegate { fm.GetTimeOnly(99900); });

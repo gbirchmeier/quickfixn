@@ -68,11 +68,11 @@ public class DDField : IElement {
             case "UTCDATE":
             case "DATE":
                 csClass = "DateOnlyField";
-                baseType = "DateTime";
+                baseType = "DateOnly";
                 return;
             case "UTCTIMEONLY":
                 csClass = "TimeOnlyField";
-                baseType = "DateTime";
+                baseType = "TimeOnly";
                 return;
             case "BOOLEAN":
                 csClass = "BooleanField";

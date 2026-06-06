@@ -1,6 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using QuickFix.Fields;
+using QuickFix.Fields.Converters;
 using UnitTests.TestHelpers;
 using StringField = QuickFix.Fields.StringField;
 
@@ -169,18 +170,18 @@ public class FieldTests
     [Test]
     public void DateOnlyFieldTest()
     {
-        MDEntryDate d = new MDEntryDate(new DateTime(2011, 11, 30, 8, 9, 10, 555));
+        MDEntryDate d = new MDEntryDate(new DateOnly(2011, 11, 30));
         Assert.That(d.ToString(), Is.EqualTo("20111130"));
     }
 
     [Test]
     public void TimeOnlyFieldTest()
     {
-        MDEntryTime t = new MDEntryTime(new DateTime(2011, 11, 30, 8, 9, 10, 555), true);
-        Assert.That(t.ToString(), Is.EqualTo("08:09:10.555"));
+        MDEntryTime t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimeStampPrecision.Second);
+        Assert.That(t.ToString(), Is.EqualTo("12:30:45"));
 
-        t = new MDEntryTime(new DateTime(2011, 11, 30, 8, 9, 10, 555), false);
-        Assert.That(t.ToString(), Is.EqualTo("08:09:10"));
+        t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimeStampPrecision.Microsecond);
+        Assert.That(t.ToString(), Is.EqualTo("12:30:45.999050"));
     }
 
     [Test]
