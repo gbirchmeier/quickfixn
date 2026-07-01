@@ -17,7 +17,6 @@ public sealed class Account : StringField
         : base(Tags.Account, val) {}
 }
 
-
 /// <summary>
 /// AdvId Field
 /// </summary>
@@ -31,7 +30,6 @@ public sealed class AdvId : StringField
         : base(Tags.AdvId, val) {}
 }
 
-
 /// <summary>
 /// AdvRefID Field
 /// </summary>
@@ -44,7 +42,6 @@ public sealed class AdvRefID : StringField
     public AdvRefID(string val)
         : base(Tags.AdvRefID, val) {}
 }
-
 
 /// <summary>
 /// AdvSide Field
@@ -65,7 +62,6 @@ public sealed class AdvSide : CharField
     public const char CROSS = 'X';
 }
 
-
 /// <summary>
 /// AdvTransType Field
 /// </summary>
@@ -84,7 +80,6 @@ public sealed class AdvTransType : StringField
     public const string REPLACE = "R";
 }
 
-
 /// <summary>
 /// AvgPx Field
 /// </summary>
@@ -97,7 +92,6 @@ public sealed class AvgPx : DecimalField
     public AvgPx(Decimal val)
         : base(Tags.AvgPx, val) {}
 }
-
 
 /// <summary>
 /// BeginSeqNo Field
@@ -112,7 +106,6 @@ public sealed class BeginSeqNo : SeqNumFieldType
         : base(Tags.BeginSeqNo, val) {}
 }
 
-
 /// <summary>
 /// BeginString Field
 /// </summary>
@@ -125,7 +118,6 @@ public sealed class BeginString : StringField
     public BeginString(string val)
         : base(Tags.BeginString, val) {}
 }
-
 
 /// <summary>
 /// BodyLength Field
@@ -140,7 +132,6 @@ public sealed class BodyLength : IntField
         : base(Tags.BodyLength, val) {}
 }
 
-
 /// <summary>
 /// CheckSum Field
 /// </summary>
@@ -153,7 +144,6 @@ public sealed class CheckSum : StringField
     public CheckSum(string val)
         : base(Tags.CheckSum, val) {}
 }
-
 
 /// <summary>
 /// ClOrdID Field
@@ -168,7 +158,6 @@ public sealed class ClOrdID : StringField
         : base(Tags.ClOrdID, val) {}
 }
 
-
 /// <summary>
 /// Commission Field
 /// </summary>
@@ -181,7 +170,6 @@ public sealed class Commission : DecimalField
     public Commission(Decimal val)
         : base(Tags.Commission, val) {}
 }
-
 
 /// <summary>
 /// CommType Field
@@ -210,7 +198,6 @@ public sealed class CommType : CharField
     public const char PER_BOND = '6';
 }
 
-
 /// <summary>
 /// CumQty Field
 /// </summary>
@@ -223,7 +210,6 @@ public sealed class CumQty : DecimalField
     public CumQty(Decimal val)
         : base(Tags.CumQty, val) {}
 }
-
 
 /// <summary>
 /// Currency Field
@@ -238,7 +224,6 @@ public sealed class Currency : StringField
         : base(Tags.Currency, val) {}
 }
 
-
 /// <summary>
 /// EndSeqNo Field
 /// </summary>
@@ -252,7 +237,6 @@ public sealed class EndSeqNo : SeqNumFieldType
         : base(Tags.EndSeqNo, val) {}
 }
 
-
 /// <summary>
 /// ExecID Field
 /// </summary>
@@ -265,7 +249,6 @@ public sealed class ExecID : StringField
     public ExecID(string val)
         : base(Tags.ExecID, val) {}
 }
-
 
 /// <summary>
 /// ExecInst Field
@@ -349,7 +332,6 @@ public sealed class ExecInst : StringField
     public const string NONNEGOTIABLE = "N";
 }
 
-
 /// <summary>
 /// ExecRefID Field
 /// </summary>
@@ -362,7 +344,6 @@ public sealed class ExecRefID : StringField
     public ExecRefID(string val)
         : base(Tags.ExecRefID, val) {}
 }
-
 
 /// <summary>
 /// ExecTransType Field
@@ -382,7 +363,6 @@ public sealed class ExecTransType : CharField
     public const char CORRECT = '2';
     public const char STATUS = '3';
 }
-
 
 /// <summary>
 /// HandlInst Field
@@ -404,7 +384,6 @@ public sealed class HandlInst : CharField
     public const char AUTOMATED_EXECUTION_ORDER_PUBLIC = '2';
     public const char MANUAL_ORDER = '3';
 }
-
 
 /// <summary>
 /// IDSource Field
@@ -430,7 +409,6 @@ public sealed class IDSource : StringField
     public const string CONSOLIDATED_TAPE_ASSOCIATION = "9";
 }
 
-
 /// <summary>
 /// IOIid Field
 /// </summary>
@@ -444,7 +422,6 @@ public sealed class IOIid : StringField
         : base(Tags.IOIid, val) {}
 }
 
-
 /// <summary>
 /// IOIOthSvc Field
 /// </summary>
@@ -457,7 +434,6 @@ public sealed class IOIOthSvc : CharField
     public IOIOthSvc(char val)
         : base(Tags.IOIOthSvc, val) {}
 }
-
 
 /// <summary>
 /// IOIQltyInd Field
@@ -477,7 +453,6 @@ public sealed class IOIQltyInd : CharField
     public const char MEDIUM = 'M';
 }
 
-
 /// <summary>
 /// IOIRefID Field
 /// </summary>
@@ -491,7 +466,6 @@ public sealed class IOIRefID : StringField
         : base(Tags.IOIRefID, val) {}
 }
 
-
 /// <summary>
 /// IOIShares Field
 /// </summary>
@@ -504,7 +478,6 @@ public sealed class IOIShares : StringField
     public IOIShares(string val)
         : base(Tags.IOIShares, val) {}
 }
-
 
 /// <summary>
 /// IOITransType Field
@@ -523,7 +496,6 @@ public sealed class IOITransType : CharField
     public const char NEW = 'N';
     public const char REPLACE = 'R';
 }
-
 
 /// <summary>
 /// LastCapacity Field
@@ -544,7 +516,6 @@ public sealed class LastCapacity : CharField
     public const char PRINCIPAL = '4';
 }
 
-
 /// <summary>
 /// LastMkt Field
 /// </summary>
@@ -557,7 +528,6 @@ public sealed class LastMkt : StringField
     public LastMkt(string val)
         : base(Tags.LastMkt, val) {}
 }
-
 
 /// <summary>
 /// LastPx Field
@@ -572,7 +542,6 @@ public sealed class LastPx : DecimalField
         : base(Tags.LastPx, val) {}
 }
 
-
 /// <summary>
 /// LastShares Field
 /// </summary>
@@ -585,7 +554,6 @@ public sealed class LastShares : DecimalField
     public LastShares(Decimal val)
         : base(Tags.LastShares, val) {}
 }
-
 
 /// <summary>
 /// LinesOfText Field
@@ -600,7 +568,6 @@ public sealed class LinesOfText : IntField
         : base(Tags.LinesOfText, val) {}
 }
 
-
 /// <summary>
 /// MsgSeqNum Field
 /// </summary>
@@ -613,7 +580,6 @@ public sealed class MsgSeqNum : SeqNumFieldType
     public MsgSeqNum(SeqNumType val)
         : base(Tags.MsgSeqNum, val) {}
 }
-
 
 /// <summary>
 /// MsgType Field
@@ -852,7 +818,6 @@ public sealed class MsgType : StringField
     public const string MULTILEG_ORDER_CANCEL = "AC";
 }
 
-
 /// <summary>
 /// NewSeqNo Field
 /// </summary>
@@ -865,7 +830,6 @@ public sealed class NewSeqNo : SeqNumFieldType
     public NewSeqNo(SeqNumType val)
         : base(Tags.NewSeqNo, val) {}
 }
-
 
 /// <summary>
 /// OrderID Field
@@ -880,7 +844,6 @@ public sealed class OrderID : StringField
         : base(Tags.OrderID, val) {}
 }
 
-
 /// <summary>
 /// OrderQty Field
 /// </summary>
@@ -893,7 +856,6 @@ public sealed class OrderQty : DecimalField
     public OrderQty(Decimal val)
         : base(Tags.OrderQty, val) {}
 }
-
 
 /// <summary>
 /// OrdStatus Field
@@ -925,7 +887,6 @@ public sealed class OrdStatus : CharField
     public const char REPLACED = '5';
     public const char PENDING_CANCELREPLACE = '6';
 }
-
 
 /// <summary>
 /// OrdType Field
@@ -968,7 +929,6 @@ public sealed class OrdType : CharField
     public const char FOREX = 'C';
 }
 
-
 /// <summary>
 /// OrigClOrdID Field
 /// </summary>
@@ -981,7 +941,6 @@ public sealed class OrigClOrdID : StringField
     public OrigClOrdID(string val)
         : base(Tags.OrigClOrdID, val) {}
 }
-
 
 /// <summary>
 /// OrigTime Field
@@ -1000,7 +959,6 @@ public sealed class OrigTime : DateTimeField
     public OrigTime(DateTime val, TimePrecision precision)
         : base(Tags.OrigTime, val, precision) {}
 }
-
 
 /// <summary>
 /// PossDupFlag Field
@@ -1021,7 +979,6 @@ public sealed class PossDupFlag : BooleanField
     public const Boolean ORIGINAL_TRANSMISSION = false;
 }
 
-
 /// <summary>
 /// Price Field
 /// </summary>
@@ -1034,7 +991,6 @@ public sealed class Price : DecimalField
     public Price(Decimal val)
         : base(Tags.Price, val) {}
 }
-
 
 /// <summary>
 /// RefSeqNum Field
@@ -1049,7 +1005,6 @@ public sealed class RefSeqNum : SeqNumFieldType
         : base(Tags.RefSeqNum, val) {}
 }
 
-
 /// <summary>
 /// RelatdSym Field
 /// </summary>
@@ -1062,7 +1017,6 @@ public sealed class RelatdSym : StringField
     public RelatdSym(string val)
         : base(Tags.RelatdSym, val) {}
 }
-
 
 /// <summary>
 /// Rule80A Field
@@ -1129,7 +1083,6 @@ public sealed class Rule80A : CharField
     public const char PROGRAM_ORDER_NONINDEX_ARB_FOR_OTHER_AGENCY = 'Y';
 }
 
-
 /// <summary>
 /// SecurityID Field
 /// </summary>
@@ -1142,7 +1095,6 @@ public sealed class SecurityID : StringField
     public SecurityID(string val)
         : base(Tags.SecurityID, val) {}
 }
-
 
 /// <summary>
 /// SenderCompID Field
@@ -1157,7 +1109,6 @@ public sealed class SenderCompID : StringField
         : base(Tags.SenderCompID, val) {}
 }
 
-
 /// <summary>
 /// SenderSubID Field
 /// </summary>
@@ -1170,7 +1121,6 @@ public sealed class SenderSubID : StringField
     public SenderSubID(string val)
         : base(Tags.SenderSubID, val) {}
 }
-
 
 /// <summary>
 /// SendingTime Field
@@ -1190,7 +1140,6 @@ public sealed class SendingTime : DateTimeField
         : base(Tags.SendingTime, val, precision) {}
 }
 
-
 /// <summary>
 /// Shares Field
 /// </summary>
@@ -1203,7 +1152,6 @@ public sealed class Shares : DecimalField
     public Shares(Decimal val)
         : base(Tags.Shares, val) {}
 }
-
 
 /// <summary>
 /// Side Field
@@ -1236,7 +1184,6 @@ public sealed class Side : CharField
     public const char BORROW = 'G';
 }
 
-
 /// <summary>
 /// Symbol Field
 /// </summary>
@@ -1249,7 +1196,6 @@ public sealed class Symbol : StringField
     public Symbol(string val)
         : base(Tags.Symbol, val) {}
 }
-
 
 /// <summary>
 /// TargetCompID Field
@@ -1264,7 +1210,6 @@ public sealed class TargetCompID : StringField
         : base(Tags.TargetCompID, val) {}
 }
 
-
 /// <summary>
 /// TargetSubID Field
 /// </summary>
@@ -1278,7 +1223,6 @@ public sealed class TargetSubID : StringField
         : base(Tags.TargetSubID, val) {}
 }
 
-
 /// <summary>
 /// Text Field
 /// </summary>
@@ -1291,7 +1235,6 @@ public sealed class Text : StringField
     public Text(string val)
         : base(Tags.Text, val) {}
 }
-
 
 /// <summary>
 /// TimeInForce Field
@@ -1318,7 +1261,6 @@ public sealed class TimeInForce : CharField
     public const char AT_CROSSING = '9';
 }
 
-
 /// <summary>
 /// TransactTime Field
 /// </summary>
@@ -1336,7 +1278,6 @@ public sealed class TransactTime : DateTimeField
     public TransactTime(DateTime val, TimePrecision precision)
         : base(Tags.TransactTime, val, precision) {}
 }
-
 
 /// <summary>
 /// Urgency Field
@@ -1356,7 +1297,6 @@ public sealed class Urgency : CharField
     public const char BACKGROUND = '2';
 }
 
-
 /// <summary>
 /// ValidUntilTime Field
 /// </summary>
@@ -1374,7 +1314,6 @@ public sealed class ValidUntilTime : DateTimeField
     public ValidUntilTime(DateTime val, TimePrecision precision)
         : base(Tags.ValidUntilTime, val, precision) {}
 }
-
 
 /// <summary>
 /// SettlmntTyp Field
@@ -1407,7 +1346,6 @@ public sealed class SettlmntTyp : CharField
     public const char TPLUS5 = '9';
 }
 
-
 /// <summary>
 /// FutSettDate Field
 /// </summary>
@@ -1420,7 +1358,6 @@ public sealed class FutSettDate : StringField
     public FutSettDate(string val)
         : base(Tags.FutSettDate, val) {}
 }
-
 
 /// <summary>
 /// SymbolSfx Field
@@ -1441,7 +1378,6 @@ public sealed class SymbolSfx : StringField
     public const string A_EUCP_WITH_LUMP_SUM_INTEREST = "CD";
 }
 
-
 /// <summary>
 /// ListID Field
 /// </summary>
@@ -1454,7 +1390,6 @@ public sealed class ListID : StringField
     public ListID(string val)
         : base(Tags.ListID, val) {}
 }
-
 
 /// <summary>
 /// ListSeqNo Field
@@ -1469,7 +1404,6 @@ public sealed class ListSeqNo : IntField
         : base(Tags.ListSeqNo, val) {}
 }
 
-
 /// <summary>
 /// ListNoOrds Field
 /// </summary>
@@ -1482,7 +1416,6 @@ public sealed class ListNoOrds : IntField
     public ListNoOrds(int val)
         : base(Tags.ListNoOrds, val) {}
 }
-
 
 /// <summary>
 /// ListExecInst Field
@@ -1497,7 +1430,6 @@ public sealed class ListExecInst : StringField
         : base(Tags.ListExecInst, val) {}
 }
 
-
 /// <summary>
 /// AllocID Field
 /// </summary>
@@ -1510,7 +1442,6 @@ public sealed class AllocID : StringField
     public AllocID(string val)
         : base(Tags.AllocID, val) {}
 }
-
 
 /// <summary>
 /// AllocTransType Field
@@ -1534,7 +1465,6 @@ public sealed class AllocTransType : CharField
     public const char REVERSAL = '6';
 }
 
-
 /// <summary>
 /// RefAllocID Field
 /// </summary>
@@ -1547,7 +1477,6 @@ public sealed class RefAllocID : StringField
     public RefAllocID(string val)
         : base(Tags.RefAllocID, val) {}
 }
-
 
 /// <summary>
 /// NoOrders Field
@@ -1562,7 +1491,6 @@ public sealed class NoOrders : IntField
         : base(Tags.NoOrders, val) {}
 }
 
-
 /// <summary>
 /// AvgPrxPrecision Field
 /// </summary>
@@ -1575,7 +1503,6 @@ public sealed class AvgPrxPrecision : IntField
     public AvgPrxPrecision(int val)
         : base(Tags.AvgPrxPrecision, val) {}
 }
-
 
 /// <summary>
 /// TradeDate Field
@@ -1590,7 +1517,6 @@ public sealed class TradeDate : StringField
         : base(Tags.TradeDate, val) {}
 }
 
-
 /// <summary>
 /// ExecBroker Field
 /// </summary>
@@ -1603,7 +1529,6 @@ public sealed class ExecBroker : StringField
     public ExecBroker(string val)
         : base(Tags.ExecBroker, val) {}
 }
-
 
 /// <summary>
 /// OpenClose Field
@@ -1622,7 +1547,6 @@ public sealed class OpenClose : CharField
     public const char CLOSE = 'C';
 }
 
-
 /// <summary>
 /// NoAllocs Field
 /// </summary>
@@ -1635,7 +1559,6 @@ public sealed class NoAllocs : IntField
     public NoAllocs(int val)
         : base(Tags.NoAllocs, val) {}
 }
-
 
 /// <summary>
 /// AllocAccount Field
@@ -1650,7 +1573,6 @@ public sealed class AllocAccount : StringField
         : base(Tags.AllocAccount, val) {}
 }
 
-
 /// <summary>
 /// AllocShares Field
 /// </summary>
@@ -1663,7 +1585,6 @@ public sealed class AllocShares : DecimalField
     public AllocShares(Decimal val)
         : base(Tags.AllocShares, val) {}
 }
-
 
 /// <summary>
 /// ProcessCode Field
@@ -1691,7 +1612,6 @@ public sealed class ProcessCode : CharField
     public const char SOFTDOLLAR_STEPOUT = '5';
 }
 
-
 /// <summary>
 /// NoRpts Field
 /// </summary>
@@ -1704,7 +1624,6 @@ public sealed class NoRpts : IntField
     public NoRpts(int val)
         : base(Tags.NoRpts, val) {}
 }
-
 
 /// <summary>
 /// RptSeq Field
@@ -1719,7 +1638,6 @@ public sealed class RptSeq : IntField
         : base(Tags.RptSeq, val) {}
 }
 
-
 /// <summary>
 /// CxlQty Field
 /// </summary>
@@ -1732,7 +1650,6 @@ public sealed class CxlQty : DecimalField
     public CxlQty(Decimal val)
         : base(Tags.CxlQty, val) {}
 }
-
 
 /// <summary>
 /// NoDlvyInst Field
@@ -1747,7 +1664,6 @@ public sealed class NoDlvyInst : IntField
         : base(Tags.NoDlvyInst, val) {}
 }
 
-
 /// <summary>
 /// DlvyInst Field
 /// </summary>
@@ -1760,7 +1676,6 @@ public sealed class DlvyInst : StringField
     public DlvyInst(string val)
         : base(Tags.DlvyInst, val) {}
 }
-
 
 /// <summary>
 /// AllocStatus Field
@@ -1786,7 +1701,6 @@ public sealed class AllocStatus : IntField
     public const int REJECTED = 1;
     public const int PARTIAL_ACCEPT = 2;
 }
-
 
 /// <summary>
 /// AllocRejCode Field
@@ -1822,7 +1736,6 @@ public sealed class AllocRejCode : IntField
     public const int MISMATCHED_DATA_VALUE = 11;
 }
 
-
 /// <summary>
 /// Signature Field
 /// </summary>
@@ -1835,7 +1748,6 @@ public sealed class Signature : StringField
     public Signature(string val)
         : base(Tags.Signature, val) {}
 }
-
 
 /// <summary>
 /// SecureDataLen Field
@@ -1850,7 +1762,6 @@ public sealed class SecureDataLen : IntField
         : base(Tags.SecureDataLen, val) {}
 }
 
-
 /// <summary>
 /// SecureData Field
 /// </summary>
@@ -1863,7 +1774,6 @@ public sealed class SecureData : StringField
     public SecureData(string val)
         : base(Tags.SecureData, val) {}
 }
-
 
 /// <summary>
 /// BrokerOfCredit Field
@@ -1878,7 +1788,6 @@ public sealed class BrokerOfCredit : StringField
         : base(Tags.BrokerOfCredit, val) {}
 }
 
-
 /// <summary>
 /// SignatureLength Field
 /// </summary>
@@ -1891,7 +1800,6 @@ public sealed class SignatureLength : IntField
     public SignatureLength(int val)
         : base(Tags.SignatureLength, val) {}
 }
-
 
 /// <summary>
 /// EmailType Field
@@ -1911,7 +1819,6 @@ public sealed class EmailType : CharField
     public const char ADMIN_REPLY = '2';
 }
 
-
 /// <summary>
 /// RawDataLength Field
 /// </summary>
@@ -1925,7 +1832,6 @@ public sealed class RawDataLength : IntField
         : base(Tags.RawDataLength, val) {}
 }
 
-
 /// <summary>
 /// RawData Field
 /// </summary>
@@ -1938,7 +1844,6 @@ public sealed class RawData : StringField
     public RawData(string val)
         : base(Tags.RawData, val) {}
 }
-
 
 /// <summary>
 /// PossResend Field
@@ -1956,7 +1861,6 @@ public sealed class PossResend : BooleanField
     public const Boolean NO = false;
     public const Boolean YES = true;
 }
-
 
 /// <summary>
 /// EncryptMethod Field
@@ -1991,7 +1895,6 @@ public sealed class EncryptMethod : IntField
     public const int PEMDESMD5 = 6;
 }
 
-
 /// <summary>
 /// StopPx Field
 /// </summary>
@@ -2004,7 +1907,6 @@ public sealed class StopPx : DecimalField
     public StopPx(Decimal val)
         : base(Tags.StopPx, val) {}
 }
-
 
 /// <summary>
 /// ExDestination Field
@@ -2022,7 +1924,6 @@ public sealed class ExDestination : StringField
     public const string NONE = "0";
     public const string POSIT = "4";
 }
-
 
 /// <summary>
 /// CxlRejReason Field
@@ -2054,7 +1955,6 @@ public sealed class CxlRejReason : IntField
     public const int ALREADY_PENDING = 3;
     public const int BROKER_OPTION = 2;
 }
-
 
 /// <summary>
 /// OrdRejReason Field
@@ -2094,7 +1994,6 @@ public sealed class OrdRejReason : IntField
     public const int DUPLICATE_VERBALYES = 7;
 }
 
-
 /// <summary>
 /// IOIQualifier Field
 /// </summary>
@@ -2132,7 +2031,6 @@ public sealed class IOIQualifier : CharField
     public const char CURRENT_QUOTE = 'Q';
 }
 
-
 /// <summary>
 /// WaveNo Field
 /// </summary>
@@ -2145,7 +2043,6 @@ public sealed class WaveNo : StringField
     public WaveNo(string val)
         : base(Tags.WaveNo, val) {}
 }
-
 
 /// <summary>
 /// Issuer Field
@@ -2160,7 +2057,6 @@ public sealed class Issuer : StringField
         : base(Tags.Issuer, val) {}
 }
 
-
 /// <summary>
 /// SecurityDesc Field
 /// </summary>
@@ -2173,7 +2069,6 @@ public sealed class SecurityDesc : StringField
     public SecurityDesc(string val)
         : base(Tags.SecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// HeartBtInt Field
@@ -2188,7 +2083,6 @@ public sealed class HeartBtInt : IntField
         : base(Tags.HeartBtInt, val) {}
 }
 
-
 /// <summary>
 /// ClientID Field
 /// </summary>
@@ -2201,7 +2095,6 @@ public sealed class ClientID : StringField
     public ClientID(string val)
         : base(Tags.ClientID, val) {}
 }
-
 
 /// <summary>
 /// MinQty Field
@@ -2216,7 +2109,6 @@ public sealed class MinQty : DecimalField
         : base(Tags.MinQty, val) {}
 }
 
-
 /// <summary>
 /// MaxFloor Field
 /// </summary>
@@ -2230,7 +2122,6 @@ public sealed class MaxFloor : DecimalField
         : base(Tags.MaxFloor, val) {}
 }
 
-
 /// <summary>
 /// TestReqID Field
 /// </summary>
@@ -2243,7 +2134,6 @@ public sealed class TestReqID : StringField
     public TestReqID(string val)
         : base(Tags.TestReqID, val) {}
 }
-
 
 /// <summary>
 /// ReportToExch Field
@@ -2262,7 +2152,6 @@ public sealed class ReportToExch : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// LocateReqd Field
 /// </summary>
@@ -2280,7 +2169,6 @@ public sealed class LocateReqd : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// OnBehalfOfCompID Field
 /// </summary>
@@ -2293,7 +2181,6 @@ public sealed class OnBehalfOfCompID : StringField
     public OnBehalfOfCompID(string val)
         : base(Tags.OnBehalfOfCompID, val) {}
 }
-
 
 /// <summary>
 /// OnBehalfOfSubID Field
@@ -2308,7 +2195,6 @@ public sealed class OnBehalfOfSubID : StringField
         : base(Tags.OnBehalfOfSubID, val) {}
 }
 
-
 /// <summary>
 /// QuoteID Field
 /// </summary>
@@ -2321,7 +2207,6 @@ public sealed class QuoteID : StringField
     public QuoteID(string val)
         : base(Tags.QuoteID, val) {}
 }
-
 
 /// <summary>
 /// NetMoney Field
@@ -2336,7 +2221,6 @@ public sealed class NetMoney : DecimalField
         : base(Tags.NetMoney, val) {}
 }
 
-
 /// <summary>
 /// SettlCurrAmt Field
 /// </summary>
@@ -2350,7 +2234,6 @@ public sealed class SettlCurrAmt : DecimalField
         : base(Tags.SettlCurrAmt, val) {}
 }
 
-
 /// <summary>
 /// SettlCurrency Field
 /// </summary>
@@ -2363,7 +2246,6 @@ public sealed class SettlCurrency : StringField
     public SettlCurrency(string val)
         : base(Tags.SettlCurrency, val) {}
 }
-
 
 /// <summary>
 /// ForexReq Field
@@ -2382,7 +2264,6 @@ public sealed class ForexReq : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// OrigSendingTime Field
 /// </summary>
@@ -2400,7 +2281,6 @@ public sealed class OrigSendingTime : DateTimeField
     public OrigSendingTime(DateTime val, TimePrecision precision)
         : base(Tags.OrigSendingTime, val, precision) {}
 }
-
 
 /// <summary>
 /// GapFillFlag Field
@@ -2421,7 +2301,6 @@ public sealed class GapFillFlag : BooleanField
     public const Boolean SEQUENCE_RESET_IGNORE_MSGSEQNUM = false;
 }
 
-
 /// <summary>
 /// NoExecs Field
 /// </summary>
@@ -2434,7 +2313,6 @@ public sealed class NoExecs : IntField
     public NoExecs(int val)
         : base(Tags.NoExecs, val) {}
 }
-
 
 /// <summary>
 /// CxlType Field
@@ -2453,7 +2331,6 @@ public sealed class CxlType : CharField
     public const char FULL_REMAINING_QUANTITY = 'F';
 }
 
-
 /// <summary>
 /// ExpireTime Field
 /// </summary>
@@ -2471,7 +2348,6 @@ public sealed class ExpireTime : DateTimeField
     public ExpireTime(DateTime val, TimePrecision precision)
         : base(Tags.ExpireTime, val, precision) {}
 }
-
 
 /// <summary>
 /// DKReason Field
@@ -2495,7 +2371,6 @@ public sealed class DKReason : CharField
     public const char OTHER = 'Z';
 }
 
-
 /// <summary>
 /// DeliverToCompID Field
 /// </summary>
@@ -2509,7 +2384,6 @@ public sealed class DeliverToCompID : StringField
         : base(Tags.DeliverToCompID, val) {}
 }
 
-
 /// <summary>
 /// DeliverToSubID Field
 /// </summary>
@@ -2522,7 +2396,6 @@ public sealed class DeliverToSubID : StringField
     public DeliverToSubID(string val)
         : base(Tags.DeliverToSubID, val) {}
 }
-
 
 /// <summary>
 /// IOINaturalFlag Field
@@ -2543,7 +2416,6 @@ public sealed class IOINaturalFlag : BooleanField
     public const Boolean NOT_NATURAL = false;
 }
 
-
 /// <summary>
 /// QuoteReqID Field
 /// </summary>
@@ -2556,7 +2428,6 @@ public sealed class QuoteReqID : StringField
     public QuoteReqID(string val)
         : base(Tags.QuoteReqID, val) {}
 }
-
 
 /// <summary>
 /// BidPx Field
@@ -2571,7 +2442,6 @@ public sealed class BidPx : DecimalField
         : base(Tags.BidPx, val) {}
 }
 
-
 /// <summary>
 /// OfferPx Field
 /// </summary>
@@ -2584,7 +2454,6 @@ public sealed class OfferPx : DecimalField
     public OfferPx(Decimal val)
         : base(Tags.OfferPx, val) {}
 }
-
 
 /// <summary>
 /// BidSize Field
@@ -2599,7 +2468,6 @@ public sealed class BidSize : DecimalField
         : base(Tags.BidSize, val) {}
 }
 
-
 /// <summary>
 /// OfferSize Field
 /// </summary>
@@ -2612,7 +2480,6 @@ public sealed class OfferSize : DecimalField
     public OfferSize(Decimal val)
         : base(Tags.OfferSize, val) {}
 }
-
 
 /// <summary>
 /// NoMiscFees Field
@@ -2627,7 +2494,6 @@ public sealed class NoMiscFees : IntField
         : base(Tags.NoMiscFees, val) {}
 }
 
-
 /// <summary>
 /// MiscFeeAmt Field
 /// </summary>
@@ -2641,7 +2507,6 @@ public sealed class MiscFeeAmt : DecimalField
         : base(Tags.MiscFeeAmt, val) {}
 }
 
-
 /// <summary>
 /// MiscFeeCurr Field
 /// </summary>
@@ -2654,7 +2519,6 @@ public sealed class MiscFeeCurr : StringField
     public MiscFeeCurr(string val)
         : base(Tags.MiscFeeCurr, val) {}
 }
-
 
 /// <summary>
 /// MiscFeeType Field
@@ -2685,7 +2549,6 @@ public sealed class MiscFeeType : StringField
     public const string SECURITY_LENDING = "14";
 }
 
-
 /// <summary>
 /// PrevClosePx Field
 /// </summary>
@@ -2698,7 +2561,6 @@ public sealed class PrevClosePx : DecimalField
     public PrevClosePx(Decimal val)
         : base(Tags.PrevClosePx, val) {}
 }
-
 
 /// <summary>
 /// ResetSeqNumFlag Field
@@ -2718,7 +2580,6 @@ public sealed class ResetSeqNumFlag : BooleanField
     public const Boolean YES_RESET_SEQUENCE_NUMBERS = true;
 }
 
-
 /// <summary>
 /// SenderLocationID Field
 /// </summary>
@@ -2731,7 +2592,6 @@ public sealed class SenderLocationID : StringField
     public SenderLocationID(string val)
         : base(Tags.SenderLocationID, val) {}
 }
-
 
 /// <summary>
 /// TargetLocationID Field
@@ -2746,7 +2606,6 @@ public sealed class TargetLocationID : StringField
         : base(Tags.TargetLocationID, val) {}
 }
 
-
 /// <summary>
 /// OnBehalfOfLocationID Field
 /// </summary>
@@ -2759,7 +2618,6 @@ public sealed class OnBehalfOfLocationID : StringField
     public OnBehalfOfLocationID(string val)
         : base(Tags.OnBehalfOfLocationID, val) {}
 }
-
 
 /// <summary>
 /// DeliverToLocationID Field
@@ -2774,7 +2632,6 @@ public sealed class DeliverToLocationID : StringField
         : base(Tags.DeliverToLocationID, val) {}
 }
 
-
 /// <summary>
 /// NoRelatedSym Field
 /// </summary>
@@ -2787,7 +2644,6 @@ public sealed class NoRelatedSym : IntField
     public NoRelatedSym(int val)
         : base(Tags.NoRelatedSym, val) {}
 }
-
 
 /// <summary>
 /// Subject Field
@@ -2802,7 +2658,6 @@ public sealed class Subject : StringField
         : base(Tags.Subject, val) {}
 }
 
-
 /// <summary>
 /// Headline Field
 /// </summary>
@@ -2816,7 +2671,6 @@ public sealed class Headline : StringField
         : base(Tags.Headline, val) {}
 }
 
-
 /// <summary>
 /// URLLink Field
 /// </summary>
@@ -2829,7 +2683,6 @@ public sealed class URLLink : StringField
     public URLLink(string val)
         : base(Tags.URLLink, val) {}
 }
-
 
 /// <summary>
 /// ExecType Field
@@ -2871,7 +2724,6 @@ public sealed class ExecType : CharField
     public const char PENDING_CANCELREPLACE = '6';
 }
 
-
 /// <summary>
 /// LeavesQty Field
 /// </summary>
@@ -2884,7 +2736,6 @@ public sealed class LeavesQty : DecimalField
     public LeavesQty(Decimal val)
         : base(Tags.LeavesQty, val) {}
 }
-
 
 /// <summary>
 /// CashOrderQty Field
@@ -2899,7 +2750,6 @@ public sealed class CashOrderQty : DecimalField
         : base(Tags.CashOrderQty, val) {}
 }
 
-
 /// <summary>
 /// AllocAvgPx Field
 /// </summary>
@@ -2912,7 +2762,6 @@ public sealed class AllocAvgPx : DecimalField
     public AllocAvgPx(Decimal val)
         : base(Tags.AllocAvgPx, val) {}
 }
-
 
 /// <summary>
 /// AllocNetMoney Field
@@ -2927,7 +2776,6 @@ public sealed class AllocNetMoney : DecimalField
         : base(Tags.AllocNetMoney, val) {}
 }
 
-
 /// <summary>
 /// SettlCurrFxRate Field
 /// </summary>
@@ -2940,7 +2788,6 @@ public sealed class SettlCurrFxRate : DecimalField
     public SettlCurrFxRate(Decimal val)
         : base(Tags.SettlCurrFxRate, val) {}
 }
-
 
 /// <summary>
 /// SettlCurrFxRateCalc Field
@@ -2959,7 +2806,6 @@ public sealed class SettlCurrFxRateCalc : CharField
     public const char DIVIDE = 'D';
 }
 
-
 /// <summary>
 /// NumDaysInterest Field
 /// </summary>
@@ -2972,7 +2818,6 @@ public sealed class NumDaysInterest : IntField
     public NumDaysInterest(int val)
         : base(Tags.NumDaysInterest, val) {}
 }
-
 
 /// <summary>
 /// AccruedInterestRate Field
@@ -2987,7 +2832,6 @@ public sealed class AccruedInterestRate : DecimalField
         : base(Tags.AccruedInterestRate, val) {}
 }
 
-
 /// <summary>
 /// AccruedInterestAmt Field
 /// </summary>
@@ -3000,7 +2844,6 @@ public sealed class AccruedInterestAmt : DecimalField
     public AccruedInterestAmt(Decimal val)
         : base(Tags.AccruedInterestAmt, val) {}
 }
-
 
 /// <summary>
 /// SettlInstMode Field
@@ -3023,7 +2866,6 @@ public sealed class SettlInstMode : CharField
     public const char REQUEST_REJECT = '5';
 }
 
-
 /// <summary>
 /// AllocText Field
 /// </summary>
@@ -3037,7 +2879,6 @@ public sealed class AllocText : StringField
         : base(Tags.AllocText, val) {}
 }
 
-
 /// <summary>
 /// SettlInstID Field
 /// </summary>
@@ -3050,7 +2891,6 @@ public sealed class SettlInstID : StringField
     public SettlInstID(string val)
         : base(Tags.SettlInstID, val) {}
 }
-
 
 /// <summary>
 /// SettlInstTransType Field
@@ -3071,7 +2911,6 @@ public sealed class SettlInstTransType : CharField
     public const char RESTATE = 'T';
 }
 
-
 /// <summary>
 /// EmailThreadID Field
 /// </summary>
@@ -3084,7 +2923,6 @@ public sealed class EmailThreadID : StringField
     public EmailThreadID(string val)
         : base(Tags.EmailThreadID, val) {}
 }
-
 
 /// <summary>
 /// SettlInstSource Field
@@ -3105,7 +2943,6 @@ public sealed class SettlInstSource : CharField
     public const char BROKER = '1';
     public const char INSTITUTION = '2';
 }
-
 
 /// <summary>
 /// SettlLocation Field
@@ -3130,7 +2967,6 @@ public sealed class SettlLocation : StringField
     public const string EUROCLEAR = "EUR";
     public const string PARTICIPANT_TRUST_COMPANY_ISO_COUNTRY = "PTC";
 }
-
 
 /// <summary>
 /// SecurityType Field
@@ -3294,7 +3130,6 @@ public sealed class SecurityType : StringField
     public const string MORTGAGE_PRINCIPLE_ONLY = "MPO";
 }
 
-
 /// <summary>
 /// EffectiveTime Field
 /// </summary>
@@ -3312,7 +3147,6 @@ public sealed class EffectiveTime : DateTimeField
     public EffectiveTime(DateTime val, TimePrecision precision)
         : base(Tags.EffectiveTime, val, precision) {}
 }
-
 
 /// <summary>
 /// StandInstDbType Field
@@ -3334,7 +3168,6 @@ public sealed class StandInstDbType : IntField
     public const int ACCOUNTNET = 4;
 }
 
-
 /// <summary>
 /// StandInstDbName Field
 /// </summary>
@@ -3348,7 +3181,6 @@ public sealed class StandInstDbName : StringField
         : base(Tags.StandInstDbName, val) {}
 }
 
-
 /// <summary>
 /// StandInstDbID Field
 /// </summary>
@@ -3361,7 +3193,6 @@ public sealed class StandInstDbID : StringField
     public StandInstDbID(string val)
         : base(Tags.StandInstDbID, val) {}
 }
-
 
 /// <summary>
 /// SettlDeliveryType Field
@@ -3384,7 +3215,6 @@ public sealed class SettlDeliveryType : IntField
     public const int FREE = 1;
 }
 
-
 /// <summary>
 /// SettlDepositoryCode Field
 /// </summary>
@@ -3397,7 +3227,6 @@ public sealed class SettlDepositoryCode : StringField
     public SettlDepositoryCode(string val)
         : base(Tags.SettlDepositoryCode, val) {}
 }
-
 
 /// <summary>
 /// SettlBrkrCode Field
@@ -3412,7 +3241,6 @@ public sealed class SettlBrkrCode : StringField
         : base(Tags.SettlBrkrCode, val) {}
 }
 
-
 /// <summary>
 /// SettlInstCode Field
 /// </summary>
@@ -3425,7 +3253,6 @@ public sealed class SettlInstCode : StringField
     public SettlInstCode(string val)
         : base(Tags.SettlInstCode, val) {}
 }
-
 
 /// <summary>
 /// SecuritySettlAgentName Field
@@ -3440,7 +3267,6 @@ public sealed class SecuritySettlAgentName : StringField
         : base(Tags.SecuritySettlAgentName, val) {}
 }
 
-
 /// <summary>
 /// SecuritySettlAgentCode Field
 /// </summary>
@@ -3453,7 +3279,6 @@ public sealed class SecuritySettlAgentCode : StringField
     public SecuritySettlAgentCode(string val)
         : base(Tags.SecuritySettlAgentCode, val) {}
 }
-
 
 /// <summary>
 /// SecuritySettlAgentAcctNum Field
@@ -3468,7 +3293,6 @@ public sealed class SecuritySettlAgentAcctNum : StringField
         : base(Tags.SecuritySettlAgentAcctNum, val) {}
 }
 
-
 /// <summary>
 /// SecuritySettlAgentAcctName Field
 /// </summary>
@@ -3481,7 +3305,6 @@ public sealed class SecuritySettlAgentAcctName : StringField
     public SecuritySettlAgentAcctName(string val)
         : base(Tags.SecuritySettlAgentAcctName, val) {}
 }
-
 
 /// <summary>
 /// SecuritySettlAgentContactName Field
@@ -3496,7 +3319,6 @@ public sealed class SecuritySettlAgentContactName : StringField
         : base(Tags.SecuritySettlAgentContactName, val) {}
 }
 
-
 /// <summary>
 /// SecuritySettlAgentContactPhone Field
 /// </summary>
@@ -3509,7 +3331,6 @@ public sealed class SecuritySettlAgentContactPhone : StringField
     public SecuritySettlAgentContactPhone(string val)
         : base(Tags.SecuritySettlAgentContactPhone, val) {}
 }
-
 
 /// <summary>
 /// CashSettlAgentName Field
@@ -3524,7 +3345,6 @@ public sealed class CashSettlAgentName : StringField
         : base(Tags.CashSettlAgentName, val) {}
 }
 
-
 /// <summary>
 /// CashSettlAgentCode Field
 /// </summary>
@@ -3537,7 +3357,6 @@ public sealed class CashSettlAgentCode : StringField
     public CashSettlAgentCode(string val)
         : base(Tags.CashSettlAgentCode, val) {}
 }
-
 
 /// <summary>
 /// CashSettlAgentAcctNum Field
@@ -3552,7 +3371,6 @@ public sealed class CashSettlAgentAcctNum : StringField
         : base(Tags.CashSettlAgentAcctNum, val) {}
 }
 
-
 /// <summary>
 /// CashSettlAgentAcctName Field
 /// </summary>
@@ -3565,7 +3383,6 @@ public sealed class CashSettlAgentAcctName : StringField
     public CashSettlAgentAcctName(string val)
         : base(Tags.CashSettlAgentAcctName, val) {}
 }
-
 
 /// <summary>
 /// CashSettlAgentContactName Field
@@ -3580,7 +3397,6 @@ public sealed class CashSettlAgentContactName : StringField
         : base(Tags.CashSettlAgentContactName, val) {}
 }
 
-
 /// <summary>
 /// CashSettlAgentContactPhone Field
 /// </summary>
@@ -3593,7 +3409,6 @@ public sealed class CashSettlAgentContactPhone : StringField
     public CashSettlAgentContactPhone(string val)
         : base(Tags.CashSettlAgentContactPhone, val) {}
 }
-
 
 /// <summary>
 /// BidSpotRate Field
@@ -3608,7 +3423,6 @@ public sealed class BidSpotRate : DecimalField
         : base(Tags.BidSpotRate, val) {}
 }
 
-
 /// <summary>
 /// BidForwardPoints Field
 /// </summary>
@@ -3621,7 +3435,6 @@ public sealed class BidForwardPoints : DecimalField
     public BidForwardPoints(Decimal val)
         : base(Tags.BidForwardPoints, val) {}
 }
-
 
 /// <summary>
 /// OfferSpotRate Field
@@ -3636,7 +3449,6 @@ public sealed class OfferSpotRate : DecimalField
         : base(Tags.OfferSpotRate, val) {}
 }
 
-
 /// <summary>
 /// OfferForwardPoints Field
 /// </summary>
@@ -3649,7 +3461,6 @@ public sealed class OfferForwardPoints : DecimalField
     public OfferForwardPoints(Decimal val)
         : base(Tags.OfferForwardPoints, val) {}
 }
-
 
 /// <summary>
 /// OrderQty2 Field
@@ -3664,7 +3475,6 @@ public sealed class OrderQty2 : DecimalField
         : base(Tags.OrderQty2, val) {}
 }
 
-
 /// <summary>
 /// FutSettDate2 Field
 /// </summary>
@@ -3677,7 +3487,6 @@ public sealed class FutSettDate2 : StringField
     public FutSettDate2(string val)
         : base(Tags.FutSettDate2, val) {}
 }
-
 
 /// <summary>
 /// LastSpotRate Field
@@ -3692,7 +3501,6 @@ public sealed class LastSpotRate : DecimalField
         : base(Tags.LastSpotRate, val) {}
 }
 
-
 /// <summary>
 /// LastForwardPoints Field
 /// </summary>
@@ -3706,7 +3514,6 @@ public sealed class LastForwardPoints : DecimalField
         : base(Tags.LastForwardPoints, val) {}
 }
 
-
 /// <summary>
 /// AllocLinkID Field
 /// </summary>
@@ -3719,7 +3526,6 @@ public sealed class AllocLinkID : StringField
     public AllocLinkID(string val)
         : base(Tags.AllocLinkID, val) {}
 }
-
 
 /// <summary>
 /// AllocLinkType Field
@@ -3740,7 +3546,6 @@ public sealed class AllocLinkType : IntField
     public const int F_X_SWAP = 1;
 }
 
-
 /// <summary>
 /// SecondaryOrderID Field
 /// </summary>
@@ -3753,7 +3558,6 @@ public sealed class SecondaryOrderID : StringField
     public SecondaryOrderID(string val)
         : base(Tags.SecondaryOrderID, val) {}
 }
-
 
 /// <summary>
 /// NoIOIQualifiers Field
@@ -3768,7 +3572,6 @@ public sealed class NoIOIQualifiers : IntField
         : base(Tags.NoIOIQualifiers, val) {}
 }
 
-
 /// <summary>
 /// MaturityMonthYear Field
 /// </summary>
@@ -3781,7 +3584,6 @@ public sealed class MaturityMonthYear : StringField
     public MaturityMonthYear(string val)
         : base(Tags.MaturityMonthYear, val) {}
 }
-
 
 /// <summary>
 /// PutOrCall Field
@@ -3800,7 +3602,6 @@ public sealed class PutOrCall : IntField
     public const int CALL = 1;
 }
 
-
 /// <summary>
 /// StrikePrice Field
 /// </summary>
@@ -3813,7 +3614,6 @@ public sealed class StrikePrice : DecimalField
     public StrikePrice(Decimal val)
         : base(Tags.StrikePrice, val) {}
 }
-
 
 /// <summary>
 /// CoveredOrUncovered Field
@@ -3832,7 +3632,6 @@ public sealed class CoveredOrUncovered : IntField
     public const int UNCOVERED = 1;
 }
 
-
 /// <summary>
 /// CustomerOrFirm Field
 /// </summary>
@@ -3850,7 +3649,6 @@ public sealed class CustomerOrFirm : IntField
     public const int FIRM = 1;
 }
 
-
 /// <summary>
 /// MaturityDay Field
 /// </summary>
@@ -3863,7 +3661,6 @@ public sealed class MaturityDay : StringField
     public MaturityDay(string val)
         : base(Tags.MaturityDay, val) {}
 }
-
 
 /// <summary>
 /// OptAttribute Field
@@ -3878,7 +3675,6 @@ public sealed class OptAttribute : CharField
         : base(Tags.OptAttribute, val) {}
 }
 
-
 /// <summary>
 /// SecurityExchange Field
 /// </summary>
@@ -3891,7 +3687,6 @@ public sealed class SecurityExchange : StringField
     public SecurityExchange(string val)
         : base(Tags.SecurityExchange, val) {}
 }
-
 
 /// <summary>
 /// NotifyBrokerOfCredit Field
@@ -3912,7 +3707,6 @@ public sealed class NotifyBrokerOfCredit : BooleanField
     public const Boolean DETAILS_SHOULD_NOT_BE_COMMUNICATED = false;
 }
 
-
 /// <summary>
 /// AllocHandlInst Field
 /// </summary>
@@ -3931,7 +3725,6 @@ public sealed class AllocHandlInst : IntField
     public const int FORWARD_AND_MATCH = 3;
 }
 
-
 /// <summary>
 /// MaxShow Field
 /// </summary>
@@ -3944,7 +3737,6 @@ public sealed class MaxShow : DecimalField
     public MaxShow(Decimal val)
         : base(Tags.MaxShow, val) {}
 }
-
 
 /// <summary>
 /// PegDifference Field
@@ -3959,7 +3751,6 @@ public sealed class PegDifference : DecimalField
         : base(Tags.PegDifference, val) {}
 }
 
-
 /// <summary>
 /// TotNoOrders Field
 /// </summary>
@@ -3972,7 +3763,6 @@ public sealed class TotNoOrders : IntField
     public TotNoOrders(int val)
         : base(Tags.TotNoOrders, val) {}
 }
-
 
 /// <summary>
 /// XmlDataLen Field
@@ -3987,7 +3777,6 @@ public sealed class XmlDataLen : IntField
         : base(Tags.XmlDataLen, val) {}
 }
 
-
 /// <summary>
 /// XmlData Field
 /// </summary>
@@ -4000,7 +3789,6 @@ public sealed class XmlData : StringField
     public XmlData(string val)
         : base(Tags.XmlData, val) {}
 }
-
 
 /// <summary>
 /// SettlInstRefID Field
@@ -4015,7 +3803,6 @@ public sealed class SettlInstRefID : StringField
         : base(Tags.SettlInstRefID, val) {}
 }
 
-
 /// <summary>
 /// NoRoutingIDs Field
 /// </summary>
@@ -4028,7 +3815,6 @@ public sealed class NoRoutingIDs : IntField
     public NoRoutingIDs(int val)
         : base(Tags.NoRoutingIDs, val) {}
 }
-
 
 /// <summary>
 /// RoutingType Field
@@ -4049,7 +3835,6 @@ public sealed class RoutingType : IntField
     public const int BLOCK_LIST = 4;
 }
 
-
 /// <summary>
 /// RoutingID Field
 /// </summary>
@@ -4063,7 +3848,6 @@ public sealed class RoutingID : StringField
         : base(Tags.RoutingID, val) {}
 }
 
-
 /// <summary>
 /// SpreadToBenchmark Field
 /// </summary>
@@ -4076,7 +3860,6 @@ public sealed class SpreadToBenchmark : DecimalField
     public SpreadToBenchmark(Decimal val)
         : base(Tags.SpreadToBenchmark, val) {}
 }
-
 
 /// <summary>
 /// Benchmark Field
@@ -4107,7 +3890,6 @@ public sealed class Benchmark : CharField
     public const char SIXMOLIBOR = '9';
 }
 
-
 /// <summary>
 /// CouponRate Field
 /// </summary>
@@ -4120,7 +3902,6 @@ public sealed class CouponRate : DecimalField
     public CouponRate(Decimal val)
         : base(Tags.CouponRate, val) {}
 }
-
 
 /// <summary>
 /// ContractMultiplier Field
@@ -4135,7 +3916,6 @@ public sealed class ContractMultiplier : DecimalField
         : base(Tags.ContractMultiplier, val) {}
 }
 
-
 /// <summary>
 /// MDReqID Field
 /// </summary>
@@ -4148,7 +3928,6 @@ public sealed class MDReqID : StringField
     public MDReqID(string val)
         : base(Tags.MDReqID, val) {}
 }
-
 
 /// <summary>
 /// SubscriptionRequestType Field
@@ -4169,7 +3948,6 @@ public sealed class SubscriptionRequestType : CharField
     public const char DISABLE_PREVIOUS = '2';
 }
 
-
 /// <summary>
 /// MarketDepth Field
 /// </summary>
@@ -4182,7 +3960,6 @@ public sealed class MarketDepth : IntField
     public MarketDepth(int val)
         : base(Tags.MarketDepth, val) {}
 }
-
 
 /// <summary>
 /// MDUpdateType Field
@@ -4200,7 +3977,6 @@ public sealed class MDUpdateType : IntField
     public const int FULL_REFRESH = 0;
     public const int INCREMENTAL_REFRESH = 1;
 }
-
 
 /// <summary>
 /// AggregatedBook Field
@@ -4221,7 +3997,6 @@ public sealed class AggregatedBook : BooleanField
     public const Boolean MULTIPLE_ENTRIES_PER_SIDE_PER_PRICE_ALLOWED = false;
 }
 
-
 /// <summary>
 /// NoMDEntryTypes Field
 /// </summary>
@@ -4235,7 +4010,6 @@ public sealed class NoMDEntryTypes : IntField
         : base(Tags.NoMDEntryTypes, val) {}
 }
 
-
 /// <summary>
 /// NoMDEntries Field
 /// </summary>
@@ -4248,7 +4022,6 @@ public sealed class NoMDEntries : IntField
     public NoMDEntries(int val)
         : base(Tags.NoMDEntries, val) {}
 }
-
 
 /// <summary>
 /// MDEntryType Field
@@ -4301,7 +4074,6 @@ public sealed class MDEntryType : CharField
     public const char CASH_RATE = 'X';
 }
 
-
 /// <summary>
 /// MDEntryPx Field
 /// </summary>
@@ -4314,7 +4086,6 @@ public sealed class MDEntryPx : DecimalField
     public MDEntryPx(Decimal val)
         : base(Tags.MDEntryPx, val) {}
 }
-
 
 /// <summary>
 /// MDEntrySize Field
@@ -4329,7 +4100,6 @@ public sealed class MDEntrySize : DecimalField
         : base(Tags.MDEntrySize, val) {}
 }
 
-
 /// <summary>
 /// MDEntryDate Field
 /// </summary>
@@ -4342,7 +4112,6 @@ public sealed class MDEntryDate : DateOnlyField
     public MDEntryDate(DateOnly val)
         : base(Tags.MDEntryDate, val) {}
 }
-
 
 /// <summary>
 /// MDEntryTime Field
@@ -4358,7 +4127,6 @@ public sealed class MDEntryTime : TimeOnlyField
     public MDEntryTime(TimeOnly val, TimePrecision precision)
         : base(Tags.MDEntryTime, val, precision) {}
 }
-
 
 /// <summary>
 /// TickDirection Field
@@ -4381,7 +4149,6 @@ public sealed class TickDirection : CharField
     public const char ZEROMINUS_TICK = '3';
 }
 
-
 /// <summary>
 /// MDMkt Field
 /// </summary>
@@ -4394,7 +4161,6 @@ public sealed class MDMkt : StringField
     public MDMkt(string val)
         : base(Tags.MDMkt, val) {}
 }
-
 
 /// <summary>
 /// QuoteCondition Field
@@ -4473,7 +4239,6 @@ public sealed class QuoteCondition : StringField
     public const string CLOSED = "B";
     public const string NONFIRM = "I";
 }
-
 
 /// <summary>
 /// TradeCondition Field
@@ -4572,7 +4337,6 @@ public sealed class TradeCondition : StringField
     public const string OPENING = "E";
 }
 
-
 /// <summary>
 /// MDEntryID Field
 /// </summary>
@@ -4585,7 +4349,6 @@ public sealed class MDEntryID : StringField
     public MDEntryID(string val)
         : base(Tags.MDEntryID, val) {}
 }
-
 
 /// <summary>
 /// MDUpdateAction Field
@@ -4608,7 +4371,6 @@ public sealed class MDUpdateAction : CharField
     public const char OVERLAY = '5';
 }
 
-
 /// <summary>
 /// MDEntryRefID Field
 /// </summary>
@@ -4621,7 +4383,6 @@ public sealed class MDEntryRefID : StringField
     public MDEntryRefID(string val)
         : base(Tags.MDEntryRefID, val) {}
 }
-
 
 /// <summary>
 /// MDReqRejReason Field
@@ -4652,7 +4413,6 @@ public sealed class MDReqRejReason : CharField
     public const char INSUFFICIENT_CREDIT = 'D';
 }
 
-
 /// <summary>
 /// MDEntryOriginator Field
 /// </summary>
@@ -4665,7 +4425,6 @@ public sealed class MDEntryOriginator : StringField
     public MDEntryOriginator(string val)
         : base(Tags.MDEntryOriginator, val) {}
 }
-
 
 /// <summary>
 /// LocationID Field
@@ -4680,7 +4439,6 @@ public sealed class LocationID : StringField
         : base(Tags.LocationID, val) {}
 }
 
-
 /// <summary>
 /// DeskID Field
 /// </summary>
@@ -4693,7 +4451,6 @@ public sealed class DeskID : StringField
     public DeskID(string val)
         : base(Tags.DeskID, val) {}
 }
-
 
 /// <summary>
 /// DeleteReason Field
@@ -4713,7 +4470,6 @@ public sealed class DeleteReason : CharField
     public const char CANCELATION_TRADE_BUST = '0';
     public const char CANCELATION = '0';
 }
-
 
 /// <summary>
 /// OpenCloseSettleFlag Field
@@ -4737,7 +4493,6 @@ public sealed class OpenCloseSettleFlag : StringField
     public const string SESSION_OPEN_CLOSE__SETTLEMENT_PRICE = "1";
 }
 
-
 /// <summary>
 /// SellerDays Field
 /// </summary>
@@ -4750,7 +4505,6 @@ public sealed class SellerDays : IntField
     public SellerDays(int val)
         : base(Tags.SellerDays, val) {}
 }
-
 
 /// <summary>
 /// MDEntryBuyer Field
@@ -4765,7 +4519,6 @@ public sealed class MDEntryBuyer : StringField
         : base(Tags.MDEntryBuyer, val) {}
 }
 
-
 /// <summary>
 /// MDEntrySeller Field
 /// </summary>
@@ -4779,7 +4532,6 @@ public sealed class MDEntrySeller : StringField
         : base(Tags.MDEntrySeller, val) {}
 }
 
-
 /// <summary>
 /// MDEntryPositionNo Field
 /// </summary>
@@ -4792,7 +4544,6 @@ public sealed class MDEntryPositionNo : IntField
     public MDEntryPositionNo(int val)
         : base(Tags.MDEntryPositionNo, val) {}
 }
-
 
 /// <summary>
 /// FinancialStatus Field
@@ -4811,7 +4562,6 @@ public sealed class FinancialStatus : StringField
     public const string PENDING_DELISTING = "2";
     public const string RESTRICTED = "3";
 }
-
 
 /// <summary>
 /// CorporateAction Field
@@ -4855,7 +4605,6 @@ public sealed class CorporateAction : StringField
     public const string EXINTEREST = "E";
 }
 
-
 /// <summary>
 /// DefBidSize Field
 /// </summary>
@@ -4868,7 +4617,6 @@ public sealed class DefBidSize : DecimalField
     public DefBidSize(Decimal val)
         : base(Tags.DefBidSize, val) {}
 }
-
 
 /// <summary>
 /// DefOfferSize Field
@@ -4883,7 +4631,6 @@ public sealed class DefOfferSize : DecimalField
         : base(Tags.DefOfferSize, val) {}
 }
 
-
 /// <summary>
 /// NoQuoteEntries Field
 /// </summary>
@@ -4896,7 +4643,6 @@ public sealed class NoQuoteEntries : IntField
     public NoQuoteEntries(int val)
         : base(Tags.NoQuoteEntries, val) {}
 }
-
 
 /// <summary>
 /// NoQuoteSets Field
@@ -4911,7 +4657,6 @@ public sealed class NoQuoteSets : IntField
         : base(Tags.NoQuoteSets, val) {}
 }
 
-
 /// <summary>
 /// QuoteAckStatus Field
 /// </summary>
@@ -4924,7 +4669,6 @@ public sealed class QuoteAckStatus : IntField
     public QuoteAckStatus(int val)
         : base(Tags.QuoteAckStatus, val) {}
 }
-
 
 /// <summary>
 /// QuoteCancelType Field
@@ -4951,7 +4695,6 @@ public sealed class QuoteCancelType : IntField
     public const int CANCEL_FOR_UNDERLYING_SYMBOL = 3;
 }
 
-
 /// <summary>
 /// QuoteEntryID Field
 /// </summary>
@@ -4964,7 +4707,6 @@ public sealed class QuoteEntryID : StringField
     public QuoteEntryID(string val)
         : base(Tags.QuoteEntryID, val) {}
 }
-
 
 /// <summary>
 /// QuoteRejectReason Field
@@ -4997,7 +4739,6 @@ public sealed class QuoteRejectReason : IntField
     public const int DUPLICATE_QUOTE_7 = 6;
 }
 
-
 /// <summary>
 /// QuoteResponseLevel Field
 /// </summary>
@@ -5018,7 +4759,6 @@ public sealed class QuoteResponseLevel : IntField
     public const int ACKNOWLEDGE_EACH_QUOTE_MESSAGES = 2;
 }
 
-
 /// <summary>
 /// QuoteSetID Field
 /// </summary>
@@ -5031,7 +4771,6 @@ public sealed class QuoteSetID : StringField
     public QuoteSetID(string val)
         : base(Tags.QuoteSetID, val) {}
 }
-
 
 /// <summary>
 /// QuoteRequestType Field
@@ -5050,7 +4789,6 @@ public sealed class QuoteRequestType : IntField
     public const int AUTOMATIC = 2;
 }
 
-
 /// <summary>
 /// TotQuoteEntries Field
 /// </summary>
@@ -5063,7 +4801,6 @@ public sealed class TotQuoteEntries : IntField
     public TotQuoteEntries(int val)
         : base(Tags.TotQuoteEntries, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingIDSource Field
@@ -5078,7 +4815,6 @@ public sealed class UnderlyingIDSource : StringField
         : base(Tags.UnderlyingIDSource, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingIssuer Field
 /// </summary>
@@ -5091,7 +4827,6 @@ public sealed class UnderlyingIssuer : StringField
     public UnderlyingIssuer(string val)
         : base(Tags.UnderlyingIssuer, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSecurityDesc Field
@@ -5106,7 +4841,6 @@ public sealed class UnderlyingSecurityDesc : StringField
         : base(Tags.UnderlyingSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSecurityExchange Field
 /// </summary>
@@ -5119,7 +4853,6 @@ public sealed class UnderlyingSecurityExchange : StringField
     public UnderlyingSecurityExchange(string val)
         : base(Tags.UnderlyingSecurityExchange, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSecurityID Field
@@ -5134,7 +4867,6 @@ public sealed class UnderlyingSecurityID : StringField
         : base(Tags.UnderlyingSecurityID, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSecurityType Field
 /// </summary>
@@ -5147,7 +4879,6 @@ public sealed class UnderlyingSecurityType : StringField
     public UnderlyingSecurityType(string val)
         : base(Tags.UnderlyingSecurityType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSymbol Field
@@ -5162,7 +4893,6 @@ public sealed class UnderlyingSymbol : StringField
         : base(Tags.UnderlyingSymbol, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSymbolSfx Field
 /// </summary>
@@ -5175,7 +4905,6 @@ public sealed class UnderlyingSymbolSfx : StringField
     public UnderlyingSymbolSfx(string val)
         : base(Tags.UnderlyingSymbolSfx, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingMaturityMonthYear Field
@@ -5190,7 +4919,6 @@ public sealed class UnderlyingMaturityMonthYear : StringField
         : base(Tags.UnderlyingMaturityMonthYear, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingMaturityDay Field
 /// </summary>
@@ -5203,7 +4931,6 @@ public sealed class UnderlyingMaturityDay : StringField
     public UnderlyingMaturityDay(string val)
         : base(Tags.UnderlyingMaturityDay, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingPutOrCall Field
@@ -5222,7 +4949,6 @@ public sealed class UnderlyingPutOrCall : IntField
     public const int CALL = 1;
 }
 
-
 /// <summary>
 /// UnderlyingStrikePrice Field
 /// </summary>
@@ -5235,7 +4961,6 @@ public sealed class UnderlyingStrikePrice : DecimalField
     public UnderlyingStrikePrice(Decimal val)
         : base(Tags.UnderlyingStrikePrice, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingOptAttribute Field
@@ -5250,7 +4975,6 @@ public sealed class UnderlyingOptAttribute : CharField
         : base(Tags.UnderlyingOptAttribute, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingCurrency Field
 /// </summary>
@@ -5263,7 +4987,6 @@ public sealed class UnderlyingCurrency : StringField
     public UnderlyingCurrency(string val)
         : base(Tags.UnderlyingCurrency, val) {}
 }
-
 
 /// <summary>
 /// RatioQty Field
@@ -5278,7 +5001,6 @@ public sealed class RatioQty : DecimalField
         : base(Tags.RatioQty, val) {}
 }
 
-
 /// <summary>
 /// SecurityReqID Field
 /// </summary>
@@ -5291,7 +5013,6 @@ public sealed class SecurityReqID : StringField
     public SecurityReqID(string val)
         : base(Tags.SecurityReqID, val) {}
 }
-
 
 /// <summary>
 /// SecurityRequestType Field
@@ -5318,7 +5039,6 @@ public sealed class SecurityRequestType : IntField
     public const int MARKETID_OR_MARKETID_PLUS_MARKETSEGMENTID = 9;
 }
 
-
 /// <summary>
 /// SecurityResponseID Field
 /// </summary>
@@ -5331,7 +5051,6 @@ public sealed class SecurityResponseID : StringField
     public SecurityResponseID(string val)
         : base(Tags.SecurityResponseID, val) {}
 }
-
 
 /// <summary>
 /// SecurityResponseType Field
@@ -5355,7 +5074,6 @@ public sealed class SecurityResponseType : IntField
     public const int CAN_NOT_MATCH_SELECTION_CRITERIA = 6;
 }
 
-
 /// <summary>
 /// SecurityStatusReqID Field
 /// </summary>
@@ -5368,7 +5086,6 @@ public sealed class SecurityStatusReqID : StringField
     public SecurityStatusReqID(string val)
         : base(Tags.SecurityStatusReqID, val) {}
 }
-
 
 /// <summary>
 /// UnsolicitedIndicator Field
@@ -5388,7 +5105,6 @@ public sealed class UnsolicitedIndicator : BooleanField
     public const Boolean MESSAGE_IS_BEING_SENT_UNSOLICITED = true;
     public const Boolean MESSAGE_IS_BEING_SENT_AS_A_RESULT_OF_A_PRIOR_REQUEST = false;
 }
-
 
 /// <summary>
 /// SecurityTradingStatus Field
@@ -5437,7 +5153,6 @@ public sealed class SecurityTradingStatus : IntField
     public const int ITS_PREOPENING = 14;
 }
 
-
 /// <summary>
 /// HaltReason Field
 /// </summary>
@@ -5459,7 +5174,6 @@ public sealed class HaltReason : CharField
     public const char ADDITIONAL_INFORMATION = 'M';
 }
 
-
 /// <summary>
 /// InViewOfCommon Field
 /// </summary>
@@ -5478,7 +5192,6 @@ public sealed class InViewOfCommon : BooleanField
     public const Boolean HALT_WAS_DUE_TO_COMMON_STOCK_BEING_HALTED = true;
     public const Boolean HALT_WAS_NOT_RELATED_TO_A_HALT_OF_THE_COMMON_STOCK = false;
 }
-
 
 /// <summary>
 /// DueToRelated Field
@@ -5499,7 +5212,6 @@ public sealed class DueToRelated : BooleanField
     public const Boolean HALT_WAS_NOT_RELATED_TO_A_HALT_OF_THE_RELATED_SECURITY = false;
 }
 
-
 /// <summary>
 /// BuyVolume Field
 /// </summary>
@@ -5512,7 +5224,6 @@ public sealed class BuyVolume : DecimalField
     public BuyVolume(Decimal val)
         : base(Tags.BuyVolume, val) {}
 }
-
 
 /// <summary>
 /// SellVolume Field
@@ -5527,7 +5238,6 @@ public sealed class SellVolume : DecimalField
         : base(Tags.SellVolume, val) {}
 }
 
-
 /// <summary>
 /// HighPx Field
 /// </summary>
@@ -5541,7 +5251,6 @@ public sealed class HighPx : DecimalField
         : base(Tags.HighPx, val) {}
 }
 
-
 /// <summary>
 /// LowPx Field
 /// </summary>
@@ -5554,7 +5263,6 @@ public sealed class LowPx : DecimalField
     public LowPx(Decimal val)
         : base(Tags.LowPx, val) {}
 }
-
 
 /// <summary>
 /// Adjustment Field
@@ -5574,7 +5282,6 @@ public sealed class Adjustment : IntField
     public const int CORRECTION = 3;
 }
 
-
 /// <summary>
 /// TradSesReqID Field
 /// </summary>
@@ -5587,7 +5294,6 @@ public sealed class TradSesReqID : StringField
     public TradSesReqID(string val)
         : base(Tags.TradSesReqID, val) {}
 }
-
 
 /// <summary>
 /// TradingSessionID Field
@@ -5610,7 +5316,6 @@ public sealed class TradingSessionID : StringField
     public const string AFTER_HOURS = "6";
 }
 
-
 /// <summary>
 /// ContraTrader Field
 /// </summary>
@@ -5623,7 +5328,6 @@ public sealed class ContraTrader : StringField
     public ContraTrader(string val)
         : base(Tags.ContraTrader, val) {}
 }
-
 
 /// <summary>
 /// TradSesMethod Field
@@ -5643,7 +5347,6 @@ public sealed class TradSesMethod : IntField
     public const int TWO_PARTY = 3;
 }
 
-
 /// <summary>
 /// TradSesMode Field
 /// </summary>
@@ -5661,7 +5364,6 @@ public sealed class TradSesMode : IntField
     public const int SIMULATED = 2;
     public const int PRODUCTION = 3;
 }
-
 
 /// <summary>
 /// TradSesStatus Field
@@ -5687,7 +5389,6 @@ public sealed class TradSesStatus : IntField
     public const int PRECLOSE = 5;
 }
 
-
 /// <summary>
 /// TradSesStartTime Field
 /// </summary>
@@ -5705,7 +5406,6 @@ public sealed class TradSesStartTime : DateTimeField
     public TradSesStartTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesStartTime, val, precision) {}
 }
-
 
 /// <summary>
 /// TradSesOpenTime Field
@@ -5725,7 +5425,6 @@ public sealed class TradSesOpenTime : DateTimeField
         : base(Tags.TradSesOpenTime, val, precision) {}
 }
 
-
 /// <summary>
 /// TradSesPreCloseTime Field
 /// </summary>
@@ -5743,7 +5442,6 @@ public sealed class TradSesPreCloseTime : DateTimeField
     public TradSesPreCloseTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesPreCloseTime, val, precision) {}
 }
-
 
 /// <summary>
 /// TradSesCloseTime Field
@@ -5763,7 +5461,6 @@ public sealed class TradSesCloseTime : DateTimeField
         : base(Tags.TradSesCloseTime, val, precision) {}
 }
 
-
 /// <summary>
 /// TradSesEndTime Field
 /// </summary>
@@ -5782,7 +5479,6 @@ public sealed class TradSesEndTime : DateTimeField
         : base(Tags.TradSesEndTime, val, precision) {}
 }
 
-
 /// <summary>
 /// NumberOfOrders Field
 /// </summary>
@@ -5795,7 +5491,6 @@ public sealed class NumberOfOrders : IntField
     public NumberOfOrders(int val)
         : base(Tags.NumberOfOrders, val) {}
 }
-
 
 /// <summary>
 /// MessageEncoding Field
@@ -5816,7 +5511,6 @@ public sealed class MessageEncoding : StringField
     public const string UTF_8 = "UTF-8";
 }
 
-
 /// <summary>
 /// EncodedIssuerLen Field
 /// </summary>
@@ -5829,7 +5523,6 @@ public sealed class EncodedIssuerLen : IntField
     public EncodedIssuerLen(int val)
         : base(Tags.EncodedIssuerLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedIssuer Field
@@ -5844,7 +5537,6 @@ public sealed class EncodedIssuer : StringField
         : base(Tags.EncodedIssuer, val) {}
 }
 
-
 /// <summary>
 /// EncodedSecurityDescLen Field
 /// </summary>
@@ -5857,7 +5549,6 @@ public sealed class EncodedSecurityDescLen : IntField
     public EncodedSecurityDescLen(int val)
         : base(Tags.EncodedSecurityDescLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedSecurityDesc Field
@@ -5872,7 +5563,6 @@ public sealed class EncodedSecurityDesc : StringField
         : base(Tags.EncodedSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// EncodedListExecInstLen Field
 /// </summary>
@@ -5885,7 +5575,6 @@ public sealed class EncodedListExecInstLen : IntField
     public EncodedListExecInstLen(int val)
         : base(Tags.EncodedListExecInstLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedListExecInst Field
@@ -5900,7 +5589,6 @@ public sealed class EncodedListExecInst : StringField
         : base(Tags.EncodedListExecInst, val) {}
 }
 
-
 /// <summary>
 /// EncodedTextLen Field
 /// </summary>
@@ -5913,7 +5601,6 @@ public sealed class EncodedTextLen : IntField
     public EncodedTextLen(int val)
         : base(Tags.EncodedTextLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedText Field
@@ -5928,7 +5615,6 @@ public sealed class EncodedText : StringField
         : base(Tags.EncodedText, val) {}
 }
 
-
 /// <summary>
 /// EncodedSubjectLen Field
 /// </summary>
@@ -5941,7 +5627,6 @@ public sealed class EncodedSubjectLen : IntField
     public EncodedSubjectLen(int val)
         : base(Tags.EncodedSubjectLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedSubject Field
@@ -5956,7 +5641,6 @@ public sealed class EncodedSubject : StringField
         : base(Tags.EncodedSubject, val) {}
 }
 
-
 /// <summary>
 /// EncodedHeadlineLen Field
 /// </summary>
@@ -5969,7 +5653,6 @@ public sealed class EncodedHeadlineLen : IntField
     public EncodedHeadlineLen(int val)
         : base(Tags.EncodedHeadlineLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedHeadline Field
@@ -5984,7 +5667,6 @@ public sealed class EncodedHeadline : StringField
         : base(Tags.EncodedHeadline, val) {}
 }
 
-
 /// <summary>
 /// EncodedAllocTextLen Field
 /// </summary>
@@ -5997,7 +5679,6 @@ public sealed class EncodedAllocTextLen : IntField
     public EncodedAllocTextLen(int val)
         : base(Tags.EncodedAllocTextLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedAllocText Field
@@ -6012,7 +5693,6 @@ public sealed class EncodedAllocText : StringField
         : base(Tags.EncodedAllocText, val) {}
 }
 
-
 /// <summary>
 /// EncodedUnderlyingIssuerLen Field
 /// </summary>
@@ -6025,7 +5705,6 @@ public sealed class EncodedUnderlyingIssuerLen : IntField
     public EncodedUnderlyingIssuerLen(int val)
         : base(Tags.EncodedUnderlyingIssuerLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedUnderlyingIssuer Field
@@ -6040,7 +5719,6 @@ public sealed class EncodedUnderlyingIssuer : StringField
         : base(Tags.EncodedUnderlyingIssuer, val) {}
 }
 
-
 /// <summary>
 /// EncodedUnderlyingSecurityDescLen Field
 /// </summary>
@@ -6053,7 +5731,6 @@ public sealed class EncodedUnderlyingSecurityDescLen : IntField
     public EncodedUnderlyingSecurityDescLen(int val)
         : base(Tags.EncodedUnderlyingSecurityDescLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedUnderlyingSecurityDesc Field
@@ -6068,7 +5745,6 @@ public sealed class EncodedUnderlyingSecurityDesc : StringField
         : base(Tags.EncodedUnderlyingSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// AllocPrice Field
 /// </summary>
@@ -6081,7 +5757,6 @@ public sealed class AllocPrice : DecimalField
     public AllocPrice(Decimal val)
         : base(Tags.AllocPrice, val) {}
 }
-
 
 /// <summary>
 /// QuoteSetValidUntilTime Field
@@ -6100,7 +5775,6 @@ public sealed class QuoteSetValidUntilTime : DateTimeField
     public QuoteSetValidUntilTime(DateTime val, TimePrecision precision)
         : base(Tags.QuoteSetValidUntilTime, val, precision) {}
 }
-
 
 /// <summary>
 /// QuoteEntryRejectReason Field
@@ -6131,7 +5805,6 @@ public sealed class QuoteEntryRejectReason : IntField
     public const int INVALID_BIDASK_SPREAD = 7;
 }
 
-
 /// <summary>
 /// LastMsgSeqNumProcessed Field
 /// </summary>
@@ -6144,7 +5817,6 @@ public sealed class LastMsgSeqNumProcessed : SeqNumFieldType
     public LastMsgSeqNumProcessed(SeqNumType val)
         : base(Tags.LastMsgSeqNumProcessed, val) {}
 }
-
 
 /// <summary>
 /// OnBehalfOfSendingTime Field
@@ -6164,7 +5836,6 @@ public sealed class OnBehalfOfSendingTime : DateTimeField
         : base(Tags.OnBehalfOfSendingTime, val, precision) {}
 }
 
-
 /// <summary>
 /// RefTagID Field
 /// </summary>
@@ -6178,7 +5849,6 @@ public sealed class RefTagID : IntField
         : base(Tags.RefTagID, val) {}
 }
 
-
 /// <summary>
 /// RefMsgType Field
 /// </summary>
@@ -6191,7 +5861,6 @@ public sealed class RefMsgType : StringField
     public RefMsgType(string val)
         : base(Tags.RefMsgType, val) {}
 }
-
 
 /// <summary>
 /// SessionRejectReason Field
@@ -6229,7 +5898,6 @@ public sealed class SessionRejectReason : IntField
     public const int E = 11;
 }
 
-
 /// <summary>
 /// BidRequestTransType Field
 /// </summary>
@@ -6248,7 +5916,6 @@ public sealed class BidRequestTransType : CharField
     public const char NEW = 'N';
 }
 
-
 /// <summary>
 /// ContraBroker Field
 /// </summary>
@@ -6262,7 +5929,6 @@ public sealed class ContraBroker : StringField
         : base(Tags.ContraBroker, val) {}
 }
 
-
 /// <summary>
 /// ComplianceID Field
 /// </summary>
@@ -6275,7 +5941,6 @@ public sealed class ComplianceID : StringField
     public ComplianceID(string val)
         : base(Tags.ComplianceID, val) {}
 }
-
 
 /// <summary>
 /// SolicitedFlag Field
@@ -6295,7 +5960,6 @@ public sealed class SolicitedFlag : BooleanField
     public const Boolean WAS_SOLCITIED = true;
     public const Boolean WAS_NOT_SOLICITED = false;
 }
-
 
 /// <summary>
 /// ExecRestatementReason Field
@@ -6327,7 +5991,6 @@ public sealed class ExecRestatementReason : IntField
     public const int MARKET_OPTION = 8;
 }
 
-
 /// <summary>
 /// BusinessRejectRefID Field
 /// </summary>
@@ -6340,7 +6003,6 @@ public sealed class BusinessRejectRefID : StringField
     public BusinessRejectRefID(string val)
         : base(Tags.BusinessRejectRefID, val) {}
 }
-
 
 /// <summary>
 /// BusinessRejectReason Field
@@ -6368,7 +6030,6 @@ public sealed class BusinessRejectReason : IntField
     public const int UNKOWN_ID = 1;
 }
 
-
 /// <summary>
 /// GrossTradeAmt Field
 /// </summary>
@@ -6381,7 +6042,6 @@ public sealed class GrossTradeAmt : DecimalField
     public GrossTradeAmt(Decimal val)
         : base(Tags.GrossTradeAmt, val) {}
 }
-
 
 /// <summary>
 /// NoContraBrokers Field
@@ -6396,7 +6056,6 @@ public sealed class NoContraBrokers : IntField
         : base(Tags.NoContraBrokers, val) {}
 }
 
-
 /// <summary>
 /// MaxMessageSize Field
 /// </summary>
@@ -6410,7 +6069,6 @@ public sealed class MaxMessageSize : IntField
         : base(Tags.MaxMessageSize, val) {}
 }
 
-
 /// <summary>
 /// NoMsgTypes Field
 /// </summary>
@@ -6423,7 +6081,6 @@ public sealed class NoMsgTypes : IntField
     public NoMsgTypes(int val)
         : base(Tags.NoMsgTypes, val) {}
 }
-
 
 /// <summary>
 /// MsgDirection Field
@@ -6442,7 +6099,6 @@ public sealed class MsgDirection : CharField
     public const char SEND = 'S';
 }
 
-
 /// <summary>
 /// NoTradingSessions Field
 /// </summary>
@@ -6456,7 +6112,6 @@ public sealed class NoTradingSessions : IntField
         : base(Tags.NoTradingSessions, val) {}
 }
 
-
 /// <summary>
 /// TotalVolumeTraded Field
 /// </summary>
@@ -6469,7 +6124,6 @@ public sealed class TotalVolumeTraded : DecimalField
     public TotalVolumeTraded(Decimal val)
         : base(Tags.TotalVolumeTraded, val) {}
 }
-
 
 /// <summary>
 /// DiscretionInst Field
@@ -6494,7 +6148,6 @@ public sealed class DiscretionInst : CharField
     public const char AVERAGE_PRICE_GUARANTEE = '7';
 }
 
-
 /// <summary>
 /// DiscretionOffset Field
 /// </summary>
@@ -6507,7 +6160,6 @@ public sealed class DiscretionOffset : DecimalField
     public DiscretionOffset(Decimal val)
         : base(Tags.DiscretionOffset, val) {}
 }
-
 
 /// <summary>
 /// BidID Field
@@ -6522,7 +6174,6 @@ public sealed class BidID : StringField
         : base(Tags.BidID, val) {}
 }
 
-
 /// <summary>
 /// ClientBidID Field
 /// </summary>
@@ -6535,7 +6186,6 @@ public sealed class ClientBidID : StringField
     public ClientBidID(string val)
         : base(Tags.ClientBidID, val) {}
 }
-
 
 /// <summary>
 /// ListName Field
@@ -6550,7 +6200,6 @@ public sealed class ListName : StringField
         : base(Tags.ListName, val) {}
 }
 
-
 /// <summary>
 /// TotalNumSecurities Field
 /// </summary>
@@ -6563,7 +6212,6 @@ public sealed class TotalNumSecurities : IntField
     public TotalNumSecurities(int val)
         : base(Tags.TotalNumSecurities, val) {}
 }
-
 
 /// <summary>
 /// BidType Field
@@ -6585,7 +6233,6 @@ public sealed class BidType : IntField
     public const int DISCLOSED_STYLE = 2;
 }
 
-
 /// <summary>
 /// NumTickets Field
 /// </summary>
@@ -6598,7 +6245,6 @@ public sealed class NumTickets : IntField
     public NumTickets(int val)
         : base(Tags.NumTickets, val) {}
 }
-
 
 /// <summary>
 /// SideValue1 Field
@@ -6613,7 +6259,6 @@ public sealed class SideValue1 : DecimalField
         : base(Tags.SideValue1, val) {}
 }
 
-
 /// <summary>
 /// SideValue2 Field
 /// </summary>
@@ -6627,7 +6272,6 @@ public sealed class SideValue2 : DecimalField
         : base(Tags.SideValue2, val) {}
 }
 
-
 /// <summary>
 /// NoBidDescriptors Field
 /// </summary>
@@ -6640,7 +6284,6 @@ public sealed class NoBidDescriptors : IntField
     public NoBidDescriptors(int val)
         : base(Tags.NoBidDescriptors, val) {}
 }
-
 
 /// <summary>
 /// BidDescriptorType Field
@@ -6660,7 +6303,6 @@ public sealed class BidDescriptorType : IntField
     public const int INDEX = 3;
 }
 
-
 /// <summary>
 /// BidDescriptor Field
 /// </summary>
@@ -6673,7 +6315,6 @@ public sealed class BidDescriptor : StringField
     public BidDescriptor(string val)
         : base(Tags.BidDescriptor, val) {}
 }
-
 
 /// <summary>
 /// SideValueInd Field
@@ -6695,7 +6336,6 @@ public sealed class SideValueInd : IntField
     public const int SIDEVALUE_2 = 2;
 }
 
-
 /// <summary>
 /// LiquidityPctLow Field
 /// </summary>
@@ -6708,7 +6348,6 @@ public sealed class LiquidityPctLow : DecimalField
     public LiquidityPctLow(Decimal val)
         : base(Tags.LiquidityPctLow, val) {}
 }
-
 
 /// <summary>
 /// LiquidityPctHigh Field
@@ -6723,7 +6362,6 @@ public sealed class LiquidityPctHigh : DecimalField
         : base(Tags.LiquidityPctHigh, val) {}
 }
 
-
 /// <summary>
 /// LiquidityValue Field
 /// </summary>
@@ -6736,7 +6374,6 @@ public sealed class LiquidityValue : DecimalField
     public LiquidityValue(Decimal val)
         : base(Tags.LiquidityValue, val) {}
 }
-
 
 /// <summary>
 /// EFPTrackingError Field
@@ -6751,7 +6388,6 @@ public sealed class EFPTrackingError : DecimalField
         : base(Tags.EFPTrackingError, val) {}
 }
 
-
 /// <summary>
 /// FairValue Field
 /// </summary>
@@ -6764,7 +6400,6 @@ public sealed class FairValue : DecimalField
     public FairValue(Decimal val)
         : base(Tags.FairValue, val) {}
 }
-
 
 /// <summary>
 /// OutsideIndexPct Field
@@ -6779,7 +6414,6 @@ public sealed class OutsideIndexPct : DecimalField
         : base(Tags.OutsideIndexPct, val) {}
 }
 
-
 /// <summary>
 /// ValueOfFutures Field
 /// </summary>
@@ -6792,7 +6426,6 @@ public sealed class ValueOfFutures : DecimalField
     public ValueOfFutures(Decimal val)
         : base(Tags.ValueOfFutures, val) {}
 }
-
 
 /// <summary>
 /// LiquidityIndType Field
@@ -6815,7 +6448,6 @@ public sealed class LiquidityIndType : IntField
     public const int TWENTYDAY_MOVING_AVERAGE = 2;
 }
 
-
 /// <summary>
 /// WtAverageLiquidity Field
 /// </summary>
@@ -6828,7 +6460,6 @@ public sealed class WtAverageLiquidity : DecimalField
     public WtAverageLiquidity(Decimal val)
         : base(Tags.WtAverageLiquidity, val) {}
 }
-
 
 /// <summary>
 /// ExchangeForPhysical Field
@@ -6849,7 +6480,6 @@ public sealed class ExchangeForPhysical : BooleanField
     public const Boolean FALSE = false;
 }
 
-
 /// <summary>
 /// OutMainCntryUIndex Field
 /// </summary>
@@ -6863,7 +6493,6 @@ public sealed class OutMainCntryUIndex : DecimalField
         : base(Tags.OutMainCntryUIndex, val) {}
 }
 
-
 /// <summary>
 /// CrossPercent Field
 /// </summary>
@@ -6876,7 +6505,6 @@ public sealed class CrossPercent : DecimalField
     public CrossPercent(Decimal val)
         : base(Tags.CrossPercent, val) {}
 }
-
 
 /// <summary>
 /// ProgRptReqs Field
@@ -6898,7 +6526,6 @@ public sealed class ProgRptReqs : IntField
     public const int SELLSIDE_PERIODICALLY_SENDS_STATUS_USING_LISTSTATUS = 2;
 }
 
-
 /// <summary>
 /// ProgPeriodInterval Field
 /// </summary>
@@ -6911,7 +6538,6 @@ public sealed class ProgPeriodInterval : IntField
     public ProgPeriodInterval(int val)
         : base(Tags.ProgPeriodInterval, val) {}
 }
-
 
 /// <summary>
 /// IncTaxInd Field
@@ -6930,7 +6556,6 @@ public sealed class IncTaxInd : IntField
     public const int GROSS = 2;
 }
 
-
 /// <summary>
 /// NumBidders Field
 /// </summary>
@@ -6944,7 +6569,6 @@ public sealed class NumBidders : IntField
         : base(Tags.NumBidders, val) {}
 }
 
-
 /// <summary>
 /// TradeType Field
 /// </summary>
@@ -6957,7 +6581,6 @@ public sealed class TradeType : CharField
     public TradeType(char val)
         : base(Tags.TradeType, val) {}
 }
-
 
 /// <summary>
 /// BasisPxType Field
@@ -6988,7 +6611,6 @@ public sealed class BasisPxType : CharField
     public const char CLOSING_PRICE_AT_MORNING_SESSION = '2';
 }
 
-
 /// <summary>
 /// NoBidComponents Field
 /// </summary>
@@ -7001,7 +6623,6 @@ public sealed class NoBidComponents : IntField
     public NoBidComponents(int val)
         : base(Tags.NoBidComponents, val) {}
 }
-
 
 /// <summary>
 /// Country Field
@@ -7016,7 +6637,6 @@ public sealed class Country : StringField
         : base(Tags.Country, val) {}
 }
 
-
 /// <summary>
 /// TotNoStrikes Field
 /// </summary>
@@ -7029,7 +6649,6 @@ public sealed class TotNoStrikes : IntField
     public TotNoStrikes(int val)
         : base(Tags.TotNoStrikes, val) {}
 }
-
 
 /// <summary>
 /// PriceType Field
@@ -7066,7 +6685,6 @@ public sealed class PriceType : IntField
     public const int BASIS_POINTS_RELATIVE_TO_BENCHMARK = 6;
 }
 
-
 /// <summary>
 /// DayOrderQty Field
 /// </summary>
@@ -7079,7 +6697,6 @@ public sealed class DayOrderQty : DecimalField
     public DayOrderQty(Decimal val)
         : base(Tags.DayOrderQty, val) {}
 }
-
 
 /// <summary>
 /// DayCumQty Field
@@ -7094,7 +6711,6 @@ public sealed class DayCumQty : DecimalField
         : base(Tags.DayCumQty, val) {}
 }
 
-
 /// <summary>
 /// DayAvgPx Field
 /// </summary>
@@ -7107,7 +6723,6 @@ public sealed class DayAvgPx : DecimalField
     public DayAvgPx(Decimal val)
         : base(Tags.DayAvgPx, val) {}
 }
-
 
 /// <summary>
 /// GTBookingInst Field
@@ -7129,7 +6744,6 @@ public sealed class GTBookingInst : IntField
     public const int ACCUMULATE_UNTIL_VERBALLY_NOTIFIED_OTHERWISE = 2;
 }
 
-
 /// <summary>
 /// NoStrikes Field
 /// </summary>
@@ -7142,7 +6756,6 @@ public sealed class NoStrikes : IntField
     public NoStrikes(int val)
         : base(Tags.NoStrikes, val) {}
 }
-
 
 /// <summary>
 /// ListStatusType Field
@@ -7167,7 +6780,6 @@ public sealed class ListStatusType : IntField
     public const int ALLDONE = 5;
 }
 
-
 /// <summary>
 /// NetGrossInd Field
 /// </summary>
@@ -7184,7 +6796,6 @@ public sealed class NetGrossInd : IntField
     public const int NET = 1;
     public const int GROSS = 2;
 }
-
 
 /// <summary>
 /// ListOrderStatus Field
@@ -7211,7 +6822,6 @@ public sealed class ListOrderStatus : IntField
     public const int CANCELING = 4;
 }
 
-
 /// <summary>
 /// ExpireDate Field
 /// </summary>
@@ -7224,7 +6834,6 @@ public sealed class ExpireDate : StringField
     public ExpireDate(string val)
         : base(Tags.ExpireDate, val) {}
 }
-
 
 /// <summary>
 /// ListExecInstType Field
@@ -7250,7 +6859,6 @@ public sealed class ListExecInstType : CharField
     public const char EXCHANGE_SWITCH_CIV_ORDER_BUY_DRIVEN_CASH_WITHDRAW = '5';
 }
 
-
 /// <summary>
 /// CxlRejResponseTo Field
 /// </summary>
@@ -7268,7 +6876,6 @@ public sealed class CxlRejResponseTo : CharField
     public const char ORDER_CANCEL_REPLACE_REQUEST = '2';
 }
 
-
 /// <summary>
 /// UnderlyingCouponRate Field
 /// </summary>
@@ -7281,7 +6888,6 @@ public sealed class UnderlyingCouponRate : DecimalField
     public UnderlyingCouponRate(Decimal val)
         : base(Tags.UnderlyingCouponRate, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingContractMultiplier Field
@@ -7296,7 +6902,6 @@ public sealed class UnderlyingContractMultiplier : DecimalField
         : base(Tags.UnderlyingContractMultiplier, val) {}
 }
 
-
 /// <summary>
 /// ContraTradeQty Field
 /// </summary>
@@ -7309,7 +6914,6 @@ public sealed class ContraTradeQty : DecimalField
     public ContraTradeQty(Decimal val)
         : base(Tags.ContraTradeQty, val) {}
 }
-
 
 /// <summary>
 /// ContraTradeTime Field
@@ -7329,7 +6933,6 @@ public sealed class ContraTradeTime : DateTimeField
         : base(Tags.ContraTradeTime, val, precision) {}
 }
 
-
 /// <summary>
 /// ClearingFirm Field
 /// </summary>
@@ -7342,7 +6945,6 @@ public sealed class ClearingFirm : StringField
     public ClearingFirm(string val)
         : base(Tags.ClearingFirm, val) {}
 }
-
 
 /// <summary>
 /// ClearingAccount Field
@@ -7357,7 +6959,6 @@ public sealed class ClearingAccount : StringField
         : base(Tags.ClearingAccount, val) {}
 }
 
-
 /// <summary>
 /// LiquidityNumSecurities Field
 /// </summary>
@@ -7370,7 +6971,6 @@ public sealed class LiquidityNumSecurities : IntField
     public LiquidityNumSecurities(int val)
         : base(Tags.LiquidityNumSecurities, val) {}
 }
-
 
 /// <summary>
 /// MultiLegReportingType Field
@@ -7391,7 +6991,6 @@ public sealed class MultiLegReportingType : CharField
     public const char INDIVIDUAL_LEG_OF_A_MULTILEG_SECURITY = '2';
 }
 
-
 /// <summary>
 /// StrikeTime Field
 /// </summary>
@@ -7410,7 +7009,6 @@ public sealed class StrikeTime : DateTimeField
         : base(Tags.StrikeTime, val, precision) {}
 }
 
-
 /// <summary>
 /// ListStatusText Field
 /// </summary>
@@ -7423,7 +7021,6 @@ public sealed class ListStatusText : StringField
     public ListStatusText(string val)
         : base(Tags.ListStatusText, val) {}
 }
-
 
 /// <summary>
 /// EncodedListStatusTextLen Field
@@ -7438,7 +7035,6 @@ public sealed class EncodedListStatusTextLen : IntField
         : base(Tags.EncodedListStatusTextLen, val) {}
 }
 
-
 /// <summary>
 /// EncodedListStatusText Field
 /// </summary>
@@ -7451,7 +7047,6 @@ public sealed class EncodedListStatusText : StringField
     public EncodedListStatusText(string val)
         : base(Tags.EncodedListStatusText, val) {}
 }
-
 
 /// <summary>
 /// SecurityIDSource Field
@@ -7492,7 +7087,6 @@ public sealed class SecurityIDSource : StringField
     public const string OPTIONS_PRICE_REPORTING_AUTHORITY = "J";
 }
 
-
 /// <summary>
 /// IOIQty Field
 /// </summary>
@@ -7505,7 +7099,6 @@ public sealed class IOIQty : StringField
     public IOIQty(string val)
         : base(Tags.IOIQty, val) {}
 }
-
 
 /// <summary>
 /// LastQty Field
@@ -7520,7 +7113,6 @@ public sealed class LastQty : DecimalField
         : base(Tags.LastQty, val) {}
 }
 
-
 /// <summary>
 /// SendingDate Field
 /// </summary>
@@ -7534,7 +7126,6 @@ public sealed class SendingDate : StringField
         : base(Tags.SendingDate, val) {}
 }
 
-
 /// <summary>
 /// Quantity Field
 /// </summary>
@@ -7547,7 +7138,6 @@ public sealed class Quantity : DecimalField
     public Quantity(Decimal val)
         : base(Tags.Quantity, val) {}
 }
-
 
 /// <summary>
 /// PositionEffect Field
@@ -7570,7 +7160,6 @@ public sealed class PositionEffect : CharField
     public const char DEFAULT = 'D';
 }
 
-
 /// <summary>
 /// AllocQty Field
 /// </summary>
@@ -7583,7 +7172,6 @@ public sealed class AllocQty : DecimalField
     public AllocQty(Decimal val)
         : base(Tags.AllocQty, val) {}
 }
-
 
 /// <summary>
 /// Spread Field
@@ -7598,7 +7186,6 @@ public sealed class Spread : DecimalField
         : base(Tags.Spread, val) {}
 }
 
-
 /// <summary>
 /// BenchmarkCurveCurrency Field
 /// </summary>
@@ -7611,7 +7198,6 @@ public sealed class BenchmarkCurveCurrency : StringField
     public BenchmarkCurveCurrency(string val)
         : base(Tags.BenchmarkCurveCurrency, val) {}
 }
-
 
 /// <summary>
 /// BenchmarkCurveName Field
@@ -7640,7 +7226,6 @@ public sealed class BenchmarkCurveName : StringField
     public const string TREASURY = "Treasury";
 }
 
-
 /// <summary>
 /// BenchmarkCurvePoint Field
 /// </summary>
@@ -7653,7 +7238,6 @@ public sealed class BenchmarkCurvePoint : StringField
     public BenchmarkCurvePoint(string val)
         : base(Tags.BenchmarkCurvePoint, val) {}
 }
-
 
 /// <summary>
 /// CouponPaymentDate Field
@@ -7668,7 +7252,6 @@ public sealed class CouponPaymentDate : StringField
         : base(Tags.CouponPaymentDate, val) {}
 }
 
-
 /// <summary>
 /// IssueDate Field
 /// </summary>
@@ -7681,7 +7264,6 @@ public sealed class IssueDate : StringField
     public IssueDate(string val)
         : base(Tags.IssueDate, val) {}
 }
-
 
 /// <summary>
 /// RepurchaseTerm Field
@@ -7696,7 +7278,6 @@ public sealed class RepurchaseTerm : IntField
         : base(Tags.RepurchaseTerm, val) {}
 }
 
-
 /// <summary>
 /// RepurchaseRate Field
 /// </summary>
@@ -7709,7 +7290,6 @@ public sealed class RepurchaseRate : DecimalField
     public RepurchaseRate(Decimal val)
         : base(Tags.RepurchaseRate, val) {}
 }
-
 
 /// <summary>
 /// Factor Field
@@ -7724,7 +7304,6 @@ public sealed class Factor : DecimalField
         : base(Tags.Factor, val) {}
 }
 
-
 /// <summary>
 /// TradeOriginationDate Field
 /// </summary>
@@ -7737,7 +7316,6 @@ public sealed class TradeOriginationDate : StringField
     public TradeOriginationDate(string val)
         : base(Tags.TradeOriginationDate, val) {}
 }
-
 
 /// <summary>
 /// ExDate Field
@@ -7752,7 +7330,6 @@ public sealed class ExDate : StringField
         : base(Tags.ExDate, val) {}
 }
 
-
 /// <summary>
 /// NoStipulations Field
 /// </summary>
@@ -7765,7 +7342,6 @@ public sealed class NoStipulations : IntField
     public NoStipulations(int val)
         : base(Tags.NoStipulations, val) {}
 }
-
 
 /// <summary>
 /// StipulationType Field
@@ -7866,7 +7442,6 @@ public sealed class StipulationType : StringField
     public const string SECURITYTYPE_INCLUDED_OR_EXCLUDED = "SECTYPE";
 }
 
-
 /// <summary>
 /// StipulationValue Field
 /// </summary>
@@ -7895,7 +7470,6 @@ public sealed class StipulationValue : StringField
     public const string REPORT_FOR_EUROPEAN_EQUITY_MARKET_SECURITIES = "TR";
     public const string GUARANTEED_DELIVERY = "GD";
 }
-
 
 /// <summary>
 /// YieldType Field
@@ -7952,7 +7526,6 @@ public sealed class YieldType : StringField
     public const string YIELD_TO_WORST_CONVENTION = "WORST";
 }
 
-
 /// <summary>
 /// Yield Field
 /// </summary>
@@ -7965,7 +7538,6 @@ public sealed class Yield : DecimalField
     public Yield(Decimal val)
         : base(Tags.Yield, val) {}
 }
-
 
 /// <summary>
 /// TotalTakedown Field
@@ -7980,7 +7552,6 @@ public sealed class TotalTakedown : DecimalField
         : base(Tags.TotalTakedown, val) {}
 }
 
-
 /// <summary>
 /// Concession Field
 /// </summary>
@@ -7993,7 +7564,6 @@ public sealed class Concession : DecimalField
     public Concession(Decimal val)
         : base(Tags.Concession, val) {}
 }
-
 
 /// <summary>
 /// RepoCollateralSecurityType Field
@@ -8008,7 +7578,6 @@ public sealed class RepoCollateralSecurityType : IntField
         : base(Tags.RepoCollateralSecurityType, val) {}
 }
 
-
 /// <summary>
 /// RedemptionDate Field
 /// </summary>
@@ -8021,7 +7590,6 @@ public sealed class RedemptionDate : StringField
     public RedemptionDate(string val)
         : base(Tags.RedemptionDate, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCouponPaymentDate Field
@@ -8036,7 +7604,6 @@ public sealed class UnderlyingCouponPaymentDate : StringField
         : base(Tags.UnderlyingCouponPaymentDate, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingIssueDate Field
 /// </summary>
@@ -8049,7 +7616,6 @@ public sealed class UnderlyingIssueDate : StringField
     public UnderlyingIssueDate(string val)
         : base(Tags.UnderlyingIssueDate, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingRepoCollateralSecurityType Field
@@ -8064,7 +7630,6 @@ public sealed class UnderlyingRepoCollateralSecurityType : IntField
         : base(Tags.UnderlyingRepoCollateralSecurityType, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingRepurchaseTerm Field
 /// </summary>
@@ -8077,7 +7642,6 @@ public sealed class UnderlyingRepurchaseTerm : IntField
     public UnderlyingRepurchaseTerm(int val)
         : base(Tags.UnderlyingRepurchaseTerm, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingRepurchaseRate Field
@@ -8092,7 +7656,6 @@ public sealed class UnderlyingRepurchaseRate : DecimalField
         : base(Tags.UnderlyingRepurchaseRate, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingFactor Field
 /// </summary>
@@ -8105,7 +7668,6 @@ public sealed class UnderlyingFactor : DecimalField
     public UnderlyingFactor(Decimal val)
         : base(Tags.UnderlyingFactor, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingRedemptionDate Field
@@ -8120,7 +7682,6 @@ public sealed class UnderlyingRedemptionDate : StringField
         : base(Tags.UnderlyingRedemptionDate, val) {}
 }
 
-
 /// <summary>
 /// LegCouponPaymentDate Field
 /// </summary>
@@ -8133,7 +7694,6 @@ public sealed class LegCouponPaymentDate : StringField
     public LegCouponPaymentDate(string val)
         : base(Tags.LegCouponPaymentDate, val) {}
 }
-
 
 /// <summary>
 /// LegIssueDate Field
@@ -8148,7 +7708,6 @@ public sealed class LegIssueDate : StringField
         : base(Tags.LegIssueDate, val) {}
 }
 
-
 /// <summary>
 /// LegRepoCollateralSecurityType Field
 /// </summary>
@@ -8161,7 +7720,6 @@ public sealed class LegRepoCollateralSecurityType : IntField
     public LegRepoCollateralSecurityType(int val)
         : base(Tags.LegRepoCollateralSecurityType, val) {}
 }
-
 
 /// <summary>
 /// LegRepurchaseTerm Field
@@ -8176,7 +7734,6 @@ public sealed class LegRepurchaseTerm : IntField
         : base(Tags.LegRepurchaseTerm, val) {}
 }
 
-
 /// <summary>
 /// LegRepurchaseRate Field
 /// </summary>
@@ -8189,7 +7746,6 @@ public sealed class LegRepurchaseRate : DecimalField
     public LegRepurchaseRate(Decimal val)
         : base(Tags.LegRepurchaseRate, val) {}
 }
-
 
 /// <summary>
 /// LegFactor Field
@@ -8204,7 +7760,6 @@ public sealed class LegFactor : DecimalField
         : base(Tags.LegFactor, val) {}
 }
 
-
 /// <summary>
 /// LegRedemptionDate Field
 /// </summary>
@@ -8217,7 +7772,6 @@ public sealed class LegRedemptionDate : StringField
     public LegRedemptionDate(string val)
         : base(Tags.LegRedemptionDate, val) {}
 }
-
 
 /// <summary>
 /// CreditRating Field
@@ -8232,7 +7786,6 @@ public sealed class CreditRating : StringField
         : base(Tags.CreditRating, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingCreditRating Field
 /// </summary>
@@ -8246,7 +7799,6 @@ public sealed class UnderlyingCreditRating : StringField
         : base(Tags.UnderlyingCreditRating, val) {}
 }
 
-
 /// <summary>
 /// LegCreditRating Field
 /// </summary>
@@ -8259,7 +7811,6 @@ public sealed class LegCreditRating : StringField
     public LegCreditRating(string val)
         : base(Tags.LegCreditRating, val) {}
 }
-
 
 /// <summary>
 /// TradedFlatSwitch Field
@@ -8278,7 +7829,6 @@ public sealed class TradedFlatSwitch : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// BasisFeatureDate Field
 /// </summary>
@@ -8292,7 +7842,6 @@ public sealed class BasisFeatureDate : StringField
         : base(Tags.BasisFeatureDate, val) {}
 }
 
-
 /// <summary>
 /// BasisFeaturePrice Field
 /// </summary>
@@ -8305,7 +7854,6 @@ public sealed class BasisFeaturePrice : DecimalField
     public BasisFeaturePrice(Decimal val)
         : base(Tags.BasisFeaturePrice, val) {}
 }
-
 
 /// <summary>
 /// QuoteStatus Field
@@ -8344,7 +7892,6 @@ public sealed class QuoteStatus : IntField
     public const int CANCELED_FOR_SYMBOL = 1;
 }
 
-
 /// <summary>
 /// UnderlyingSecurityIDSource Field
 /// </summary>
@@ -8357,7 +7904,6 @@ public sealed class UnderlyingSecurityIDSource : StringField
     public UnderlyingSecurityIDSource(string val)
         : base(Tags.UnderlyingSecurityIDSource, val) {}
 }
-
 
 /// <summary>
 /// PartyIDSource Field
@@ -8399,7 +7945,6 @@ public sealed class PartyIDSource : CharField
     public const char TAIWANESE_QUALIFIED_FOREIGN_INVESTOR_ID_QFII = '2';
 }
 
-
 /// <summary>
 /// PartyID Field
 /// </summary>
@@ -8413,7 +7958,6 @@ public sealed class PartyID : StringField
         : base(Tags.PartyID, val) {}
 }
 
-
 /// <summary>
 /// TotalVolumeTradedDate Field
 /// </summary>
@@ -8426,7 +7970,6 @@ public sealed class TotalVolumeTradedDate : DateOnlyField
     public TotalVolumeTradedDate(DateOnly val)
         : base(Tags.TotalVolumeTradedDate, val) {}
 }
-
 
 /// <summary>
 /// TotalVolumeTradedTime Field
@@ -8443,7 +7986,6 @@ public sealed class TotalVolumeTradedTime : TimeOnlyField
         : base(Tags.TotalVolumeTradedTime, val, precision) {}
 }
 
-
 /// <summary>
 /// NetChgPrevDay Field
 /// </summary>
@@ -8456,7 +7998,6 @@ public sealed class NetChgPrevDay : DecimalField
     public NetChgPrevDay(Decimal val)
         : base(Tags.NetChgPrevDay, val) {}
 }
-
 
 /// <summary>
 /// PartyRole Field
@@ -8559,7 +8100,6 @@ public sealed class PartyRole : IntField
     public const int LOCATE_LENDING_FIRM = 8;
 }
 
-
 /// <summary>
 /// NoPartyIDs Field
 /// </summary>
@@ -8572,7 +8112,6 @@ public sealed class NoPartyIDs : IntField
     public NoPartyIDs(int val)
         : base(Tags.NoPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// NoSecurityAltID Field
@@ -8587,7 +8126,6 @@ public sealed class NoSecurityAltID : IntField
         : base(Tags.NoSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// SecurityAltID Field
 /// </summary>
@@ -8600,7 +8138,6 @@ public sealed class SecurityAltID : StringField
     public SecurityAltID(string val)
         : base(Tags.SecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// SecurityAltIDSource Field
@@ -8615,7 +8152,6 @@ public sealed class SecurityAltIDSource : StringField
         : base(Tags.SecurityAltIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoUnderlyingSecurityAltID Field
 /// </summary>
@@ -8628,7 +8164,6 @@ public sealed class NoUnderlyingSecurityAltID : IntField
     public NoUnderlyingSecurityAltID(int val)
         : base(Tags.NoUnderlyingSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSecurityAltID Field
@@ -8643,7 +8178,6 @@ public sealed class UnderlyingSecurityAltID : StringField
         : base(Tags.UnderlyingSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSecurityAltIDSource Field
 /// </summary>
@@ -8656,7 +8190,6 @@ public sealed class UnderlyingSecurityAltIDSource : StringField
     public UnderlyingSecurityAltIDSource(string val)
         : base(Tags.UnderlyingSecurityAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// Product Field
@@ -8686,7 +8219,6 @@ public sealed class Product : IntField
     public const int MONEYMARKET = 9;
 }
 
-
 /// <summary>
 /// CFICode Field
 /// </summary>
@@ -8699,7 +8231,6 @@ public sealed class CFICode : StringField
     public CFICode(string val)
         : base(Tags.CFICode, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingProduct Field
@@ -8714,7 +8245,6 @@ public sealed class UnderlyingProduct : IntField
         : base(Tags.UnderlyingProduct, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingCFICode Field
 /// </summary>
@@ -8727,7 +8257,6 @@ public sealed class UnderlyingCFICode : StringField
     public UnderlyingCFICode(string val)
         : base(Tags.UnderlyingCFICode, val) {}
 }
-
 
 /// <summary>
 /// TestMessageIndicator Field
@@ -8745,7 +8274,6 @@ public sealed class TestMessageIndicator : BooleanField
     public const Boolean NO = false;
     public const Boolean YES = true;
 }
-
 
 /// <summary>
 /// QuantityType Field
@@ -8770,7 +8298,6 @@ public sealed class QuantityType : IntField
     public const int PAR = 8;
 }
 
-
 /// <summary>
 /// BookingRefID Field
 /// </summary>
@@ -8784,7 +8311,6 @@ public sealed class BookingRefID : StringField
         : base(Tags.BookingRefID, val) {}
 }
 
-
 /// <summary>
 /// IndividualAllocID Field
 /// </summary>
@@ -8797,7 +8323,6 @@ public sealed class IndividualAllocID : StringField
     public IndividualAllocID(string val)
         : base(Tags.IndividualAllocID, val) {}
 }
-
 
 /// <summary>
 /// RoundingDirection Field
@@ -8817,7 +8342,6 @@ public sealed class RoundingDirection : CharField
     public const char ROUND_UP = '2';
 }
 
-
 /// <summary>
 /// RoundingModulus Field
 /// </summary>
@@ -8830,7 +8354,6 @@ public sealed class RoundingModulus : DecimalField
     public RoundingModulus(Decimal val)
         : base(Tags.RoundingModulus, val) {}
 }
-
 
 /// <summary>
 /// CountryOfIssue Field
@@ -8845,7 +8368,6 @@ public sealed class CountryOfIssue : StringField
         : base(Tags.CountryOfIssue, val) {}
 }
 
-
 /// <summary>
 /// StateOrProvinceOfIssue Field
 /// </summary>
@@ -8858,7 +8380,6 @@ public sealed class StateOrProvinceOfIssue : StringField
     public StateOrProvinceOfIssue(string val)
         : base(Tags.StateOrProvinceOfIssue, val) {}
 }
-
 
 /// <summary>
 /// LocaleOfIssue Field
@@ -8873,7 +8394,6 @@ public sealed class LocaleOfIssue : StringField
         : base(Tags.LocaleOfIssue, val) {}
 }
 
-
 /// <summary>
 /// NoRegistDtls Field
 /// </summary>
@@ -8886,7 +8406,6 @@ public sealed class NoRegistDtls : IntField
     public NoRegistDtls(int val)
         : base(Tags.NoRegistDtls, val) {}
 }
-
 
 /// <summary>
 /// MailingDtls Field
@@ -8901,7 +8420,6 @@ public sealed class MailingDtls : StringField
         : base(Tags.MailingDtls, val) {}
 }
 
-
 /// <summary>
 /// InvestorCountryOfResidence Field
 /// </summary>
@@ -8915,7 +8433,6 @@ public sealed class InvestorCountryOfResidence : StringField
         : base(Tags.InvestorCountryOfResidence, val) {}
 }
 
-
 /// <summary>
 /// PaymentRef Field
 /// </summary>
@@ -8928,7 +8445,6 @@ public sealed class PaymentRef : StringField
     public PaymentRef(string val)
         : base(Tags.PaymentRef, val) {}
 }
-
 
 /// <summary>
 /// DistribPaymentMethod Field
@@ -8959,7 +8475,6 @@ public sealed class DistribPaymentMethod : IntField
     public const int HIGH_VALUE_CLEARING_SYSTEM = 11;
 }
 
-
 /// <summary>
 /// CashDistribCurr Field
 /// </summary>
@@ -8973,7 +8488,6 @@ public sealed class CashDistribCurr : StringField
         : base(Tags.CashDistribCurr, val) {}
 }
 
-
 /// <summary>
 /// CommCurrency Field
 /// </summary>
@@ -8986,7 +8500,6 @@ public sealed class CommCurrency : StringField
     public CommCurrency(string val)
         : base(Tags.CommCurrency, val) {}
 }
-
 
 /// <summary>
 /// CancellationRights Field
@@ -9009,7 +8522,6 @@ public sealed class CancellationRights : CharField
     public const char NO_WAIVER_AGREEMENT = 'M';
     public const char NO_INSTITUTIONAL = 'O';
 }
-
 
 /// <summary>
 /// MoneyLaunderingStatus Field
@@ -9034,7 +8546,6 @@ public sealed class MoneyLaunderingStatus : CharField
     public const char EXEMPT_AUTHORISED_CREDIT_OR_FINANCIAL_INSTITUTION = '3';
 }
 
-
 /// <summary>
 /// MailingInst Field
 /// </summary>
@@ -9047,7 +8558,6 @@ public sealed class MailingInst : StringField
     public MailingInst(string val)
         : base(Tags.MailingInst, val) {}
 }
-
 
 /// <summary>
 /// TransBkdTime Field
@@ -9066,7 +8576,6 @@ public sealed class TransBkdTime : DateTimeField
     public TransBkdTime(DateTime val, TimePrecision precision)
         : base(Tags.TransBkdTime, val, precision) {}
 }
-
 
 /// <summary>
 /// ExecPriceType Field
@@ -9091,7 +8600,6 @@ public sealed class ExecPriceType : CharField
     public const char SINGLE_PRICE = 'S';
 }
 
-
 /// <summary>
 /// ExecPriceAdjustment Field
 /// </summary>
@@ -9105,7 +8613,6 @@ public sealed class ExecPriceAdjustment : DecimalField
         : base(Tags.ExecPriceAdjustment, val) {}
 }
 
-
 /// <summary>
 /// DateOfBirth Field
 /// </summary>
@@ -9118,7 +8625,6 @@ public sealed class DateOfBirth : StringField
     public DateOfBirth(string val)
         : base(Tags.DateOfBirth, val) {}
 }
-
 
 /// <summary>
 /// TradeReportTransType Field
@@ -9141,7 +8647,6 @@ public sealed class TradeReportTransType : IntField
     public const int CANCEL_DUE_TO_BACK_OUT_OF_TRADE = 5;
 }
 
-
 /// <summary>
 /// CardHolderName Field
 /// </summary>
@@ -9154,7 +8659,6 @@ public sealed class CardHolderName : StringField
     public CardHolderName(string val)
         : base(Tags.CardHolderName, val) {}
 }
-
 
 /// <summary>
 /// CardNumber Field
@@ -9169,7 +8673,6 @@ public sealed class CardNumber : StringField
         : base(Tags.CardNumber, val) {}
 }
 
-
 /// <summary>
 /// CardExpDate Field
 /// </summary>
@@ -9183,7 +8686,6 @@ public sealed class CardExpDate : StringField
         : base(Tags.CardExpDate, val) {}
 }
 
-
 /// <summary>
 /// CardIssNo Field
 /// </summary>
@@ -9196,7 +8698,6 @@ public sealed class CardIssNo : StringField
     public CardIssNo(string val)
         : base(Tags.CardIssNo, val) {}
 }
-
 
 /// <summary>
 /// PaymentMethod Field
@@ -9229,7 +8730,6 @@ public sealed class PaymentMethod : IntField
     public const int FEDWIRE = 7;
 }
 
-
 /// <summary>
 /// RegistAcctType Field
 /// </summary>
@@ -9243,7 +8743,6 @@ public sealed class RegistAcctType : StringField
         : base(Tags.RegistAcctType, val) {}
 }
 
-
 /// <summary>
 /// Designation Field
 /// </summary>
@@ -9256,7 +8755,6 @@ public sealed class Designation : StringField
     public Designation(string val)
         : base(Tags.Designation, val) {}
 }
-
 
 /// <summary>
 /// TaxAdvantageType Field
@@ -9306,7 +8804,6 @@ public sealed class TaxAdvantageType : IntField
     public const int EMPLOYEE_PRIOR_YEAR = 9;
 }
 
-
 /// <summary>
 /// RegistRejReasonText Field
 /// </summary>
@@ -9319,7 +8816,6 @@ public sealed class RegistRejReasonText : StringField
     public RegistRejReasonText(string val)
         : base(Tags.RegistRejReasonText, val) {}
 }
-
 
 /// <summary>
 /// FundRenewWaiv Field
@@ -9338,7 +8834,6 @@ public sealed class FundRenewWaiv : CharField
     public const char YES = 'Y';
 }
 
-
 /// <summary>
 /// CashDistribAgentName Field
 /// </summary>
@@ -9351,7 +8846,6 @@ public sealed class CashDistribAgentName : StringField
     public CashDistribAgentName(string val)
         : base(Tags.CashDistribAgentName, val) {}
 }
-
 
 /// <summary>
 /// CashDistribAgentCode Field
@@ -9366,7 +8860,6 @@ public sealed class CashDistribAgentCode : StringField
         : base(Tags.CashDistribAgentCode, val) {}
 }
 
-
 /// <summary>
 /// CashDistribAgentAcctNumber Field
 /// </summary>
@@ -9379,7 +8872,6 @@ public sealed class CashDistribAgentAcctNumber : StringField
     public CashDistribAgentAcctNumber(string val)
         : base(Tags.CashDistribAgentAcctNumber, val) {}
 }
-
 
 /// <summary>
 /// CashDistribPayRef Field
@@ -9394,7 +8886,6 @@ public sealed class CashDistribPayRef : StringField
         : base(Tags.CashDistribPayRef, val) {}
 }
 
-
 /// <summary>
 /// CashDistribAgentAcctName Field
 /// </summary>
@@ -9407,7 +8898,6 @@ public sealed class CashDistribAgentAcctName : StringField
     public CashDistribAgentAcctName(string val)
         : base(Tags.CashDistribAgentAcctName, val) {}
 }
-
 
 /// <summary>
 /// CardStartDate Field
@@ -9422,7 +8912,6 @@ public sealed class CardStartDate : StringField
         : base(Tags.CardStartDate, val) {}
 }
 
-
 /// <summary>
 /// PaymentDate Field
 /// </summary>
@@ -9436,7 +8925,6 @@ public sealed class PaymentDate : StringField
         : base(Tags.PaymentDate, val) {}
 }
 
-
 /// <summary>
 /// PaymentRemitterID Field
 /// </summary>
@@ -9449,7 +8937,6 @@ public sealed class PaymentRemitterID : StringField
     public PaymentRemitterID(string val)
         : base(Tags.PaymentRemitterID, val) {}
 }
-
 
 /// <summary>
 /// RegistStatus Field
@@ -9469,7 +8956,6 @@ public sealed class RegistStatus : CharField
     public const char REMINDER = 'N';
     public const char REJECTED = 'R';
 }
-
 
 /// <summary>
 /// RegistRejReasonCode Field
@@ -9511,7 +8997,6 @@ public sealed class RegistRejReasonCode : IntField
     public const int INVALID_UNACCEPTABLE_NODISTRIBINSTNS = 13;
 }
 
-
 /// <summary>
 /// RegistRefID Field
 /// </summary>
@@ -9524,7 +9009,6 @@ public sealed class RegistRefID : StringField
     public RegistRefID(string val)
         : base(Tags.RegistRefID, val) {}
 }
-
 
 /// <summary>
 /// RegistDetls Field
@@ -9539,7 +9023,6 @@ public sealed class RegistDetls : StringField
         : base(Tags.RegistDetls, val) {}
 }
 
-
 /// <summary>
 /// NoDistribInsts Field
 /// </summary>
@@ -9552,7 +9035,6 @@ public sealed class NoDistribInsts : IntField
     public NoDistribInsts(int val)
         : base(Tags.NoDistribInsts, val) {}
 }
-
 
 /// <summary>
 /// RegistEmail Field
@@ -9567,7 +9049,6 @@ public sealed class RegistEmail : StringField
         : base(Tags.RegistEmail, val) {}
 }
 
-
 /// <summary>
 /// DistribPercentage Field
 /// </summary>
@@ -9581,7 +9062,6 @@ public sealed class DistribPercentage : DecimalField
         : base(Tags.DistribPercentage, val) {}
 }
 
-
 /// <summary>
 /// RegistID Field
 /// </summary>
@@ -9594,7 +9074,6 @@ public sealed class RegistID : StringField
     public RegistID(string val)
         : base(Tags.RegistID, val) {}
 }
-
 
 /// <summary>
 /// RegistTransType Field
@@ -9614,7 +9093,6 @@ public sealed class RegistTransType : CharField
     public const char CANCEL = '2';
 }
 
-
 /// <summary>
 /// ExecValuationPoint Field
 /// </summary>
@@ -9633,7 +9111,6 @@ public sealed class ExecValuationPoint : DateTimeField
         : base(Tags.ExecValuationPoint, val, precision) {}
 }
 
-
 /// <summary>
 /// OrderPercent Field
 /// </summary>
@@ -9646,7 +9123,6 @@ public sealed class OrderPercent : DecimalField
     public OrderPercent(Decimal val)
         : base(Tags.OrderPercent, val) {}
 }
-
 
 /// <summary>
 /// OwnershipType Field
@@ -9666,7 +9142,6 @@ public sealed class OwnershipType : CharField
     public const char TENANTS_IN_COMMON = 'T';
 }
 
-
 /// <summary>
 /// NoContAmts Field
 /// </summary>
@@ -9679,7 +9154,6 @@ public sealed class NoContAmts : IntField
     public NoContAmts(int val)
         : base(Tags.NoContAmts, val) {}
 }
-
 
 /// <summary>
 /// ContAmtType Field
@@ -9711,7 +9185,6 @@ public sealed class ContAmtType : IntField
     public const int EXIT_CHARGE_AMOUNT = 9;
 }
 
-
 /// <summary>
 /// ContAmtValue Field
 /// </summary>
@@ -9725,7 +9198,6 @@ public sealed class ContAmtValue : DecimalField
         : base(Tags.ContAmtValue, val) {}
 }
 
-
 /// <summary>
 /// ContAmtCurr Field
 /// </summary>
@@ -9738,7 +9210,6 @@ public sealed class ContAmtCurr : StringField
     public ContAmtCurr(string val)
         : base(Tags.ContAmtCurr, val) {}
 }
-
 
 /// <summary>
 /// OwnerType Field
@@ -9768,7 +9239,6 @@ public sealed class OwnerType : IntField
     public const int FIDUCIARIES = 9;
 }
 
-
 /// <summary>
 /// PartySubID Field
 /// </summary>
@@ -9781,7 +9251,6 @@ public sealed class PartySubID : StringField
     public PartySubID(string val)
         : base(Tags.PartySubID, val) {}
 }
-
 
 /// <summary>
 /// NestedPartyID Field
@@ -9796,7 +9265,6 @@ public sealed class NestedPartyID : StringField
         : base(Tags.NestedPartyID, val) {}
 }
 
-
 /// <summary>
 /// NestedPartyIDSource Field
 /// </summary>
@@ -9809,7 +9277,6 @@ public sealed class NestedPartyIDSource : CharField
     public NestedPartyIDSource(char val)
         : base(Tags.NestedPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// SecondaryClOrdID Field
@@ -9824,7 +9291,6 @@ public sealed class SecondaryClOrdID : StringField
         : base(Tags.SecondaryClOrdID, val) {}
 }
 
-
 /// <summary>
 /// SecondaryExecID Field
 /// </summary>
@@ -9837,7 +9303,6 @@ public sealed class SecondaryExecID : StringField
     public SecondaryExecID(string val)
         : base(Tags.SecondaryExecID, val) {}
 }
-
 
 /// <summary>
 /// OrderCapacity Field
@@ -9859,7 +9324,6 @@ public sealed class OrderCapacity : CharField
     public const char RISKLESS_PRINCIPAL = 'R';
     public const char AGENT_FOR_OTHER_MEMBER = 'W';
 }
-
 
 /// <summary>
 /// OrderRestrictions Field
@@ -9893,7 +9357,6 @@ public sealed class OrderRestrictions : StringField
     public const string EXTNERAL_INTER_CONNECTED_MARKET_LINKAGE = "9";
 }
 
-
 /// <summary>
 /// MassCancelRequestType Field
 /// </summary>
@@ -9920,7 +9383,6 @@ public sealed class MassCancelRequestType : CharField
     public const char CANCEL_FOR_SECURITY_ISSUER = 'B';
     public const char CANCEL_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
 }
-
 
 /// <summary>
 /// MassCancelResponse Field
@@ -9949,7 +9411,6 @@ public sealed class MassCancelResponse : CharField
     public const char CANCEL_ORDERS_FOR_A_SECURITIES_ISSUER = 'B';
     public const char CANCEL_ORDERS_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
 }
-
 
 /// <summary>
 /// MassCancelRejectReason Field
@@ -9981,7 +9442,6 @@ public sealed class MassCancelRejectReason : IntField
     public const int INVALID_OR_UNKNOWN_SECURITY_TYPE = 5;
 }
 
-
 /// <summary>
 /// TotalAffectedOrders Field
 /// </summary>
@@ -9994,7 +9454,6 @@ public sealed class TotalAffectedOrders : IntField
     public TotalAffectedOrders(int val)
         : base(Tags.TotalAffectedOrders, val) {}
 }
-
 
 /// <summary>
 /// NoAffectedOrders Field
@@ -10009,7 +9468,6 @@ public sealed class NoAffectedOrders : IntField
         : base(Tags.NoAffectedOrders, val) {}
 }
 
-
 /// <summary>
 /// AffectedOrderID Field
 /// </summary>
@@ -10023,7 +9481,6 @@ public sealed class AffectedOrderID : StringField
         : base(Tags.AffectedOrderID, val) {}
 }
 
-
 /// <summary>
 /// AffectedSecondaryOrderID Field
 /// </summary>
@@ -10036,7 +9493,6 @@ public sealed class AffectedSecondaryOrderID : StringField
     public AffectedSecondaryOrderID(string val)
         : base(Tags.AffectedSecondaryOrderID, val) {}
 }
-
 
 /// <summary>
 /// QuoteType Field
@@ -10057,7 +9513,6 @@ public sealed class QuoteType : IntField
     public const int COUNTER = 3;
 }
 
-
 /// <summary>
 /// NestedPartyRole Field
 /// </summary>
@@ -10070,7 +9525,6 @@ public sealed class NestedPartyRole : IntField
     public NestedPartyRole(int val)
         : base(Tags.NestedPartyRole, val) {}
 }
-
 
 /// <summary>
 /// NoNestedPartyIDs Field
@@ -10085,7 +9539,6 @@ public sealed class NoNestedPartyIDs : IntField
         : base(Tags.NoNestedPartyIDs, val) {}
 }
 
-
 /// <summary>
 /// TotalAccruedInterestAmt Field
 /// </summary>
@@ -10098,7 +9551,6 @@ public sealed class TotalAccruedInterestAmt : DecimalField
     public TotalAccruedInterestAmt(Decimal val)
         : base(Tags.TotalAccruedInterestAmt, val) {}
 }
-
 
 /// <summary>
 /// MaturityDate Field
@@ -10113,7 +9565,6 @@ public sealed class MaturityDate : StringField
         : base(Tags.MaturityDate, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingMaturityDate Field
 /// </summary>
@@ -10126,7 +9577,6 @@ public sealed class UnderlyingMaturityDate : StringField
     public UnderlyingMaturityDate(string val)
         : base(Tags.UnderlyingMaturityDate, val) {}
 }
-
 
 /// <summary>
 /// InstrRegistry Field
@@ -10144,7 +9594,6 @@ public sealed class InstrRegistry : StringField
     public const string COUNTRY_IN_WHICH_REGISTRY_IS_KEPT = "Code";
     public const string PHYSICAL_OR_BEARER = "ZZ";
 }
-
 
 /// <summary>
 /// CashMargin Field
@@ -10164,7 +9613,6 @@ public sealed class CashMargin : CharField
     public const char MARGIN_CLOSE = '3';
 }
 
-
 /// <summary>
 /// NestedPartySubID Field
 /// </summary>
@@ -10177,7 +9625,6 @@ public sealed class NestedPartySubID : StringField
     public NestedPartySubID(string val)
         : base(Tags.NestedPartySubID, val) {}
 }
-
 
 /// <summary>
 /// Scope Field
@@ -10198,7 +9645,6 @@ public sealed class Scope : StringField
     public const string LOCAL = "1";
 }
 
-
 /// <summary>
 /// MDImplicitDelete Field
 /// </summary>
@@ -10216,7 +9662,6 @@ public sealed class MDImplicitDelete : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// CrossID Field
 /// </summary>
@@ -10229,7 +9674,6 @@ public sealed class CrossID : StringField
     public CrossID(string val)
         : base(Tags.CrossID, val) {}
 }
-
 
 /// <summary>
 /// CrossType Field
@@ -10254,7 +9698,6 @@ public sealed class CrossType : IntField
     public const int CROSS_TRADE_IS_EXECUTED_WITH_EXISTING_ORDERS_WITH_THE_SAME_PRICE = 4;
 }
 
-
 /// <summary>
 /// CrossPrioritization Field
 /// </summary>
@@ -10273,7 +9716,6 @@ public sealed class CrossPrioritization : IntField
     public const int SELL_SIDE_IS_PRIORITIZED = 2;
 }
 
-
 /// <summary>
 /// OrigCrossID Field
 /// </summary>
@@ -10286,7 +9728,6 @@ public sealed class OrigCrossID : StringField
     public OrigCrossID(string val)
         : base(Tags.OrigCrossID, val) {}
 }
-
 
 /// <summary>
 /// NoSides Field
@@ -10305,7 +9746,6 @@ public sealed class NoSides : IntField
     public const int BOTH_SIDES = 2;
 }
 
-
 /// <summary>
 /// Username Field
 /// </summary>
@@ -10318,7 +9758,6 @@ public sealed class Username : StringField
     public Username(string val)
         : base(Tags.Username, val) {}
 }
-
 
 /// <summary>
 /// Password Field
@@ -10333,7 +9772,6 @@ public sealed class Password : StringField
         : base(Tags.Password, val) {}
 }
 
-
 /// <summary>
 /// NoLegs Field
 /// </summary>
@@ -10346,7 +9784,6 @@ public sealed class NoLegs : IntField
     public NoLegs(int val)
         : base(Tags.NoLegs, val) {}
 }
-
 
 /// <summary>
 /// LegCurrency Field
@@ -10361,7 +9798,6 @@ public sealed class LegCurrency : StringField
         : base(Tags.LegCurrency, val) {}
 }
 
-
 /// <summary>
 /// TotalNumSecurityTypes Field
 /// </summary>
@@ -10375,7 +9811,6 @@ public sealed class TotalNumSecurityTypes : IntField
         : base(Tags.TotalNumSecurityTypes, val) {}
 }
 
-
 /// <summary>
 /// NoSecurityTypes Field
 /// </summary>
@@ -10388,7 +9823,6 @@ public sealed class NoSecurityTypes : IntField
     public NoSecurityTypes(int val)
         : base(Tags.NoSecurityTypes, val) {}
 }
-
 
 /// <summary>
 /// SecurityListRequestType Field
@@ -10412,7 +9846,6 @@ public sealed class SecurityListRequestType : IntField
     public const int SECURITYTYPE_AND = 1;
 }
 
-
 /// <summary>
 /// SecurityRequestResult Field
 /// </summary>
@@ -10434,7 +9867,6 @@ public sealed class SecurityRequestResult : IntField
     public const int REQUEST_FOR_INSTRUMENT_DATA_NOT_SUPPORTED = 5;
 }
 
-
 /// <summary>
 /// RoundLot Field
 /// </summary>
@@ -10448,7 +9880,6 @@ public sealed class RoundLot : DecimalField
         : base(Tags.RoundLot, val) {}
 }
 
-
 /// <summary>
 /// MinTradeVol Field
 /// </summary>
@@ -10461,7 +9892,6 @@ public sealed class MinTradeVol : DecimalField
     public MinTradeVol(Decimal val)
         : base(Tags.MinTradeVol, val) {}
 }
-
 
 /// <summary>
 /// MultiLegRptTypeReq Field
@@ -10481,7 +9911,6 @@ public sealed class MultiLegRptTypeReq : IntField
     public const int REPORT_BY_INSTRUMENT_LEGS_BELONGING_TO_THE_MULTILEG_SECURITY_ONLY = 2;
 }
 
-
 /// <summary>
 /// LegPositionEffect Field
 /// </summary>
@@ -10494,7 +9923,6 @@ public sealed class LegPositionEffect : CharField
     public LegPositionEffect(char val)
         : base(Tags.LegPositionEffect, val) {}
 }
-
 
 /// <summary>
 /// LegCoveredOrUncovered Field
@@ -10509,7 +9937,6 @@ public sealed class LegCoveredOrUncovered : IntField
         : base(Tags.LegCoveredOrUncovered, val) {}
 }
 
-
 /// <summary>
 /// LegPrice Field
 /// </summary>
@@ -10522,7 +9949,6 @@ public sealed class LegPrice : DecimalField
     public LegPrice(Decimal val)
         : base(Tags.LegPrice, val) {}
 }
-
 
 /// <summary>
 /// TradSesStatusRejReason Field
@@ -10541,7 +9967,6 @@ public sealed class TradSesStatusRejReason : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// TradeRequestID Field
 /// </summary>
@@ -10554,7 +9979,6 @@ public sealed class TradeRequestID : StringField
     public TradeRequestID(string val)
         : base(Tags.TradeRequestID, val) {}
 }
-
 
 /// <summary>
 /// TradeRequestType Field
@@ -10576,7 +10000,6 @@ public sealed class TradeRequestType : IntField
     public const int ADVISORIES_THAT_MATCH_CRITERIA = 4;
 }
 
-
 /// <summary>
 /// PreviouslyReported Field
 /// </summary>
@@ -10594,7 +10017,6 @@ public sealed class PreviouslyReported : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// TradeReportID Field
 /// </summary>
@@ -10608,7 +10030,6 @@ public sealed class TradeReportID : StringField
         : base(Tags.TradeReportID, val) {}
 }
 
-
 /// <summary>
 /// TradeReportRefID Field
 /// </summary>
@@ -10621,7 +10042,6 @@ public sealed class TradeReportRefID : StringField
     public TradeReportRefID(string val)
         : base(Tags.TradeReportRefID, val) {}
 }
-
 
 /// <summary>
 /// MatchStatus Field
@@ -10643,7 +10063,6 @@ public sealed class MatchStatus : CharField
     public const char COMPARED = '0';
     public const char UNCOMPARED = '1';
 }
-
 
 /// <summary>
 /// MatchType Field
@@ -10712,7 +10131,6 @@ public sealed class MatchType : StringField
     public const string NON_ACT = "MT";
 }
 
-
 /// <summary>
 /// OddLot Field
 /// </summary>
@@ -10730,7 +10148,6 @@ public sealed class OddLot : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// NoClearingInstructions Field
 /// </summary>
@@ -10743,7 +10160,6 @@ public sealed class NoClearingInstructions : IntField
     public NoClearingInstructions(int val)
         : base(Tags.NoClearingInstructions, val) {}
 }
-
 
 /// <summary>
 /// ClearingInstruction Field
@@ -10775,7 +10191,6 @@ public sealed class ClearingInstruction : IntField
     public const int QUALIFIED_SERVICE_REPRESENTATIVE = 11;
 }
 
-
 /// <summary>
 /// TradeInputSource Field
 /// </summary>
@@ -10788,7 +10203,6 @@ public sealed class TradeInputSource : StringField
     public TradeInputSource(string val)
         : base(Tags.TradeInputSource, val) {}
 }
-
 
 /// <summary>
 /// TradeInputDevice Field
@@ -10803,7 +10217,6 @@ public sealed class TradeInputDevice : StringField
         : base(Tags.TradeInputDevice, val) {}
 }
 
-
 /// <summary>
 /// NoDates Field
 /// </summary>
@@ -10816,7 +10229,6 @@ public sealed class NoDates : IntField
     public NoDates(int val)
         : base(Tags.NoDates, val) {}
 }
-
 
 /// <summary>
 /// AccountType Field
@@ -10842,7 +10254,6 @@ public sealed class AccountType : IntField
     public const int JOINT_BACKOFFICE_ACCOUNT = 8;
 }
 
-
 /// <summary>
 /// CustOrderCapacity Field
 /// </summary>
@@ -10862,7 +10273,6 @@ public sealed class CustOrderCapacity : IntField
     public const int ALL_OTHER = 4;
 }
 
-
 /// <summary>
 /// ClOrdLinkID Field
 /// </summary>
@@ -10876,7 +10286,6 @@ public sealed class ClOrdLinkID : StringField
         : base(Tags.ClOrdLinkID, val) {}
 }
 
-
 /// <summary>
 /// MassStatusReqID Field
 /// </summary>
@@ -10889,7 +10298,6 @@ public sealed class MassStatusReqID : StringField
     public MassStatusReqID(string val)
         : base(Tags.MassStatusReqID, val) {}
 }
-
 
 /// <summary>
 /// MassStatusReqType Field
@@ -10916,7 +10324,6 @@ public sealed class MassStatusReqType : IntField
     public const int STATUS_FOR_ISSUER_OF_UNDERLYING_SECURITY = 10;
 }
 
-
 /// <summary>
 /// OrigOrdModTime Field
 /// </summary>
@@ -10935,7 +10342,6 @@ public sealed class OrigOrdModTime : DateTimeField
         : base(Tags.OrigOrdModTime, val, precision) {}
 }
 
-
 /// <summary>
 /// LegSettlmntTyp Field
 /// </summary>
@@ -10949,7 +10355,6 @@ public sealed class LegSettlmntTyp : CharField
         : base(Tags.LegSettlmntTyp, val) {}
 }
 
-
 /// <summary>
 /// LegFutSettDate Field
 /// </summary>
@@ -10962,7 +10367,6 @@ public sealed class LegFutSettDate : StringField
     public LegFutSettDate(string val)
         : base(Tags.LegFutSettDate, val) {}
 }
-
 
 /// <summary>
 /// DayBookingInst Field
@@ -10982,7 +10386,6 @@ public sealed class DayBookingInst : CharField
     public const char ACCUMULATE = '2';
 }
 
-
 /// <summary>
 /// BookingUnit Field
 /// </summary>
@@ -11001,7 +10404,6 @@ public sealed class BookingUnit : CharField
     public const char AGGREGATE_EXECUTIONS_FOR_THIS_SYMBOL_SIDE_AND_SETTLEMENT_DATE = '2';
 }
 
-
 /// <summary>
 /// PreallocMethod Field
 /// </summary>
@@ -11019,7 +10421,6 @@ public sealed class PreallocMethod : CharField
     public const char DO_NOT_PRO_RATA = '1';
 }
 
-
 /// <summary>
 /// UnderlyingCountryOfIssue Field
 /// </summary>
@@ -11032,7 +10433,6 @@ public sealed class UnderlyingCountryOfIssue : StringField
     public UnderlyingCountryOfIssue(string val)
         : base(Tags.UnderlyingCountryOfIssue, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingStateOrProvinceOfIssue Field
@@ -11047,7 +10447,6 @@ public sealed class UnderlyingStateOrProvinceOfIssue : StringField
         : base(Tags.UnderlyingStateOrProvinceOfIssue, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLocaleOfIssue Field
 /// </summary>
@@ -11060,7 +10459,6 @@ public sealed class UnderlyingLocaleOfIssue : StringField
     public UnderlyingLocaleOfIssue(string val)
         : base(Tags.UnderlyingLocaleOfIssue, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingInstrRegistry Field
@@ -11075,7 +10473,6 @@ public sealed class UnderlyingInstrRegistry : StringField
         : base(Tags.UnderlyingInstrRegistry, val) {}
 }
 
-
 /// <summary>
 /// LegCountryOfIssue Field
 /// </summary>
@@ -11088,7 +10485,6 @@ public sealed class LegCountryOfIssue : StringField
     public LegCountryOfIssue(string val)
         : base(Tags.LegCountryOfIssue, val) {}
 }
-
 
 /// <summary>
 /// LegStateOrProvinceOfIssue Field
@@ -11103,7 +10499,6 @@ public sealed class LegStateOrProvinceOfIssue : StringField
         : base(Tags.LegStateOrProvinceOfIssue, val) {}
 }
 
-
 /// <summary>
 /// LegLocaleOfIssue Field
 /// </summary>
@@ -11116,7 +10511,6 @@ public sealed class LegLocaleOfIssue : StringField
     public LegLocaleOfIssue(string val)
         : base(Tags.LegLocaleOfIssue, val) {}
 }
-
 
 /// <summary>
 /// LegInstrRegistry Field
@@ -11131,7 +10525,6 @@ public sealed class LegInstrRegistry : StringField
         : base(Tags.LegInstrRegistry, val) {}
 }
 
-
 /// <summary>
 /// LegSymbol Field
 /// </summary>
@@ -11144,7 +10537,6 @@ public sealed class LegSymbol : StringField
     public LegSymbol(string val)
         : base(Tags.LegSymbol, val) {}
 }
-
 
 /// <summary>
 /// LegSymbolSfx Field
@@ -11159,7 +10551,6 @@ public sealed class LegSymbolSfx : StringField
         : base(Tags.LegSymbolSfx, val) {}
 }
 
-
 /// <summary>
 /// LegSecurityID Field
 /// </summary>
@@ -11172,7 +10563,6 @@ public sealed class LegSecurityID : StringField
     public LegSecurityID(string val)
         : base(Tags.LegSecurityID, val) {}
 }
-
 
 /// <summary>
 /// LegSecurityIDSource Field
@@ -11187,7 +10577,6 @@ public sealed class LegSecurityIDSource : StringField
         : base(Tags.LegSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoLegSecurityAltID Field
 /// </summary>
@@ -11200,7 +10589,6 @@ public sealed class NoLegSecurityAltID : StringField
     public NoLegSecurityAltID(string val)
         : base(Tags.NoLegSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// LegSecurityAltID Field
@@ -11215,7 +10603,6 @@ public sealed class LegSecurityAltID : StringField
         : base(Tags.LegSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// LegSecurityAltIDSource Field
 /// </summary>
@@ -11228,7 +10615,6 @@ public sealed class LegSecurityAltIDSource : StringField
     public LegSecurityAltIDSource(string val)
         : base(Tags.LegSecurityAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// LegProduct Field
@@ -11243,7 +10629,6 @@ public sealed class LegProduct : IntField
         : base(Tags.LegProduct, val) {}
 }
 
-
 /// <summary>
 /// LegCFICode Field
 /// </summary>
@@ -11256,7 +10641,6 @@ public sealed class LegCFICode : StringField
     public LegCFICode(string val)
         : base(Tags.LegCFICode, val) {}
 }
-
 
 /// <summary>
 /// LegSecurityType Field
@@ -11271,7 +10655,6 @@ public sealed class LegSecurityType : StringField
         : base(Tags.LegSecurityType, val) {}
 }
 
-
 /// <summary>
 /// LegMaturityMonthYear Field
 /// </summary>
@@ -11284,7 +10667,6 @@ public sealed class LegMaturityMonthYear : StringField
     public LegMaturityMonthYear(string val)
         : base(Tags.LegMaturityMonthYear, val) {}
 }
-
 
 /// <summary>
 /// LegMaturityDate Field
@@ -11299,7 +10681,6 @@ public sealed class LegMaturityDate : StringField
         : base(Tags.LegMaturityDate, val) {}
 }
 
-
 /// <summary>
 /// LegStrikePrice Field
 /// </summary>
@@ -11312,7 +10693,6 @@ public sealed class LegStrikePrice : DecimalField
     public LegStrikePrice(Decimal val)
         : base(Tags.LegStrikePrice, val) {}
 }
-
 
 /// <summary>
 /// LegOptAttribute Field
@@ -11327,7 +10707,6 @@ public sealed class LegOptAttribute : CharField
         : base(Tags.LegOptAttribute, val) {}
 }
 
-
 /// <summary>
 /// LegContractMultiplier Field
 /// </summary>
@@ -11340,7 +10719,6 @@ public sealed class LegContractMultiplier : DecimalField
     public LegContractMultiplier(Decimal val)
         : base(Tags.LegContractMultiplier, val) {}
 }
-
 
 /// <summary>
 /// LegCouponRate Field
@@ -11355,7 +10733,6 @@ public sealed class LegCouponRate : DecimalField
         : base(Tags.LegCouponRate, val) {}
 }
 
-
 /// <summary>
 /// LegSecurityExchange Field
 /// </summary>
@@ -11368,7 +10745,6 @@ public sealed class LegSecurityExchange : StringField
     public LegSecurityExchange(string val)
         : base(Tags.LegSecurityExchange, val) {}
 }
-
 
 /// <summary>
 /// LegIssuer Field
@@ -11383,7 +10759,6 @@ public sealed class LegIssuer : StringField
         : base(Tags.LegIssuer, val) {}
 }
 
-
 /// <summary>
 /// EncodedLegIssuerLen Field
 /// </summary>
@@ -11396,7 +10771,6 @@ public sealed class EncodedLegIssuerLen : IntField
     public EncodedLegIssuerLen(int val)
         : base(Tags.EncodedLegIssuerLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedLegIssuer Field
@@ -11411,7 +10785,6 @@ public sealed class EncodedLegIssuer : StringField
         : base(Tags.EncodedLegIssuer, val) {}
 }
 
-
 /// <summary>
 /// LegSecurityDesc Field
 /// </summary>
@@ -11424,7 +10797,6 @@ public sealed class LegSecurityDesc : StringField
     public LegSecurityDesc(string val)
         : base(Tags.LegSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// EncodedLegSecurityDescLen Field
@@ -11439,7 +10811,6 @@ public sealed class EncodedLegSecurityDescLen : IntField
         : base(Tags.EncodedLegSecurityDescLen, val) {}
 }
 
-
 /// <summary>
 /// EncodedLegSecurityDesc Field
 /// </summary>
@@ -11452,7 +10823,6 @@ public sealed class EncodedLegSecurityDesc : StringField
     public EncodedLegSecurityDesc(string val)
         : base(Tags.EncodedLegSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// LegRatioQty Field
@@ -11467,7 +10837,6 @@ public sealed class LegRatioQty : DecimalField
         : base(Tags.LegRatioQty, val) {}
 }
 
-
 /// <summary>
 /// LegSide Field
 /// </summary>
@@ -11480,7 +10849,6 @@ public sealed class LegSide : CharField
     public LegSide(char val)
         : base(Tags.LegSide, val) {}
 }
-
 
 /// <summary>
 /// TradingSessionSubID Field
@@ -11503,7 +10871,6 @@ public sealed class TradingSessionSubID : StringField
     public const string INTRADAY_AUCTION = "6";
     public const string QUIESCENT = "7";
 }
-
 
 /// <summary>
 /// AllocType Field
@@ -11539,7 +10906,6 @@ public sealed class AllocType : IntField
     public const int BUYSIDE_READY_TO_BOOK_COMBINED_SET_OF_ORDERS = 6;
 }
 
-
 /// <summary>
 /// NoHops Field
 /// </summary>
@@ -11553,7 +10919,6 @@ public sealed class NoHops : IntField
         : base(Tags.NoHops, val) {}
 }
 
-
 /// <summary>
 /// HopCompID Field
 /// </summary>
@@ -11566,7 +10931,6 @@ public sealed class HopCompID : StringField
     public HopCompID(string val)
         : base(Tags.HopCompID, val) {}
 }
-
 
 /// <summary>
 /// HopSendingTime Field
@@ -11586,7 +10950,6 @@ public sealed class HopSendingTime : DateTimeField
         : base(Tags.HopSendingTime, val, precision) {}
 }
 
-
 /// <summary>
 /// HopRefID Field
 /// </summary>
@@ -11599,7 +10962,6 @@ public sealed class HopRefID : SeqNumFieldType
     public HopRefID(SeqNumType val)
         : base(Tags.HopRefID, val) {}
 }
-
 
 /// <summary>
 /// MidPx Field
@@ -11614,7 +10976,6 @@ public sealed class MidPx : DecimalField
         : base(Tags.MidPx, val) {}
 }
 
-
 /// <summary>
 /// BidYield Field
 /// </summary>
@@ -11627,7 +10988,6 @@ public sealed class BidYield : DecimalField
     public BidYield(Decimal val)
         : base(Tags.BidYield, val) {}
 }
-
 
 /// <summary>
 /// MidYield Field
@@ -11642,7 +11002,6 @@ public sealed class MidYield : DecimalField
         : base(Tags.MidYield, val) {}
 }
 
-
 /// <summary>
 /// OfferYield Field
 /// </summary>
@@ -11655,7 +11014,6 @@ public sealed class OfferYield : DecimalField
     public OfferYield(Decimal val)
         : base(Tags.OfferYield, val) {}
 }
-
 
 /// <summary>
 /// ClearingFeeIndicator Field
@@ -11688,7 +11046,6 @@ public sealed class ClearingFeeIndicator : StringField
     public const string LESSEE_AND_106F_EMPLOYEES = "L";
 }
 
-
 /// <summary>
 /// WorkingIndicator Field
 /// </summary>
@@ -11706,7 +11063,6 @@ public sealed class WorkingIndicator : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// LegLastPx Field
 /// </summary>
@@ -11719,7 +11075,6 @@ public sealed class LegLastPx : DecimalField
     public LegLastPx(Decimal val)
         : base(Tags.LegLastPx, val) {}
 }
-
 
 /// <summary>
 /// PriorityIndicator Field
@@ -11738,7 +11093,6 @@ public sealed class PriorityIndicator : IntField
     public const int LOST_PRIORITY_AS_RESULT_OF_ORDER_CHANGE = 1;
 }
 
-
 /// <summary>
 /// PriceImprovement Field
 /// </summary>
@@ -11751,7 +11105,6 @@ public sealed class PriceImprovement : DecimalField
     public PriceImprovement(Decimal val)
         : base(Tags.PriceImprovement, val) {}
 }
-
 
 /// <summary>
 /// Price2 Field
@@ -11766,7 +11119,6 @@ public sealed class Price2 : DecimalField
         : base(Tags.Price2, val) {}
 }
 
-
 /// <summary>
 /// LastForwardPoints2 Field
 /// </summary>
@@ -11779,7 +11131,6 @@ public sealed class LastForwardPoints2 : DecimalField
     public LastForwardPoints2(Decimal val)
         : base(Tags.LastForwardPoints2, val) {}
 }
-
 
 /// <summary>
 /// BidForwardPoints2 Field
@@ -11794,7 +11145,6 @@ public sealed class BidForwardPoints2 : DecimalField
         : base(Tags.BidForwardPoints2, val) {}
 }
 
-
 /// <summary>
 /// OfferForwardPoints2 Field
 /// </summary>
@@ -11807,7 +11157,6 @@ public sealed class OfferForwardPoints2 : DecimalField
     public OfferForwardPoints2(Decimal val)
         : base(Tags.OfferForwardPoints2, val) {}
 }
-
 
 /// <summary>
 /// RFQReqID Field
@@ -11822,7 +11171,6 @@ public sealed class RFQReqID : StringField
         : base(Tags.RFQReqID, val) {}
 }
 
-
 /// <summary>
 /// MktBidPx Field
 /// </summary>
@@ -11835,7 +11183,6 @@ public sealed class MktBidPx : DecimalField
     public MktBidPx(Decimal val)
         : base(Tags.MktBidPx, val) {}
 }
-
 
 /// <summary>
 /// MktOfferPx Field
@@ -11850,7 +11197,6 @@ public sealed class MktOfferPx : DecimalField
         : base(Tags.MktOfferPx, val) {}
 }
 
-
 /// <summary>
 /// MinBidSize Field
 /// </summary>
@@ -11863,7 +11209,6 @@ public sealed class MinBidSize : DecimalField
     public MinBidSize(Decimal val)
         : base(Tags.MinBidSize, val) {}
 }
-
 
 /// <summary>
 /// MinOfferSize Field
@@ -11878,7 +11223,6 @@ public sealed class MinOfferSize : DecimalField
         : base(Tags.MinOfferSize, val) {}
 }
 
-
 /// <summary>
 /// QuoteStatusReqID Field
 /// </summary>
@@ -11891,7 +11235,6 @@ public sealed class QuoteStatusReqID : StringField
     public QuoteStatusReqID(string val)
         : base(Tags.QuoteStatusReqID, val) {}
 }
-
 
 /// <summary>
 /// LegalConfirm Field
@@ -11910,7 +11253,6 @@ public sealed class LegalConfirm : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// UnderlyingLastPx Field
 /// </summary>
@@ -11924,7 +11266,6 @@ public sealed class UnderlyingLastPx : DecimalField
         : base(Tags.UnderlyingLastPx, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLastQty Field
 /// </summary>
@@ -11937,7 +11278,6 @@ public sealed class UnderlyingLastQty : DecimalField
     public UnderlyingLastQty(Decimal val)
         : base(Tags.UnderlyingLastQty, val) {}
 }
-
 
 /// <summary>
 /// SecDefStatus Field
@@ -11959,7 +11299,6 @@ public sealed class SecDefStatus : IntField
     public const int INVALID_DEFINITION_REQUEST = 4;
 }
 
-
 /// <summary>
 /// LegRefID Field
 /// </summary>
@@ -11972,7 +11311,6 @@ public sealed class LegRefID : StringField
     public LegRefID(string val)
         : base(Tags.LegRefID, val) {}
 }
-
 
 /// <summary>
 /// ContraLegRefID Field
@@ -11987,7 +11325,6 @@ public sealed class ContraLegRefID : StringField
         : base(Tags.ContraLegRefID, val) {}
 }
 
-
 /// <summary>
 /// SettlCurrBidFxRate Field
 /// </summary>
@@ -12001,7 +11338,6 @@ public sealed class SettlCurrBidFxRate : DecimalField
         : base(Tags.SettlCurrBidFxRate, val) {}
 }
 
-
 /// <summary>
 /// SettlCurrOfferFxRate Field
 /// </summary>
@@ -12014,7 +11350,6 @@ public sealed class SettlCurrOfferFxRate : DecimalField
     public SettlCurrOfferFxRate(Decimal val)
         : base(Tags.SettlCurrOfferFxRate, val) {}
 }
-
 
 /// <summary>
 /// QuoteRequestRejectReason Field
@@ -12044,7 +11379,6 @@ public sealed class QuoteRequestRejectReason : IntField
     public const int EXCHANGE_CLOSED = 2;
 }
 
-
 /// <summary>
 /// SideComplianceID Field
 /// </summary>
@@ -12057,7 +11391,6 @@ public sealed class SideComplianceID : StringField
     public SideComplianceID(string val)
         : base(Tags.SideComplianceID, val) {}
 }
-
 
 /// <summary>
 /// SettlType Field
@@ -12086,7 +11419,6 @@ public sealed class SettlType : StringField
     public const string BROKEN_DATE = "B";
 }
 
-
 /// <summary>
 /// SettlDate Field
 /// </summary>
@@ -12099,7 +11431,6 @@ public sealed class SettlDate : StringField
     public SettlDate(string val)
         : base(Tags.SettlDate, val) {}
 }
-
 
 /// <summary>
 /// AvgPxPrecision Field
@@ -12114,7 +11445,6 @@ public sealed class AvgPxPrecision : IntField
         : base(Tags.AvgPxPrecision, val) {}
 }
 
-
 /// <summary>
 /// SettlDate2 Field
 /// </summary>
@@ -12128,7 +11458,6 @@ public sealed class SettlDate2 : StringField
         : base(Tags.SettlDate2, val) {}
 }
 
-
 /// <summary>
 /// PegOffsetValue Field
 /// </summary>
@@ -12141,7 +11470,6 @@ public sealed class PegOffsetValue : DecimalField
     public PegOffsetValue(Decimal val)
         : base(Tags.PegOffsetValue, val) {}
 }
-
 
 /// <summary>
 /// OpenCloseSettlFlag Field
@@ -12166,7 +11494,6 @@ public sealed class OpenCloseSettlFlag : StringField
     public const string SESSION_OPEN_CLOSE_SETTLEMENT_ENTRY = "1";
 }
 
-
 /// <summary>
 /// TotNoQuoteEntries Field
 /// </summary>
@@ -12179,7 +11506,6 @@ public sealed class TotNoQuoteEntries : IntField
     public TotNoQuoteEntries(int val)
         : base(Tags.TotNoQuoteEntries, val) {}
 }
-
 
 /// <summary>
 /// DiscretionOffsetValue Field
@@ -12194,7 +11520,6 @@ public sealed class DiscretionOffsetValue : DecimalField
         : base(Tags.DiscretionOffsetValue, val) {}
 }
 
-
 /// <summary>
 /// TotNoRelatedSym Field
 /// </summary>
@@ -12207,7 +11532,6 @@ public sealed class TotNoRelatedSym : IntField
     public TotNoRelatedSym(int val)
         : base(Tags.TotNoRelatedSym, val) {}
 }
-
 
 /// <summary>
 /// BidTradeType Field
@@ -12228,7 +11552,6 @@ public sealed class BidTradeType : CharField
     public const char RISK_TRADE = 'R';
 }
 
-
 /// <summary>
 /// CardIssNum Field
 /// </summary>
@@ -12241,7 +11564,6 @@ public sealed class CardIssNum : StringField
     public CardIssNum(string val)
         : base(Tags.CardIssNum, val) {}
 }
-
 
 /// <summary>
 /// RegistDtls Field
@@ -12256,7 +11578,6 @@ public sealed class RegistDtls : StringField
         : base(Tags.RegistDtls, val) {}
 }
 
-
 /// <summary>
 /// TotNoSecurityTypes Field
 /// </summary>
@@ -12269,7 +11590,6 @@ public sealed class TotNoSecurityTypes : IntField
     public TotNoSecurityTypes(int val)
         : base(Tags.TotNoSecurityTypes, val) {}
 }
-
 
 /// <summary>
 /// LegSettlType Field
@@ -12284,7 +11604,6 @@ public sealed class LegSettlType : CharField
         : base(Tags.LegSettlType, val) {}
 }
 
-
 /// <summary>
 /// LegSettlDate Field
 /// </summary>
@@ -12297,7 +11616,6 @@ public sealed class LegSettlDate : StringField
     public LegSettlDate(string val)
         : base(Tags.LegSettlDate, val) {}
 }
-
 
 /// <summary>
 /// AcctIDSource Field
@@ -12320,7 +11638,6 @@ public sealed class AcctIDSource : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// AllocAcctIDSource Field
 /// </summary>
@@ -12333,7 +11650,6 @@ public sealed class AllocAcctIDSource : IntField
     public AllocAcctIDSource(int val)
         : base(Tags.AllocAcctIDSource, val) {}
 }
-
 
 /// <summary>
 /// BenchmarkPrice Field
@@ -12348,7 +11664,6 @@ public sealed class BenchmarkPrice : DecimalField
         : base(Tags.BenchmarkPrice, val) {}
 }
 
-
 /// <summary>
 /// BenchmarkPriceType Field
 /// </summary>
@@ -12362,7 +11677,6 @@ public sealed class BenchmarkPriceType : IntField
         : base(Tags.BenchmarkPriceType, val) {}
 }
 
-
 /// <summary>
 /// ConfirmID Field
 /// </summary>
@@ -12375,7 +11689,6 @@ public sealed class ConfirmID : StringField
     public ConfirmID(string val)
         : base(Tags.ConfirmID, val) {}
 }
-
 
 /// <summary>
 /// ConfirmStatus Field
@@ -12397,7 +11710,6 @@ public sealed class ConfirmStatus : IntField
     public const int REQUEST_REJECTED = 5;
 }
 
-
 /// <summary>
 /// ConfirmTransType Field
 /// </summary>
@@ -12416,7 +11728,6 @@ public sealed class ConfirmTransType : IntField
     public const int CANCEL = 2;
 }
 
-
 /// <summary>
 /// ContractSettlMonth Field
 /// </summary>
@@ -12429,7 +11740,6 @@ public sealed class ContractSettlMonth : StringField
     public ContractSettlMonth(string val)
         : base(Tags.ContractSettlMonth, val) {}
 }
-
 
 /// <summary>
 /// DeliveryForm Field
@@ -12449,7 +11759,6 @@ public sealed class DeliveryForm : IntField
     public const int BOOKENTRY = 1;
 }
 
-
 /// <summary>
 /// LastParPx Field
 /// </summary>
@@ -12462,7 +11771,6 @@ public sealed class LastParPx : DecimalField
     public LastParPx(Decimal val)
         : base(Tags.LastParPx, val) {}
 }
-
 
 /// <summary>
 /// NoLegAllocs Field
@@ -12477,7 +11785,6 @@ public sealed class NoLegAllocs : IntField
         : base(Tags.NoLegAllocs, val) {}
 }
 
-
 /// <summary>
 /// LegAllocAccount Field
 /// </summary>
@@ -12490,7 +11797,6 @@ public sealed class LegAllocAccount : StringField
     public LegAllocAccount(string val)
         : base(Tags.LegAllocAccount, val) {}
 }
-
 
 /// <summary>
 /// LegIndividualAllocID Field
@@ -12505,7 +11811,6 @@ public sealed class LegIndividualAllocID : StringField
         : base(Tags.LegIndividualAllocID, val) {}
 }
 
-
 /// <summary>
 /// LegAllocQty Field
 /// </summary>
@@ -12518,7 +11823,6 @@ public sealed class LegAllocQty : DecimalField
     public LegAllocQty(Decimal val)
         : base(Tags.LegAllocQty, val) {}
 }
-
 
 /// <summary>
 /// LegAllocAcctIDSource Field
@@ -12533,7 +11837,6 @@ public sealed class LegAllocAcctIDSource : StringField
         : base(Tags.LegAllocAcctIDSource, val) {}
 }
 
-
 /// <summary>
 /// LegSettlCurrency Field
 /// </summary>
@@ -12546,7 +11849,6 @@ public sealed class LegSettlCurrency : StringField
     public LegSettlCurrency(string val)
         : base(Tags.LegSettlCurrency, val) {}
 }
-
 
 /// <summary>
 /// LegBenchmarkCurveCurrency Field
@@ -12561,7 +11863,6 @@ public sealed class LegBenchmarkCurveCurrency : StringField
         : base(Tags.LegBenchmarkCurveCurrency, val) {}
 }
 
-
 /// <summary>
 /// LegBenchmarkCurveName Field
 /// </summary>
@@ -12574,7 +11875,6 @@ public sealed class LegBenchmarkCurveName : StringField
     public LegBenchmarkCurveName(string val)
         : base(Tags.LegBenchmarkCurveName, val) {}
 }
-
 
 /// <summary>
 /// LegBenchmarkCurvePoint Field
@@ -12589,7 +11889,6 @@ public sealed class LegBenchmarkCurvePoint : StringField
         : base(Tags.LegBenchmarkCurvePoint, val) {}
 }
 
-
 /// <summary>
 /// LegBenchmarkPrice Field
 /// </summary>
@@ -12602,7 +11901,6 @@ public sealed class LegBenchmarkPrice : DecimalField
     public LegBenchmarkPrice(Decimal val)
         : base(Tags.LegBenchmarkPrice, val) {}
 }
-
 
 /// <summary>
 /// LegBenchmarkPriceType Field
@@ -12617,7 +11915,6 @@ public sealed class LegBenchmarkPriceType : IntField
         : base(Tags.LegBenchmarkPriceType, val) {}
 }
 
-
 /// <summary>
 /// LegBidPx Field
 /// </summary>
@@ -12630,7 +11927,6 @@ public sealed class LegBidPx : DecimalField
     public LegBidPx(Decimal val)
         : base(Tags.LegBidPx, val) {}
 }
-
 
 /// <summary>
 /// LegIOIQty Field
@@ -12645,7 +11941,6 @@ public sealed class LegIOIQty : StringField
         : base(Tags.LegIOIQty, val) {}
 }
 
-
 /// <summary>
 /// NoLegStipulations Field
 /// </summary>
@@ -12658,7 +11953,6 @@ public sealed class NoLegStipulations : IntField
     public NoLegStipulations(int val)
         : base(Tags.NoLegStipulations, val) {}
 }
-
 
 /// <summary>
 /// LegOfferPx Field
@@ -12673,7 +11967,6 @@ public sealed class LegOfferPx : DecimalField
         : base(Tags.LegOfferPx, val) {}
 }
 
-
 /// <summary>
 /// LegOrderQty Field
 /// </summary>
@@ -12686,7 +11979,6 @@ public sealed class LegOrderQty : DecimalField
     public LegOrderQty(Decimal val)
         : base(Tags.LegOrderQty, val) {}
 }
-
 
 /// <summary>
 /// LegPriceType Field
@@ -12701,7 +11993,6 @@ public sealed class LegPriceType : IntField
         : base(Tags.LegPriceType, val) {}
 }
 
-
 /// <summary>
 /// LegQty Field
 /// </summary>
@@ -12714,7 +12005,6 @@ public sealed class LegQty : DecimalField
     public LegQty(Decimal val)
         : base(Tags.LegQty, val) {}
 }
-
 
 /// <summary>
 /// LegStipulationType Field
@@ -12729,7 +12019,6 @@ public sealed class LegStipulationType : StringField
         : base(Tags.LegStipulationType, val) {}
 }
 
-
 /// <summary>
 /// LegStipulationValue Field
 /// </summary>
@@ -12742,7 +12031,6 @@ public sealed class LegStipulationValue : StringField
     public LegStipulationValue(string val)
         : base(Tags.LegStipulationValue, val) {}
 }
-
 
 /// <summary>
 /// LegSwapType Field
@@ -12763,7 +12051,6 @@ public sealed class LegSwapType : IntField
     public const int PROCEEDS = 5;
 }
 
-
 /// <summary>
 /// Pool Field
 /// </summary>
@@ -12776,7 +12063,6 @@ public sealed class Pool : StringField
     public Pool(string val)
         : base(Tags.Pool, val) {}
 }
-
 
 /// <summary>
 /// QuotePriceType Field
@@ -12804,7 +12090,6 @@ public sealed class QuotePriceType : IntField
     public const int BASIS_POINTS_RELATIVE_TO_BENCHMARK = 6;
 }
 
-
 /// <summary>
 /// QuoteRespID Field
 /// </summary>
@@ -12817,7 +12102,6 @@ public sealed class QuoteRespID : StringField
     public QuoteRespID(string val)
         : base(Tags.QuoteRespID, val) {}
 }
-
 
 /// <summary>
 /// QuoteRespType Field
@@ -12842,7 +12126,6 @@ public sealed class QuoteRespType : IntField
     public const int TIMED_OUT = 8;
 }
 
-
 /// <summary>
 /// QuoteQualifier Field
 /// </summary>
@@ -12855,7 +12138,6 @@ public sealed class QuoteQualifier : CharField
     public QuoteQualifier(char val)
         : base(Tags.QuoteQualifier, val) {}
 }
-
 
 /// <summary>
 /// YieldRedemptionDate Field
@@ -12870,7 +12152,6 @@ public sealed class YieldRedemptionDate : StringField
         : base(Tags.YieldRedemptionDate, val) {}
 }
 
-
 /// <summary>
 /// YieldRedemptionPrice Field
 /// </summary>
@@ -12883,7 +12164,6 @@ public sealed class YieldRedemptionPrice : DecimalField
     public YieldRedemptionPrice(Decimal val)
         : base(Tags.YieldRedemptionPrice, val) {}
 }
-
 
 /// <summary>
 /// YieldRedemptionPriceType Field
@@ -12898,7 +12178,6 @@ public sealed class YieldRedemptionPriceType : IntField
         : base(Tags.YieldRedemptionPriceType, val) {}
 }
 
-
 /// <summary>
 /// BenchmarkSecurityID Field
 /// </summary>
@@ -12911,7 +12190,6 @@ public sealed class BenchmarkSecurityID : StringField
     public BenchmarkSecurityID(string val)
         : base(Tags.BenchmarkSecurityID, val) {}
 }
-
 
 /// <summary>
 /// ReversalIndicator Field
@@ -12926,7 +12204,6 @@ public sealed class ReversalIndicator : BooleanField
         : base(Tags.ReversalIndicator, val) {}
 }
 
-
 /// <summary>
 /// YieldCalcDate Field
 /// </summary>
@@ -12940,7 +12217,6 @@ public sealed class YieldCalcDate : StringField
         : base(Tags.YieldCalcDate, val) {}
 }
 
-
 /// <summary>
 /// NoPositions Field
 /// </summary>
@@ -12953,7 +12229,6 @@ public sealed class NoPositions : IntField
     public NoPositions(int val)
         : base(Tags.NoPositions, val) {}
 }
-
 
 /// <summary>
 /// PosType Field
@@ -12997,7 +12272,6 @@ public sealed class PosType : StringField
     public const string SUCCESSION_EVENT_ADJUSTMENT = "SEA";
 }
 
-
 /// <summary>
 /// LongQty Field
 /// </summary>
@@ -13011,7 +12285,6 @@ public sealed class LongQty : DecimalField
         : base(Tags.LongQty, val) {}
 }
 
-
 /// <summary>
 /// ShortQty Field
 /// </summary>
@@ -13024,7 +12297,6 @@ public sealed class ShortQty : DecimalField
     public ShortQty(Decimal val)
         : base(Tags.ShortQty, val) {}
 }
-
 
 /// <summary>
 /// PosQtyStatus Field
@@ -13043,7 +12315,6 @@ public sealed class PosQtyStatus : IntField
     public const int ACCEPTED = 1;
     public const int REJECTED = 2;
 }
-
 
 /// <summary>
 /// PosAmtType Field
@@ -13078,7 +12349,6 @@ public sealed class PosAmtType : StringField
     public const string TOTAL_COLLATERALIZED_AMOUNT = "COLAT";
 }
 
-
 /// <summary>
 /// PosAmt Field
 /// </summary>
@@ -13091,7 +12361,6 @@ public sealed class PosAmt : DecimalField
     public PosAmt(Decimal val)
         : base(Tags.PosAmt, val) {}
 }
-
 
 /// <summary>
 /// PosTransType Field
@@ -13114,7 +12383,6 @@ public sealed class PosTransType : IntField
     public const int LARGE_TRADER_SUBMISSION = 6;
 }
 
-
 /// <summary>
 /// PosReqID Field
 /// </summary>
@@ -13128,7 +12396,6 @@ public sealed class PosReqID : StringField
         : base(Tags.PosReqID, val) {}
 }
 
-
 /// <summary>
 /// NoUnderlyings Field
 /// </summary>
@@ -13141,7 +12408,6 @@ public sealed class NoUnderlyings : IntField
     public NoUnderlyings(int val)
         : base(Tags.NoUnderlyings, val) {}
 }
-
 
 /// <summary>
 /// PosMaintAction Field
@@ -13162,7 +12428,6 @@ public sealed class PosMaintAction : IntField
     public const int REVERSE = 4;
 }
 
-
 /// <summary>
 /// OrigPosReqRefID Field
 /// </summary>
@@ -13175,7 +12440,6 @@ public sealed class OrigPosReqRefID : StringField
     public OrigPosReqRefID(string val)
         : base(Tags.OrigPosReqRefID, val) {}
 }
-
 
 /// <summary>
 /// PosMaintRptRefID Field
@@ -13190,7 +12454,6 @@ public sealed class PosMaintRptRefID : StringField
         : base(Tags.PosMaintRptRefID, val) {}
 }
 
-
 /// <summary>
 /// ClearingBusinessDate Field
 /// </summary>
@@ -13203,7 +12466,6 @@ public sealed class ClearingBusinessDate : StringField
     public ClearingBusinessDate(string val)
         : base(Tags.ClearingBusinessDate, val) {}
 }
-
 
 /// <summary>
 /// SettlSessID Field
@@ -13224,7 +12486,6 @@ public sealed class SettlSessID : StringField
     public const string END_OF_DAY = "EOD";
 }
 
-
 /// <summary>
 /// SettlSessSubID Field
 /// </summary>
@@ -13237,7 +12498,6 @@ public sealed class SettlSessSubID : StringField
     public SettlSessSubID(string val)
         : base(Tags.SettlSessSubID, val) {}
 }
-
 
 /// <summary>
 /// AdjustmentType Field
@@ -13258,7 +12518,6 @@ public sealed class AdjustmentType : IntField
     public const int FINAL = 3;
 }
 
-
 /// <summary>
 /// ContraryInstructionIndicator Field
 /// </summary>
@@ -13271,7 +12530,6 @@ public sealed class ContraryInstructionIndicator : BooleanField
     public ContraryInstructionIndicator(Boolean val)
         : base(Tags.ContraryInstructionIndicator, val) {}
 }
-
 
 /// <summary>
 /// PriorSpreadIndicator Field
@@ -13286,7 +12544,6 @@ public sealed class PriorSpreadIndicator : BooleanField
         : base(Tags.PriorSpreadIndicator, val) {}
 }
 
-
 /// <summary>
 /// PosMaintRptID Field
 /// </summary>
@@ -13299,7 +12556,6 @@ public sealed class PosMaintRptID : StringField
     public PosMaintRptID(string val)
         : base(Tags.PosMaintRptID, val) {}
 }
-
 
 /// <summary>
 /// PosMaintStatus Field
@@ -13321,7 +12577,6 @@ public sealed class PosMaintStatus : IntField
     public const int COMPLETED_WITH_WARNINGS = 4;
 }
 
-
 /// <summary>
 /// PosMaintResult Field
 /// </summary>
@@ -13340,7 +12595,6 @@ public sealed class PosMaintResult : IntField
     public const int OTHER = 99;
     public const int SUCCESSFUL_COMPLETION_NO_WARNINGS_OR_ERRORS = 0;
 }
-
 
 /// <summary>
 /// PosReqType Field
@@ -13364,7 +12618,6 @@ public sealed class PosReqType : IntField
     public const int DELTA_POSITIONS = 6;
 }
 
-
 /// <summary>
 /// ResponseTransportType Field
 /// </summary>
@@ -13382,7 +12635,6 @@ public sealed class ResponseTransportType : IntField
     public const int OUT_OF_BAND = 1;
 }
 
-
 /// <summary>
 /// ResponseDestination Field
 /// </summary>
@@ -13396,7 +12648,6 @@ public sealed class ResponseDestination : StringField
         : base(Tags.ResponseDestination, val) {}
 }
 
-
 /// <summary>
 /// TotalNumPosReports Field
 /// </summary>
@@ -13409,7 +12660,6 @@ public sealed class TotalNumPosReports : IntField
     public TotalNumPosReports(int val)
         : base(Tags.TotalNumPosReports, val) {}
 }
-
 
 /// <summary>
 /// PosReqResult Field
@@ -13432,7 +12682,6 @@ public sealed class PosReqResult : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// PosReqStatus Field
 /// </summary>
@@ -13451,7 +12700,6 @@ public sealed class PosReqStatus : IntField
     public const int REJECTED = 2;
 }
 
-
 /// <summary>
 /// SettlPrice Field
 /// </summary>
@@ -13464,7 +12712,6 @@ public sealed class SettlPrice : DecimalField
     public SettlPrice(Decimal val)
         : base(Tags.SettlPrice, val) {}
 }
-
 
 /// <summary>
 /// SettlPriceType Field
@@ -13483,7 +12730,6 @@ public sealed class SettlPriceType : IntField
     public const int THEORETICAL = 2;
 }
 
-
 /// <summary>
 /// UnderlyingSettlPrice Field
 /// </summary>
@@ -13496,7 +12742,6 @@ public sealed class UnderlyingSettlPrice : DecimalField
     public UnderlyingSettlPrice(Decimal val)
         : base(Tags.UnderlyingSettlPrice, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSettlPriceType Field
@@ -13511,7 +12756,6 @@ public sealed class UnderlyingSettlPriceType : IntField
         : base(Tags.UnderlyingSettlPriceType, val) {}
 }
 
-
 /// <summary>
 /// PriorSettlPrice Field
 /// </summary>
@@ -13524,7 +12768,6 @@ public sealed class PriorSettlPrice : DecimalField
     public PriorSettlPrice(Decimal val)
         : base(Tags.PriorSettlPrice, val) {}
 }
-
 
 /// <summary>
 /// NoQuoteQualifiers Field
@@ -13539,7 +12782,6 @@ public sealed class NoQuoteQualifiers : IntField
         : base(Tags.NoQuoteQualifiers, val) {}
 }
 
-
 /// <summary>
 /// AllocSettlCurrency Field
 /// </summary>
@@ -13552,7 +12794,6 @@ public sealed class AllocSettlCurrency : StringField
     public AllocSettlCurrency(string val)
         : base(Tags.AllocSettlCurrency, val) {}
 }
-
 
 /// <summary>
 /// AllocSettlCurrAmt Field
@@ -13567,7 +12808,6 @@ public sealed class AllocSettlCurrAmt : DecimalField
         : base(Tags.AllocSettlCurrAmt, val) {}
 }
 
-
 /// <summary>
 /// InterestAtMaturity Field
 /// </summary>
@@ -13580,7 +12820,6 @@ public sealed class InterestAtMaturity : DecimalField
     public InterestAtMaturity(Decimal val)
         : base(Tags.InterestAtMaturity, val) {}
 }
-
 
 /// <summary>
 /// LegDatedDate Field
@@ -13595,7 +12834,6 @@ public sealed class LegDatedDate : StringField
         : base(Tags.LegDatedDate, val) {}
 }
 
-
 /// <summary>
 /// LegPool Field
 /// </summary>
@@ -13608,7 +12846,6 @@ public sealed class LegPool : StringField
     public LegPool(string val)
         : base(Tags.LegPool, val) {}
 }
-
 
 /// <summary>
 /// AllocInterestAtMaturity Field
@@ -13623,7 +12860,6 @@ public sealed class AllocInterestAtMaturity : DecimalField
         : base(Tags.AllocInterestAtMaturity, val) {}
 }
 
-
 /// <summary>
 /// AllocAccruedInterestAmt Field
 /// </summary>
@@ -13637,7 +12873,6 @@ public sealed class AllocAccruedInterestAmt : DecimalField
         : base(Tags.AllocAccruedInterestAmt, val) {}
 }
 
-
 /// <summary>
 /// DeliveryDate Field
 /// </summary>
@@ -13650,7 +12885,6 @@ public sealed class DeliveryDate : StringField
     public DeliveryDate(string val)
         : base(Tags.DeliveryDate, val) {}
 }
-
 
 /// <summary>
 /// AssignmentMethod Field
@@ -13670,7 +12904,6 @@ public sealed class AssignmentMethod : CharField
     public const char PRORATA = 'P';
 }
 
-
 /// <summary>
 /// AssignmentUnit Field
 /// </summary>
@@ -13684,7 +12917,6 @@ public sealed class AssignmentUnit : DecimalField
         : base(Tags.AssignmentUnit, val) {}
 }
 
-
 /// <summary>
 /// OpenInterest Field
 /// </summary>
@@ -13697,7 +12929,6 @@ public sealed class OpenInterest : DecimalField
     public OpenInterest(Decimal val)
         : base(Tags.OpenInterest, val) {}
 }
-
 
 /// <summary>
 /// ExerciseMethod Field
@@ -13716,7 +12947,6 @@ public sealed class ExerciseMethod : CharField
     public const char MANUAL = 'M';
 }
 
-
 /// <summary>
 /// TotNumTradeReports Field
 /// </summary>
@@ -13729,7 +12959,6 @@ public sealed class TotNumTradeReports : IntField
     public TotNumTradeReports(int val)
         : base(Tags.TotNumTradeReports, val) {}
 }
-
 
 /// <summary>
 /// TradeRequestResult Field
@@ -13758,7 +12987,6 @@ public sealed class TradeRequestResult : IntField
     public const int YIELD = 10;
 }
 
-
 /// <summary>
 /// TradeRequestStatus Field
 /// </summary>
@@ -13776,7 +13004,6 @@ public sealed class TradeRequestStatus : IntField
     public const int COMPLETED = 1;
     public const int REJECTED = 2;
 }
-
 
 /// <summary>
 /// TradeReportRejectReason Field
@@ -13801,7 +13028,6 @@ public sealed class TradeReportRejectReason : IntField
     public const int YIELD = 10;
 }
 
-
 /// <summary>
 /// SideMultiLegReportingType Field
 /// </summary>
@@ -13822,7 +13048,6 @@ public sealed class SideMultiLegReportingType : IntField
     public const int MULTI_LEG_SECURITY = 3;
 }
 
-
 /// <summary>
 /// NoPosAmt Field
 /// </summary>
@@ -13835,7 +13060,6 @@ public sealed class NoPosAmt : IntField
     public NoPosAmt(int val)
         : base(Tags.NoPosAmt, val) {}
 }
-
 
 /// <summary>
 /// AutoAcceptIndicator Field
@@ -13850,7 +13074,6 @@ public sealed class AutoAcceptIndicator : BooleanField
         : base(Tags.AutoAcceptIndicator, val) {}
 }
 
-
 /// <summary>
 /// AllocReportID Field
 /// </summary>
@@ -13863,7 +13086,6 @@ public sealed class AllocReportID : StringField
     public AllocReportID(string val)
         : base(Tags.AllocReportID, val) {}
 }
-
 
 /// <summary>
 /// NoNested2PartyIDs Field
@@ -13878,7 +13100,6 @@ public sealed class NoNested2PartyIDs : IntField
         : base(Tags.NoNested2PartyIDs, val) {}
 }
 
-
 /// <summary>
 /// Nested2PartyID Field
 /// </summary>
@@ -13891,7 +13112,6 @@ public sealed class Nested2PartyID : StringField
     public Nested2PartyID(string val)
         : base(Tags.Nested2PartyID, val) {}
 }
-
 
 /// <summary>
 /// Nested2PartyIDSource Field
@@ -13906,7 +13126,6 @@ public sealed class Nested2PartyIDSource : CharField
         : base(Tags.Nested2PartyIDSource, val) {}
 }
 
-
 /// <summary>
 /// Nested2PartyRole Field
 /// </summary>
@@ -13919,7 +13138,6 @@ public sealed class Nested2PartyRole : IntField
     public Nested2PartyRole(int val)
         : base(Tags.Nested2PartyRole, val) {}
 }
-
 
 /// <summary>
 /// Nested2PartySubID Field
@@ -13934,7 +13152,6 @@ public sealed class Nested2PartySubID : StringField
         : base(Tags.Nested2PartySubID, val) {}
 }
 
-
 /// <summary>
 /// BenchmarkSecurityIDSource Field
 /// </summary>
@@ -13947,7 +13164,6 @@ public sealed class BenchmarkSecurityIDSource : StringField
     public BenchmarkSecurityIDSource(string val)
         : base(Tags.BenchmarkSecurityIDSource, val) {}
 }
-
 
 /// <summary>
 /// SecuritySubType Field
@@ -13962,7 +13178,6 @@ public sealed class SecuritySubType : StringField
         : base(Tags.SecuritySubType, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSecuritySubType Field
 /// </summary>
@@ -13975,7 +13190,6 @@ public sealed class UnderlyingSecuritySubType : StringField
     public UnderlyingSecuritySubType(string val)
         : base(Tags.UnderlyingSecuritySubType, val) {}
 }
-
 
 /// <summary>
 /// LegSecuritySubType Field
@@ -13990,7 +13204,6 @@ public sealed class LegSecuritySubType : StringField
         : base(Tags.LegSecuritySubType, val) {}
 }
 
-
 /// <summary>
 /// AllowableOneSidednessPct Field
 /// </summary>
@@ -14003,7 +13216,6 @@ public sealed class AllowableOneSidednessPct : DecimalField
     public AllowableOneSidednessPct(Decimal val)
         : base(Tags.AllowableOneSidednessPct, val) {}
 }
-
 
 /// <summary>
 /// AllowableOneSidednessValue Field
@@ -14018,7 +13230,6 @@ public sealed class AllowableOneSidednessValue : DecimalField
         : base(Tags.AllowableOneSidednessValue, val) {}
 }
 
-
 /// <summary>
 /// AllowableOneSidednessCurr Field
 /// </summary>
@@ -14032,7 +13243,6 @@ public sealed class AllowableOneSidednessCurr : StringField
         : base(Tags.AllowableOneSidednessCurr, val) {}
 }
 
-
 /// <summary>
 /// NoTrdRegTimestamps Field
 /// </summary>
@@ -14045,7 +13255,6 @@ public sealed class NoTrdRegTimestamps : IntField
     public NoTrdRegTimestamps(int val)
         : base(Tags.NoTrdRegTimestamps, val) {}
 }
-
 
 /// <summary>
 /// TrdRegTimestamp Field
@@ -14064,7 +13273,6 @@ public sealed class TrdRegTimestamp : DateTimeField
     public TrdRegTimestamp(DateTime val, TimePrecision precision)
         : base(Tags.TrdRegTimestamp, val, precision) {}
 }
-
 
 /// <summary>
 /// TrdRegTimestampType Field
@@ -14088,7 +13296,6 @@ public sealed class TrdRegTimestampType : IntField
     public const int SUBMISSION_TO_CLEARING = 7;
 }
 
-
 /// <summary>
 /// TrdRegTimestampOrigin Field
 /// </summary>
@@ -14102,7 +13309,6 @@ public sealed class TrdRegTimestampOrigin : StringField
         : base(Tags.TrdRegTimestampOrigin, val) {}
 }
 
-
 /// <summary>
 /// ConfirmRefID Field
 /// </summary>
@@ -14115,7 +13321,6 @@ public sealed class ConfirmRefID : StringField
     public ConfirmRefID(string val)
         : base(Tags.ConfirmRefID, val) {}
 }
-
 
 /// <summary>
 /// ConfirmType Field
@@ -14135,7 +13340,6 @@ public sealed class ConfirmType : IntField
     public const int CONFIRMATION_REQUEST_REJECTED = 3;
 }
 
-
 /// <summary>
 /// ConfirmRejReason Field
 /// </summary>
@@ -14153,7 +13357,6 @@ public sealed class ConfirmRejReason : IntField
     public const int MISSING_SETTLEMENT_INSTRUCTIONS = 2;
     public const int OTHER = 99;
 }
-
 
 /// <summary>
 /// BookingType Field
@@ -14173,7 +13376,6 @@ public sealed class BookingType : IntField
     public const int TOTAL_RETURN_SWAP = 2;
 }
 
-
 /// <summary>
 /// IndividualAllocRejCode Field
 /// </summary>
@@ -14186,7 +13388,6 @@ public sealed class IndividualAllocRejCode : IntField
     public IndividualAllocRejCode(int val)
         : base(Tags.IndividualAllocRejCode, val) {}
 }
-
 
 /// <summary>
 /// SettlInstMsgID Field
@@ -14201,7 +13402,6 @@ public sealed class SettlInstMsgID : StringField
         : base(Tags.SettlInstMsgID, val) {}
 }
 
-
 /// <summary>
 /// NoSettlInst Field
 /// </summary>
@@ -14214,7 +13414,6 @@ public sealed class NoSettlInst : IntField
     public NoSettlInst(int val)
         : base(Tags.NoSettlInst, val) {}
 }
-
 
 /// <summary>
 /// LastUpdateTime Field
@@ -14233,7 +13432,6 @@ public sealed class LastUpdateTime : DateTimeField
     public LastUpdateTime(DateTime val, TimePrecision precision)
         : base(Tags.LastUpdateTime, val, precision) {}
 }
-
 
 /// <summary>
 /// AllocSettlInstType Field
@@ -14255,7 +13453,6 @@ public sealed class AllocSettlInstType : IntField
     public const int PHONE_FOR_INSTRUCTIONS = 4;
 }
 
-
 /// <summary>
 /// NoSettlPartyIDs Field
 /// </summary>
@@ -14268,7 +13465,6 @@ public sealed class NoSettlPartyIDs : IntField
     public NoSettlPartyIDs(int val)
         : base(Tags.NoSettlPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// SettlPartyID Field
@@ -14283,7 +13479,6 @@ public sealed class SettlPartyID : StringField
         : base(Tags.SettlPartyID, val) {}
 }
 
-
 /// <summary>
 /// SettlPartyIDSource Field
 /// </summary>
@@ -14296,7 +13491,6 @@ public sealed class SettlPartyIDSource : CharField
     public SettlPartyIDSource(char val)
         : base(Tags.SettlPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// SettlPartyRole Field
@@ -14311,7 +13505,6 @@ public sealed class SettlPartyRole : IntField
         : base(Tags.SettlPartyRole, val) {}
 }
 
-
 /// <summary>
 /// SettlPartySubID Field
 /// </summary>
@@ -14325,7 +13518,6 @@ public sealed class SettlPartySubID : StringField
         : base(Tags.SettlPartySubID, val) {}
 }
 
-
 /// <summary>
 /// SettlPartySubIDType Field
 /// </summary>
@@ -14338,7 +13530,6 @@ public sealed class SettlPartySubIDType : IntField
     public SettlPartySubIDType(int val)
         : base(Tags.SettlPartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// DlvyInstType Field
@@ -14356,7 +13547,6 @@ public sealed class DlvyInstType : CharField
     public const char CASH = 'C';
     public const char SECURITIES = 'S';
 }
-
 
 /// <summary>
 /// TerminationType Field
@@ -14377,7 +13567,6 @@ public sealed class TerminationType : IntField
     public const int OPEN = 4;
 }
 
-
 /// <summary>
 /// NextExpectedMsgSeqNum Field
 /// </summary>
@@ -14390,7 +13579,6 @@ public sealed class NextExpectedMsgSeqNum : SeqNumFieldType
     public NextExpectedMsgSeqNum(SeqNumType val)
         : base(Tags.NextExpectedMsgSeqNum, val) {}
 }
-
 
 /// <summary>
 /// OrdStatusReqID Field
@@ -14405,7 +13593,6 @@ public sealed class OrdStatusReqID : StringField
         : base(Tags.OrdStatusReqID, val) {}
 }
 
-
 /// <summary>
 /// SettlInstReqID Field
 /// </summary>
@@ -14418,7 +13605,6 @@ public sealed class SettlInstReqID : StringField
     public SettlInstReqID(string val)
         : base(Tags.SettlInstReqID, val) {}
 }
-
 
 /// <summary>
 /// SettlInstReqRejCode Field
@@ -14439,7 +13625,6 @@ public sealed class SettlInstReqRejCode : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// SecondaryAllocID Field
 /// </summary>
@@ -14452,7 +13637,6 @@ public sealed class SecondaryAllocID : StringField
     public SecondaryAllocID(string val)
         : base(Tags.SecondaryAllocID, val) {}
 }
-
 
 /// <summary>
 /// AllocReportType Field
@@ -14479,7 +13663,6 @@ public sealed class AllocReportType : IntField
     public const int REVERSE_PENDING = 14;
 }
 
-
 /// <summary>
 /// AllocReportRefID Field
 /// </summary>
@@ -14492,7 +13675,6 @@ public sealed class AllocReportRefID : StringField
     public AllocReportRefID(string val)
         : base(Tags.AllocReportRefID, val) {}
 }
-
 
 /// <summary>
 /// AllocCancReplaceReason Field
@@ -14512,7 +13694,6 @@ public sealed class AllocCancReplaceReason : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// CopyMsgIndicator Field
 /// </summary>
@@ -14525,7 +13706,6 @@ public sealed class CopyMsgIndicator : BooleanField
     public CopyMsgIndicator(Boolean val)
         : base(Tags.CopyMsgIndicator, val) {}
 }
-
 
 /// <summary>
 /// AllocAccountType Field
@@ -14551,7 +13731,6 @@ public sealed class AllocAccountType : IntField
     public const int JOINT_BACKOFFICE_ACCOUNT = 8;
 }
 
-
 /// <summary>
 /// OrderAvgPx Field
 /// </summary>
@@ -14564,7 +13743,6 @@ public sealed class OrderAvgPx : DecimalField
     public OrderAvgPx(Decimal val)
         : base(Tags.OrderAvgPx, val) {}
 }
-
 
 /// <summary>
 /// OrderBookingQty Field
@@ -14579,7 +13757,6 @@ public sealed class OrderBookingQty : DecimalField
         : base(Tags.OrderBookingQty, val) {}
 }
 
-
 /// <summary>
 /// NoSettlPartySubIDs Field
 /// </summary>
@@ -14593,7 +13770,6 @@ public sealed class NoSettlPartySubIDs : IntField
         : base(Tags.NoSettlPartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// NoPartySubIDs Field
 /// </summary>
@@ -14606,7 +13782,6 @@ public sealed class NoPartySubIDs : IntField
     public NoPartySubIDs(int val)
         : base(Tags.NoPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// PartySubIDType Field
@@ -14656,7 +13831,6 @@ public sealed class PartySubIDType : IntField
     public const int CURRENCY_DELIVERY_IDENTIFIER = 33;
 }
 
-
 /// <summary>
 /// NoNestedPartySubIDs Field
 /// </summary>
@@ -14669,7 +13843,6 @@ public sealed class NoNestedPartySubIDs : IntField
     public NoNestedPartySubIDs(int val)
         : base(Tags.NoNestedPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// NestedPartySubIDType Field
@@ -14684,7 +13857,6 @@ public sealed class NestedPartySubIDType : IntField
         : base(Tags.NestedPartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// NoNested2PartySubIDs Field
 /// </summary>
@@ -14698,7 +13870,6 @@ public sealed class NoNested2PartySubIDs : IntField
         : base(Tags.NoNested2PartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// Nested2PartySubIDType Field
 /// </summary>
@@ -14711,7 +13882,6 @@ public sealed class Nested2PartySubIDType : IntField
     public Nested2PartySubIDType(int val)
         : base(Tags.Nested2PartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// AllocIntermedReqType Field
@@ -14734,7 +13904,6 @@ public sealed class AllocIntermedReqType : IntField
     public const int ACCOUNT_LEVEL_REJECT = 6;
 }
 
-
 /// <summary>
 /// UnderlyingPx Field
 /// </summary>
@@ -14747,7 +13916,6 @@ public sealed class UnderlyingPx : DecimalField
     public UnderlyingPx(Decimal val)
         : base(Tags.UnderlyingPx, val) {}
 }
-
 
 /// <summary>
 /// PriceDelta Field
@@ -14762,7 +13930,6 @@ public sealed class PriceDelta : DecimalField
         : base(Tags.PriceDelta, val) {}
 }
 
-
 /// <summary>
 /// ApplQueueMax Field
 /// </summary>
@@ -14776,7 +13943,6 @@ public sealed class ApplQueueMax : IntField
         : base(Tags.ApplQueueMax, val) {}
 }
 
-
 /// <summary>
 /// ApplQueueDepth Field
 /// </summary>
@@ -14789,7 +13955,6 @@ public sealed class ApplQueueDepth : IntField
     public ApplQueueDepth(int val)
         : base(Tags.ApplQueueDepth, val) {}
 }
-
 
 /// <summary>
 /// ApplQueueResolution Field
@@ -14810,7 +13975,6 @@ public sealed class ApplQueueResolution : IntField
     public const int END_SESSION = 3;
 }
 
-
 /// <summary>
 /// ApplQueueAction Field
 /// </summary>
@@ -14830,7 +13994,6 @@ public sealed class ApplQueueAction : IntField
     public const int END_SESSION = 3;
 }
 
-
 /// <summary>
 /// NoAltMDSource Field
 /// </summary>
@@ -14843,7 +14006,6 @@ public sealed class NoAltMDSource : IntField
     public NoAltMDSource(int val)
         : base(Tags.NoAltMDSource, val) {}
 }
-
 
 /// <summary>
 /// AltMDSourceID Field
@@ -14858,7 +14020,6 @@ public sealed class AltMDSourceID : StringField
         : base(Tags.AltMDSourceID, val) {}
 }
 
-
 /// <summary>
 /// SecondaryTradeReportID Field
 /// </summary>
@@ -14871,7 +14032,6 @@ public sealed class SecondaryTradeReportID : StringField
     public SecondaryTradeReportID(string val)
         : base(Tags.SecondaryTradeReportID, val) {}
 }
-
 
 /// <summary>
 /// AvgPxIndicator Field
@@ -14892,7 +14052,6 @@ public sealed class AvgPxIndicator : IntField
     public const int LAST_TRADE_IN_THE_AVERAGE_PRICE_GROUP_IDENTIFIED_BY_THE_TRADELINKID = 2;
 }
 
-
 /// <summary>
 /// TradeLinkID Field
 /// </summary>
@@ -14905,7 +14064,6 @@ public sealed class TradeLinkID : StringField
     public TradeLinkID(string val)
         : base(Tags.TradeLinkID, val) {}
 }
-
 
 /// <summary>
 /// OrderInputDevice Field
@@ -14920,7 +14078,6 @@ public sealed class OrderInputDevice : StringField
         : base(Tags.OrderInputDevice, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingTradingSessionID Field
 /// </summary>
@@ -14933,7 +14090,6 @@ public sealed class UnderlyingTradingSessionID : StringField
     public UnderlyingTradingSessionID(string val)
         : base(Tags.UnderlyingTradingSessionID, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingTradingSessionSubID Field
@@ -14948,7 +14104,6 @@ public sealed class UnderlyingTradingSessionSubID : StringField
         : base(Tags.UnderlyingTradingSessionSubID, val) {}
 }
 
-
 /// <summary>
 /// TradeLegRefID Field
 /// </summary>
@@ -14962,7 +14117,6 @@ public sealed class TradeLegRefID : StringField
         : base(Tags.TradeLegRefID, val) {}
 }
 
-
 /// <summary>
 /// ExchangeRule Field
 /// </summary>
@@ -14975,7 +14129,6 @@ public sealed class ExchangeRule : StringField
     public ExchangeRule(string val)
         : base(Tags.ExchangeRule, val) {}
 }
-
 
 /// <summary>
 /// TradeAllocIndicator Field
@@ -14998,7 +14151,6 @@ public sealed class TradeAllocIndicator : IntField
     public const int ALLOCATION_TO_CLAIM_ACCOUNT = 5;
 }
 
-
 /// <summary>
 /// ExpirationCycle Field
 /// </summary>
@@ -15016,7 +14168,6 @@ public sealed class ExpirationCycle : IntField
     public const int EXPIRE_ON_TRADING_SESSION_OPEN = 1;
     public const int TRADING_ELIGIBILITY_EXPIRATION_SPECIFIED_IN_THE_DATE_AND_TIME_FIELDS_EVENTDATE = 2;
 }
-
 
 /// <summary>
 /// TrdType Field
@@ -15089,7 +14240,6 @@ public sealed class TrdType : IntField
     public const int BLOCK_TRADE = 1;
 }
 
-
 /// <summary>
 /// TrdSubType Field
 /// </summary>
@@ -15144,7 +14294,6 @@ public sealed class TrdSubType : IntField
     public const int ONSET_DUT_TO_AN_ALLOCATION = 6;
 }
 
-
 /// <summary>
 /// TransferReason Field
 /// </summary>
@@ -15157,7 +14306,6 @@ public sealed class TransferReason : StringField
     public TransferReason(string val)
         : base(Tags.TransferReason, val) {}
 }
-
 
 /// <summary>
 /// AsgnReqID Field
@@ -15172,7 +14320,6 @@ public sealed class AsgnReqID : StringField
         : base(Tags.AsgnReqID, val) {}
 }
 
-
 /// <summary>
 /// TotNumAssignmentReports Field
 /// </summary>
@@ -15185,7 +14332,6 @@ public sealed class TotNumAssignmentReports : IntField
     public TotNumAssignmentReports(int val)
         : base(Tags.TotNumAssignmentReports, val) {}
 }
-
 
 /// <summary>
 /// AsgnRptID Field
@@ -15200,7 +14346,6 @@ public sealed class AsgnRptID : StringField
         : base(Tags.AsgnRptID, val) {}
 }
 
-
 /// <summary>
 /// ThresholdAmount Field
 /// </summary>
@@ -15213,7 +14358,6 @@ public sealed class ThresholdAmount : DecimalField
     public ThresholdAmount(Decimal val)
         : base(Tags.ThresholdAmount, val) {}
 }
-
 
 /// <summary>
 /// PegMoveType Field
@@ -15231,7 +14375,6 @@ public sealed class PegMoveType : IntField
     public const int FLOATING = 0;
     public const int FIXED = 1;
 }
-
 
 /// <summary>
 /// PegOffsetType Field
@@ -15253,7 +14396,6 @@ public sealed class PegOffsetType : IntField
     public const int PRICE_TIER_LEVEL = 3;
 }
 
-
 /// <summary>
 /// PegLimitType Field
 /// </summary>
@@ -15272,7 +14414,6 @@ public sealed class PegLimitType : IntField
     public const int OR_WORSE = 2;
 }
 
-
 /// <summary>
 /// PegRoundDirection Field
 /// </summary>
@@ -15290,7 +14431,6 @@ public sealed class PegRoundDirection : IntField
     public const int MORE_PASSIVE = 2;
 }
 
-
 /// <summary>
 /// PeggedPrice Field
 /// </summary>
@@ -15303,7 +14443,6 @@ public sealed class PeggedPrice : DecimalField
     public PeggedPrice(Decimal val)
         : base(Tags.PeggedPrice, val) {}
 }
-
 
 /// <summary>
 /// PegScope Field
@@ -15325,7 +14464,6 @@ public sealed class PegScope : IntField
     public const int NATIONAL_XXCLUDING_LOCAL = 4;
 }
 
-
 /// <summary>
 /// DiscretionMoveType Field
 /// </summary>
@@ -15342,7 +14480,6 @@ public sealed class DiscretionMoveType : IntField
     public const int FLOATING = 0;
     public const int FIXED = 1;
 }
-
 
 /// <summary>
 /// DiscretionOffsetType Field
@@ -15364,7 +14501,6 @@ public sealed class DiscretionOffsetType : IntField
     public const int PRICE_TIER_LEVEL = 3;
 }
 
-
 /// <summary>
 /// DiscretionLimitType Field
 /// </summary>
@@ -15383,7 +14519,6 @@ public sealed class DiscretionLimitType : IntField
     public const int OR_WORSE = 2;
 }
 
-
 /// <summary>
 /// DiscretionRoundDirection Field
 /// </summary>
@@ -15401,7 +14536,6 @@ public sealed class DiscretionRoundDirection : IntField
     public const int MORE_PASSIVE = 2;
 }
 
-
 /// <summary>
 /// DiscretionPrice Field
 /// </summary>
@@ -15414,7 +14548,6 @@ public sealed class DiscretionPrice : DecimalField
     public DiscretionPrice(Decimal val)
         : base(Tags.DiscretionPrice, val) {}
 }
-
 
 /// <summary>
 /// DiscretionScope Field
@@ -15435,7 +14568,6 @@ public sealed class DiscretionScope : IntField
     public const int NATIONAL_EXCLUDING_LOCAL = 4;
 }
 
-
 /// <summary>
 /// TargetStrategy Field
 /// </summary>
@@ -15454,7 +14586,6 @@ public sealed class TargetStrategy : IntField
     public const int MININIZE_MARKET_IMPACT = 3;
 }
 
-
 /// <summary>
 /// TargetStrategyParameters Field
 /// </summary>
@@ -15467,7 +14598,6 @@ public sealed class TargetStrategyParameters : StringField
     public TargetStrategyParameters(string val)
         : base(Tags.TargetStrategyParameters, val) {}
 }
-
 
 /// <summary>
 /// ParticipationRate Field
@@ -15482,7 +14612,6 @@ public sealed class ParticipationRate : DecimalField
         : base(Tags.ParticipationRate, val) {}
 }
 
-
 /// <summary>
 /// TargetStrategyPerformance Field
 /// </summary>
@@ -15495,7 +14624,6 @@ public sealed class TargetStrategyPerformance : DecimalField
     public TargetStrategyPerformance(Decimal val)
         : base(Tags.TargetStrategyPerformance, val) {}
 }
-
 
 /// <summary>
 /// LastLiquidityInd Field
@@ -15516,7 +14644,6 @@ public sealed class LastLiquidityInd : IntField
     public const int AUCTION = 4;
 }
 
-
 /// <summary>
 /// PublishTrdIndicator Field
 /// </summary>
@@ -15533,7 +14660,6 @@ public sealed class PublishTrdIndicator : BooleanField
     public const Boolean NO = false;
     public const Boolean YES = true;
 }
-
 
 /// <summary>
 /// ShortSaleReason Field
@@ -15557,7 +14683,6 @@ public sealed class ShortSaleReason : IntField
     public const int QUALIFED_SERVICE_REPRESENTATIVE_OR_AUTOMATIC_GIVEUP_CONTRA_SIDE_SOLD_SHORT = 4;
 }
 
-
 /// <summary>
 /// QtyType Field
 /// </summary>
@@ -15576,7 +14701,6 @@ public sealed class QtyType : IntField
     public const int UNITS_OF_MEASURE_PER_TIME_UNIT = 2;
 }
 
-
 /// <summary>
 /// SecondaryTrdType Field
 /// </summary>
@@ -15589,7 +14713,6 @@ public sealed class SecondaryTrdType : IntField
     public SecondaryTrdType(int val)
         : base(Tags.SecondaryTrdType, val) {}
 }
-
 
 /// <summary>
 /// TradeReportType Field
@@ -15624,7 +14747,6 @@ public sealed class TradeReportType : IntField
     public const int LOCKED_IN_TRADE_BREAK = 7;
 }
 
-
 /// <summary>
 /// AllocNoOrdersType Field
 /// </summary>
@@ -15642,7 +14764,6 @@ public sealed class AllocNoOrdersType : IntField
     public const int EXPLICIT_LIST_PROVIDED = 1;
 }
 
-
 /// <summary>
 /// SharedCommission Field
 /// </summary>
@@ -15655,7 +14776,6 @@ public sealed class SharedCommission : DecimalField
     public SharedCommission(Decimal val)
         : base(Tags.SharedCommission, val) {}
 }
-
 
 /// <summary>
 /// ConfirmReqID Field
@@ -15670,7 +14790,6 @@ public sealed class ConfirmReqID : StringField
         : base(Tags.ConfirmReqID, val) {}
 }
 
-
 /// <summary>
 /// AvgParPx Field
 /// </summary>
@@ -15683,7 +14802,6 @@ public sealed class AvgParPx : DecimalField
     public AvgParPx(Decimal val)
         : base(Tags.AvgParPx, val) {}
 }
-
 
 /// <summary>
 /// ReportedPx Field
@@ -15698,7 +14816,6 @@ public sealed class ReportedPx : DecimalField
         : base(Tags.ReportedPx, val) {}
 }
 
-
 /// <summary>
 /// NoCapacities Field
 /// </summary>
@@ -15711,7 +14828,6 @@ public sealed class NoCapacities : IntField
     public NoCapacities(int val)
         : base(Tags.NoCapacities, val) {}
 }
-
 
 /// <summary>
 /// OrderCapacityQty Field
@@ -15726,7 +14842,6 @@ public sealed class OrderCapacityQty : DecimalField
         : base(Tags.OrderCapacityQty, val) {}
 }
 
-
 /// <summary>
 /// NoEvents Field
 /// </summary>
@@ -15739,7 +14854,6 @@ public sealed class NoEvents : IntField
     public NoEvents(int val)
         : base(Tags.NoEvents, val) {}
 }
-
 
 /// <summary>
 /// EventType Field
@@ -15776,7 +14890,6 @@ public sealed class EventType : IntField
     public const int POSITION_REMOVAL_DATE = 19;
 }
 
-
 /// <summary>
 /// EventDate Field
 /// </summary>
@@ -15789,7 +14902,6 @@ public sealed class EventDate : StringField
     public EventDate(string val)
         : base(Tags.EventDate, val) {}
 }
-
 
 /// <summary>
 /// EventPx Field
@@ -15804,7 +14916,6 @@ public sealed class EventPx : DecimalField
         : base(Tags.EventPx, val) {}
 }
 
-
 /// <summary>
 /// EventText Field
 /// </summary>
@@ -15817,7 +14928,6 @@ public sealed class EventText : StringField
     public EventText(string val)
         : base(Tags.EventText, val) {}
 }
-
 
 /// <summary>
 /// PctAtRisk Field
@@ -15832,7 +14942,6 @@ public sealed class PctAtRisk : DecimalField
         : base(Tags.PctAtRisk, val) {}
 }
 
-
 /// <summary>
 /// NoInstrAttrib Field
 /// </summary>
@@ -15845,7 +14954,6 @@ public sealed class NoInstrAttrib : IntField
     public NoInstrAttrib(int val)
         : base(Tags.NoInstrAttrib, val) {}
 }
-
 
 /// <summary>
 /// InstrAttribType Field
@@ -15894,7 +15002,6 @@ public sealed class InstrAttribType : IntField
     public const int TEXT = 99;
 }
 
-
 /// <summary>
 /// InstrAttribValue Field
 /// </summary>
@@ -15907,7 +15014,6 @@ public sealed class InstrAttribValue : StringField
     public InstrAttribValue(string val)
         : base(Tags.InstrAttribValue, val) {}
 }
-
 
 /// <summary>
 /// DatedDate Field
@@ -15922,7 +15028,6 @@ public sealed class DatedDate : StringField
         : base(Tags.DatedDate, val) {}
 }
 
-
 /// <summary>
 /// InterestAccrualDate Field
 /// </summary>
@@ -15935,7 +15040,6 @@ public sealed class InterestAccrualDate : StringField
     public InterestAccrualDate(string val)
         : base(Tags.InterestAccrualDate, val) {}
 }
-
 
 /// <summary>
 /// CPProgram Field
@@ -15955,7 +15059,6 @@ public sealed class CPProgram : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// CPRegType Field
 /// </summary>
@@ -15968,7 +15071,6 @@ public sealed class CPRegType : StringField
     public CPRegType(string val)
         : base(Tags.CPRegType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCPProgram Field
@@ -15983,7 +15085,6 @@ public sealed class UnderlyingCPProgram : StringField
         : base(Tags.UnderlyingCPProgram, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingCPRegType Field
 /// </summary>
@@ -15996,7 +15097,6 @@ public sealed class UnderlyingCPRegType : StringField
     public UnderlyingCPRegType(string val)
         : base(Tags.UnderlyingCPRegType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingQty Field
@@ -16011,7 +15111,6 @@ public sealed class UnderlyingQty : DecimalField
         : base(Tags.UnderlyingQty, val) {}
 }
 
-
 /// <summary>
 /// TrdMatchID Field
 /// </summary>
@@ -16024,7 +15123,6 @@ public sealed class TrdMatchID : StringField
     public TrdMatchID(string val)
         : base(Tags.TrdMatchID, val) {}
 }
-
 
 /// <summary>
 /// SecondaryTradeReportRefID Field
@@ -16039,7 +15137,6 @@ public sealed class SecondaryTradeReportRefID : StringField
         : base(Tags.SecondaryTradeReportRefID, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingDirtyPrice Field
 /// </summary>
@@ -16052,7 +15149,6 @@ public sealed class UnderlyingDirtyPrice : DecimalField
     public UnderlyingDirtyPrice(Decimal val)
         : base(Tags.UnderlyingDirtyPrice, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingEndPrice Field
@@ -16067,7 +15163,6 @@ public sealed class UnderlyingEndPrice : DecimalField
         : base(Tags.UnderlyingEndPrice, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingStartValue Field
 /// </summary>
@@ -16080,7 +15175,6 @@ public sealed class UnderlyingStartValue : DecimalField
     public UnderlyingStartValue(Decimal val)
         : base(Tags.UnderlyingStartValue, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCurrentValue Field
@@ -16095,7 +15189,6 @@ public sealed class UnderlyingCurrentValue : DecimalField
         : base(Tags.UnderlyingCurrentValue, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingEndValue Field
 /// </summary>
@@ -16108,7 +15201,6 @@ public sealed class UnderlyingEndValue : DecimalField
     public UnderlyingEndValue(Decimal val)
         : base(Tags.UnderlyingEndValue, val) {}
 }
-
 
 /// <summary>
 /// NoUnderlyingStips Field
@@ -16123,7 +15215,6 @@ public sealed class NoUnderlyingStips : IntField
         : base(Tags.NoUnderlyingStips, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingStipType Field
 /// </summary>
@@ -16136,7 +15227,6 @@ public sealed class UnderlyingStipType : StringField
     public UnderlyingStipType(string val)
         : base(Tags.UnderlyingStipType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingStipValue Field
@@ -16151,7 +15241,6 @@ public sealed class UnderlyingStipValue : StringField
         : base(Tags.UnderlyingStipValue, val) {}
 }
 
-
 /// <summary>
 /// MaturityNetMoney Field
 /// </summary>
@@ -16164,7 +15253,6 @@ public sealed class MaturityNetMoney : DecimalField
     public MaturityNetMoney(Decimal val)
         : base(Tags.MaturityNetMoney, val) {}
 }
-
 
 /// <summary>
 /// MiscFeeBasis Field
@@ -16184,7 +15272,6 @@ public sealed class MiscFeeBasis : IntField
     public const int PERCENTAGE = 2;
 }
 
-
 /// <summary>
 /// TotNoAllocs Field
 /// </summary>
@@ -16197,7 +15284,6 @@ public sealed class TotNoAllocs : IntField
     public TotNoAllocs(int val)
         : base(Tags.TotNoAllocs, val) {}
 }
-
 
 /// <summary>
 /// LastFragment Field
@@ -16216,7 +15302,6 @@ public sealed class LastFragment : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// CollReqID Field
 /// </summary>
@@ -16229,7 +15314,6 @@ public sealed class CollReqID : StringField
     public CollReqID(string val)
         : base(Tags.CollReqID, val) {}
 }
-
 
 /// <summary>
 /// CollAsgnReason Field
@@ -16253,7 +15337,6 @@ public sealed class CollAsgnReason : IntField
     public const int EVENT_OF_DEFAULT = 6;
     public const int ADVERSE_TAX_EVENT = 7;
 }
-
 
 /// <summary>
 /// CollInquiryQualifier Field
@@ -16280,7 +15363,6 @@ public sealed class CollInquiryQualifier : IntField
     public const int COLLATERALINSTRUMENT = 2;
 }
 
-
 /// <summary>
 /// NoTrades Field
 /// </summary>
@@ -16293,7 +15375,6 @@ public sealed class NoTrades : IntField
     public NoTrades(int val)
         : base(Tags.NoTrades, val) {}
 }
-
 
 /// <summary>
 /// MarginRatio Field
@@ -16308,7 +15389,6 @@ public sealed class MarginRatio : DecimalField
         : base(Tags.MarginRatio, val) {}
 }
 
-
 /// <summary>
 /// MarginExcess Field
 /// </summary>
@@ -16321,7 +15401,6 @@ public sealed class MarginExcess : DecimalField
     public MarginExcess(Decimal val)
         : base(Tags.MarginExcess, val) {}
 }
-
 
 /// <summary>
 /// TotalNetValue Field
@@ -16336,7 +15415,6 @@ public sealed class TotalNetValue : DecimalField
         : base(Tags.TotalNetValue, val) {}
 }
 
-
 /// <summary>
 /// CashOutstanding Field
 /// </summary>
@@ -16350,7 +15428,6 @@ public sealed class CashOutstanding : DecimalField
         : base(Tags.CashOutstanding, val) {}
 }
 
-
 /// <summary>
 /// CollAsgnID Field
 /// </summary>
@@ -16363,7 +15440,6 @@ public sealed class CollAsgnID : StringField
     public CollAsgnID(string val)
         : base(Tags.CollAsgnID, val) {}
 }
-
 
 /// <summary>
 /// CollAsgnTransType Field
@@ -16385,7 +15461,6 @@ public sealed class CollAsgnTransType : IntField
     public const int REVERSE = 4;
 }
 
-
 /// <summary>
 /// CollRespID Field
 /// </summary>
@@ -16398,7 +15473,6 @@ public sealed class CollRespID : StringField
     public CollRespID(string val)
         : base(Tags.CollRespID, val) {}
 }
-
 
 /// <summary>
 /// CollAsgnRespType Field
@@ -16418,7 +15492,6 @@ public sealed class CollAsgnRespType : IntField
     public const int DECLINED = 2;
     public const int REJECTED = 3;
 }
-
 
 /// <summary>
 /// CollAsgnRejectReason Field
@@ -16442,7 +15515,6 @@ public sealed class CollAsgnRejectReason : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// CollAsgnRefID Field
 /// </summary>
@@ -16455,7 +15527,6 @@ public sealed class CollAsgnRefID : StringField
     public CollAsgnRefID(string val)
         : base(Tags.CollAsgnRefID, val) {}
 }
-
 
 /// <summary>
 /// CollRptID Field
@@ -16470,7 +15541,6 @@ public sealed class CollRptID : StringField
         : base(Tags.CollRptID, val) {}
 }
 
-
 /// <summary>
 /// CollInquiryID Field
 /// </summary>
@@ -16483,7 +15553,6 @@ public sealed class CollInquiryID : StringField
     public CollInquiryID(string val)
         : base(Tags.CollInquiryID, val) {}
 }
-
 
 /// <summary>
 /// CollStatus Field
@@ -16505,7 +15574,6 @@ public sealed class CollStatus : IntField
     public const int CHALLENGED = 4;
 }
 
-
 /// <summary>
 /// TotNumReports Field
 /// </summary>
@@ -16518,7 +15586,6 @@ public sealed class TotNumReports : IntField
     public TotNumReports(int val)
         : base(Tags.TotNumReports, val) {}
 }
-
 
 /// <summary>
 /// LastRptRequested Field
@@ -16537,7 +15604,6 @@ public sealed class LastRptRequested : BooleanField
     public const Boolean YES = true;
 }
 
-
 /// <summary>
 /// AgreementDesc Field
 /// </summary>
@@ -16550,7 +15616,6 @@ public sealed class AgreementDesc : StringField
     public AgreementDesc(string val)
         : base(Tags.AgreementDesc, val) {}
 }
-
 
 /// <summary>
 /// AgreementID Field
@@ -16565,7 +15630,6 @@ public sealed class AgreementID : StringField
         : base(Tags.AgreementID, val) {}
 }
 
-
 /// <summary>
 /// AgreementDate Field
 /// </summary>
@@ -16578,7 +15642,6 @@ public sealed class AgreementDate : StringField
     public AgreementDate(string val)
         : base(Tags.AgreementDate, val) {}
 }
-
 
 /// <summary>
 /// StartDate Field
@@ -16593,7 +15656,6 @@ public sealed class StartDate : StringField
         : base(Tags.StartDate, val) {}
 }
 
-
 /// <summary>
 /// EndDate Field
 /// </summary>
@@ -16607,7 +15669,6 @@ public sealed class EndDate : StringField
         : base(Tags.EndDate, val) {}
 }
 
-
 /// <summary>
 /// AgreementCurrency Field
 /// </summary>
@@ -16620,7 +15681,6 @@ public sealed class AgreementCurrency : StringField
     public AgreementCurrency(string val)
         : base(Tags.AgreementCurrency, val) {}
 }
-
 
 /// <summary>
 /// DeliveryType Field
@@ -16643,7 +15703,6 @@ public sealed class DeliveryType : IntField
     public const int FREE = 1;
 }
 
-
 /// <summary>
 /// EndAccruedInterestAmt Field
 /// </summary>
@@ -16656,7 +15715,6 @@ public sealed class EndAccruedInterestAmt : DecimalField
     public EndAccruedInterestAmt(Decimal val)
         : base(Tags.EndAccruedInterestAmt, val) {}
 }
-
 
 /// <summary>
 /// StartCash Field
@@ -16671,7 +15729,6 @@ public sealed class StartCash : DecimalField
         : base(Tags.StartCash, val) {}
 }
 
-
 /// <summary>
 /// EndCash Field
 /// </summary>
@@ -16685,7 +15742,6 @@ public sealed class EndCash : DecimalField
         : base(Tags.EndCash, val) {}
 }
 
-
 /// <summary>
 /// UserRequestID Field
 /// </summary>
@@ -16698,7 +15754,6 @@ public sealed class UserRequestID : StringField
     public UserRequestID(string val)
         : base(Tags.UserRequestID, val) {}
 }
-
 
 /// <summary>
 /// UserRequestType Field
@@ -16722,7 +15777,6 @@ public sealed class UserRequestType : IntField
     public const int CHANGEPASSWORDFORUSER = 3;
 }
 
-
 /// <summary>
 /// NewPassword Field
 /// </summary>
@@ -16735,7 +15789,6 @@ public sealed class NewPassword : StringField
     public NewPassword(string val)
         : base(Tags.NewPassword, val) {}
 }
-
 
 /// <summary>
 /// UserStatus Field
@@ -16760,7 +15813,6 @@ public sealed class UserStatus : IntField
     public const int SESSION_SHUTDOWN_WARNING = 8;
 }
 
-
 /// <summary>
 /// UserStatusText Field
 /// </summary>
@@ -16773,7 +15825,6 @@ public sealed class UserStatusText : StringField
     public UserStatusText(string val)
         : base(Tags.UserStatusText, val) {}
 }
-
 
 /// <summary>
 /// StatusValue Field
@@ -16796,7 +15847,6 @@ public sealed class StatusValue : IntField
     public const int NOT_CONNECTED_DOWN_EXPECTED_DOWN = 3;
 }
 
-
 /// <summary>
 /// StatusText Field
 /// </summary>
@@ -16809,7 +15859,6 @@ public sealed class StatusText : StringField
     public StatusText(string val)
         : base(Tags.StatusText, val) {}
 }
-
 
 /// <summary>
 /// RefCompID Field
@@ -16824,7 +15873,6 @@ public sealed class RefCompID : StringField
         : base(Tags.RefCompID, val) {}
 }
 
-
 /// <summary>
 /// RefSubID Field
 /// </summary>
@@ -16837,7 +15885,6 @@ public sealed class RefSubID : StringField
     public RefSubID(string val)
         : base(Tags.RefSubID, val) {}
 }
-
 
 /// <summary>
 /// NetworkResponseID Field
@@ -16852,7 +15899,6 @@ public sealed class NetworkResponseID : StringField
         : base(Tags.NetworkResponseID, val) {}
 }
 
-
 /// <summary>
 /// NetworkRequestID Field
 /// </summary>
@@ -16866,7 +15912,6 @@ public sealed class NetworkRequestID : StringField
         : base(Tags.NetworkRequestID, val) {}
 }
 
-
 /// <summary>
 /// LastNetworkResponseID Field
 /// </summary>
@@ -16879,7 +15924,6 @@ public sealed class LastNetworkResponseID : StringField
     public LastNetworkResponseID(string val)
         : base(Tags.LastNetworkResponseID, val) {}
 }
-
 
 /// <summary>
 /// NetworkRequestType Field
@@ -16901,7 +15945,6 @@ public sealed class NetworkRequestType : IntField
     public const int LEVEL_OF_DETAIL = 8;
 }
 
-
 /// <summary>
 /// NoCompIDs Field
 /// </summary>
@@ -16914,7 +15957,6 @@ public sealed class NoCompIDs : IntField
     public NoCompIDs(int val)
         : base(Tags.NoCompIDs, val) {}
 }
-
 
 /// <summary>
 /// NetworkStatusResponseType Field
@@ -16933,7 +15975,6 @@ public sealed class NetworkStatusResponseType : IntField
     public const int INCREMENTAL_UPDATE = 2;
 }
 
-
 /// <summary>
 /// NoCollInquiryQualifier Field
 /// </summary>
@@ -16946,7 +15987,6 @@ public sealed class NoCollInquiryQualifier : IntField
     public NoCollInquiryQualifier(int val)
         : base(Tags.NoCollInquiryQualifier, val) {}
 }
-
 
 /// <summary>
 /// TrdRptStatus Field
@@ -16965,7 +16005,6 @@ public sealed class TrdRptStatus : IntField
     public const int REJECTED = 1;
     public const int ACCEPTED_WITH_ERRORS = 3;
 }
-
 
 /// <summary>
 /// AffirmStatus Field
@@ -16986,7 +16025,6 @@ public sealed class AffirmStatus : IntField
     public const int CONFIRM_REJECTED = 2;
 }
 
-
 /// <summary>
 /// UnderlyingStrikeCurrency Field
 /// </summary>
@@ -16999,7 +16037,6 @@ public sealed class UnderlyingStrikeCurrency : StringField
     public UnderlyingStrikeCurrency(string val)
         : base(Tags.UnderlyingStrikeCurrency, val) {}
 }
-
 
 /// <summary>
 /// LegStrikeCurrency Field
@@ -17014,7 +16051,6 @@ public sealed class LegStrikeCurrency : StringField
         : base(Tags.LegStrikeCurrency, val) {}
 }
 
-
 /// <summary>
 /// TimeBracket Field
 /// </summary>
@@ -17027,7 +16063,6 @@ public sealed class TimeBracket : StringField
     public TimeBracket(string val)
         : base(Tags.TimeBracket, val) {}
 }
-
 
 /// <summary>
 /// CollAction Field
@@ -17046,7 +16081,6 @@ public sealed class CollAction : IntField
     public const int ADD = 1;
     public const int REMOVE = 2;
 }
-
 
 /// <summary>
 /// CollInquiryStatus Field
@@ -17067,7 +16101,6 @@ public sealed class CollInquiryStatus : IntField
     public const int COMPLETED_WITH_WARNINGS = 3;
     public const int REJECTED = 4;
 }
-
 
 /// <summary>
 /// CollInquiryResult Field
@@ -17095,7 +16128,6 @@ public sealed class CollInquiryResult : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// StrikeCurrency Field
 /// </summary>
@@ -17108,7 +16140,6 @@ public sealed class StrikeCurrency : StringField
     public StrikeCurrency(string val)
         : base(Tags.StrikeCurrency, val) {}
 }
-
 
 /// <summary>
 /// NoNested3PartyIDs Field
@@ -17123,7 +16154,6 @@ public sealed class NoNested3PartyIDs : IntField
         : base(Tags.NoNested3PartyIDs, val) {}
 }
 
-
 /// <summary>
 /// Nested3PartyID Field
 /// </summary>
@@ -17136,7 +16166,6 @@ public sealed class Nested3PartyID : StringField
     public Nested3PartyID(string val)
         : base(Tags.Nested3PartyID, val) {}
 }
-
 
 /// <summary>
 /// Nested3PartyIDSource Field
@@ -17151,7 +16180,6 @@ public sealed class Nested3PartyIDSource : CharField
         : base(Tags.Nested3PartyIDSource, val) {}
 }
 
-
 /// <summary>
 /// Nested3PartyRole Field
 /// </summary>
@@ -17164,7 +16192,6 @@ public sealed class Nested3PartyRole : IntField
     public Nested3PartyRole(int val)
         : base(Tags.Nested3PartyRole, val) {}
 }
-
 
 /// <summary>
 /// NoNested3PartySubIDs Field
@@ -17179,7 +16206,6 @@ public sealed class NoNested3PartySubIDs : IntField
         : base(Tags.NoNested3PartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// Nested3PartySubID Field
 /// </summary>
@@ -17192,7 +16218,6 @@ public sealed class Nested3PartySubID : StringField
     public Nested3PartySubID(string val)
         : base(Tags.Nested3PartySubID, val) {}
 }
-
 
 /// <summary>
 /// Nested3PartySubIDType Field
@@ -17207,7 +16232,6 @@ public sealed class Nested3PartySubIDType : IntField
         : base(Tags.Nested3PartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// LegContractSettlMonth Field
 /// </summary>
@@ -17220,7 +16244,6 @@ public sealed class LegContractSettlMonth : StringField
     public LegContractSettlMonth(string val)
         : base(Tags.LegContractSettlMonth, val) {}
 }
-
 
 /// <summary>
 /// LegInterestAccrualDate Field
@@ -17235,7 +16258,6 @@ public sealed class LegInterestAccrualDate : StringField
         : base(Tags.LegInterestAccrualDate, val) {}
 }
 
-
 /// <summary>
 /// IOIID Field
 /// </summary>
@@ -17249,7 +16271,6 @@ public sealed class IOIID : StringField
         : base(Tags.IOIID, val) {}
 }
 
-
 /// <summary>
 /// NoLinesOfText Field
 /// </summary>
@@ -17262,7 +16283,6 @@ public sealed class NoLinesOfText : IntField
     public NoLinesOfText(int val)
         : base(Tags.NoLinesOfText, val) {}
 }
-
 
 /// <summary>
 /// HaltReasonChar Field
@@ -17285,7 +16305,6 @@ public sealed class HaltReasonChar : CharField
     public const char EQUIPMENT_CHANGEOVER = 'X';
 }
 
-
 /// <summary>
 /// NoStrategyParameters Field
 /// </summary>
@@ -17299,7 +16318,6 @@ public sealed class NoStrategyParameters : IntField
         : base(Tags.NoStrategyParameters, val) {}
 }
 
-
 /// <summary>
 /// StrategyParameterName Field
 /// </summary>
@@ -17312,7 +16330,6 @@ public sealed class StrategyParameterName : StringField
     public StrategyParameterName(string val)
         : base(Tags.StrategyParameterName, val) {}
 }
-
 
 /// <summary>
 /// StrategyParameterType Field
@@ -17361,7 +16378,6 @@ public sealed class StrategyParameterType : IntField
     public const int UTCDATE = 22;
 }
 
-
 /// <summary>
 /// StrategyParameterValue Field
 /// </summary>
@@ -17375,7 +16391,6 @@ public sealed class StrategyParameterValue : StringField
         : base(Tags.StrategyParameterValue, val) {}
 }
 
-
 /// <summary>
 /// HostCrossID Field
 /// </summary>
@@ -17388,7 +16403,6 @@ public sealed class HostCrossID : StringField
     public HostCrossID(string val)
         : base(Tags.HostCrossID, val) {}
 }
-
 
 /// <summary>
 /// SideTimeInForce Field
@@ -17408,7 +16422,6 @@ public sealed class SideTimeInForce : DateTimeField
         : base(Tags.SideTimeInForce, val, precision) {}
 }
 
-
 /// <summary>
 /// MDReportID Field
 /// </summary>
@@ -17422,7 +16435,6 @@ public sealed class MDReportID : IntField
         : base(Tags.MDReportID, val) {}
 }
 
-
 /// <summary>
 /// SecurityReportID Field
 /// </summary>
@@ -17435,7 +16447,6 @@ public sealed class SecurityReportID : IntField
     public SecurityReportID(int val)
         : base(Tags.SecurityReportID, val) {}
 }
-
 
 /// <summary>
 /// SecurityStatus Field
@@ -17454,7 +16465,6 @@ public sealed class SecurityStatus : StringField
     public const string INACTIVE = "2";
 }
 
-
 /// <summary>
 /// SettleOnOpenFlag Field
 /// </summary>
@@ -17467,7 +16477,6 @@ public sealed class SettleOnOpenFlag : StringField
     public SettleOnOpenFlag(string val)
         : base(Tags.SettleOnOpenFlag, val) {}
 }
-
 
 /// <summary>
 /// StrikeMultiplier Field
@@ -17482,7 +16491,6 @@ public sealed class StrikeMultiplier : DecimalField
         : base(Tags.StrikeMultiplier, val) {}
 }
 
-
 /// <summary>
 /// StrikeValue Field
 /// </summary>
@@ -17495,7 +16503,6 @@ public sealed class StrikeValue : DecimalField
     public StrikeValue(Decimal val)
         : base(Tags.StrikeValue, val) {}
 }
-
 
 /// <summary>
 /// MinPriceIncrement Field
@@ -17510,7 +16517,6 @@ public sealed class MinPriceIncrement : DecimalField
         : base(Tags.MinPriceIncrement, val) {}
 }
 
-
 /// <summary>
 /// PositionLimit Field
 /// </summary>
@@ -17523,7 +16529,6 @@ public sealed class PositionLimit : IntField
     public PositionLimit(int val)
         : base(Tags.PositionLimit, val) {}
 }
-
 
 /// <summary>
 /// NTPositionLimit Field
@@ -17538,7 +16543,6 @@ public sealed class NTPositionLimit : IntField
         : base(Tags.NTPositionLimit, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingAllocationPercent Field
 /// </summary>
@@ -17552,7 +16556,6 @@ public sealed class UnderlyingAllocationPercent : DecimalField
         : base(Tags.UnderlyingAllocationPercent, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingCashAmount Field
 /// </summary>
@@ -17565,7 +16568,6 @@ public sealed class UnderlyingCashAmount : DecimalField
     public UnderlyingCashAmount(Decimal val)
         : base(Tags.UnderlyingCashAmount, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCashType Field
@@ -17583,7 +16585,6 @@ public sealed class UnderlyingCashType : StringField
     public const string FIXED = "FIXED";
     public const string DIFF = "DIFF";
 }
-
 
 /// <summary>
 /// UnderlyingSettlementType Field
@@ -17603,7 +16604,6 @@ public sealed class UnderlyingSettlementType : IntField
     public const int T_PLUS_4 = 5;
 }
 
-
 /// <summary>
 /// QuantityDate Field
 /// </summary>
@@ -17616,7 +16616,6 @@ public sealed class QuantityDate : StringField
     public QuantityDate(string val)
         : base(Tags.QuantityDate, val) {}
 }
-
 
 /// <summary>
 /// ContIntRptID Field
@@ -17631,7 +16630,6 @@ public sealed class ContIntRptID : StringField
         : base(Tags.ContIntRptID, val) {}
 }
 
-
 /// <summary>
 /// LateIndicator Field
 /// </summary>
@@ -17645,7 +16643,6 @@ public sealed class LateIndicator : BooleanField
         : base(Tags.LateIndicator, val) {}
 }
 
-
 /// <summary>
 /// InputSource Field
 /// </summary>
@@ -17658,7 +16655,6 @@ public sealed class InputSource : StringField
     public InputSource(string val)
         : base(Tags.InputSource, val) {}
 }
-
 
 /// <summary>
 /// SecurityUpdateAction Field
@@ -17678,7 +16674,6 @@ public sealed class SecurityUpdateAction : CharField
     public const char MODIFY = 'M';
 }
 
-
 /// <summary>
 /// NoExpiration Field
 /// </summary>
@@ -17691,7 +16686,6 @@ public sealed class NoExpiration : IntField
     public NoExpiration(int val)
         : base(Tags.NoExpiration, val) {}
 }
-
 
 /// <summary>
 /// ExpType Field
@@ -17713,7 +16707,6 @@ public sealed class ExpType : IntField
     public const int DIFFERENCE = 5;
 }
 
-
 /// <summary>
 /// ExpQty Field
 /// </summary>
@@ -17726,7 +16719,6 @@ public sealed class ExpQty : DecimalField
     public ExpQty(Decimal val)
         : base(Tags.ExpQty, val) {}
 }
-
 
 /// <summary>
 /// NoUnderlyingAmounts Field
@@ -17741,7 +16733,6 @@ public sealed class NoUnderlyingAmounts : IntField
         : base(Tags.NoUnderlyingAmounts, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingPayAmount Field
 /// </summary>
@@ -17754,7 +16745,6 @@ public sealed class UnderlyingPayAmount : DecimalField
     public UnderlyingPayAmount(Decimal val)
         : base(Tags.UnderlyingPayAmount, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCollectAmount Field
@@ -17769,7 +16759,6 @@ public sealed class UnderlyingCollectAmount : DecimalField
         : base(Tags.UnderlyingCollectAmount, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSettlementDate Field
 /// </summary>
@@ -17782,7 +16771,6 @@ public sealed class UnderlyingSettlementDate : StringField
     public UnderlyingSettlementDate(string val)
         : base(Tags.UnderlyingSettlementDate, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSettlementStatus Field
@@ -17797,7 +16785,6 @@ public sealed class UnderlyingSettlementStatus : StringField
         : base(Tags.UnderlyingSettlementStatus, val) {}
 }
 
-
 /// <summary>
 /// SecondaryIndividualAllocID Field
 /// </summary>
@@ -17810,7 +16797,6 @@ public sealed class SecondaryIndividualAllocID : StringField
     public SecondaryIndividualAllocID(string val)
         : base(Tags.SecondaryIndividualAllocID, val) {}
 }
-
 
 /// <summary>
 /// LegReportID Field
@@ -17825,7 +16811,6 @@ public sealed class LegReportID : StringField
         : base(Tags.LegReportID, val) {}
 }
 
-
 /// <summary>
 /// RndPx Field
 /// </summary>
@@ -17838,7 +16823,6 @@ public sealed class RndPx : DecimalField
     public RndPx(Decimal val)
         : base(Tags.RndPx, val) {}
 }
-
 
 /// <summary>
 /// IndividualAllocType Field
@@ -17857,7 +16841,6 @@ public sealed class IndividualAllocType : IntField
     public const int THIRD_PARTY_ALLOCATION = 2;
 }
 
-
 /// <summary>
 /// AllocCustomerCapacity Field
 /// </summary>
@@ -17871,7 +16854,6 @@ public sealed class AllocCustomerCapacity : StringField
         : base(Tags.AllocCustomerCapacity, val) {}
 }
 
-
 /// <summary>
 /// TierCode Field
 /// </summary>
@@ -17884,7 +16866,6 @@ public sealed class TierCode : StringField
     public TierCode(string val)
         : base(Tags.TierCode, val) {}
 }
-
 
 /// <summary>
 /// UnitOfMeasure Field
@@ -17914,7 +16895,6 @@ public sealed class UnitOfMeasure : StringField
     public const string ALLOWANCES = "Alw";
 }
 
-
 /// <summary>
 /// TimeUnit Field
 /// </summary>
@@ -17937,7 +16917,6 @@ public sealed class TimeUnit : StringField
     public const string YEAR = "Yr";
 }
 
-
 /// <summary>
 /// UnderlyingUnitOfMeasure Field
 /// </summary>
@@ -17950,7 +16929,6 @@ public sealed class UnderlyingUnitOfMeasure : StringField
     public UnderlyingUnitOfMeasure(string val)
         : base(Tags.UnderlyingUnitOfMeasure, val) {}
 }
-
 
 /// <summary>
 /// LegUnitOfMeasure Field
@@ -17965,7 +16943,6 @@ public sealed class LegUnitOfMeasure : StringField
         : base(Tags.LegUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingTimeUnit Field
 /// </summary>
@@ -17979,7 +16956,6 @@ public sealed class UnderlyingTimeUnit : StringField
         : base(Tags.UnderlyingTimeUnit, val) {}
 }
 
-
 /// <summary>
 /// LegTimeUnit Field
 /// </summary>
@@ -17992,7 +16968,6 @@ public sealed class LegTimeUnit : StringField
     public LegTimeUnit(string val)
         : base(Tags.LegTimeUnit, val) {}
 }
-
 
 /// <summary>
 /// AllocMethod Field
@@ -18012,7 +16987,6 @@ public sealed class AllocMethod : IntField
     public const int MANUAL = 3;
 }
 
-
 /// <summary>
 /// TradeID Field
 /// </summary>
@@ -18025,7 +16999,6 @@ public sealed class TradeID : StringField
     public TradeID(string val)
         : base(Tags.TradeID, val) {}
 }
-
 
 /// <summary>
 /// SideTradeReportID Field
@@ -18040,7 +17013,6 @@ public sealed class SideTradeReportID : StringField
         : base(Tags.SideTradeReportID, val) {}
 }
 
-
 /// <summary>
 /// SideFillStationCd Field
 /// </summary>
@@ -18054,7 +17026,6 @@ public sealed class SideFillStationCd : StringField
         : base(Tags.SideFillStationCd, val) {}
 }
 
-
 /// <summary>
 /// SideReasonCd Field
 /// </summary>
@@ -18067,7 +17038,6 @@ public sealed class SideReasonCd : StringField
     public SideReasonCd(string val)
         : base(Tags.SideReasonCd, val) {}
 }
-
 
 /// <summary>
 /// SideTrdSubTyp Field
@@ -18095,7 +17065,6 @@ public sealed class SideTrdSubTyp : IntField
     public const int TRANSACTION_FROM_ASSIGNMENT = 10;
 }
 
-
 /// <summary>
 /// SideQty Field
 /// </summary>
@@ -18109,7 +17078,6 @@ public sealed class SideQty : IntField
         : base(Tags.SideQty, val) {}
 }
 
-
 /// <summary>
 /// MessageEventSource Field
 /// </summary>
@@ -18122,7 +17090,6 @@ public sealed class MessageEventSource : StringField
     public MessageEventSource(string val)
         : base(Tags.MessageEventSource, val) {}
 }
-
 
 /// <summary>
 /// SideTrdRegTimestamp Field
@@ -18142,7 +17109,6 @@ public sealed class SideTrdRegTimestamp : DateTimeField
         : base(Tags.SideTrdRegTimestamp, val, precision) {}
 }
 
-
 /// <summary>
 /// SideTrdRegTimestampType Field
 /// </summary>
@@ -18156,7 +17122,6 @@ public sealed class SideTrdRegTimestampType : IntField
         : base(Tags.SideTrdRegTimestampType, val) {}
 }
 
-
 /// <summary>
 /// SideTrdRegTimestampSrc Field
 /// </summary>
@@ -18169,7 +17134,6 @@ public sealed class SideTrdRegTimestampSrc : StringField
     public SideTrdRegTimestampSrc(string val)
         : base(Tags.SideTrdRegTimestampSrc, val) {}
 }
-
 
 /// <summary>
 /// AsOfIndicator Field
@@ -18188,7 +17152,6 @@ public sealed class AsOfIndicator : CharField
     public const char TRUE = '1';
 }
 
-
 /// <summary>
 /// NoSideTrdRegTS Field
 /// </summary>
@@ -18201,7 +17164,6 @@ public sealed class NoSideTrdRegTS : IntField
     public NoSideTrdRegTS(int val)
         : base(Tags.NoSideTrdRegTS, val) {}
 }
-
 
 /// <summary>
 /// LegOptionRatio Field
@@ -18216,7 +17178,6 @@ public sealed class LegOptionRatio : DecimalField
         : base(Tags.LegOptionRatio, val) {}
 }
 
-
 /// <summary>
 /// NoInstrumentParties Field
 /// </summary>
@@ -18229,7 +17190,6 @@ public sealed class NoInstrumentParties : IntField
     public NoInstrumentParties(int val)
         : base(Tags.NoInstrumentParties, val) {}
 }
-
 
 /// <summary>
 /// InstrumentPartyID Field
@@ -18244,7 +17204,6 @@ public sealed class InstrumentPartyID : StringField
         : base(Tags.InstrumentPartyID, val) {}
 }
 
-
 /// <summary>
 /// TradeVolume Field
 /// </summary>
@@ -18257,7 +17216,6 @@ public sealed class TradeVolume : DecimalField
     public TradeVolume(Decimal val)
         : base(Tags.TradeVolume, val) {}
 }
-
 
 /// <summary>
 /// MDBookType Field
@@ -18277,7 +17235,6 @@ public sealed class MDBookType : IntField
     public const int ORDER_DEPTH = 3;
 }
 
-
 /// <summary>
 /// MDFeedType Field
 /// </summary>
@@ -18291,7 +17248,6 @@ public sealed class MDFeedType : StringField
         : base(Tags.MDFeedType, val) {}
 }
 
-
 /// <summary>
 /// MDPriceLevel Field
 /// </summary>
@@ -18304,7 +17260,6 @@ public sealed class MDPriceLevel : IntField
     public MDPriceLevel(int val)
         : base(Tags.MDPriceLevel, val) {}
 }
-
 
 /// <summary>
 /// MDOriginType Field
@@ -18324,7 +17279,6 @@ public sealed class MDOriginType : IntField
     public const int CROSS = 2;
 }
 
-
 /// <summary>
 /// FirstPx Field
 /// </summary>
@@ -18337,7 +17291,6 @@ public sealed class FirstPx : DecimalField
     public FirstPx(Decimal val)
         : base(Tags.FirstPx, val) {}
 }
-
 
 /// <summary>
 /// MDEntrySpotRate Field
@@ -18352,7 +17305,6 @@ public sealed class MDEntrySpotRate : DecimalField
         : base(Tags.MDEntrySpotRate, val) {}
 }
 
-
 /// <summary>
 /// MDEntryForwardPoints Field
 /// </summary>
@@ -18365,7 +17317,6 @@ public sealed class MDEntryForwardPoints : DecimalField
     public MDEntryForwardPoints(Decimal val)
         : base(Tags.MDEntryForwardPoints, val) {}
 }
-
 
 /// <summary>
 /// ManualOrderIndicator Field
@@ -18380,7 +17331,6 @@ public sealed class ManualOrderIndicator : BooleanField
         : base(Tags.ManualOrderIndicator, val) {}
 }
 
-
 /// <summary>
 /// CustDirectedOrder Field
 /// </summary>
@@ -18394,7 +17344,6 @@ public sealed class CustDirectedOrder : BooleanField
         : base(Tags.CustDirectedOrder, val) {}
 }
 
-
 /// <summary>
 /// ReceivedDeptID Field
 /// </summary>
@@ -18407,7 +17356,6 @@ public sealed class ReceivedDeptID : StringField
     public ReceivedDeptID(string val)
         : base(Tags.ReceivedDeptID, val) {}
 }
-
 
 /// <summary>
 /// CustOrderHandlingInst Field
@@ -18448,7 +17396,6 @@ public sealed class CustOrderHandlingInst : StringField
     public const string WORK = "WRK";
 }
 
-
 /// <summary>
 /// OrderHandlingInstSource Field
 /// </summary>
@@ -18464,7 +17411,6 @@ public sealed class OrderHandlingInstSource : IntField
     // Field Enumerations
     public const int NASD_OATS = 1;
 }
-
 
 /// <summary>
 /// DeskType Field
@@ -18492,7 +17438,6 @@ public sealed class DeskType : StringField
     public const string TRADING = "T";
 }
 
-
 /// <summary>
 /// DeskTypeSource Field
 /// </summary>
@@ -18508,7 +17453,6 @@ public sealed class DeskTypeSource : IntField
     // Field Enumerations
     public const int NASD_OATS = 1;
 }
-
 
 /// <summary>
 /// DeskOrderHandlingInst Field
@@ -18549,7 +17493,6 @@ public sealed class DeskOrderHandlingInst : StringField
     public const string WORK = "WRK";
 }
 
-
 /// <summary>
 /// ExecAckStatus Field
 /// </summary>
@@ -18568,7 +17511,6 @@ public sealed class ExecAckStatus : CharField
     public const char DONT_KNOW = '2';
 }
 
-
 /// <summary>
 /// UnderlyingDeliveryAmount Field
 /// </summary>
@@ -18581,7 +17523,6 @@ public sealed class UnderlyingDeliveryAmount : DecimalField
     public UnderlyingDeliveryAmount(Decimal val)
         : base(Tags.UnderlyingDeliveryAmount, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingCapValue Field
@@ -18596,7 +17537,6 @@ public sealed class UnderlyingCapValue : DecimalField
         : base(Tags.UnderlyingCapValue, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingSettlMethod Field
 /// </summary>
@@ -18609,7 +17549,6 @@ public sealed class UnderlyingSettlMethod : StringField
     public UnderlyingSettlMethod(string val)
         : base(Tags.UnderlyingSettlMethod, val) {}
 }
-
 
 /// <summary>
 /// SecondaryTradeID Field
@@ -18624,7 +17563,6 @@ public sealed class SecondaryTradeID : StringField
         : base(Tags.SecondaryTradeID, val) {}
 }
 
-
 /// <summary>
 /// FirmTradeID Field
 /// </summary>
@@ -18638,7 +17576,6 @@ public sealed class FirmTradeID : StringField
         : base(Tags.FirmTradeID, val) {}
 }
 
-
 /// <summary>
 /// SecondaryFirmTradeID Field
 /// </summary>
@@ -18651,7 +17588,6 @@ public sealed class SecondaryFirmTradeID : StringField
     public SecondaryFirmTradeID(string val)
         : base(Tags.SecondaryFirmTradeID, val) {}
 }
-
 
 /// <summary>
 /// CollApplType Field
@@ -18670,7 +17606,6 @@ public sealed class CollApplType : IntField
     public const int GENERAL = 1;
 }
 
-
 /// <summary>
 /// UnderlyingAdjustedQuantity Field
 /// </summary>
@@ -18684,7 +17619,6 @@ public sealed class UnderlyingAdjustedQuantity : DecimalField
         : base(Tags.UnderlyingAdjustedQuantity, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingFXRate Field
 /// </summary>
@@ -18697,7 +17631,6 @@ public sealed class UnderlyingFXRate : DecimalField
     public UnderlyingFXRate(Decimal val)
         : base(Tags.UnderlyingFXRate, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingFXRateCalc Field
@@ -18715,7 +17648,6 @@ public sealed class UnderlyingFXRateCalc : CharField
     public const char MULTIPLY = 'M';
     public const char DIVIDE = 'D';
 }
-
 
 /// <summary>
 /// AllocPositionEffect Field
@@ -18736,7 +17668,6 @@ public sealed class AllocPositionEffect : CharField
     public const char FIFO = 'F';
 }
 
-
 /// <summary>
 /// DealingCapacity Field
 /// </summary>
@@ -18755,7 +17686,6 @@ public sealed class DealingCapacity : CharField
     public const char RISKLESS_PRINCIPAL = 'R';
 }
 
-
 /// <summary>
 /// InstrmtAssignmentMethod Field
 /// </summary>
@@ -18768,7 +17698,6 @@ public sealed class InstrmtAssignmentMethod : CharField
     public InstrmtAssignmentMethod(char val)
         : base(Tags.InstrmtAssignmentMethod, val) {}
 }
-
 
 /// <summary>
 /// InstrumentPartyIDSource Field
@@ -18783,7 +17712,6 @@ public sealed class InstrumentPartyIDSource : CharField
         : base(Tags.InstrumentPartyIDSource, val) {}
 }
 
-
 /// <summary>
 /// InstrumentPartyRole Field
 /// </summary>
@@ -18796,7 +17724,6 @@ public sealed class InstrumentPartyRole : IntField
     public InstrumentPartyRole(int val)
         : base(Tags.InstrumentPartyRole, val) {}
 }
-
 
 /// <summary>
 /// NoInstrumentPartySubIDs Field
@@ -18811,7 +17738,6 @@ public sealed class NoInstrumentPartySubIDs : IntField
         : base(Tags.NoInstrumentPartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// InstrumentPartySubID Field
 /// </summary>
@@ -18824,7 +17750,6 @@ public sealed class InstrumentPartySubID : StringField
     public InstrumentPartySubID(string val)
         : base(Tags.InstrumentPartySubID, val) {}
 }
-
 
 /// <summary>
 /// InstrumentPartySubIDType Field
@@ -18839,7 +17764,6 @@ public sealed class InstrumentPartySubIDType : IntField
         : base(Tags.InstrumentPartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// PositionCurrency Field
 /// </summary>
@@ -18853,7 +17777,6 @@ public sealed class PositionCurrency : StringField
         : base(Tags.PositionCurrency, val) {}
 }
 
-
 /// <summary>
 /// CalculatedCcyLastQty Field
 /// </summary>
@@ -18866,7 +17789,6 @@ public sealed class CalculatedCcyLastQty : DecimalField
     public CalculatedCcyLastQty(Decimal val)
         : base(Tags.CalculatedCcyLastQty, val) {}
 }
-
 
 /// <summary>
 /// AggressorIndicator Field
@@ -18885,7 +17807,6 @@ public sealed class AggressorIndicator : BooleanField
     public const Boolean NO = false;
 }
 
-
 /// <summary>
 /// NoUndlyInstrumentParties Field
 /// </summary>
@@ -18898,7 +17819,6 @@ public sealed class NoUndlyInstrumentParties : IntField
     public NoUndlyInstrumentParties(int val)
         : base(Tags.NoUndlyInstrumentParties, val) {}
 }
-
 
 /// <summary>
 /// UndlyInstrumentPartyID Field
@@ -18913,7 +17833,6 @@ public sealed class UndlyInstrumentPartyID : StringField
         : base(Tags.UndlyInstrumentPartyID, val) {}
 }
 
-
 /// <summary>
 /// UndlyInstrumentPartyIDSource Field
 /// </summary>
@@ -18926,7 +17845,6 @@ public sealed class UndlyInstrumentPartyIDSource : CharField
     public UndlyInstrumentPartyIDSource(char val)
         : base(Tags.UndlyInstrumentPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// UndlyInstrumentPartyRole Field
@@ -18941,7 +17859,6 @@ public sealed class UndlyInstrumentPartyRole : IntField
         : base(Tags.UndlyInstrumentPartyRole, val) {}
 }
 
-
 /// <summary>
 /// NoUndlyInstrumentPartySubIDs Field
 /// </summary>
@@ -18954,7 +17871,6 @@ public sealed class NoUndlyInstrumentPartySubIDs : IntField
     public NoUndlyInstrumentPartySubIDs(int val)
         : base(Tags.NoUndlyInstrumentPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// UndlyInstrumentPartySubID Field
@@ -18969,7 +17885,6 @@ public sealed class UndlyInstrumentPartySubID : StringField
         : base(Tags.UndlyInstrumentPartySubID, val) {}
 }
 
-
 /// <summary>
 /// UndlyInstrumentPartySubIDType Field
 /// </summary>
@@ -18982,7 +17897,6 @@ public sealed class UndlyInstrumentPartySubIDType : IntField
     public UndlyInstrumentPartySubIDType(int val)
         : base(Tags.UndlyInstrumentPartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// BidSwapPoints Field
@@ -18997,7 +17911,6 @@ public sealed class BidSwapPoints : DecimalField
         : base(Tags.BidSwapPoints, val) {}
 }
 
-
 /// <summary>
 /// OfferSwapPoints Field
 /// </summary>
@@ -19010,7 +17923,6 @@ public sealed class OfferSwapPoints : DecimalField
     public OfferSwapPoints(Decimal val)
         : base(Tags.OfferSwapPoints, val) {}
 }
-
 
 /// <summary>
 /// LegBidForwardPoints Field
@@ -19025,7 +17937,6 @@ public sealed class LegBidForwardPoints : DecimalField
         : base(Tags.LegBidForwardPoints, val) {}
 }
 
-
 /// <summary>
 /// LegOfferForwardPoints Field
 /// </summary>
@@ -19039,7 +17950,6 @@ public sealed class LegOfferForwardPoints : DecimalField
         : base(Tags.LegOfferForwardPoints, val) {}
 }
 
-
 /// <summary>
 /// SwapPoints Field
 /// </summary>
@@ -19052,7 +17962,6 @@ public sealed class SwapPoints : DecimalField
     public SwapPoints(Decimal val)
         : base(Tags.SwapPoints, val) {}
 }
-
 
 /// <summary>
 /// MDQuoteType Field
@@ -19074,7 +17983,6 @@ public sealed class MDQuoteType : IntField
     public const int INDICATIVE_AND_TRADEABLE = 4;
 }
 
-
 /// <summary>
 /// LastSwapPoints Field
 /// </summary>
@@ -19087,7 +17995,6 @@ public sealed class LastSwapPoints : DecimalField
     public LastSwapPoints(Decimal val)
         : base(Tags.LastSwapPoints, val) {}
 }
-
 
 /// <summary>
 /// SideGrossTradeAmt Field
@@ -19102,7 +18009,6 @@ public sealed class SideGrossTradeAmt : DecimalField
         : base(Tags.SideGrossTradeAmt, val) {}
 }
 
-
 /// <summary>
 /// LegLastForwardPoints Field
 /// </summary>
@@ -19115,7 +18021,6 @@ public sealed class LegLastForwardPoints : DecimalField
     public LegLastForwardPoints(Decimal val)
         : base(Tags.LegLastForwardPoints, val) {}
 }
-
 
 /// <summary>
 /// LegCalculatedCcyLastQty Field
@@ -19130,7 +18035,6 @@ public sealed class LegCalculatedCcyLastQty : DecimalField
         : base(Tags.LegCalculatedCcyLastQty, val) {}
 }
 
-
 /// <summary>
 /// LegGrossTradeAmt Field
 /// </summary>
@@ -19143,7 +18047,6 @@ public sealed class LegGrossTradeAmt : DecimalField
     public LegGrossTradeAmt(Decimal val)
         : base(Tags.LegGrossTradeAmt, val) {}
 }
-
 
 /// <summary>
 /// MaturityTime Field
@@ -19158,7 +18061,6 @@ public sealed class MaturityTime : StringField
         : base(Tags.MaturityTime, val) {}
 }
 
-
 /// <summary>
 /// RefOrderID Field
 /// </summary>
@@ -19171,7 +18073,6 @@ public sealed class RefOrderID : StringField
     public RefOrderID(string val)
         : base(Tags.RefOrderID, val) {}
 }
-
 
 /// <summary>
 /// RefOrderIDSource Field
@@ -19197,7 +18098,6 @@ public sealed class RefOrderIDSource : CharField
     public const char QUOTENTRYID = '3';
 }
 
-
 /// <summary>
 /// SecondaryDisplayQty Field
 /// </summary>
@@ -19210,7 +18110,6 @@ public sealed class SecondaryDisplayQty : DecimalField
     public SecondaryDisplayQty(Decimal val)
         : base(Tags.SecondaryDisplayQty, val) {}
 }
-
 
 /// <summary>
 /// DisplayWhen Field
@@ -19228,7 +18127,6 @@ public sealed class DisplayWhen : CharField
     public const char IMMEDIATE = '1';
     public const char EXHAUST = '2';
 }
-
 
 /// <summary>
 /// DisplayMethod Field
@@ -19249,7 +18147,6 @@ public sealed class DisplayMethod : CharField
     public const char UNDISCLOSED = '4';
 }
 
-
 /// <summary>
 /// DisplayLowQty Field
 /// </summary>
@@ -19262,7 +18159,6 @@ public sealed class DisplayLowQty : DecimalField
     public DisplayLowQty(Decimal val)
         : base(Tags.DisplayLowQty, val) {}
 }
-
 
 /// <summary>
 /// DisplayHighQty Field
@@ -19277,7 +18173,6 @@ public sealed class DisplayHighQty : DecimalField
         : base(Tags.DisplayHighQty, val) {}
 }
 
-
 /// <summary>
 /// DisplayMinIncr Field
 /// </summary>
@@ -19290,7 +18185,6 @@ public sealed class DisplayMinIncr : DecimalField
     public DisplayMinIncr(Decimal val)
         : base(Tags.DisplayMinIncr, val) {}
 }
-
 
 /// <summary>
 /// RefreshQty Field
@@ -19305,7 +18199,6 @@ public sealed class RefreshQty : DecimalField
         : base(Tags.RefreshQty, val) {}
 }
 
-
 /// <summary>
 /// MatchIncrement Field
 /// </summary>
@@ -19318,7 +18211,6 @@ public sealed class MatchIncrement : DecimalField
     public MatchIncrement(Decimal val)
         : base(Tags.MatchIncrement, val) {}
 }
-
 
 /// <summary>
 /// MaxPriceLevels Field
@@ -19333,7 +18225,6 @@ public sealed class MaxPriceLevels : IntField
         : base(Tags.MaxPriceLevels, val) {}
 }
 
-
 /// <summary>
 /// PreTradeAnonymity Field
 /// </summary>
@@ -19346,7 +18237,6 @@ public sealed class PreTradeAnonymity : BooleanField
     public PreTradeAnonymity(Boolean val)
         : base(Tags.PreTradeAnonymity, val) {}
 }
-
 
 /// <summary>
 /// PriceProtectionScope Field
@@ -19367,7 +18257,6 @@ public sealed class PriceProtectionScope : CharField
     public const char GLOBAL = '3';
 }
 
-
 /// <summary>
 /// LotType Field
 /// </summary>
@@ -19386,7 +18275,6 @@ public sealed class LotType : CharField
     public const char BLOCK_LOT = '3';
     public const char ROUND_LOT_BASED_UPON_UNITOFMEASURE = '4';
 }
-
 
 /// <summary>
 /// PegPriceType Field
@@ -19412,7 +18300,6 @@ public sealed class PegPriceType : IntField
     public const int FIXED_PEG_TO_LOCAL_BEST_BID_OR_OFFER_AT_TIME_OF_ORDER = 6;
 }
 
-
 /// <summary>
 /// PeggedRefPrice Field
 /// </summary>
@@ -19425,7 +18312,6 @@ public sealed class PeggedRefPrice : DecimalField
     public PeggedRefPrice(Decimal val)
         : base(Tags.PeggedRefPrice, val) {}
 }
-
 
 /// <summary>
 /// PegSecurityIDSource Field
@@ -19440,7 +18326,6 @@ public sealed class PegSecurityIDSource : StringField
         : base(Tags.PegSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// PegSecurityID Field
 /// </summary>
@@ -19453,7 +18338,6 @@ public sealed class PegSecurityID : StringField
     public PegSecurityID(string val)
         : base(Tags.PegSecurityID, val) {}
 }
-
 
 /// <summary>
 /// PegSymbol Field
@@ -19468,7 +18352,6 @@ public sealed class PegSymbol : StringField
         : base(Tags.PegSymbol, val) {}
 }
 
-
 /// <summary>
 /// PegSecurityDesc Field
 /// </summary>
@@ -19481,7 +18364,6 @@ public sealed class PegSecurityDesc : StringField
     public PegSecurityDesc(string val)
         : base(Tags.PegSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// TriggerType Field
@@ -19502,7 +18384,6 @@ public sealed class TriggerType : CharField
     public const char PRICE_MOVEMENT = '4';
 }
 
-
 /// <summary>
 /// TriggerAction Field
 /// </summary>
@@ -19521,7 +18402,6 @@ public sealed class TriggerAction : CharField
     public const char CANCEL = '3';
 }
 
-
 /// <summary>
 /// TriggerPrice Field
 /// </summary>
@@ -19534,7 +18414,6 @@ public sealed class TriggerPrice : DecimalField
     public TriggerPrice(Decimal val)
         : base(Tags.TriggerPrice, val) {}
 }
-
 
 /// <summary>
 /// TriggerSymbol Field
@@ -19549,7 +18428,6 @@ public sealed class TriggerSymbol : StringField
         : base(Tags.TriggerSymbol, val) {}
 }
 
-
 /// <summary>
 /// TriggerSecurityID Field
 /// </summary>
@@ -19562,7 +18440,6 @@ public sealed class TriggerSecurityID : StringField
     public TriggerSecurityID(string val)
         : base(Tags.TriggerSecurityID, val) {}
 }
-
 
 /// <summary>
 /// TriggerSecurityIDSource Field
@@ -19577,7 +18454,6 @@ public sealed class TriggerSecurityIDSource : StringField
         : base(Tags.TriggerSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// TriggerSecurityDesc Field
 /// </summary>
@@ -19590,7 +18466,6 @@ public sealed class TriggerSecurityDesc : StringField
     public TriggerSecurityDesc(string val)
         : base(Tags.TriggerSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// TriggerPriceType Field
@@ -19613,7 +18488,6 @@ public sealed class TriggerPriceType : CharField
     public const char BEST_MID = '6';
 }
 
-
 /// <summary>
 /// TriggerPriceTypeScope Field
 /// </summary>
@@ -19633,7 +18507,6 @@ public sealed class TriggerPriceTypeScope : CharField
     public const char GLOBAL = '3';
 }
 
-
 /// <summary>
 /// TriggerPriceDirection Field
 /// </summary>
@@ -19651,7 +18524,6 @@ public sealed class TriggerPriceDirection : CharField
     public const char TRIGGER_IF_THE_PRICE_OF_THE_SPECIFIED_TYPE_GOES_DOWN_TO_OR_THROUGH_THE_SPECIFIED_TRIGGER_PRICE = 'D';
 }
 
-
 /// <summary>
 /// TriggerNewPrice Field
 /// </summary>
@@ -19664,7 +18536,6 @@ public sealed class TriggerNewPrice : DecimalField
     public TriggerNewPrice(Decimal val)
         : base(Tags.TriggerNewPrice, val) {}
 }
-
 
 /// <summary>
 /// TriggerOrderType Field
@@ -19683,7 +18554,6 @@ public sealed class TriggerOrderType : CharField
     public const char LIMIT = '2';
 }
 
-
 /// <summary>
 /// TriggerNewQty Field
 /// </summary>
@@ -19696,7 +18566,6 @@ public sealed class TriggerNewQty : DecimalField
     public TriggerNewQty(Decimal val)
         : base(Tags.TriggerNewQty, val) {}
 }
-
 
 /// <summary>
 /// TriggerTradingSessionID Field
@@ -19711,7 +18580,6 @@ public sealed class TriggerTradingSessionID : StringField
         : base(Tags.TriggerTradingSessionID, val) {}
 }
 
-
 /// <summary>
 /// TriggerTradingSessionSubID Field
 /// </summary>
@@ -19724,7 +18592,6 @@ public sealed class TriggerTradingSessionSubID : StringField
     public TriggerTradingSessionSubID(string val)
         : base(Tags.TriggerTradingSessionSubID, val) {}
 }
-
 
 /// <summary>
 /// OrderCategory Field
@@ -19750,7 +18617,6 @@ public sealed class OrderCategory : CharField
     public const char STREAMING_PRICE = '9';
 }
 
-
 /// <summary>
 /// NoRootPartyIDs Field
 /// </summary>
@@ -19763,7 +18629,6 @@ public sealed class NoRootPartyIDs : IntField
     public NoRootPartyIDs(int val)
         : base(Tags.NoRootPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// RootPartyID Field
@@ -19778,7 +18643,6 @@ public sealed class RootPartyID : StringField
         : base(Tags.RootPartyID, val) {}
 }
 
-
 /// <summary>
 /// RootPartyIDSource Field
 /// </summary>
@@ -19791,7 +18655,6 @@ public sealed class RootPartyIDSource : CharField
     public RootPartyIDSource(char val)
         : base(Tags.RootPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// RootPartyRole Field
@@ -19806,7 +18669,6 @@ public sealed class RootPartyRole : IntField
         : base(Tags.RootPartyRole, val) {}
 }
 
-
 /// <summary>
 /// NoRootPartySubIDs Field
 /// </summary>
@@ -19819,7 +18681,6 @@ public sealed class NoRootPartySubIDs : IntField
     public NoRootPartySubIDs(int val)
         : base(Tags.NoRootPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// RootPartySubID Field
@@ -19834,7 +18695,6 @@ public sealed class RootPartySubID : StringField
         : base(Tags.RootPartySubID, val) {}
 }
 
-
 /// <summary>
 /// RootPartySubIDType Field
 /// </summary>
@@ -19847,7 +18707,6 @@ public sealed class RootPartySubIDType : IntField
     public RootPartySubIDType(int val)
         : base(Tags.RootPartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// TradeHandlingInstr Field
@@ -19870,7 +18729,6 @@ public sealed class TradeHandlingInstr : CharField
     public const char TWO_PARTY_REPORT_FOR_CLAIM = '5';
 }
 
-
 /// <summary>
 /// OrigTradeHandlingInstr Field
 /// </summary>
@@ -19883,7 +18741,6 @@ public sealed class OrigTradeHandlingInstr : CharField
     public OrigTradeHandlingInstr(char val)
         : base(Tags.OrigTradeHandlingInstr, val) {}
 }
-
 
 /// <summary>
 /// OrigTradeDate Field
@@ -19898,7 +18755,6 @@ public sealed class OrigTradeDate : StringField
         : base(Tags.OrigTradeDate, val) {}
 }
 
-
 /// <summary>
 /// OrigTradeID Field
 /// </summary>
@@ -19912,7 +18768,6 @@ public sealed class OrigTradeID : StringField
         : base(Tags.OrigTradeID, val) {}
 }
 
-
 /// <summary>
 /// OrigSecondaryTradeID Field
 /// </summary>
@@ -19925,7 +18780,6 @@ public sealed class OrigSecondaryTradeID : StringField
     public OrigSecondaryTradeID(string val)
         : base(Tags.OrigSecondaryTradeID, val) {}
 }
-
 
 /// <summary>
 /// ApplVerID Field
@@ -19952,7 +18806,6 @@ public sealed class ApplVerID : StringField
     public const string FIX50SP2 = "9";
 }
 
-
 /// <summary>
 /// CstmApplVerID Field
 /// </summary>
@@ -19965,7 +18818,6 @@ public sealed class CstmApplVerID : StringField
     public CstmApplVerID(string val)
         : base(Tags.CstmApplVerID, val) {}
 }
-
 
 /// <summary>
 /// RefApplVerID Field
@@ -19980,7 +18832,6 @@ public sealed class RefApplVerID : StringField
         : base(Tags.RefApplVerID, val) {}
 }
 
-
 /// <summary>
 /// RefCstmApplVerID Field
 /// </summary>
@@ -19993,7 +18844,6 @@ public sealed class RefCstmApplVerID : StringField
     public RefCstmApplVerID(string val)
         : base(Tags.RefCstmApplVerID, val) {}
 }
-
 
 /// <summary>
 /// TZTransactTime Field
@@ -20012,7 +18862,6 @@ public sealed class TZTransactTime : DateTimeField
     public TZTransactTime(DateTime val, TimePrecision precision)
         : base(Tags.TZTransactTime, val, precision) {}
 }
-
 
 /// <summary>
 /// ExDestinationIDSource Field
@@ -20034,7 +18883,6 @@ public sealed class ExDestinationIDSource : CharField
     public const char MIC = 'G';
 }
 
-
 /// <summary>
 /// ReportedPxDiff Field
 /// </summary>
@@ -20047,7 +18895,6 @@ public sealed class ReportedPxDiff : BooleanField
     public ReportedPxDiff(Boolean val)
         : base(Tags.ReportedPxDiff, val) {}
 }
-
 
 /// <summary>
 /// RptSys Field
@@ -20062,7 +18909,6 @@ public sealed class RptSys : StringField
         : base(Tags.RptSys, val) {}
 }
 
-
 /// <summary>
 /// AllocClearingFeeIndicator Field
 /// </summary>
@@ -20075,7 +18921,6 @@ public sealed class AllocClearingFeeIndicator : StringField
     public AllocClearingFeeIndicator(string val)
         : base(Tags.AllocClearingFeeIndicator, val) {}
 }
-
 
 /// <summary>
 /// DefaultApplVerID Field
@@ -20090,7 +18935,6 @@ public sealed class DefaultApplVerID : StringField
         : base(Tags.DefaultApplVerID, val) {}
 }
 
-
 /// <summary>
 /// DisplayQty Field
 /// </summary>
@@ -20104,7 +18948,6 @@ public sealed class DisplayQty : DecimalField
         : base(Tags.DisplayQty, val) {}
 }
 
-
 /// <summary>
 /// ExchangeSpecialInstructions Field
 /// </summary>
@@ -20117,7 +18960,6 @@ public sealed class ExchangeSpecialInstructions : StringField
     public ExchangeSpecialInstructions(string val)
         : base(Tags.ExchangeSpecialInstructions, val) {}
 }
-
 
 /// <summary>
 /// ExpirationQtyType Field
@@ -20139,7 +18981,6 @@ public sealed class ExpirationQtyType : IntField
     public const int DIFFERENCE = 5;
 }
 
-
 /// <summary>
 /// MaxTradeVol Field
 /// </summary>
@@ -20152,7 +18993,6 @@ public sealed class MaxTradeVol : DecimalField
     public MaxTradeVol(Decimal val)
         : base(Tags.MaxTradeVol, val) {}
 }
-
 
 /// <summary>
 /// NoMDFeedTypes Field
@@ -20167,7 +19007,6 @@ public sealed class NoMDFeedTypes : IntField
         : base(Tags.NoMDFeedTypes, val) {}
 }
 
-
 /// <summary>
 /// MatchAlgorithm Field
 /// </summary>
@@ -20181,7 +19020,6 @@ public sealed class MatchAlgorithm : StringField
         : base(Tags.MatchAlgorithm, val) {}
 }
 
-
 /// <summary>
 /// MaxPriceVariation Field
 /// </summary>
@@ -20194,7 +19032,6 @@ public sealed class MaxPriceVariation : DecimalField
     public MaxPriceVariation(Decimal val)
         : base(Tags.MaxPriceVariation, val) {}
 }
-
 
 /// <summary>
 /// ImpliedMarketIndicator Field
@@ -20215,7 +19052,6 @@ public sealed class ImpliedMarketIndicator : IntField
     public const int BOTH_IMPLIED_IN_AND_IMPLIED_OUT = 3;
 }
 
-
 /// <summary>
 /// EventTime Field
 /// </summary>
@@ -20234,7 +19070,6 @@ public sealed class EventTime : DateTimeField
         : base(Tags.EventTime, val, precision) {}
 }
 
-
 /// <summary>
 /// MinPriceIncrementAmount Field
 /// </summary>
@@ -20247,7 +19082,6 @@ public sealed class MinPriceIncrementAmount : DecimalField
     public MinPriceIncrementAmount(Decimal val)
         : base(Tags.MinPriceIncrementAmount, val) {}
 }
-
 
 /// <summary>
 /// UnitOfMeasureQty Field
@@ -20262,7 +19096,6 @@ public sealed class UnitOfMeasureQty : DecimalField
         : base(Tags.UnitOfMeasureQty, val) {}
 }
 
-
 /// <summary>
 /// LowLimitPrice Field
 /// </summary>
@@ -20275,7 +19108,6 @@ public sealed class LowLimitPrice : DecimalField
     public LowLimitPrice(Decimal val)
         : base(Tags.LowLimitPrice, val) {}
 }
-
 
 /// <summary>
 /// HighLimitPrice Field
@@ -20290,7 +19122,6 @@ public sealed class HighLimitPrice : DecimalField
         : base(Tags.HighLimitPrice, val) {}
 }
 
-
 /// <summary>
 /// TradingReferencePrice Field
 /// </summary>
@@ -20303,7 +19134,6 @@ public sealed class TradingReferencePrice : DecimalField
     public TradingReferencePrice(Decimal val)
         : base(Tags.TradingReferencePrice, val) {}
 }
-
 
 /// <summary>
 /// SecurityGroup Field
@@ -20318,7 +19148,6 @@ public sealed class SecurityGroup : StringField
         : base(Tags.SecurityGroup, val) {}
 }
 
-
 /// <summary>
 /// LegNumber Field
 /// </summary>
@@ -20331,7 +19160,6 @@ public sealed class LegNumber : IntField
     public LegNumber(int val)
         : base(Tags.LegNumber, val) {}
 }
-
 
 /// <summary>
 /// SettlementCycleNo Field
@@ -20346,7 +19174,6 @@ public sealed class SettlementCycleNo : IntField
         : base(Tags.SettlementCycleNo, val) {}
 }
 
-
 /// <summary>
 /// SideCurrency Field
 /// </summary>
@@ -20359,7 +19186,6 @@ public sealed class SideCurrency : StringField
     public SideCurrency(string val)
         : base(Tags.SideCurrency, val) {}
 }
-
 
 /// <summary>
 /// SideSettlCurrency Field
@@ -20374,7 +19200,6 @@ public sealed class SideSettlCurrency : StringField
         : base(Tags.SideSettlCurrency, val) {}
 }
 
-
 /// <summary>
 /// ApplExtID Field
 /// </summary>
@@ -20387,7 +19212,6 @@ public sealed class ApplExtID : IntField
     public ApplExtID(int val)
         : base(Tags.ApplExtID, val) {}
 }
-
 
 /// <summary>
 /// CcyAmt Field
@@ -20402,7 +19226,6 @@ public sealed class CcyAmt : DecimalField
         : base(Tags.CcyAmt, val) {}
 }
 
-
 /// <summary>
 /// NoSettlDetails Field
 /// </summary>
@@ -20415,7 +19238,6 @@ public sealed class NoSettlDetails : IntField
     public NoSettlDetails(int val)
         : base(Tags.NoSettlDetails, val) {}
 }
-
 
 /// <summary>
 /// SettlObligMode Field
@@ -20434,7 +19256,6 @@ public sealed class SettlObligMode : IntField
     public const int FINAL = 2;
 }
 
-
 /// <summary>
 /// SettlObligMsgID Field
 /// </summary>
@@ -20448,7 +19269,6 @@ public sealed class SettlObligMsgID : StringField
         : base(Tags.SettlObligMsgID, val) {}
 }
 
-
 /// <summary>
 /// SettlObligID Field
 /// </summary>
@@ -20461,7 +19281,6 @@ public sealed class SettlObligID : StringField
     public SettlObligID(string val)
         : base(Tags.SettlObligID, val) {}
 }
-
 
 /// <summary>
 /// SettlObligTransType Field
@@ -20482,7 +19301,6 @@ public sealed class SettlObligTransType : CharField
     public const char RESTATE = 'T';
 }
 
-
 /// <summary>
 /// SettlObligRefID Field
 /// </summary>
@@ -20495,7 +19313,6 @@ public sealed class SettlObligRefID : StringField
     public SettlObligRefID(string val)
         : base(Tags.SettlObligRefID, val) {}
 }
-
 
 /// <summary>
 /// SettlObligSource Field
@@ -20515,7 +19332,6 @@ public sealed class SettlObligSource : CharField
     public const char INVESTOR = '3';
 }
 
-
 /// <summary>
 /// NoSettlOblig Field
 /// </summary>
@@ -20529,7 +19345,6 @@ public sealed class NoSettlOblig : IntField
         : base(Tags.NoSettlOblig, val) {}
 }
 
-
 /// <summary>
 /// QuoteMsgID Field
 /// </summary>
@@ -20542,7 +19357,6 @@ public sealed class QuoteMsgID : StringField
     public QuoteMsgID(string val)
         : base(Tags.QuoteMsgID, val) {}
 }
-
 
 /// <summary>
 /// QuoteEntryStatus Field
@@ -20568,7 +19382,6 @@ public sealed class QuoteEntryStatus : IntField
     public const int ACTIVE = 16;
 }
 
-
 /// <summary>
 /// TotNoCxldQuotes Field
 /// </summary>
@@ -20581,7 +19394,6 @@ public sealed class TotNoCxldQuotes : IntField
     public TotNoCxldQuotes(int val)
         : base(Tags.TotNoCxldQuotes, val) {}
 }
-
 
 /// <summary>
 /// TotNoAccQuotes Field
@@ -20596,7 +19408,6 @@ public sealed class TotNoAccQuotes : IntField
         : base(Tags.TotNoAccQuotes, val) {}
 }
 
-
 /// <summary>
 /// TotNoRejQuotes Field
 /// </summary>
@@ -20610,7 +19421,6 @@ public sealed class TotNoRejQuotes : IntField
         : base(Tags.TotNoRejQuotes, val) {}
 }
 
-
 /// <summary>
 /// PrivateQuote Field
 /// </summary>
@@ -20623,7 +19433,6 @@ public sealed class PrivateQuote : BooleanField
     public PrivateQuote(Boolean val)
         : base(Tags.PrivateQuote, val) {}
 }
-
 
 /// <summary>
 /// RespondentType Field
@@ -20644,7 +19453,6 @@ public sealed class RespondentType : IntField
     public const int PRIMARY_MARKET_MAKER = 4;
 }
 
-
 /// <summary>
 /// MDSubBookType Field
 /// </summary>
@@ -20657,7 +19465,6 @@ public sealed class MDSubBookType : IntField
     public MDSubBookType(int val)
         : base(Tags.MDSubBookType, val) {}
 }
-
 
 /// <summary>
 /// SecurityTradingEvent Field
@@ -20683,7 +19490,6 @@ public sealed class SecurityTradingEvent : IntField
     public const int CHANGE_OF_SECURITY_STATUS = 6;
 }
 
-
 /// <summary>
 /// NoStatsIndicators Field
 /// </summary>
@@ -20696,7 +19502,6 @@ public sealed class NoStatsIndicators : IntField
     public NoStatsIndicators(int val)
         : base(Tags.NoStatsIndicators, val) {}
 }
-
 
 /// <summary>
 /// StatsType Field
@@ -20717,7 +19522,6 @@ public sealed class StatsType : IntField
     public const int TURNOVER = 4;
 }
 
-
 /// <summary>
 /// NoOfSecSizes Field
 /// </summary>
@@ -20730,7 +19534,6 @@ public sealed class NoOfSecSizes : IntField
     public NoOfSecSizes(int val)
         : base(Tags.NoOfSecSizes, val) {}
 }
-
 
 /// <summary>
 /// MDSecSizeType Field
@@ -20748,7 +19551,6 @@ public sealed class MDSecSizeType : IntField
     public const int CUSTOMER = 1;
 }
 
-
 /// <summary>
 /// MDSecSize Field
 /// </summary>
@@ -20761,7 +19563,6 @@ public sealed class MDSecSize : DecimalField
     public MDSecSize(Decimal val)
         : base(Tags.MDSecSize, val) {}
 }
-
 
 /// <summary>
 /// ApplID Field
@@ -20776,7 +19577,6 @@ public sealed class ApplID : StringField
         : base(Tags.ApplID, val) {}
 }
 
-
 /// <summary>
 /// ApplSeqNum Field
 /// </summary>
@@ -20789,7 +19589,6 @@ public sealed class ApplSeqNum : SeqNumFieldType
     public ApplSeqNum(SeqNumType val)
         : base(Tags.ApplSeqNum, val) {}
 }
-
 
 /// <summary>
 /// ApplBegSeqNum Field
@@ -20804,7 +19603,6 @@ public sealed class ApplBegSeqNum : SeqNumFieldType
         : base(Tags.ApplBegSeqNum, val) {}
 }
 
-
 /// <summary>
 /// ApplEndSeqNum Field
 /// </summary>
@@ -20817,7 +19615,6 @@ public sealed class ApplEndSeqNum : SeqNumFieldType
     public ApplEndSeqNum(SeqNumType val)
         : base(Tags.ApplEndSeqNum, val) {}
 }
-
 
 /// <summary>
 /// SecurityXMLLen Field
@@ -20832,7 +19629,6 @@ public sealed class SecurityXMLLen : IntField
         : base(Tags.SecurityXMLLen, val) {}
 }
 
-
 /// <summary>
 /// SecurityXML Field
 /// </summary>
@@ -20845,7 +19641,6 @@ public sealed class SecurityXML : StringField
     public SecurityXML(string val)
         : base(Tags.SecurityXML, val) {}
 }
-
 
 /// <summary>
 /// SecurityXMLSchema Field
@@ -20860,7 +19655,6 @@ public sealed class SecurityXMLSchema : StringField
         : base(Tags.SecurityXMLSchema, val) {}
 }
 
-
 /// <summary>
 /// RefreshIndicator Field
 /// </summary>
@@ -20873,7 +19667,6 @@ public sealed class RefreshIndicator : BooleanField
     public RefreshIndicator(Boolean val)
         : base(Tags.RefreshIndicator, val) {}
 }
-
 
 /// <summary>
 /// Volatility Field
@@ -20888,7 +19681,6 @@ public sealed class Volatility : DecimalField
         : base(Tags.Volatility, val) {}
 }
 
-
 /// <summary>
 /// TimeToExpiration Field
 /// </summary>
@@ -20901,7 +19693,6 @@ public sealed class TimeToExpiration : DecimalField
     public TimeToExpiration(Decimal val)
         : base(Tags.TimeToExpiration, val) {}
 }
-
 
 /// <summary>
 /// RiskFreeRate Field
@@ -20916,7 +19707,6 @@ public sealed class RiskFreeRate : DecimalField
         : base(Tags.RiskFreeRate, val) {}
 }
 
-
 /// <summary>
 /// PriceUnitOfMeasure Field
 /// </summary>
@@ -20930,7 +19720,6 @@ public sealed class PriceUnitOfMeasure : StringField
         : base(Tags.PriceUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// PriceUnitOfMeasureQty Field
 /// </summary>
@@ -20943,7 +19732,6 @@ public sealed class PriceUnitOfMeasureQty : DecimalField
     public PriceUnitOfMeasureQty(Decimal val)
         : base(Tags.PriceUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// SettlMethod Field
@@ -20961,7 +19749,6 @@ public sealed class SettlMethod : CharField
     public const char CASH_SETTLEMENT_REQUIRED = 'C';
     public const char PHYSICAL_SETTLEMENT_REQUIRED = 'P';
 }
-
 
 /// <summary>
 /// ExerciseStyle Field
@@ -20981,7 +19768,6 @@ public sealed class ExerciseStyle : IntField
     public const int BERMUDA = 2;
 }
 
-
 /// <summary>
 /// OptPayAmount Field
 /// </summary>
@@ -20994,7 +19780,6 @@ public sealed class OptPayAmount : DecimalField
     public OptPayAmount(Decimal val)
         : base(Tags.OptPayAmount, val) {}
 }
-
 
 /// <summary>
 /// PriceQuoteMethod Field
@@ -21015,7 +19800,6 @@ public sealed class PriceQuoteMethod : StringField
     public const string PERCENT_OF_PAR = "PCTPAR";
 }
 
-
 /// <summary>
 /// FuturesValuationMethod Field
 /// </summary>
@@ -21034,7 +19818,6 @@ public sealed class FuturesValuationMethod : StringField
     public const string FUTURES_STYLE_WITH_AN_ATTACHED_CASH_ADJUSTMENT = "FUTDA";
 }
 
-
 /// <summary>
 /// ListMethod Field
 /// </summary>
@@ -21052,7 +19835,6 @@ public sealed class ListMethod : IntField
     public const int USER_REQUESTED = 1;
 }
 
-
 /// <summary>
 /// CapPrice Field
 /// </summary>
@@ -21065,7 +19847,6 @@ public sealed class CapPrice : DecimalField
     public CapPrice(Decimal val)
         : base(Tags.CapPrice, val) {}
 }
-
 
 /// <summary>
 /// FloorPrice Field
@@ -21080,7 +19861,6 @@ public sealed class FloorPrice : DecimalField
         : base(Tags.FloorPrice, val) {}
 }
 
-
 /// <summary>
 /// NoStrikeRules Field
 /// </summary>
@@ -21093,7 +19873,6 @@ public sealed class NoStrikeRules : IntField
     public NoStrikeRules(int val)
         : base(Tags.NoStrikeRules, val) {}
 }
-
 
 /// <summary>
 /// StartStrikePxRange Field
@@ -21108,7 +19887,6 @@ public sealed class StartStrikePxRange : DecimalField
         : base(Tags.StartStrikePxRange, val) {}
 }
 
-
 /// <summary>
 /// EndStrikePxRange Field
 /// </summary>
@@ -21121,7 +19899,6 @@ public sealed class EndStrikePxRange : DecimalField
     public EndStrikePxRange(Decimal val)
         : base(Tags.EndStrikePxRange, val) {}
 }
-
 
 /// <summary>
 /// StrikeIncrement Field
@@ -21136,7 +19913,6 @@ public sealed class StrikeIncrement : DecimalField
         : base(Tags.StrikeIncrement, val) {}
 }
 
-
 /// <summary>
 /// NoTickRules Field
 /// </summary>
@@ -21149,7 +19925,6 @@ public sealed class NoTickRules : IntField
     public NoTickRules(int val)
         : base(Tags.NoTickRules, val) {}
 }
-
 
 /// <summary>
 /// StartTickPriceRange Field
@@ -21164,7 +19939,6 @@ public sealed class StartTickPriceRange : DecimalField
         : base(Tags.StartTickPriceRange, val) {}
 }
 
-
 /// <summary>
 /// EndTickPriceRange Field
 /// </summary>
@@ -21178,7 +19952,6 @@ public sealed class EndTickPriceRange : DecimalField
         : base(Tags.EndTickPriceRange, val) {}
 }
 
-
 /// <summary>
 /// TickIncrement Field
 /// </summary>
@@ -21191,7 +19964,6 @@ public sealed class TickIncrement : DecimalField
     public TickIncrement(Decimal val)
         : base(Tags.TickIncrement, val) {}
 }
-
 
 /// <summary>
 /// TickRuleType Field
@@ -21213,7 +19985,6 @@ public sealed class TickRuleType : IntField
     public const int SETTLED_AS_A_SPREAD_LEG = 4;
 }
 
-
 /// <summary>
 /// NestedInstrAttribType Field
 /// </summary>
@@ -21226,7 +19997,6 @@ public sealed class NestedInstrAttribType : IntField
     public NestedInstrAttribType(int val)
         : base(Tags.NestedInstrAttribType, val) {}
 }
-
 
 /// <summary>
 /// NestedInstrAttribValue Field
@@ -21241,7 +20011,6 @@ public sealed class NestedInstrAttribValue : StringField
         : base(Tags.NestedInstrAttribValue, val) {}
 }
 
-
 /// <summary>
 /// LegMaturityTime Field
 /// </summary>
@@ -21254,7 +20023,6 @@ public sealed class LegMaturityTime : StringField
     public LegMaturityTime(string val)
         : base(Tags.LegMaturityTime, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingMaturityTime Field
@@ -21269,7 +20037,6 @@ public sealed class UnderlyingMaturityTime : StringField
         : base(Tags.UnderlyingMaturityTime, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSymbol Field
 /// </summary>
@@ -21282,7 +20049,6 @@ public sealed class DerivativeSymbol : StringField
     public DerivativeSymbol(string val)
         : base(Tags.DerivativeSymbol, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSymbolSfx Field
@@ -21297,7 +20063,6 @@ public sealed class DerivativeSymbolSfx : StringField
         : base(Tags.DerivativeSymbolSfx, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityID Field
 /// </summary>
@@ -21310,7 +20075,6 @@ public sealed class DerivativeSecurityID : StringField
     public DerivativeSecurityID(string val)
         : base(Tags.DerivativeSecurityID, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityIDSource Field
@@ -21325,7 +20089,6 @@ public sealed class DerivativeSecurityIDSource : StringField
         : base(Tags.DerivativeSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoDerivativeSecurityAltID Field
 /// </summary>
@@ -21338,7 +20101,6 @@ public sealed class NoDerivativeSecurityAltID : IntField
     public NoDerivativeSecurityAltID(int val)
         : base(Tags.NoDerivativeSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityAltID Field
@@ -21353,7 +20115,6 @@ public sealed class DerivativeSecurityAltID : StringField
         : base(Tags.DerivativeSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityAltIDSource Field
 /// </summary>
@@ -21366,7 +20127,6 @@ public sealed class DerivativeSecurityAltIDSource : StringField
     public DerivativeSecurityAltIDSource(string val)
         : base(Tags.DerivativeSecurityAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// SecondaryLowLimitPrice Field
@@ -21381,7 +20141,6 @@ public sealed class SecondaryLowLimitPrice : DecimalField
         : base(Tags.SecondaryLowLimitPrice, val) {}
 }
 
-
 /// <summary>
 /// MaturityRuleID Field
 /// </summary>
@@ -21394,7 +20153,6 @@ public sealed class MaturityRuleID : StringField
     public MaturityRuleID(string val)
         : base(Tags.MaturityRuleID, val) {}
 }
-
 
 /// <summary>
 /// StrikeRuleID Field
@@ -21409,7 +20167,6 @@ public sealed class StrikeRuleID : StringField
         : base(Tags.StrikeRuleID, val) {}
 }
 
-
 /// <summary>
 /// LegUnitOfMeasureQty Field
 /// </summary>
@@ -21422,7 +20179,6 @@ public sealed class LegUnitOfMeasureQty : DecimalField
     public LegUnitOfMeasureQty(Decimal val)
         : base(Tags.LegUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// DerivativeOptPayAmount Field
@@ -21437,7 +20193,6 @@ public sealed class DerivativeOptPayAmount : DecimalField
         : base(Tags.DerivativeOptPayAmount, val) {}
 }
 
-
 /// <summary>
 /// EndMaturityMonthYear Field
 /// </summary>
@@ -21450,7 +20205,6 @@ public sealed class EndMaturityMonthYear : StringField
     public EndMaturityMonthYear(string val)
         : base(Tags.EndMaturityMonthYear, val) {}
 }
-
 
 /// <summary>
 /// ProductComplex Field
@@ -21465,7 +20219,6 @@ public sealed class ProductComplex : StringField
         : base(Tags.ProductComplex, val) {}
 }
 
-
 /// <summary>
 /// DerivativeProductComplex Field
 /// </summary>
@@ -21478,7 +20231,6 @@ public sealed class DerivativeProductComplex : StringField
     public DerivativeProductComplex(string val)
         : base(Tags.DerivativeProductComplex, val) {}
 }
-
 
 /// <summary>
 /// MaturityMonthYearIncrement Field
@@ -21493,7 +20245,6 @@ public sealed class MaturityMonthYearIncrement : IntField
         : base(Tags.MaturityMonthYearIncrement, val) {}
 }
 
-
 /// <summary>
 /// SecondaryHighLimitPrice Field
 /// </summary>
@@ -21506,7 +20257,6 @@ public sealed class SecondaryHighLimitPrice : DecimalField
     public SecondaryHighLimitPrice(Decimal val)
         : base(Tags.SecondaryHighLimitPrice, val) {}
 }
-
 
 /// <summary>
 /// MinLotSize Field
@@ -21521,7 +20271,6 @@ public sealed class MinLotSize : DecimalField
         : base(Tags.MinLotSize, val) {}
 }
 
-
 /// <summary>
 /// NoExecInstRules Field
 /// </summary>
@@ -21534,7 +20283,6 @@ public sealed class NoExecInstRules : IntField
     public NoExecInstRules(int val)
         : base(Tags.NoExecInstRules, val) {}
 }
-
 
 /// <summary>
 /// NoLotTypeRules Field
@@ -21549,7 +20297,6 @@ public sealed class NoLotTypeRules : IntField
         : base(Tags.NoLotTypeRules, val) {}
 }
 
-
 /// <summary>
 /// NoMatchRules Field
 /// </summary>
@@ -21562,7 +20309,6 @@ public sealed class NoMatchRules : IntField
     public NoMatchRules(int val)
         : base(Tags.NoMatchRules, val) {}
 }
-
 
 /// <summary>
 /// NoMaturityRules Field
@@ -21577,7 +20323,6 @@ public sealed class NoMaturityRules : IntField
         : base(Tags.NoMaturityRules, val) {}
 }
 
-
 /// <summary>
 /// NoOrdTypeRules Field
 /// </summary>
@@ -21590,7 +20335,6 @@ public sealed class NoOrdTypeRules : IntField
     public NoOrdTypeRules(int val)
         : base(Tags.NoOrdTypeRules, val) {}
 }
-
 
 /// <summary>
 /// NoTimeInForceRules Field
@@ -21605,7 +20349,6 @@ public sealed class NoTimeInForceRules : IntField
         : base(Tags.NoTimeInForceRules, val) {}
 }
 
-
 /// <summary>
 /// SecondaryTradingReferencePrice Field
 /// </summary>
@@ -21618,7 +20361,6 @@ public sealed class SecondaryTradingReferencePrice : DecimalField
     public SecondaryTradingReferencePrice(Decimal val)
         : base(Tags.SecondaryTradingReferencePrice, val) {}
 }
-
 
 /// <summary>
 /// StartMaturityMonthYear Field
@@ -21633,7 +20375,6 @@ public sealed class StartMaturityMonthYear : StringField
         : base(Tags.StartMaturityMonthYear, val) {}
 }
 
-
 /// <summary>
 /// FlexProductEligibilityIndicator Field
 /// </summary>
@@ -21646,7 +20387,6 @@ public sealed class FlexProductEligibilityIndicator : BooleanField
     public FlexProductEligibilityIndicator(Boolean val)
         : base(Tags.FlexProductEligibilityIndicator, val) {}
 }
-
 
 /// <summary>
 /// DerivFlexProductEligibilityIndicator Field
@@ -21661,7 +20401,6 @@ public sealed class DerivFlexProductEligibilityIndicator : BooleanField
         : base(Tags.DerivFlexProductEligibilityIndicator, val) {}
 }
 
-
 /// <summary>
 /// FlexibleIndicator Field
 /// </summary>
@@ -21674,7 +20413,6 @@ public sealed class FlexibleIndicator : BooleanField
     public FlexibleIndicator(Boolean val)
         : base(Tags.FlexibleIndicator, val) {}
 }
-
 
 /// <summary>
 /// TradingCurrency Field
@@ -21689,7 +20427,6 @@ public sealed class TradingCurrency : StringField
         : base(Tags.TradingCurrency, val) {}
 }
 
-
 /// <summary>
 /// DerivativeProduct Field
 /// </summary>
@@ -21702,7 +20439,6 @@ public sealed class DerivativeProduct : IntField
     public DerivativeProduct(int val)
         : base(Tags.DerivativeProduct, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityGroup Field
@@ -21717,7 +20453,6 @@ public sealed class DerivativeSecurityGroup : StringField
         : base(Tags.DerivativeSecurityGroup, val) {}
 }
 
-
 /// <summary>
 /// DerivativeCFICode Field
 /// </summary>
@@ -21730,7 +20465,6 @@ public sealed class DerivativeCFICode : StringField
     public DerivativeCFICode(string val)
         : base(Tags.DerivativeCFICode, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityType Field
@@ -21745,7 +20479,6 @@ public sealed class DerivativeSecurityType : StringField
         : base(Tags.DerivativeSecurityType, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecuritySubType Field
 /// </summary>
@@ -21758,7 +20491,6 @@ public sealed class DerivativeSecuritySubType : StringField
     public DerivativeSecuritySubType(string val)
         : base(Tags.DerivativeSecuritySubType, val) {}
 }
-
 
 /// <summary>
 /// DerivativeMaturityMonthYear Field
@@ -21773,7 +20505,6 @@ public sealed class DerivativeMaturityMonthYear : StringField
         : base(Tags.DerivativeMaturityMonthYear, val) {}
 }
 
-
 /// <summary>
 /// DerivativeMaturityDate Field
 /// </summary>
@@ -21786,7 +20517,6 @@ public sealed class DerivativeMaturityDate : StringField
     public DerivativeMaturityDate(string val)
         : base(Tags.DerivativeMaturityDate, val) {}
 }
-
 
 /// <summary>
 /// DerivativeMaturityTime Field
@@ -21801,7 +20531,6 @@ public sealed class DerivativeMaturityTime : StringField
         : base(Tags.DerivativeMaturityTime, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSettleOnOpenFlag Field
 /// </summary>
@@ -21814,7 +20543,6 @@ public sealed class DerivativeSettleOnOpenFlag : StringField
     public DerivativeSettleOnOpenFlag(string val)
         : base(Tags.DerivativeSettleOnOpenFlag, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrmtAssignmentMethod Field
@@ -21829,7 +20557,6 @@ public sealed class DerivativeInstrmtAssignmentMethod : CharField
         : base(Tags.DerivativeInstrmtAssignmentMethod, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityStatus Field
 /// </summary>
@@ -21842,7 +20569,6 @@ public sealed class DerivativeSecurityStatus : StringField
     public DerivativeSecurityStatus(string val)
         : base(Tags.DerivativeSecurityStatus, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrRegistry Field
@@ -21857,7 +20583,6 @@ public sealed class DerivativeInstrRegistry : StringField
         : base(Tags.DerivativeInstrRegistry, val) {}
 }
 
-
 /// <summary>
 /// DerivativeCountryOfIssue Field
 /// </summary>
@@ -21870,7 +20595,6 @@ public sealed class DerivativeCountryOfIssue : StringField
     public DerivativeCountryOfIssue(string val)
         : base(Tags.DerivativeCountryOfIssue, val) {}
 }
-
 
 /// <summary>
 /// DerivativeStateOrProvinceOfIssue Field
@@ -21885,7 +20609,6 @@ public sealed class DerivativeStateOrProvinceOfIssue : StringField
         : base(Tags.DerivativeStateOrProvinceOfIssue, val) {}
 }
 
-
 /// <summary>
 /// DerivativeLocaleOfIssue Field
 /// </summary>
@@ -21898,7 +20621,6 @@ public sealed class DerivativeLocaleOfIssue : StringField
     public DerivativeLocaleOfIssue(string val)
         : base(Tags.DerivativeLocaleOfIssue, val) {}
 }
-
 
 /// <summary>
 /// DerivativeStrikePrice Field
@@ -21913,7 +20635,6 @@ public sealed class DerivativeStrikePrice : DecimalField
         : base(Tags.DerivativeStrikePrice, val) {}
 }
 
-
 /// <summary>
 /// DerivativeStrikeCurrency Field
 /// </summary>
@@ -21926,7 +20647,6 @@ public sealed class DerivativeStrikeCurrency : StringField
     public DerivativeStrikeCurrency(string val)
         : base(Tags.DerivativeStrikeCurrency, val) {}
 }
-
 
 /// <summary>
 /// DerivativeStrikeMultiplier Field
@@ -21941,7 +20661,6 @@ public sealed class DerivativeStrikeMultiplier : DecimalField
         : base(Tags.DerivativeStrikeMultiplier, val) {}
 }
 
-
 /// <summary>
 /// DerivativeStrikeValue Field
 /// </summary>
@@ -21954,7 +20673,6 @@ public sealed class DerivativeStrikeValue : DecimalField
     public DerivativeStrikeValue(Decimal val)
         : base(Tags.DerivativeStrikeValue, val) {}
 }
-
 
 /// <summary>
 /// DerivativeOptAttribute Field
@@ -21969,7 +20687,6 @@ public sealed class DerivativeOptAttribute : CharField
         : base(Tags.DerivativeOptAttribute, val) {}
 }
 
-
 /// <summary>
 /// DerivativeContractMultiplier Field
 /// </summary>
@@ -21982,7 +20699,6 @@ public sealed class DerivativeContractMultiplier : DecimalField
     public DerivativeContractMultiplier(Decimal val)
         : base(Tags.DerivativeContractMultiplier, val) {}
 }
-
 
 /// <summary>
 /// DerivativeMinPriceIncrement Field
@@ -21997,7 +20713,6 @@ public sealed class DerivativeMinPriceIncrement : DecimalField
         : base(Tags.DerivativeMinPriceIncrement, val) {}
 }
 
-
 /// <summary>
 /// DerivativeMinPriceIncrementAmount Field
 /// </summary>
@@ -22010,7 +20725,6 @@ public sealed class DerivativeMinPriceIncrementAmount : DecimalField
     public DerivativeMinPriceIncrementAmount(Decimal val)
         : base(Tags.DerivativeMinPriceIncrementAmount, val) {}
 }
-
 
 /// <summary>
 /// DerivativeUnitOfMeasure Field
@@ -22025,7 +20739,6 @@ public sealed class DerivativeUnitOfMeasure : StringField
         : base(Tags.DerivativeUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// DerivativeUnitOfMeasureQty Field
 /// </summary>
@@ -22038,7 +20751,6 @@ public sealed class DerivativeUnitOfMeasureQty : DecimalField
     public DerivativeUnitOfMeasureQty(Decimal val)
         : base(Tags.DerivativeUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// DerivativeTimeUnit Field
@@ -22053,7 +20765,6 @@ public sealed class DerivativeTimeUnit : StringField
         : base(Tags.DerivativeTimeUnit, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityExchange Field
 /// </summary>
@@ -22066,7 +20777,6 @@ public sealed class DerivativeSecurityExchange : StringField
     public DerivativeSecurityExchange(string val)
         : base(Tags.DerivativeSecurityExchange, val) {}
 }
-
 
 /// <summary>
 /// DerivativePositionLimit Field
@@ -22081,7 +20791,6 @@ public sealed class DerivativePositionLimit : IntField
         : base(Tags.DerivativePositionLimit, val) {}
 }
 
-
 /// <summary>
 /// DerivativeNTPositionLimit Field
 /// </summary>
@@ -22094,7 +20803,6 @@ public sealed class DerivativeNTPositionLimit : IntField
     public DerivativeNTPositionLimit(int val)
         : base(Tags.DerivativeNTPositionLimit, val) {}
 }
-
 
 /// <summary>
 /// DerivativeIssuer Field
@@ -22109,7 +20817,6 @@ public sealed class DerivativeIssuer : StringField
         : base(Tags.DerivativeIssuer, val) {}
 }
 
-
 /// <summary>
 /// DerivativeIssueDate Field
 /// </summary>
@@ -22122,7 +20829,6 @@ public sealed class DerivativeIssueDate : StringField
     public DerivativeIssueDate(string val)
         : base(Tags.DerivativeIssueDate, val) {}
 }
-
 
 /// <summary>
 /// DerivativeEncodedIssuerLen Field
@@ -22137,7 +20843,6 @@ public sealed class DerivativeEncodedIssuerLen : IntField
         : base(Tags.DerivativeEncodedIssuerLen, val) {}
 }
 
-
 /// <summary>
 /// DerivativeEncodedIssuer Field
 /// </summary>
@@ -22150,7 +20855,6 @@ public sealed class DerivativeEncodedIssuer : StringField
     public DerivativeEncodedIssuer(string val)
         : base(Tags.DerivativeEncodedIssuer, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityDesc Field
@@ -22165,7 +20869,6 @@ public sealed class DerivativeSecurityDesc : StringField
         : base(Tags.DerivativeSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// DerivativeEncodedSecurityDescLen Field
 /// </summary>
@@ -22178,7 +20881,6 @@ public sealed class DerivativeEncodedSecurityDescLen : IntField
     public DerivativeEncodedSecurityDescLen(int val)
         : base(Tags.DerivativeEncodedSecurityDescLen, val) {}
 }
-
 
 /// <summary>
 /// DerivativeEncodedSecurityDesc Field
@@ -22193,7 +20895,6 @@ public sealed class DerivativeEncodedSecurityDesc : StringField
         : base(Tags.DerivativeEncodedSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityXMLLen Field
 /// </summary>
@@ -22206,7 +20907,6 @@ public sealed class DerivativeSecurityXMLLen : IntField
     public DerivativeSecurityXMLLen(int val)
         : base(Tags.DerivativeSecurityXMLLen, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSecurityXML Field
@@ -22221,7 +20921,6 @@ public sealed class DerivativeSecurityXML : StringField
         : base(Tags.DerivativeSecurityXML, val) {}
 }
 
-
 /// <summary>
 /// DerivativeSecurityXMLSchema Field
 /// </summary>
@@ -22234,7 +20933,6 @@ public sealed class DerivativeSecurityXMLSchema : StringField
     public DerivativeSecurityXMLSchema(string val)
         : base(Tags.DerivativeSecurityXMLSchema, val) {}
 }
-
 
 /// <summary>
 /// DerivativeContractSettlMonth Field
@@ -22249,7 +20947,6 @@ public sealed class DerivativeContractSettlMonth : StringField
         : base(Tags.DerivativeContractSettlMonth, val) {}
 }
 
-
 /// <summary>
 /// NoDerivativeEvents Field
 /// </summary>
@@ -22262,7 +20959,6 @@ public sealed class NoDerivativeEvents : IntField
     public NoDerivativeEvents(int val)
         : base(Tags.NoDerivativeEvents, val) {}
 }
-
 
 /// <summary>
 /// DerivativeEventType Field
@@ -22277,7 +20973,6 @@ public sealed class DerivativeEventType : IntField
         : base(Tags.DerivativeEventType, val) {}
 }
 
-
 /// <summary>
 /// DerivativeEventDate Field
 /// </summary>
@@ -22290,7 +20985,6 @@ public sealed class DerivativeEventDate : StringField
     public DerivativeEventDate(string val)
         : base(Tags.DerivativeEventDate, val) {}
 }
-
 
 /// <summary>
 /// DerivativeEventTime Field
@@ -22310,7 +21004,6 @@ public sealed class DerivativeEventTime : DateTimeField
         : base(Tags.DerivativeEventTime, val, precision) {}
 }
 
-
 /// <summary>
 /// DerivativeEventPx Field
 /// </summary>
@@ -22323,7 +21016,6 @@ public sealed class DerivativeEventPx : DecimalField
     public DerivativeEventPx(Decimal val)
         : base(Tags.DerivativeEventPx, val) {}
 }
-
 
 /// <summary>
 /// DerivativeEventText Field
@@ -22338,7 +21030,6 @@ public sealed class DerivativeEventText : StringField
         : base(Tags.DerivativeEventText, val) {}
 }
 
-
 /// <summary>
 /// NoDerivativeInstrumentParties Field
 /// </summary>
@@ -22351,7 +21042,6 @@ public sealed class NoDerivativeInstrumentParties : IntField
     public NoDerivativeInstrumentParties(int val)
         : base(Tags.NoDerivativeInstrumentParties, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrumentPartyID Field
@@ -22366,7 +21056,6 @@ public sealed class DerivativeInstrumentPartyID : StringField
         : base(Tags.DerivativeInstrumentPartyID, val) {}
 }
 
-
 /// <summary>
 /// DerivativeInstrumentPartyIDSource Field
 /// </summary>
@@ -22379,7 +21068,6 @@ public sealed class DerivativeInstrumentPartyIDSource : StringField
     public DerivativeInstrumentPartyIDSource(string val)
         : base(Tags.DerivativeInstrumentPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrumentPartyRole Field
@@ -22394,7 +21082,6 @@ public sealed class DerivativeInstrumentPartyRole : IntField
         : base(Tags.DerivativeInstrumentPartyRole, val) {}
 }
 
-
 /// <summary>
 /// NoDerivativeInstrumentPartySubIDs Field
 /// </summary>
@@ -22407,7 +21094,6 @@ public sealed class NoDerivativeInstrumentPartySubIDs : IntField
     public NoDerivativeInstrumentPartySubIDs(int val)
         : base(Tags.NoDerivativeInstrumentPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrumentPartySubID Field
@@ -22422,7 +21108,6 @@ public sealed class DerivativeInstrumentPartySubID : StringField
         : base(Tags.DerivativeInstrumentPartySubID, val) {}
 }
 
-
 /// <summary>
 /// DerivativeInstrumentPartySubIDType Field
 /// </summary>
@@ -22435,7 +21120,6 @@ public sealed class DerivativeInstrumentPartySubIDType : IntField
     public DerivativeInstrumentPartySubIDType(int val)
         : base(Tags.DerivativeInstrumentPartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// DerivativeExerciseStyle Field
@@ -22450,7 +21134,6 @@ public sealed class DerivativeExerciseStyle : CharField
         : base(Tags.DerivativeExerciseStyle, val) {}
 }
 
-
 /// <summary>
 /// MarketSegmentID Field
 /// </summary>
@@ -22464,7 +21147,6 @@ public sealed class MarketSegmentID : StringField
         : base(Tags.MarketSegmentID, val) {}
 }
 
-
 /// <summary>
 /// MarketID Field
 /// </summary>
@@ -22477,7 +21159,6 @@ public sealed class MarketID : StringField
     public MarketID(string val)
         : base(Tags.MarketID, val) {}
 }
-
 
 /// <summary>
 /// MaturityMonthYearIncrementUnits Field
@@ -22498,7 +21179,6 @@ public sealed class MaturityMonthYearIncrementUnits : IntField
     public const int YEARS = 3;
 }
 
-
 /// <summary>
 /// MaturityMonthYearFormat Field
 /// </summary>
@@ -22517,7 +21197,6 @@ public sealed class MaturityMonthYearFormat : IntField
     public const int YEARMONTHWEEK = 2;
 }
 
-
 /// <summary>
 /// StrikeExerciseStyle Field
 /// </summary>
@@ -22531,7 +21210,6 @@ public sealed class StrikeExerciseStyle : IntField
         : base(Tags.StrikeExerciseStyle, val) {}
 }
 
-
 /// <summary>
 /// SecondaryPriceLimitType Field
 /// </summary>
@@ -22544,7 +21222,6 @@ public sealed class SecondaryPriceLimitType : IntField
     public SecondaryPriceLimitType(int val)
         : base(Tags.SecondaryPriceLimitType, val) {}
 }
-
 
 /// <summary>
 /// PriceLimitType Field
@@ -22563,7 +21240,6 @@ public sealed class PriceLimitType : IntField
     public const int TICKS = 1;
     public const int PERCENTAGE = 2;
 }
-
 
 /// <summary>
 /// DerivativeSecurityListRequestType Field
@@ -22589,7 +21265,6 @@ public sealed class DerivativeSecurityListRequestType : IntField
     public const int MARKETID_OR_MARKETID_PLUS_MARKETSEGMENTID = 8;
 }
 
-
 /// <summary>
 /// ExecInstValue Field
 /// </summary>
@@ -22602,7 +21277,6 @@ public sealed class ExecInstValue : CharField
     public ExecInstValue(char val)
         : base(Tags.ExecInstValue, val) {}
 }
-
 
 /// <summary>
 /// NoTradingSessionRules Field
@@ -22617,7 +21291,6 @@ public sealed class NoTradingSessionRules : IntField
         : base(Tags.NoTradingSessionRules, val) {}
 }
 
-
 /// <summary>
 /// NoMarketSegments Field
 /// </summary>
@@ -22630,7 +21303,6 @@ public sealed class NoMarketSegments : IntField
     public NoMarketSegments(int val)
         : base(Tags.NoMarketSegments, val) {}
 }
-
 
 /// <summary>
 /// NoDerivativeInstrAttrib Field
@@ -22645,7 +21317,6 @@ public sealed class NoDerivativeInstrAttrib : IntField
         : base(Tags.NoDerivativeInstrAttrib, val) {}
 }
 
-
 /// <summary>
 /// NoNestedInstrAttrib Field
 /// </summary>
@@ -22658,7 +21329,6 @@ public sealed class NoNestedInstrAttrib : IntField
     public NoNestedInstrAttrib(int val)
         : base(Tags.NoNestedInstrAttrib, val) {}
 }
-
 
 /// <summary>
 /// DerivativeInstrAttribType Field
@@ -22673,7 +21343,6 @@ public sealed class DerivativeInstrAttribType : IntField
         : base(Tags.DerivativeInstrAttribType, val) {}
 }
 
-
 /// <summary>
 /// DerivativeInstrAttribValue Field
 /// </summary>
@@ -22686,7 +21355,6 @@ public sealed class DerivativeInstrAttribValue : StringField
     public DerivativeInstrAttribValue(string val)
         : base(Tags.DerivativeInstrAttribValue, val) {}
 }
-
 
 /// <summary>
 /// DerivativePriceUnitOfMeasure Field
@@ -22701,7 +21369,6 @@ public sealed class DerivativePriceUnitOfMeasure : StringField
         : base(Tags.DerivativePriceUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// DerivativePriceUnitOfMeasureQty Field
 /// </summary>
@@ -22714,7 +21381,6 @@ public sealed class DerivativePriceUnitOfMeasureQty : DecimalField
     public DerivativePriceUnitOfMeasureQty(Decimal val)
         : base(Tags.DerivativePriceUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// DerivativeSettlMethod Field
@@ -22729,7 +21395,6 @@ public sealed class DerivativeSettlMethod : CharField
         : base(Tags.DerivativeSettlMethod, val) {}
 }
 
-
 /// <summary>
 /// DerivativePriceQuoteMethod Field
 /// </summary>
@@ -22742,7 +21407,6 @@ public sealed class DerivativePriceQuoteMethod : StringField
     public DerivativePriceQuoteMethod(string val)
         : base(Tags.DerivativePriceQuoteMethod, val) {}
 }
-
 
 /// <summary>
 /// DerivativeFuturesValuationMethod Field
@@ -22757,7 +21421,6 @@ public sealed class DerivativeFuturesValuationMethod : StringField
         : base(Tags.DerivativeFuturesValuationMethod, val) {}
 }
 
-
 /// <summary>
 /// DerivativeListMethod Field
 /// </summary>
@@ -22770,7 +21433,6 @@ public sealed class DerivativeListMethod : IntField
     public DerivativeListMethod(int val)
         : base(Tags.DerivativeListMethod, val) {}
 }
-
 
 /// <summary>
 /// DerivativeCapPrice Field
@@ -22785,7 +21447,6 @@ public sealed class DerivativeCapPrice : DecimalField
         : base(Tags.DerivativeCapPrice, val) {}
 }
 
-
 /// <summary>
 /// DerivativeFloorPrice Field
 /// </summary>
@@ -22798,7 +21459,6 @@ public sealed class DerivativeFloorPrice : DecimalField
     public DerivativeFloorPrice(Decimal val)
         : base(Tags.DerivativeFloorPrice, val) {}
 }
-
 
 /// <summary>
 /// DerivativePutOrCall Field
@@ -22813,7 +21473,6 @@ public sealed class DerivativePutOrCall : IntField
         : base(Tags.DerivativePutOrCall, val) {}
 }
 
-
 /// <summary>
 /// ListUpdateAction Field
 /// </summary>
@@ -22826,7 +21485,6 @@ public sealed class ListUpdateAction : CharField
     public ListUpdateAction(char val)
         : base(Tags.ListUpdateAction, val) {}
 }
-
 
 /// <summary>
 /// ParentMktSegmID Field
@@ -22841,7 +21499,6 @@ public sealed class ParentMktSegmID : StringField
         : base(Tags.ParentMktSegmID, val) {}
 }
 
-
 /// <summary>
 /// TradingSessionDesc Field
 /// </summary>
@@ -22854,7 +21511,6 @@ public sealed class TradingSessionDesc : StringField
     public TradingSessionDesc(string val)
         : base(Tags.TradingSessionDesc, val) {}
 }
-
 
 /// <summary>
 /// TradSesUpdateAction Field
@@ -22869,7 +21525,6 @@ public sealed class TradSesUpdateAction : CharField
         : base(Tags.TradSesUpdateAction, val) {}
 }
 
-
 /// <summary>
 /// RejectText Field
 /// </summary>
@@ -22882,7 +21537,6 @@ public sealed class RejectText : StringField
     public RejectText(string val)
         : base(Tags.RejectText, val) {}
 }
-
 
 /// <summary>
 /// FeeMultiplier Field
@@ -22897,7 +21551,6 @@ public sealed class FeeMultiplier : DecimalField
         : base(Tags.FeeMultiplier, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegSymbol Field
 /// </summary>
@@ -22910,7 +21563,6 @@ public sealed class UnderlyingLegSymbol : StringField
     public UnderlyingLegSymbol(string val)
         : base(Tags.UnderlyingLegSymbol, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSymbolSfx Field
@@ -22925,7 +21577,6 @@ public sealed class UnderlyingLegSymbolSfx : StringField
         : base(Tags.UnderlyingLegSymbolSfx, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegSecurityID Field
 /// </summary>
@@ -22938,7 +21589,6 @@ public sealed class UnderlyingLegSecurityID : StringField
     public UnderlyingLegSecurityID(string val)
         : base(Tags.UnderlyingLegSecurityID, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSecurityIDSource Field
@@ -22953,7 +21603,6 @@ public sealed class UnderlyingLegSecurityIDSource : StringField
         : base(Tags.UnderlyingLegSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoUnderlyingLegSecurityAltID Field
 /// </summary>
@@ -22966,7 +21615,6 @@ public sealed class NoUnderlyingLegSecurityAltID : IntField
     public NoUnderlyingLegSecurityAltID(int val)
         : base(Tags.NoUnderlyingLegSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSecurityAltID Field
@@ -22981,7 +21629,6 @@ public sealed class UnderlyingLegSecurityAltID : StringField
         : base(Tags.UnderlyingLegSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegSecurityAltIDSource Field
 /// </summary>
@@ -22994,7 +21641,6 @@ public sealed class UnderlyingLegSecurityAltIDSource : StringField
     public UnderlyingLegSecurityAltIDSource(string val)
         : base(Tags.UnderlyingLegSecurityAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSecurityType Field
@@ -23009,7 +21655,6 @@ public sealed class UnderlyingLegSecurityType : StringField
         : base(Tags.UnderlyingLegSecurityType, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegSecuritySubType Field
 /// </summary>
@@ -23022,7 +21667,6 @@ public sealed class UnderlyingLegSecuritySubType : StringField
     public UnderlyingLegSecuritySubType(string val)
         : base(Tags.UnderlyingLegSecuritySubType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegMaturityMonthYear Field
@@ -23037,7 +21681,6 @@ public sealed class UnderlyingLegMaturityMonthYear : StringField
         : base(Tags.UnderlyingLegMaturityMonthYear, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegStrikePrice Field
 /// </summary>
@@ -23050,7 +21693,6 @@ public sealed class UnderlyingLegStrikePrice : DecimalField
     public UnderlyingLegStrikePrice(Decimal val)
         : base(Tags.UnderlyingLegStrikePrice, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSecurityExchange Field
@@ -23065,7 +21707,6 @@ public sealed class UnderlyingLegSecurityExchange : StringField
         : base(Tags.UnderlyingLegSecurityExchange, val) {}
 }
 
-
 /// <summary>
 /// NoOfLegUnderlyings Field
 /// </summary>
@@ -23078,7 +21719,6 @@ public sealed class NoOfLegUnderlyings : IntField
     public NoOfLegUnderlyings(int val)
         : base(Tags.NoOfLegUnderlyings, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegPutOrCall Field
@@ -23093,7 +21733,6 @@ public sealed class UnderlyingLegPutOrCall : IntField
         : base(Tags.UnderlyingLegPutOrCall, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingLegCFICode Field
 /// </summary>
@@ -23106,7 +21745,6 @@ public sealed class UnderlyingLegCFICode : StringField
     public UnderlyingLegCFICode(string val)
         : base(Tags.UnderlyingLegCFICode, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegMaturityDate Field
@@ -23121,7 +21759,6 @@ public sealed class UnderlyingLegMaturityDate : StringField
         : base(Tags.UnderlyingLegMaturityDate, val) {}
 }
 
-
 /// <summary>
 /// ApplReqID Field
 /// </summary>
@@ -23134,7 +21771,6 @@ public sealed class ApplReqID : StringField
     public ApplReqID(string val)
         : base(Tags.ApplReqID, val) {}
 }
-
 
 /// <summary>
 /// ApplReqType Field
@@ -23158,7 +21794,6 @@ public sealed class ApplReqType : IntField
     public const int CANCEL_RETRANSMISSION_AND_UNSUBSCRIBE_TO_THE_SPECIFIED_APPLICATIONS = 6;
 }
 
-
 /// <summary>
 /// ApplResponseType Field
 /// </summary>
@@ -23177,7 +21812,6 @@ public sealed class ApplResponseType : IntField
     public const int MESSAGES_NOT_AVAILABLE = 2;
 }
 
-
 /// <summary>
 /// ApplTotalMessageCount Field
 /// </summary>
@@ -23190,7 +21824,6 @@ public sealed class ApplTotalMessageCount : IntField
     public ApplTotalMessageCount(int val)
         : base(Tags.ApplTotalMessageCount, val) {}
 }
-
 
 /// <summary>
 /// ApplLastSeqNum Field
@@ -23205,7 +21838,6 @@ public sealed class ApplLastSeqNum : SeqNumFieldType
         : base(Tags.ApplLastSeqNum, val) {}
 }
 
-
 /// <summary>
 /// NoApplIDs Field
 /// </summary>
@@ -23218,7 +21850,6 @@ public sealed class NoApplIDs : IntField
     public NoApplIDs(int val)
         : base(Tags.NoApplIDs, val) {}
 }
-
 
 /// <summary>
 /// ApplResendFlag Field
@@ -23233,7 +21864,6 @@ public sealed class ApplResendFlag : BooleanField
         : base(Tags.ApplResendFlag, val) {}
 }
 
-
 /// <summary>
 /// ApplResponseID Field
 /// </summary>
@@ -23246,7 +21876,6 @@ public sealed class ApplResponseID : StringField
     public ApplResponseID(string val)
         : base(Tags.ApplResponseID, val) {}
 }
-
 
 /// <summary>
 /// ApplResponseError Field
@@ -23266,7 +21895,6 @@ public sealed class ApplResponseError : IntField
     public const int USER_NOT_AUTHORIZED_FOR_APPLICATION = 2;
 }
 
-
 /// <summary>
 /// RefApplID Field
 /// </summary>
@@ -23279,7 +21907,6 @@ public sealed class RefApplID : StringField
     public RefApplID(string val)
         : base(Tags.RefApplID, val) {}
 }
-
 
 /// <summary>
 /// ApplReportID Field
@@ -23294,7 +21921,6 @@ public sealed class ApplReportID : StringField
         : base(Tags.ApplReportID, val) {}
 }
 
-
 /// <summary>
 /// RefApplLastSeqNum Field
 /// </summary>
@@ -23307,7 +21933,6 @@ public sealed class RefApplLastSeqNum : SeqNumFieldType
     public RefApplLastSeqNum(SeqNumType val)
         : base(Tags.RefApplLastSeqNum, val) {}
 }
-
 
 /// <summary>
 /// LegPutOrCall Field
@@ -23322,7 +21947,6 @@ public sealed class LegPutOrCall : IntField
         : base(Tags.LegPutOrCall, val) {}
 }
 
-
 /// <summary>
 /// EncodedSymbolLen Field
 /// </summary>
@@ -23335,7 +21959,6 @@ public sealed class EncodedSymbolLen : IntField
     public EncodedSymbolLen(int val)
         : base(Tags.EncodedSymbolLen, val) {}
 }
-
 
 /// <summary>
 /// EncodedSymbol Field
@@ -23350,7 +21973,6 @@ public sealed class EncodedSymbol : StringField
         : base(Tags.EncodedSymbol, val) {}
 }
 
-
 /// <summary>
 /// TotNoFills Field
 /// </summary>
@@ -23363,7 +21985,6 @@ public sealed class TotNoFills : IntField
     public TotNoFills(int val)
         : base(Tags.TotNoFills, val) {}
 }
-
 
 /// <summary>
 /// NoFills Field
@@ -23378,7 +21999,6 @@ public sealed class NoFills : IntField
         : base(Tags.NoFills, val) {}
 }
 
-
 /// <summary>
 /// FillExecID Field
 /// </summary>
@@ -23391,7 +22011,6 @@ public sealed class FillExecID : StringField
     public FillExecID(string val)
         : base(Tags.FillExecID, val) {}
 }
-
 
 /// <summary>
 /// FillPx Field
@@ -23406,7 +22025,6 @@ public sealed class FillPx : DecimalField
         : base(Tags.FillPx, val) {}
 }
 
-
 /// <summary>
 /// FillQty Field
 /// </summary>
@@ -23419,7 +22037,6 @@ public sealed class FillQty : DecimalField
     public FillQty(Decimal val)
         : base(Tags.FillQty, val) {}
 }
-
 
 /// <summary>
 /// LegAllocID Field
@@ -23434,7 +22051,6 @@ public sealed class LegAllocID : StringField
         : base(Tags.LegAllocID, val) {}
 }
 
-
 /// <summary>
 /// LegAllocSettlCurrency Field
 /// </summary>
@@ -23447,7 +22063,6 @@ public sealed class LegAllocSettlCurrency : StringField
     public LegAllocSettlCurrency(string val)
         : base(Tags.LegAllocSettlCurrency, val) {}
 }
-
 
 /// <summary>
 /// TradSesEvent Field
@@ -23468,7 +22083,6 @@ public sealed class TradSesEvent : IntField
     public const int CHANGE_OF_TRADING_STATUS = 3;
 }
 
-
 /// <summary>
 /// MassActionReportID Field
 /// </summary>
@@ -23481,7 +22095,6 @@ public sealed class MassActionReportID : StringField
     public MassActionReportID(string val)
         : base(Tags.MassActionReportID, val) {}
 }
-
 
 /// <summary>
 /// NoNotAffectedOrders Field
@@ -23496,7 +22109,6 @@ public sealed class NoNotAffectedOrders : IntField
         : base(Tags.NoNotAffectedOrders, val) {}
 }
 
-
 /// <summary>
 /// NotAffectedOrderID Field
 /// </summary>
@@ -23510,7 +22122,6 @@ public sealed class NotAffectedOrderID : StringField
         : base(Tags.NotAffectedOrderID, val) {}
 }
 
-
 /// <summary>
 /// NotAffOrigClOrdID Field
 /// </summary>
@@ -23523,7 +22134,6 @@ public sealed class NotAffOrigClOrdID : StringField
     public NotAffOrigClOrdID(string val)
         : base(Tags.NotAffOrigClOrdID, val) {}
 }
-
 
 /// <summary>
 /// MassActionType Field
@@ -23542,7 +22152,6 @@ public sealed class MassActionType : IntField
     public const int RELEASE_ORDERS_FROM_SUSPENSION = 2;
     public const int CANCEL_ORDERS = 3;
 }
-
 
 /// <summary>
 /// MassActionScope Field
@@ -23571,7 +22180,6 @@ public sealed class MassActionScope : IntField
     public const int CANCEL_FOR_ISSUER_OF_UNDERLYING_SECURITY = 12;
 }
 
-
 /// <summary>
 /// MassActionResponse Field
 /// </summary>
@@ -23588,7 +22196,6 @@ public sealed class MassActionResponse : IntField
     public const int REJECTED = 0;
     public const int ACCEPTED = 1;
 }
-
 
 /// <summary>
 /// MassActionRejectReason Field
@@ -23618,7 +22225,6 @@ public sealed class MassActionRejectReason : IntField
     public const int INVALID_OR_UNKNOWN_ISSUER_OF_UNDERLYING_SECURITY = 11;
 }
 
-
 /// <summary>
 /// MultilegModel Field
 /// </summary>
@@ -23636,7 +22242,6 @@ public sealed class MultilegModel : IntField
     public const int USER_DEFINED_MULTLEG_SECURITY = 1;
     public const int USER_DEFINED_NON_SECURITIZED_MULTILEG = 2;
 }
-
 
 /// <summary>
 /// MultilegPriceMethod Field
@@ -23659,7 +22264,6 @@ public sealed class MultilegPriceMethod : IntField
     public const int MULTIPLIED_PRICE = 5;
 }
 
-
 /// <summary>
 /// LegVolatility Field
 /// </summary>
@@ -23672,7 +22276,6 @@ public sealed class LegVolatility : DecimalField
     public LegVolatility(Decimal val)
         : base(Tags.LegVolatility, val) {}
 }
-
 
 /// <summary>
 /// DividendYield Field
@@ -23687,7 +22290,6 @@ public sealed class DividendYield : DecimalField
         : base(Tags.DividendYield, val) {}
 }
 
-
 /// <summary>
 /// LegDividendYield Field
 /// </summary>
@@ -23700,7 +22302,6 @@ public sealed class LegDividendYield : DecimalField
     public LegDividendYield(Decimal val)
         : base(Tags.LegDividendYield, val) {}
 }
-
 
 /// <summary>
 /// CurrencyRatio Field
@@ -23715,7 +22316,6 @@ public sealed class CurrencyRatio : DecimalField
         : base(Tags.CurrencyRatio, val) {}
 }
 
-
 /// <summary>
 /// LegCurrencyRatio Field
 /// </summary>
@@ -23729,7 +22329,6 @@ public sealed class LegCurrencyRatio : DecimalField
         : base(Tags.LegCurrencyRatio, val) {}
 }
 
-
 /// <summary>
 /// LegExecInst Field
 /// </summary>
@@ -23742,7 +22341,6 @@ public sealed class LegExecInst : StringField
     public LegExecInst(string val)
         : base(Tags.LegExecInst, val) {}
 }
-
 
 /// <summary>
 /// ContingencyType Field
@@ -23762,7 +22360,6 @@ public sealed class ContingencyType : IntField
     public const int ONE_UPDATES_THE_OTHER_3 = 3;
     public const int ONE_UPDATES_THE_OTHER_4 = 4;
 }
-
 
 /// <summary>
 /// ListRejectReason Field
@@ -23786,7 +22383,6 @@ public sealed class ListRejectReason : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// NoTrdRepIndicators Field
 /// </summary>
@@ -23799,7 +22395,6 @@ public sealed class NoTrdRepIndicators : IntField
     public NoTrdRepIndicators(int val)
         : base(Tags.NoTrdRepIndicators, val) {}
 }
-
 
 /// <summary>
 /// TrdRepPartyRole Field
@@ -23814,7 +22409,6 @@ public sealed class TrdRepPartyRole : IntField
         : base(Tags.TrdRepPartyRole, val) {}
 }
 
-
 /// <summary>
 /// TrdRepIndicator Field
 /// </summary>
@@ -23827,7 +22421,6 @@ public sealed class TrdRepIndicator : BooleanField
     public TrdRepIndicator(Boolean val)
         : base(Tags.TrdRepIndicator, val) {}
 }
-
 
 /// <summary>
 /// TradePublishIndicator Field
@@ -23847,7 +22440,6 @@ public sealed class TradePublishIndicator : IntField
     public const int DEFERRED_PUBLICATION = 2;
 }
 
-
 /// <summary>
 /// UnderlyingLegOptAttribute Field
 /// </summary>
@@ -23860,7 +22452,6 @@ public sealed class UnderlyingLegOptAttribute : CharField
     public UnderlyingLegOptAttribute(char val)
         : base(Tags.UnderlyingLegOptAttribute, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegSecurityDesc Field
@@ -23875,7 +22466,6 @@ public sealed class UnderlyingLegSecurityDesc : StringField
         : base(Tags.UnderlyingLegSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// MarketReqID Field
 /// </summary>
@@ -23889,7 +22479,6 @@ public sealed class MarketReqID : StringField
         : base(Tags.MarketReqID, val) {}
 }
 
-
 /// <summary>
 /// MarketReportID Field
 /// </summary>
@@ -23902,7 +22491,6 @@ public sealed class MarketReportID : StringField
     public MarketReportID(string val)
         : base(Tags.MarketReportID, val) {}
 }
-
 
 /// <summary>
 /// MarketUpdateAction Field
@@ -23922,7 +22510,6 @@ public sealed class MarketUpdateAction : CharField
     public const char MODIFY = 'M';
 }
 
-
 /// <summary>
 /// MarketSegmentDesc Field
 /// </summary>
@@ -23935,7 +22522,6 @@ public sealed class MarketSegmentDesc : StringField
     public MarketSegmentDesc(string val)
         : base(Tags.MarketSegmentDesc, val) {}
 }
-
 
 /// <summary>
 /// EncodedMktSegmDescLen Field
@@ -23950,7 +22536,6 @@ public sealed class EncodedMktSegmDescLen : IntField
         : base(Tags.EncodedMktSegmDescLen, val) {}
 }
 
-
 /// <summary>
 /// EncodedMktSegmDesc Field
 /// </summary>
@@ -23963,7 +22548,6 @@ public sealed class EncodedMktSegmDesc : StringField
     public EncodedMktSegmDesc(string val)
         : base(Tags.EncodedMktSegmDesc, val) {}
 }
-
 
 /// <summary>
 /// ApplNewSeqNum Field
@@ -23978,7 +22562,6 @@ public sealed class ApplNewSeqNum : SeqNumFieldType
         : base(Tags.ApplNewSeqNum, val) {}
 }
 
-
 /// <summary>
 /// EncryptedPasswordMethod Field
 /// </summary>
@@ -23991,7 +22574,6 @@ public sealed class EncryptedPasswordMethod : IntField
     public EncryptedPasswordMethod(int val)
         : base(Tags.EncryptedPasswordMethod, val) {}
 }
-
 
 /// <summary>
 /// EncryptedPasswordLen Field
@@ -24006,7 +22588,6 @@ public sealed class EncryptedPasswordLen : IntField
         : base(Tags.EncryptedPasswordLen, val) {}
 }
 
-
 /// <summary>
 /// EncryptedPassword Field
 /// </summary>
@@ -24019,7 +22600,6 @@ public sealed class EncryptedPassword : StringField
     public EncryptedPassword(string val)
         : base(Tags.EncryptedPassword, val) {}
 }
-
 
 /// <summary>
 /// EncryptedNewPasswordLen Field
@@ -24034,7 +22614,6 @@ public sealed class EncryptedNewPasswordLen : IntField
         : base(Tags.EncryptedNewPasswordLen, val) {}
 }
 
-
 /// <summary>
 /// EncryptedNewPassword Field
 /// </summary>
@@ -24047,7 +22626,6 @@ public sealed class EncryptedNewPassword : StringField
     public EncryptedNewPassword(string val)
         : base(Tags.EncryptedNewPassword, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingLegMaturityTime Field
@@ -24062,7 +22640,6 @@ public sealed class UnderlyingLegMaturityTime : StringField
         : base(Tags.UnderlyingLegMaturityTime, val) {}
 }
 
-
 /// <summary>
 /// RefApplExtID Field
 /// </summary>
@@ -24075,7 +22652,6 @@ public sealed class RefApplExtID : IntField
     public RefApplExtID(int val)
         : base(Tags.RefApplExtID, val) {}
 }
-
 
 /// <summary>
 /// DefaultApplExtID Field
@@ -24090,7 +22666,6 @@ public sealed class DefaultApplExtID : IntField
         : base(Tags.DefaultApplExtID, val) {}
 }
 
-
 /// <summary>
 /// DefaultCstmApplVerID Field
 /// </summary>
@@ -24103,7 +22678,6 @@ public sealed class DefaultCstmApplVerID : StringField
     public DefaultCstmApplVerID(string val)
         : base(Tags.DefaultCstmApplVerID, val) {}
 }
-
 
 /// <summary>
 /// SessionStatus Field
@@ -24129,7 +22703,6 @@ public sealed class SessionStatus : IntField
     public const int PASSWORD_EXPIRED = 8;
 }
 
-
 /// <summary>
 /// DefaultVerIndicator Field
 /// </summary>
@@ -24142,7 +22715,6 @@ public sealed class DefaultVerIndicator : BooleanField
     public DefaultVerIndicator(Boolean val)
         : base(Tags.DefaultVerIndicator, val) {}
 }
-
 
 /// <summary>
 /// Nested4PartySubIDType Field
@@ -24157,7 +22729,6 @@ public sealed class Nested4PartySubIDType : IntField
         : base(Tags.Nested4PartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// Nested4PartySubID Field
 /// </summary>
@@ -24170,7 +22741,6 @@ public sealed class Nested4PartySubID : StringField
     public Nested4PartySubID(string val)
         : base(Tags.Nested4PartySubID, val) {}
 }
-
 
 /// <summary>
 /// NoNested4PartySubIDs Field
@@ -24185,7 +22755,6 @@ public sealed class NoNested4PartySubIDs : IntField
         : base(Tags.NoNested4PartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// NoNested4PartyIDs Field
 /// </summary>
@@ -24198,7 +22767,6 @@ public sealed class NoNested4PartyIDs : IntField
     public NoNested4PartyIDs(int val)
         : base(Tags.NoNested4PartyIDs, val) {}
 }
-
 
 /// <summary>
 /// Nested4PartyID Field
@@ -24213,7 +22781,6 @@ public sealed class Nested4PartyID : StringField
         : base(Tags.Nested4PartyID, val) {}
 }
 
-
 /// <summary>
 /// Nested4PartyIDSource Field
 /// </summary>
@@ -24226,7 +22793,6 @@ public sealed class Nested4PartyIDSource : CharField
     public Nested4PartyIDSource(char val)
         : base(Tags.Nested4PartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// Nested4PartyRole Field
@@ -24241,7 +22807,6 @@ public sealed class Nested4PartyRole : IntField
         : base(Tags.Nested4PartyRole, val) {}
 }
 
-
 /// <summary>
 /// LegLastQty Field
 /// </summary>
@@ -24254,7 +22819,6 @@ public sealed class LegLastQty : DecimalField
     public LegLastQty(Decimal val)
         : base(Tags.LegLastQty, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingExerciseStyle Field
@@ -24269,7 +22833,6 @@ public sealed class UnderlyingExerciseStyle : IntField
         : base(Tags.UnderlyingExerciseStyle, val) {}
 }
 
-
 /// <summary>
 /// LegExerciseStyle Field
 /// </summary>
@@ -24282,7 +22845,6 @@ public sealed class LegExerciseStyle : IntField
     public LegExerciseStyle(int val)
         : base(Tags.LegExerciseStyle, val) {}
 }
-
 
 /// <summary>
 /// LegPriceUnitOfMeasure Field
@@ -24297,7 +22859,6 @@ public sealed class LegPriceUnitOfMeasure : StringField
         : base(Tags.LegPriceUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// LegPriceUnitOfMeasureQty Field
 /// </summary>
@@ -24310,7 +22871,6 @@ public sealed class LegPriceUnitOfMeasureQty : DecimalField
     public LegPriceUnitOfMeasureQty(Decimal val)
         : base(Tags.LegPriceUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingUnitOfMeasureQty Field
@@ -24325,7 +22885,6 @@ public sealed class UnderlyingUnitOfMeasureQty : DecimalField
         : base(Tags.UnderlyingUnitOfMeasureQty, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingPriceUnitOfMeasure Field
 /// </summary>
@@ -24339,7 +22898,6 @@ public sealed class UnderlyingPriceUnitOfMeasure : StringField
         : base(Tags.UnderlyingPriceUnitOfMeasure, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingPriceUnitOfMeasureQty Field
 /// </summary>
@@ -24352,7 +22910,6 @@ public sealed class UnderlyingPriceUnitOfMeasureQty : DecimalField
     public UnderlyingPriceUnitOfMeasureQty(Decimal val)
         : base(Tags.UnderlyingPriceUnitOfMeasureQty, val) {}
 }
-
 
 /// <summary>
 /// ApplReportType Field
@@ -24372,7 +22929,6 @@ public sealed class ApplReportType : IntField
     public const int HEARTBEAT_MESSAGE_INDICATING_THAT_APPLICATION_IDENTIFIED_BY_REFAPPLID = 2;
     public const int APPLICATION_MESSAGE_RE_SEND_COMPLETED = 3;
 }
-
 
 /// <summary>
 /// HaltReasonInt Field
@@ -24395,7 +22951,6 @@ public sealed class HaltReasonInt : IntField
     public const int EQUIPMENT_CHANGEOVER = 5;
 }
 
-
 /// <summary>
 /// SideLastQty Field
 /// </summary>
@@ -24408,7 +22963,6 @@ public sealed class SideLastQty : IntField
     public SideLastQty(int val)
         : base(Tags.SideLastQty, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingInstrumentPartyID Field
@@ -24423,7 +22977,6 @@ public sealed class UnderlyingInstrumentPartyID : StringField
         : base(Tags.UnderlyingInstrumentPartyID, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingInstrumentPartyIDSource Field
 /// </summary>
@@ -24436,7 +22989,6 @@ public sealed class UnderlyingInstrumentPartyIDSource : CharField
     public UnderlyingInstrumentPartyIDSource(char val)
         : base(Tags.UnderlyingInstrumentPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingInstrumentPartyRole Field
@@ -24451,7 +23003,6 @@ public sealed class UnderlyingInstrumentPartyRole : IntField
         : base(Tags.UnderlyingInstrumentPartyRole, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingInstrumentPartySubID Field
 /// </summary>
@@ -24464,7 +23015,6 @@ public sealed class UnderlyingInstrumentPartySubID : StringField
     public UnderlyingInstrumentPartySubID(string val)
         : base(Tags.UnderlyingInstrumentPartySubID, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingInstrumentPartySubIDType Field
@@ -24479,7 +23029,6 @@ public sealed class UnderlyingInstrumentPartySubIDType : IntField
         : base(Tags.UnderlyingInstrumentPartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// OptPayoutAmount Field
 /// </summary>
@@ -24492,7 +23041,6 @@ public sealed class OptPayoutAmount : DecimalField
     public OptPayoutAmount(Decimal val)
         : base(Tags.OptPayoutAmount, val) {}
 }
-
 
 /// <summary>
 /// ValuationMethod Field
@@ -24514,7 +23062,6 @@ public sealed class ValuationMethod : StringField
     public const string CDS_IN_DELIVERY = "CDSD";
 }
 
-
 /// <summary>
 /// DerivativeValuationMethod Field
 /// </summary>
@@ -24527,7 +23074,6 @@ public sealed class DerivativeValuationMethod : StringField
     public DerivativeValuationMethod(string val)
         : base(Tags.DerivativeValuationMethod, val) {}
 }
-
 
 /// <summary>
 /// SideExecID Field
@@ -24542,7 +23088,6 @@ public sealed class SideExecID : StringField
         : base(Tags.SideExecID, val) {}
 }
 
-
 /// <summary>
 /// OrderDelay Field
 /// </summary>
@@ -24555,7 +23100,6 @@ public sealed class OrderDelay : IntField
     public OrderDelay(int val)
         : base(Tags.OrderDelay, val) {}
 }
-
 
 /// <summary>
 /// OrderDelayUnit Field
@@ -24584,7 +23128,6 @@ public sealed class OrderDelayUnit : IntField
     public const int YEARS = 15;
 }
 
-
 /// <summary>
 /// VenueType Field
 /// </summary>
@@ -24603,7 +23146,6 @@ public sealed class VenueType : CharField
     public const char EX_PIT = 'X';
 }
 
-
 /// <summary>
 /// RefOrdIDReason Field
 /// </summary>
@@ -24621,7 +23163,6 @@ public sealed class RefOrdIDReason : IntField
     public const int PARTIAL_FILL_REMAINING = 1;
     public const int ORDER_CHANGED = 2;
 }
-
 
 /// <summary>
 /// OrigCustOrderCapacity Field
@@ -24642,7 +23183,6 @@ public sealed class OrigCustOrderCapacity : IntField
     public const int ALL_OTHER = 4;
 }
 
-
 /// <summary>
 /// RefApplReqID Field
 /// </summary>
@@ -24655,7 +23195,6 @@ public sealed class RefApplReqID : StringField
     public RefApplReqID(string val)
         : base(Tags.RefApplReqID, val) {}
 }
-
 
 /// <summary>
 /// ModelType Field
@@ -24673,7 +23212,6 @@ public sealed class ModelType : IntField
     public const int UTILITY_PROVIDED_STANDARD_MODEL = 0;
     public const int PROPRIETARY = 1;
 }
-
 
 /// <summary>
 /// ContractMultiplierUnit Field
@@ -24693,7 +23231,6 @@ public sealed class ContractMultiplierUnit : IntField
     public const int DAYS = 2;
 }
 
-
 /// <summary>
 /// LegContractMultiplierUnit Field
 /// </summary>
@@ -24706,7 +23243,6 @@ public sealed class LegContractMultiplierUnit : IntField
     public LegContractMultiplierUnit(int val)
         : base(Tags.LegContractMultiplierUnit, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingContractMultiplierUnit Field
@@ -24721,7 +23257,6 @@ public sealed class UnderlyingContractMultiplierUnit : IntField
         : base(Tags.UnderlyingContractMultiplierUnit, val) {}
 }
 
-
 /// <summary>
 /// DerivativeContractMultiplierUnit Field
 /// </summary>
@@ -24734,7 +23269,6 @@ public sealed class DerivativeContractMultiplierUnit : IntField
     public DerivativeContractMultiplierUnit(int val)
         : base(Tags.DerivativeContractMultiplierUnit, val) {}
 }
-
 
 /// <summary>
 /// FlowScheduleType Field
@@ -24756,7 +23290,6 @@ public sealed class FlowScheduleType : IntField
     public const int NERC_WESTERN_PEAK = 4;
 }
 
-
 /// <summary>
 /// LegFlowScheduleType Field
 /// </summary>
@@ -24769,7 +23302,6 @@ public sealed class LegFlowScheduleType : IntField
     public LegFlowScheduleType(int val)
         : base(Tags.LegFlowScheduleType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingFlowScheduleType Field
@@ -24784,7 +23316,6 @@ public sealed class UnderlyingFlowScheduleType : IntField
         : base(Tags.UnderlyingFlowScheduleType, val) {}
 }
 
-
 /// <summary>
 /// DerivativeFlowScheduleType Field
 /// </summary>
@@ -24797,7 +23328,6 @@ public sealed class DerivativeFlowScheduleType : IntField
     public DerivativeFlowScheduleType(int val)
         : base(Tags.DerivativeFlowScheduleType, val) {}
 }
-
 
 /// <summary>
 /// FillLiquidityInd Field
@@ -24812,7 +23342,6 @@ public sealed class FillLiquidityInd : IntField
         : base(Tags.FillLiquidityInd, val) {}
 }
 
-
 /// <summary>
 /// SideLiquidityInd Field
 /// </summary>
@@ -24826,7 +23355,6 @@ public sealed class SideLiquidityInd : IntField
         : base(Tags.SideLiquidityInd, val) {}
 }
 
-
 /// <summary>
 /// NoRateSources Field
 /// </summary>
@@ -24839,7 +23367,6 @@ public sealed class NoRateSources : IntField
     public NoRateSources(int val)
         : base(Tags.NoRateSources, val) {}
 }
-
 
 /// <summary>
 /// RateSource Field
@@ -24860,7 +23387,6 @@ public sealed class RateSource : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// RateSourceType Field
 /// </summary>
@@ -24878,7 +23404,6 @@ public sealed class RateSourceType : IntField
     public const int SECONDARY = 1;
 }
 
-
 /// <summary>
 /// ReferencePage Field
 /// </summary>
@@ -24891,7 +23416,6 @@ public sealed class ReferencePage : StringField
     public ReferencePage(string val)
         : base(Tags.ReferencePage, val) {}
 }
-
 
 /// <summary>
 /// RestructuringType Field
@@ -24912,7 +23436,6 @@ public sealed class RestructuringType : StringField
     public const string NO_RESTRUCTURING_SPECIFIED = "XR";
 }
 
-
 /// <summary>
 /// Seniority Field
 /// </summary>
@@ -24931,7 +23454,6 @@ public sealed class Seniority : StringField
     public const string SUBORDINATED = "SB";
 }
 
-
 /// <summary>
 /// NotionalPercentageOutstanding Field
 /// </summary>
@@ -24944,7 +23466,6 @@ public sealed class NotionalPercentageOutstanding : DecimalField
     public NotionalPercentageOutstanding(Decimal val)
         : base(Tags.NotionalPercentageOutstanding, val) {}
 }
-
 
 /// <summary>
 /// OriginalNotionalPercentageOutstanding Field
@@ -24959,7 +23480,6 @@ public sealed class OriginalNotionalPercentageOutstanding : DecimalField
         : base(Tags.OriginalNotionalPercentageOutstanding, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingRestructuringType Field
 /// </summary>
@@ -24972,7 +23492,6 @@ public sealed class UnderlyingRestructuringType : StringField
     public UnderlyingRestructuringType(string val)
         : base(Tags.UnderlyingRestructuringType, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingSeniority Field
@@ -24987,7 +23506,6 @@ public sealed class UnderlyingSeniority : StringField
         : base(Tags.UnderlyingSeniority, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingNotionalPercentageOutstanding Field
 /// </summary>
@@ -25000,7 +23518,6 @@ public sealed class UnderlyingNotionalPercentageOutstanding : DecimalField
     public UnderlyingNotionalPercentageOutstanding(Decimal val)
         : base(Tags.UnderlyingNotionalPercentageOutstanding, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingOriginalNotionalPercentageOutstanding Field
@@ -25015,7 +23532,6 @@ public sealed class UnderlyingOriginalNotionalPercentageOutstanding : DecimalFie
         : base(Tags.UnderlyingOriginalNotionalPercentageOutstanding, val) {}
 }
 
-
 /// <summary>
 /// AttachmentPoint Field
 /// </summary>
@@ -25028,7 +23544,6 @@ public sealed class AttachmentPoint : DecimalField
     public AttachmentPoint(Decimal val)
         : base(Tags.AttachmentPoint, val) {}
 }
-
 
 /// <summary>
 /// DetachmentPoint Field
@@ -25043,7 +23558,6 @@ public sealed class DetachmentPoint : DecimalField
         : base(Tags.DetachmentPoint, val) {}
 }
 
-
 /// <summary>
 /// UnderlyingAttachmentPoint Field
 /// </summary>
@@ -25056,7 +23570,6 @@ public sealed class UnderlyingAttachmentPoint : DecimalField
     public UnderlyingAttachmentPoint(Decimal val)
         : base(Tags.UnderlyingAttachmentPoint, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingDetachmentPoint Field
@@ -25071,7 +23584,6 @@ public sealed class UnderlyingDetachmentPoint : DecimalField
         : base(Tags.UnderlyingDetachmentPoint, val) {}
 }
 
-
 /// <summary>
 /// NoTargetPartyIDs Field
 /// </summary>
@@ -25084,7 +23596,6 @@ public sealed class NoTargetPartyIDs : IntField
     public NoTargetPartyIDs(int val)
         : base(Tags.NoTargetPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// TargetPartyID Field
@@ -25099,7 +23610,6 @@ public sealed class TargetPartyID : StringField
         : base(Tags.TargetPartyID, val) {}
 }
 
-
 /// <summary>
 /// TargetPartyIDSource Field
 /// </summary>
@@ -25112,7 +23622,6 @@ public sealed class TargetPartyIDSource : CharField
     public TargetPartyIDSource(char val)
         : base(Tags.TargetPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// TargetPartyRole Field
@@ -25127,7 +23636,6 @@ public sealed class TargetPartyRole : IntField
         : base(Tags.TargetPartyRole, val) {}
 }
 
-
 /// <summary>
 /// SecurityListID Field
 /// </summary>
@@ -25140,7 +23648,6 @@ public sealed class SecurityListID : StringField
     public SecurityListID(string val)
         : base(Tags.SecurityListID, val) {}
 }
-
 
 /// <summary>
 /// SecurityListRefID Field
@@ -25155,7 +23662,6 @@ public sealed class SecurityListRefID : StringField
         : base(Tags.SecurityListRefID, val) {}
 }
 
-
 /// <summary>
 /// SecurityListDesc Field
 /// </summary>
@@ -25168,7 +23674,6 @@ public sealed class SecurityListDesc : StringField
     public SecurityListDesc(string val)
         : base(Tags.SecurityListDesc, val) {}
 }
-
 
 /// <summary>
 /// EncodedSecurityListDescLen Field
@@ -25183,7 +23688,6 @@ public sealed class EncodedSecurityListDescLen : IntField
         : base(Tags.EncodedSecurityListDescLen, val) {}
 }
 
-
 /// <summary>
 /// EncodedSecurityListDesc Field
 /// </summary>
@@ -25196,7 +23700,6 @@ public sealed class EncodedSecurityListDesc : StringField
     public EncodedSecurityListDesc(string val)
         : base(Tags.EncodedSecurityListDesc, val) {}
 }
-
 
 /// <summary>
 /// SecurityListType Field
@@ -25217,7 +23720,6 @@ public sealed class SecurityListType : IntField
     public const int NEWSPAPER_LIST = 4;
 }
 
-
 /// <summary>
 /// SecurityListTypeSource Field
 /// </summary>
@@ -25236,7 +23738,6 @@ public sealed class SecurityListTypeSource : IntField
     public const int GICS = 3;
 }
 
-
 /// <summary>
 /// NewsID Field
 /// </summary>
@@ -25249,7 +23750,6 @@ public sealed class NewsID : StringField
     public NewsID(string val)
         : base(Tags.NewsID, val) {}
 }
-
 
 /// <summary>
 /// NewsCategory Field
@@ -25271,7 +23771,6 @@ public sealed class NewsCategory : IntField
     public const int OTHER_NEWS = 99;
 }
 
-
 /// <summary>
 /// LanguageCode Field
 /// </summary>
@@ -25284,7 +23783,6 @@ public sealed class LanguageCode : StringField
     public LanguageCode(string val)
         : base(Tags.LanguageCode, val) {}
 }
-
 
 /// <summary>
 /// NoNewsRefIDs Field
@@ -25299,7 +23797,6 @@ public sealed class NoNewsRefIDs : IntField
         : base(Tags.NoNewsRefIDs, val) {}
 }
 
-
 /// <summary>
 /// NewsRefID Field
 /// </summary>
@@ -25312,7 +23809,6 @@ public sealed class NewsRefID : StringField
     public NewsRefID(string val)
         : base(Tags.NewsRefID, val) {}
 }
-
 
 /// <summary>
 /// NewsRefType Field
@@ -25332,7 +23828,6 @@ public sealed class NewsRefType : IntField
     public const int COMPLIMENTARY = 2;
 }
 
-
 /// <summary>
 /// StrikePriceDeterminationMethod Field
 /// </summary>
@@ -25351,7 +23846,6 @@ public sealed class StrikePriceDeterminationMethod : IntField
     public const int STRIKE_SET_TO_AVERAGE_OF_UNDERLYING_SETTLEMENT_PRICE_ACROSS_THE_LIFE_OF_THE_OPTION = 3;
     public const int STRIKE_SET_TO_OPTIMAL_VALUE = 4;
 }
-
 
 /// <summary>
 /// StrikePriceBoundaryMethod Field
@@ -25373,7 +23867,6 @@ public sealed class StrikePriceBoundaryMethod : IntField
     public const int GREATER_THAN_UNDERLYING_IS_IN_THE_MONEY = 5;
 }
 
-
 /// <summary>
 /// StrikePriceBoundaryPrecision Field
 /// </summary>
@@ -25386,7 +23879,6 @@ public sealed class StrikePriceBoundaryPrecision : DecimalField
     public StrikePriceBoundaryPrecision(Decimal val)
         : base(Tags.StrikePriceBoundaryPrecision, val) {}
 }
-
 
 /// <summary>
 /// UnderlyingPriceDeterminationMethod Field
@@ -25407,7 +23899,6 @@ public sealed class UnderlyingPriceDeterminationMethod : IntField
     public const int AVERAGE_VALUE = 4;
 }
 
-
 /// <summary>
 /// OptPayoutType Field
 /// </summary>
@@ -25426,7 +23917,6 @@ public sealed class OptPayoutType : IntField
     public const int BINARY = 3;
 }
 
-
 /// <summary>
 /// NoComplexEvents Field
 /// </summary>
@@ -25439,7 +23929,6 @@ public sealed class NoComplexEvents : IntField
     public NoComplexEvents(int val)
         : base(Tags.NoComplexEvents, val) {}
 }
-
 
 /// <summary>
 /// ComplexEventType Field
@@ -25465,7 +23954,6 @@ public sealed class ComplexEventType : IntField
     public const int ROLLING_BARRIER = 9;
 }
 
-
 /// <summary>
 /// ComplexOptPayoutAmount Field
 /// </summary>
@@ -25479,7 +23967,6 @@ public sealed class ComplexOptPayoutAmount : DecimalField
         : base(Tags.ComplexOptPayoutAmount, val) {}
 }
 
-
 /// <summary>
 /// ComplexEventPrice Field
 /// </summary>
@@ -25492,7 +23979,6 @@ public sealed class ComplexEventPrice : DecimalField
     public ComplexEventPrice(Decimal val)
         : base(Tags.ComplexEventPrice, val) {}
 }
-
 
 /// <summary>
 /// ComplexEventPriceBoundaryMethod Field
@@ -25514,7 +24000,6 @@ public sealed class ComplexEventPriceBoundaryMethod : IntField
     public const int GREATER_THAN_COMPLEXEVENTPRICE = 5;
 }
 
-
 /// <summary>
 /// ComplexEventPriceBoundaryPrecision Field
 /// </summary>
@@ -25527,7 +24012,6 @@ public sealed class ComplexEventPriceBoundaryPrecision : DecimalField
     public ComplexEventPriceBoundaryPrecision(Decimal val)
         : base(Tags.ComplexEventPriceBoundaryPrecision, val) {}
 }
-
 
 /// <summary>
 /// ComplexEventPriceTimeType Field
@@ -25547,7 +24031,6 @@ public sealed class ComplexEventPriceTimeType : IntField
     public const int SPECIFIED_DATE_TIME = 3;
 }
 
-
 /// <summary>
 /// ComplexEventCondition Field
 /// </summary>
@@ -25565,7 +24048,6 @@ public sealed class ComplexEventCondition : IntField
     public const int OR = 2;
 }
 
-
 /// <summary>
 /// NoComplexEventDates Field
 /// </summary>
@@ -25578,7 +24060,6 @@ public sealed class NoComplexEventDates : IntField
     public NoComplexEventDates(int val)
         : base(Tags.NoComplexEventDates, val) {}
 }
-
 
 /// <summary>
 /// ComplexEventStartDate Field
@@ -25598,7 +24079,6 @@ public sealed class ComplexEventStartDate : DateTimeField
         : base(Tags.ComplexEventStartDate, val, precision) {}
 }
 
-
 /// <summary>
 /// ComplexEventEndDate Field
 /// </summary>
@@ -25617,7 +24097,6 @@ public sealed class ComplexEventEndDate : DateTimeField
         : base(Tags.ComplexEventEndDate, val, precision) {}
 }
 
-
 /// <summary>
 /// NoComplexEventTimes Field
 /// </summary>
@@ -25630,7 +24109,6 @@ public sealed class NoComplexEventTimes : IntField
     public NoComplexEventTimes(int val)
         : base(Tags.NoComplexEventTimes, val) {}
 }
-
 
 /// <summary>
 /// ComplexEventStartTime Field
@@ -25647,7 +24125,6 @@ public sealed class ComplexEventStartTime : TimeOnlyField
         : base(Tags.ComplexEventStartTime, val, precision) {}
 }
 
-
 /// <summary>
 /// ComplexEventEndTime Field
 /// </summary>
@@ -25663,7 +24140,6 @@ public sealed class ComplexEventEndTime : TimeOnlyField
         : base(Tags.ComplexEventEndTime, val, precision) {}
 }
 
-
 /// <summary>
 /// StreamAsgnReqID Field
 /// </summary>
@@ -25676,7 +24152,6 @@ public sealed class StreamAsgnReqID : StringField
     public StreamAsgnReqID(string val)
         : base(Tags.StreamAsgnReqID, val) {}
 }
-
 
 /// <summary>
 /// StreamAsgnReqType Field
@@ -25695,7 +24170,6 @@ public sealed class StreamAsgnReqType : IntField
     public const int STREAM_ASSIGNMENT_FOR_EXISTING_CUSTOMER = 2;
 }
 
-
 /// <summary>
 /// NoAsgnReqs Field
 /// </summary>
@@ -25708,7 +24182,6 @@ public sealed class NoAsgnReqs : IntField
     public NoAsgnReqs(int val)
         : base(Tags.NoAsgnReqs, val) {}
 }
-
 
 /// <summary>
 /// MDStreamID Field
@@ -25723,7 +24196,6 @@ public sealed class MDStreamID : StringField
         : base(Tags.MDStreamID, val) {}
 }
 
-
 /// <summary>
 /// StreamAsgnRptID Field
 /// </summary>
@@ -25736,7 +24208,6 @@ public sealed class StreamAsgnRptID : StringField
     public StreamAsgnRptID(string val)
         : base(Tags.StreamAsgnRptID, val) {}
 }
-
 
 /// <summary>
 /// StreamAsgnRejReason Field
@@ -25758,7 +24229,6 @@ public sealed class StreamAsgnRejReason : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// StreamAsgnAckType Field
 /// </summary>
@@ -25775,7 +24245,6 @@ public sealed class StreamAsgnAckType : IntField
     public const int ASSIGNMENT_ACCEPTED = 0;
     public const int ASSIGNMENT_REJECTED = 1;
 }
-
 
 /// <summary>
 /// RelSymTransactTime Field
@@ -25795,7 +24264,6 @@ public sealed class RelSymTransactTime : DateTimeField
         : base(Tags.RelSymTransactTime, val, precision) {}
 }
 
-
 /// <summary>
 /// PartyDetailsListRequestID Field
 /// </summary>
@@ -25809,7 +24277,6 @@ public sealed class PartyDetailsListRequestID : StringField
         : base(Tags.PartyDetailsListRequestID, val) {}
 }
 
-
 /// <summary>
 /// NoPartyListResponseTypes Field
 /// </summary>
@@ -25822,7 +24289,6 @@ public sealed class NoPartyListResponseTypes : IntField
     public NoPartyListResponseTypes(int val)
         : base(Tags.NoPartyListResponseTypes, val) {}
 }
-
 
 /// <summary>
 /// PartyListResponseType Field
@@ -25843,7 +24309,6 @@ public sealed class PartyListResponseType : IntField
     public const int INCLUDE_RISK_LIMIT_INFORMATION = 3;
 }
 
-
 /// <summary>
 /// NoRequestedPartyRoles Field
 /// </summary>
@@ -25856,7 +24321,6 @@ public sealed class NoRequestedPartyRoles : IntField
     public NoRequestedPartyRoles(int val)
         : base(Tags.NoRequestedPartyRoles, val) {}
 }
-
 
 /// <summary>
 /// RequestedPartyRole Field
@@ -25871,7 +24335,6 @@ public sealed class RequestedPartyRole : IntField
         : base(Tags.RequestedPartyRole, val) {}
 }
 
-
 /// <summary>
 /// PartyDetailsListReportID Field
 /// </summary>
@@ -25884,7 +24347,6 @@ public sealed class PartyDetailsListReportID : StringField
     public PartyDetailsListReportID(string val)
         : base(Tags.PartyDetailsListReportID, val) {}
 }
-
 
 /// <summary>
 /// PartyDetailsRequestResult Field
@@ -25909,7 +24371,6 @@ public sealed class PartyDetailsRequestResult : IntField
     public const int OTHER = 99;
 }
 
-
 /// <summary>
 /// TotNoPartyList Field
 /// </summary>
@@ -25922,7 +24383,6 @@ public sealed class TotNoPartyList : IntField
     public TotNoPartyList(int val)
         : base(Tags.TotNoPartyList, val) {}
 }
-
 
 /// <summary>
 /// NoPartyList Field
@@ -25937,7 +24397,6 @@ public sealed class NoPartyList : IntField
         : base(Tags.NoPartyList, val) {}
 }
 
-
 /// <summary>
 /// NoPartyRelationships Field
 /// </summary>
@@ -25950,7 +24409,6 @@ public sealed class NoPartyRelationships : IntField
     public NoPartyRelationships(int val)
         : base(Tags.NoPartyRelationships, val) {}
 }
-
 
 /// <summary>
 /// PartyRelationship Field
@@ -26004,7 +24462,6 @@ public sealed class PartyRelationship : IntField
     public const int OWNED_BY_36 = 36;
 }
 
-
 /// <summary>
 /// NoPartyAltIDs Field
 /// </summary>
@@ -26017,7 +24474,6 @@ public sealed class NoPartyAltIDs : IntField
     public NoPartyAltIDs(int val)
         : base(Tags.NoPartyAltIDs, val) {}
 }
-
 
 /// <summary>
 /// PartyAltID Field
@@ -26032,7 +24488,6 @@ public sealed class PartyAltID : StringField
         : base(Tags.PartyAltID, val) {}
 }
 
-
 /// <summary>
 /// PartyAltIDSource Field
 /// </summary>
@@ -26045,7 +24500,6 @@ public sealed class PartyAltIDSource : CharField
     public PartyAltIDSource(char val)
         : base(Tags.PartyAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// NoPartyAltSubIDs Field
@@ -26060,7 +24514,6 @@ public sealed class NoPartyAltSubIDs : IntField
         : base(Tags.NoPartyAltSubIDs, val) {}
 }
 
-
 /// <summary>
 /// PartyAltSubID Field
 /// </summary>
@@ -26073,7 +24526,6 @@ public sealed class PartyAltSubID : StringField
     public PartyAltSubID(string val)
         : base(Tags.PartyAltSubID, val) {}
 }
-
 
 /// <summary>
 /// PartyAltSubIDType Field
@@ -26088,7 +24540,6 @@ public sealed class PartyAltSubIDType : IntField
         : base(Tags.PartyAltSubIDType, val) {}
 }
 
-
 /// <summary>
 /// NoContextPartyIDs Field
 /// </summary>
@@ -26101,7 +24552,6 @@ public sealed class NoContextPartyIDs : IntField
     public NoContextPartyIDs(int val)
         : base(Tags.NoContextPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// ContextPartyID Field
@@ -26116,7 +24566,6 @@ public sealed class ContextPartyID : StringField
         : base(Tags.ContextPartyID, val) {}
 }
 
-
 /// <summary>
 /// ContextPartyIDSource Field
 /// </summary>
@@ -26129,7 +24578,6 @@ public sealed class ContextPartyIDSource : CharField
     public ContextPartyIDSource(char val)
         : base(Tags.ContextPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// ContextPartyRole Field
@@ -26144,7 +24592,6 @@ public sealed class ContextPartyRole : IntField
         : base(Tags.ContextPartyRole, val) {}
 }
 
-
 /// <summary>
 /// NoContextPartySubIDs Field
 /// </summary>
@@ -26157,7 +24604,6 @@ public sealed class NoContextPartySubIDs : IntField
     public NoContextPartySubIDs(int val)
         : base(Tags.NoContextPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// ContextPartySubID Field
@@ -26172,7 +24618,6 @@ public sealed class ContextPartySubID : StringField
         : base(Tags.ContextPartySubID, val) {}
 }
 
-
 /// <summary>
 /// ContextPartySubIDType Field
 /// </summary>
@@ -26186,7 +24631,6 @@ public sealed class ContextPartySubIDType : IntField
         : base(Tags.ContextPartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// NoRiskLimits Field
 /// </summary>
@@ -26199,7 +24643,6 @@ public sealed class NoRiskLimits : IntField
     public NoRiskLimits(int val)
         : base(Tags.NoRiskLimits, val) {}
 }
-
 
 /// <summary>
 /// RiskLimitType Field
@@ -26221,7 +24664,6 @@ public sealed class RiskLimitType : IntField
     public const int SHORT_LIMIT = 5;
 }
 
-
 /// <summary>
 /// RiskLimitAmount Field
 /// </summary>
@@ -26234,7 +24676,6 @@ public sealed class RiskLimitAmount : DecimalField
     public RiskLimitAmount(Decimal val)
         : base(Tags.RiskLimitAmount, val) {}
 }
-
 
 /// <summary>
 /// RiskLimitCurrency Field
@@ -26249,7 +24690,6 @@ public sealed class RiskLimitCurrency : StringField
         : base(Tags.RiskLimitCurrency, val) {}
 }
 
-
 /// <summary>
 /// RiskLimitPlatform Field
 /// </summary>
@@ -26263,7 +24703,6 @@ public sealed class RiskLimitPlatform : StringField
         : base(Tags.RiskLimitPlatform, val) {}
 }
 
-
 /// <summary>
 /// NoRiskInstruments Field
 /// </summary>
@@ -26276,7 +24715,6 @@ public sealed class NoRiskInstruments : IntField
     public NoRiskInstruments(int val)
         : base(Tags.NoRiskInstruments, val) {}
 }
-
 
 /// <summary>
 /// RiskInstrumentOperator Field
@@ -26295,7 +24733,6 @@ public sealed class RiskInstrumentOperator : IntField
     public const int EXCLUDE = 2;
 }
 
-
 /// <summary>
 /// RiskSymbol Field
 /// </summary>
@@ -26308,7 +24745,6 @@ public sealed class RiskSymbol : StringField
     public RiskSymbol(string val)
         : base(Tags.RiskSymbol, val) {}
 }
-
 
 /// <summary>
 /// RiskSymbolSfx Field
@@ -26323,7 +24759,6 @@ public sealed class RiskSymbolSfx : StringField
         : base(Tags.RiskSymbolSfx, val) {}
 }
 
-
 /// <summary>
 /// RiskSecurityID Field
 /// </summary>
@@ -26336,7 +24771,6 @@ public sealed class RiskSecurityID : StringField
     public RiskSecurityID(string val)
         : base(Tags.RiskSecurityID, val) {}
 }
-
 
 /// <summary>
 /// RiskSecurityIDSource Field
@@ -26351,7 +24785,6 @@ public sealed class RiskSecurityIDSource : StringField
         : base(Tags.RiskSecurityIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoRiskSecurityAltID Field
 /// </summary>
@@ -26364,7 +24797,6 @@ public sealed class NoRiskSecurityAltID : IntField
     public NoRiskSecurityAltID(int val)
         : base(Tags.NoRiskSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// RiskSecurityAltID Field
@@ -26379,7 +24811,6 @@ public sealed class RiskSecurityAltID : StringField
         : base(Tags.RiskSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// RiskSecurityAltIDSource Field
 /// </summary>
@@ -26392,7 +24823,6 @@ public sealed class RiskSecurityAltIDSource : StringField
     public RiskSecurityAltIDSource(string val)
         : base(Tags.RiskSecurityAltIDSource, val) {}
 }
-
 
 /// <summary>
 /// RiskProduct Field
@@ -26407,7 +24837,6 @@ public sealed class RiskProduct : IntField
         : base(Tags.RiskProduct, val) {}
 }
 
-
 /// <summary>
 /// RiskProductComplex Field
 /// </summary>
@@ -26420,7 +24849,6 @@ public sealed class RiskProductComplex : StringField
     public RiskProductComplex(string val)
         : base(Tags.RiskProductComplex, val) {}
 }
-
 
 /// <summary>
 /// RiskSecurityGroup Field
@@ -26435,7 +24863,6 @@ public sealed class RiskSecurityGroup : StringField
         : base(Tags.RiskSecurityGroup, val) {}
 }
 
-
 /// <summary>
 /// RiskCFICode Field
 /// </summary>
@@ -26448,7 +24875,6 @@ public sealed class RiskCFICode : StringField
     public RiskCFICode(string val)
         : base(Tags.RiskCFICode, val) {}
 }
-
 
 /// <summary>
 /// RiskSecurityType Field
@@ -26463,7 +24889,6 @@ public sealed class RiskSecurityType : StringField
         : base(Tags.RiskSecurityType, val) {}
 }
 
-
 /// <summary>
 /// RiskSecuritySubType Field
 /// </summary>
@@ -26476,7 +24901,6 @@ public sealed class RiskSecuritySubType : StringField
     public RiskSecuritySubType(string val)
         : base(Tags.RiskSecuritySubType, val) {}
 }
-
 
 /// <summary>
 /// RiskMaturityMonthYear Field
@@ -26491,7 +24915,6 @@ public sealed class RiskMaturityMonthYear : StringField
         : base(Tags.RiskMaturityMonthYear, val) {}
 }
 
-
 /// <summary>
 /// RiskMaturityTime Field
 /// </summary>
@@ -26504,7 +24927,6 @@ public sealed class RiskMaturityTime : StringField
     public RiskMaturityTime(string val)
         : base(Tags.RiskMaturityTime, val) {}
 }
-
 
 /// <summary>
 /// RiskRestructuringType Field
@@ -26519,7 +24941,6 @@ public sealed class RiskRestructuringType : StringField
         : base(Tags.RiskRestructuringType, val) {}
 }
 
-
 /// <summary>
 /// RiskSeniority Field
 /// </summary>
@@ -26532,7 +24953,6 @@ public sealed class RiskSeniority : StringField
     public RiskSeniority(string val)
         : base(Tags.RiskSeniority, val) {}
 }
-
 
 /// <summary>
 /// RiskPutOrCall Field
@@ -26547,7 +24967,6 @@ public sealed class RiskPutOrCall : IntField
         : base(Tags.RiskPutOrCall, val) {}
 }
 
-
 /// <summary>
 /// RiskFlexibleIndicator Field
 /// </summary>
@@ -26560,7 +24979,6 @@ public sealed class RiskFlexibleIndicator : BooleanField
     public RiskFlexibleIndicator(Boolean val)
         : base(Tags.RiskFlexibleIndicator, val) {}
 }
-
 
 /// <summary>
 /// RiskCouponRate Field
@@ -26575,7 +24993,6 @@ public sealed class RiskCouponRate : DecimalField
         : base(Tags.RiskCouponRate, val) {}
 }
 
-
 /// <summary>
 /// RiskSecurityDesc Field
 /// </summary>
@@ -26588,7 +25005,6 @@ public sealed class RiskSecurityDesc : StringField
     public RiskSecurityDesc(string val)
         : base(Tags.RiskSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// RiskInstrumentSettlType Field
@@ -26603,7 +25019,6 @@ public sealed class RiskInstrumentSettlType : StringField
         : base(Tags.RiskInstrumentSettlType, val) {}
 }
 
-
 /// <summary>
 /// RiskInstrumentMultiplier Field
 /// </summary>
@@ -26616,7 +25031,6 @@ public sealed class RiskInstrumentMultiplier : DecimalField
     public RiskInstrumentMultiplier(Decimal val)
         : base(Tags.RiskInstrumentMultiplier, val) {}
 }
-
 
 /// <summary>
 /// NoRiskWarningLevels Field
@@ -26631,7 +25045,6 @@ public sealed class NoRiskWarningLevels : IntField
         : base(Tags.NoRiskWarningLevels, val) {}
 }
 
-
 /// <summary>
 /// RiskWarningLevelPercent Field
 /// </summary>
@@ -26644,7 +25057,6 @@ public sealed class RiskWarningLevelPercent : DecimalField
     public RiskWarningLevelPercent(Decimal val)
         : base(Tags.RiskWarningLevelPercent, val) {}
 }
-
 
 /// <summary>
 /// RiskWarningLevelName Field
@@ -26659,7 +25071,6 @@ public sealed class RiskWarningLevelName : StringField
         : base(Tags.RiskWarningLevelName, val) {}
 }
 
-
 /// <summary>
 /// NoRelatedPartyIDs Field
 /// </summary>
@@ -26672,7 +25083,6 @@ public sealed class NoRelatedPartyIDs : IntField
     public NoRelatedPartyIDs(int val)
         : base(Tags.NoRelatedPartyIDs, val) {}
 }
-
 
 /// <summary>
 /// RelatedPartyID Field
@@ -26687,7 +25097,6 @@ public sealed class RelatedPartyID : StringField
         : base(Tags.RelatedPartyID, val) {}
 }
 
-
 /// <summary>
 /// RelatedPartyIDSource Field
 /// </summary>
@@ -26700,7 +25109,6 @@ public sealed class RelatedPartyIDSource : CharField
     public RelatedPartyIDSource(char val)
         : base(Tags.RelatedPartyIDSource, val) {}
 }
-
 
 /// <summary>
 /// RelatedPartyRole Field
@@ -26715,7 +25123,6 @@ public sealed class RelatedPartyRole : IntField
         : base(Tags.RelatedPartyRole, val) {}
 }
 
-
 /// <summary>
 /// NoRelatedPartySubIDs Field
 /// </summary>
@@ -26728,7 +25135,6 @@ public sealed class NoRelatedPartySubIDs : IntField
     public NoRelatedPartySubIDs(int val)
         : base(Tags.NoRelatedPartySubIDs, val) {}
 }
-
 
 /// <summary>
 /// RelatedPartySubID Field
@@ -26743,7 +25149,6 @@ public sealed class RelatedPartySubID : StringField
         : base(Tags.RelatedPartySubID, val) {}
 }
 
-
 /// <summary>
 /// RelatedPartySubIDType Field
 /// </summary>
@@ -26756,7 +25161,6 @@ public sealed class RelatedPartySubIDType : IntField
     public RelatedPartySubIDType(int val)
         : base(Tags.RelatedPartySubIDType, val) {}
 }
-
 
 /// <summary>
 /// NoRelatedPartyAltIDs Field
@@ -26771,7 +25175,6 @@ public sealed class NoRelatedPartyAltIDs : IntField
         : base(Tags.NoRelatedPartyAltIDs, val) {}
 }
 
-
 /// <summary>
 /// RelatedPartyAltID Field
 /// </summary>
@@ -26784,7 +25187,6 @@ public sealed class RelatedPartyAltID : StringField
     public RelatedPartyAltID(string val)
         : base(Tags.RelatedPartyAltID, val) {}
 }
-
 
 /// <summary>
 /// RelatedPartyAltIDSource Field
@@ -26799,7 +25201,6 @@ public sealed class RelatedPartyAltIDSource : CharField
         : base(Tags.RelatedPartyAltIDSource, val) {}
 }
 
-
 /// <summary>
 /// NoRelatedPartyAltSubIDs Field
 /// </summary>
@@ -26812,7 +25213,6 @@ public sealed class NoRelatedPartyAltSubIDs : IntField
     public NoRelatedPartyAltSubIDs(int val)
         : base(Tags.NoRelatedPartyAltSubIDs, val) {}
 }
-
 
 /// <summary>
 /// RelatedPartyAltSubID Field
@@ -26827,7 +25227,6 @@ public sealed class RelatedPartyAltSubID : StringField
         : base(Tags.RelatedPartyAltSubID, val) {}
 }
 
-
 /// <summary>
 /// RelatedPartyAltSubIDType Field
 /// </summary>
@@ -26840,7 +25239,6 @@ public sealed class RelatedPartyAltSubIDType : IntField
     public RelatedPartyAltSubIDType(int val)
         : base(Tags.RelatedPartyAltSubIDType, val) {}
 }
-
 
 /// <summary>
 /// NoRelatedContextPartyIDs Field
@@ -26855,7 +25253,6 @@ public sealed class NoRelatedContextPartyIDs : IntField
         : base(Tags.NoRelatedContextPartyIDs, val) {}
 }
 
-
 /// <summary>
 /// RelatedContextPartyID Field
 /// </summary>
@@ -26868,7 +25265,6 @@ public sealed class RelatedContextPartyID : StringField
     public RelatedContextPartyID(string val)
         : base(Tags.RelatedContextPartyID, val) {}
 }
-
 
 /// <summary>
 /// RelatedContextPartyIDSource Field
@@ -26883,7 +25279,6 @@ public sealed class RelatedContextPartyIDSource : CharField
         : base(Tags.RelatedContextPartyIDSource, val) {}
 }
 
-
 /// <summary>
 /// RelatedContextPartyRole Field
 /// </summary>
@@ -26896,7 +25291,6 @@ public sealed class RelatedContextPartyRole : IntField
     public RelatedContextPartyRole(int val)
         : base(Tags.RelatedContextPartyRole, val) {}
 }
-
 
 /// <summary>
 /// NoRelatedContextPartySubIDs Field
@@ -26911,7 +25305,6 @@ public sealed class NoRelatedContextPartySubIDs : IntField
         : base(Tags.NoRelatedContextPartySubIDs, val) {}
 }
 
-
 /// <summary>
 /// RelatedContextPartySubID Field
 /// </summary>
@@ -26924,7 +25317,6 @@ public sealed class RelatedContextPartySubID : StringField
     public RelatedContextPartySubID(string val)
         : base(Tags.RelatedContextPartySubID, val) {}
 }
-
 
 /// <summary>
 /// RelatedContextPartySubIDType Field
@@ -26939,7 +25331,6 @@ public sealed class RelatedContextPartySubIDType : IntField
         : base(Tags.RelatedContextPartySubIDType, val) {}
 }
 
-
 /// <summary>
 /// NoRelationshipRiskLimits Field
 /// </summary>
@@ -26952,7 +25343,6 @@ public sealed class NoRelationshipRiskLimits : IntField
     public NoRelationshipRiskLimits(int val)
         : base(Tags.NoRelationshipRiskLimits, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskLimitType Field
@@ -26967,7 +25357,6 @@ public sealed class RelationshipRiskLimitType : IntField
         : base(Tags.RelationshipRiskLimitType, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskLimitAmount Field
 /// </summary>
@@ -26980,7 +25369,6 @@ public sealed class RelationshipRiskLimitAmount : DecimalField
     public RelationshipRiskLimitAmount(Decimal val)
         : base(Tags.RelationshipRiskLimitAmount, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskLimitCurrency Field
@@ -26995,7 +25383,6 @@ public sealed class RelationshipRiskLimitCurrency : StringField
         : base(Tags.RelationshipRiskLimitCurrency, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskLimitPlatform Field
 /// </summary>
@@ -27008,7 +25395,6 @@ public sealed class RelationshipRiskLimitPlatform : StringField
     public RelationshipRiskLimitPlatform(string val)
         : base(Tags.RelationshipRiskLimitPlatform, val) {}
 }
-
 
 /// <summary>
 /// NoRelationshipRiskInstruments Field
@@ -27023,7 +25409,6 @@ public sealed class NoRelationshipRiskInstruments : IntField
         : base(Tags.NoRelationshipRiskInstruments, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskInstrumentOperator Field
 /// </summary>
@@ -27036,7 +25421,6 @@ public sealed class RelationshipRiskInstrumentOperator : IntField
     public RelationshipRiskInstrumentOperator(int val)
         : base(Tags.RelationshipRiskInstrumentOperator, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSymbol Field
@@ -27051,7 +25435,6 @@ public sealed class RelationshipRiskSymbol : StringField
         : base(Tags.RelationshipRiskSymbol, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSymbolSfx Field
 /// </summary>
@@ -27064,7 +25447,6 @@ public sealed class RelationshipRiskSymbolSfx : StringField
     public RelationshipRiskSymbolSfx(string val)
         : base(Tags.RelationshipRiskSymbolSfx, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSecurityID Field
@@ -27079,7 +25461,6 @@ public sealed class RelationshipRiskSecurityID : StringField
         : base(Tags.RelationshipRiskSecurityID, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSecurityIDSource Field
 /// </summary>
@@ -27092,7 +25473,6 @@ public sealed class RelationshipRiskSecurityIDSource : StringField
     public RelationshipRiskSecurityIDSource(string val)
         : base(Tags.RelationshipRiskSecurityIDSource, val) {}
 }
-
 
 /// <summary>
 /// NoRelationshipRiskSecurityAltID Field
@@ -27107,7 +25487,6 @@ public sealed class NoRelationshipRiskSecurityAltID : IntField
         : base(Tags.NoRelationshipRiskSecurityAltID, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSecurityAltID Field
 /// </summary>
@@ -27120,7 +25499,6 @@ public sealed class RelationshipRiskSecurityAltID : StringField
     public RelationshipRiskSecurityAltID(string val)
         : base(Tags.RelationshipRiskSecurityAltID, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSecurityAltIDSource Field
@@ -27135,7 +25513,6 @@ public sealed class RelationshipRiskSecurityAltIDSource : StringField
         : base(Tags.RelationshipRiskSecurityAltIDSource, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskProduct Field
 /// </summary>
@@ -27148,7 +25525,6 @@ public sealed class RelationshipRiskProduct : IntField
     public RelationshipRiskProduct(int val)
         : base(Tags.RelationshipRiskProduct, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskProductComplex Field
@@ -27163,7 +25539,6 @@ public sealed class RelationshipRiskProductComplex : StringField
         : base(Tags.RelationshipRiskProductComplex, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSecurityGroup Field
 /// </summary>
@@ -27176,7 +25551,6 @@ public sealed class RelationshipRiskSecurityGroup : StringField
     public RelationshipRiskSecurityGroup(string val)
         : base(Tags.RelationshipRiskSecurityGroup, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskCFICode Field
@@ -27191,7 +25565,6 @@ public sealed class RelationshipRiskCFICode : StringField
         : base(Tags.RelationshipRiskCFICode, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSecurityType Field
 /// </summary>
@@ -27204,7 +25577,6 @@ public sealed class RelationshipRiskSecurityType : StringField
     public RelationshipRiskSecurityType(string val)
         : base(Tags.RelationshipRiskSecurityType, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSecuritySubType Field
@@ -27219,7 +25591,6 @@ public sealed class RelationshipRiskSecuritySubType : StringField
         : base(Tags.RelationshipRiskSecuritySubType, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskMaturityMonthYear Field
 /// </summary>
@@ -27232,7 +25603,6 @@ public sealed class RelationshipRiskMaturityMonthYear : StringField
     public RelationshipRiskMaturityMonthYear(string val)
         : base(Tags.RelationshipRiskMaturityMonthYear, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskMaturityTime Field
@@ -27247,7 +25617,6 @@ public sealed class RelationshipRiskMaturityTime : StringField
         : base(Tags.RelationshipRiskMaturityTime, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskRestructuringType Field
 /// </summary>
@@ -27260,7 +25629,6 @@ public sealed class RelationshipRiskRestructuringType : StringField
     public RelationshipRiskRestructuringType(string val)
         : base(Tags.RelationshipRiskRestructuringType, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSeniority Field
@@ -27275,7 +25643,6 @@ public sealed class RelationshipRiskSeniority : StringField
         : base(Tags.RelationshipRiskSeniority, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskPutOrCall Field
 /// </summary>
@@ -27288,7 +25655,6 @@ public sealed class RelationshipRiskPutOrCall : IntField
     public RelationshipRiskPutOrCall(int val)
         : base(Tags.RelationshipRiskPutOrCall, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskFlexibleIndicator Field
@@ -27303,7 +25669,6 @@ public sealed class RelationshipRiskFlexibleIndicator : BooleanField
         : base(Tags.RelationshipRiskFlexibleIndicator, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskCouponRate Field
 /// </summary>
@@ -27316,7 +25681,6 @@ public sealed class RelationshipRiskCouponRate : DecimalField
     public RelationshipRiskCouponRate(Decimal val)
         : base(Tags.RelationshipRiskCouponRate, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskSecurityExchange Field
@@ -27331,7 +25695,6 @@ public sealed class RelationshipRiskSecurityExchange : StringField
         : base(Tags.RelationshipRiskSecurityExchange, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskSecurityDesc Field
 /// </summary>
@@ -27344,7 +25707,6 @@ public sealed class RelationshipRiskSecurityDesc : StringField
     public RelationshipRiskSecurityDesc(string val)
         : base(Tags.RelationshipRiskSecurityDesc, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskInstrumentSettlType Field
@@ -27359,7 +25721,6 @@ public sealed class RelationshipRiskInstrumentSettlType : StringField
         : base(Tags.RelationshipRiskInstrumentSettlType, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskInstrumentMultiplier Field
 /// </summary>
@@ -27372,7 +25733,6 @@ public sealed class RelationshipRiskInstrumentMultiplier : DecimalField
     public RelationshipRiskInstrumentMultiplier(Decimal val)
         : base(Tags.RelationshipRiskInstrumentMultiplier, val) {}
 }
-
 
 /// <summary>
 /// NoRelationshipRiskWarningLevels Field
@@ -27387,7 +25747,6 @@ public sealed class NoRelationshipRiskWarningLevels : IntField
         : base(Tags.NoRelationshipRiskWarningLevels, val) {}
 }
 
-
 /// <summary>
 /// RelationshipRiskWarningLevelPercent Field
 /// </summary>
@@ -27400,7 +25759,6 @@ public sealed class RelationshipRiskWarningLevelPercent : DecimalField
     public RelationshipRiskWarningLevelPercent(Decimal val)
         : base(Tags.RelationshipRiskWarningLevelPercent, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskWarningLevelName Field
@@ -27415,7 +25773,6 @@ public sealed class RelationshipRiskWarningLevelName : StringField
         : base(Tags.RelationshipRiskWarningLevelName, val) {}
 }
 
-
 /// <summary>
 /// RiskSecurityExchange Field
 /// </summary>
@@ -27428,7 +25785,6 @@ public sealed class RiskSecurityExchange : StringField
     public RiskSecurityExchange(string val)
         : base(Tags.RiskSecurityExchange, val) {}
 }
-
 
 /// <summary>
 /// StreamAsgnType Field
@@ -27448,7 +25804,6 @@ public sealed class StreamAsgnType : IntField
     public const int TERMINATE_UNASSIGN = 3;
 }
 
-
 /// <summary>
 /// RelationshipRiskEncodedSecurityDescLen Field
 /// </summary>
@@ -27461,7 +25816,6 @@ public sealed class RelationshipRiskEncodedSecurityDescLen : IntField
     public RelationshipRiskEncodedSecurityDescLen(int val)
         : base(Tags.RelationshipRiskEncodedSecurityDescLen, val) {}
 }
-
 
 /// <summary>
 /// RelationshipRiskEncodedSecurityDesc Field
@@ -27476,7 +25830,6 @@ public sealed class RelationshipRiskEncodedSecurityDesc : StringField
         : base(Tags.RelationshipRiskEncodedSecurityDesc, val) {}
 }
 
-
 /// <summary>
 /// RiskEncodedSecurityDescLen Field
 /// </summary>
@@ -27490,7 +25843,6 @@ public sealed class RiskEncodedSecurityDescLen : IntField
         : base(Tags.RiskEncodedSecurityDescLen, val) {}
 }
 
-
 /// <summary>
 /// RiskEncodedSecurityDesc Field
 /// </summary>
@@ -27503,4 +25855,3 @@ public sealed class RiskEncodedSecurityDesc : StringField
     public RiskEncodedSecurityDesc(string val)
         : base(Tags.RiskEncodedSecurityDesc, val) {}
 }
-

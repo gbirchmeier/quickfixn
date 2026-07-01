@@ -73,7 +73,6 @@ public static class GenFields {
         AppendFieldEnumerations(lines, field);
 
         lines.Add("}");
-        lines.Add("");
     }
 
     private static void AppendTimeOnlyField(List<string> lines, DDField field) {
@@ -95,7 +94,6 @@ public static class GenFields {
         AppendFieldEnumerations(lines, field);
 
         lines.Add("}");
-        lines.Add("");
     }
 
     private static void AppendVanillaField(List<string> lines, DDField field) {
@@ -115,7 +113,6 @@ public static class GenFields {
         AppendFieldEnumerations(lines, field);
 
         lines.Add("}");
-        lines.Add("");
     }
 
     private static void AppendFieldEnumerations(List<string> lines, DDField field) {
