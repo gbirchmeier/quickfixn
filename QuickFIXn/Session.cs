@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Microsoft.Extensions.Logging;
 using QuickFix.Fields;
-using QuickFix.Fields.Converters;
 using QuickFix.Logger;
 using QuickFix.Store;
 using QuickFix.Util;
@@ -166,7 +165,7 @@ public class Session : IDisposable
     /// <value>
     /// The time stamp precision.
     /// </value>
-    public TimeStampPrecision TimeStampPrecision
+    public TimePrecision TimeStampPrecision
     {
         get;
         set;
@@ -267,7 +266,7 @@ public class Session : IDisposable
         ResendSessionLevelRejects = false;
         ValidateLengthAndChecksum = true;
         CheckCompID = true;
-        TimeStampPrecision = TimeStampPrecision.Millisecond;
+        TimeStampPrecision = TimePrecision.Millisecond;
         EnableLastMsgSeqNumProcessed = false;
         MaxMessagesInResendRequest = 0;
         SendLogoutBeforeTimeoutDisconnect = false;
@@ -1638,7 +1637,7 @@ public class Session : IDisposable
     protected void InsertSendingTime(FieldMap header)
     {
         header.SetField(new Fields.SendingTime(
-            DateTime.UtcNow, IsFix42OrAbove() ? TimeStampPrecision : TimeStampPrecision.Second ) );
+            DateTime.UtcNow, IsFix42OrAbove() ? TimeStampPrecision : TimePrecision.Second ) );
     }
 
     protected void Persist(Message message, string messageString)
@@ -1695,7 +1694,7 @@ public class Session : IDisposable
     protected void InsertOrigSendingTime(FieldMap header, DateTime sendingTime)
     {
         header.SetField(new OrigSendingTime(
-            sendingTime, IsFix42OrAbove() ? TimeStampPrecision : TimeStampPrecision.Second ) );
+            sendingTime, IsFix42OrAbove() ? TimeStampPrecision : TimePrecision.Second ) );
     }
 
     protected void NextQueued()

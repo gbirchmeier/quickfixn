@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using QuickFix.Fields;
 using QuickFix.Fields.Converters;
@@ -117,6 +116,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public BooleanField GetField(BooleanField field)
     {
@@ -141,6 +141,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public CharField GetField(CharField field)
     {
@@ -153,6 +154,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public IntField GetField(IntField field)
     {
@@ -165,6 +167,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public ULongField GetField(ULongField field)
     {
@@ -177,6 +180,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public DecimalField GetField(DecimalField field)
     {
@@ -189,6 +193,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public DateTimeField GetField(DateTimeField field)
     {
@@ -197,10 +202,11 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     }
 
     /// <summary>
-    /// Gets a date only field; saves its value into the parameter object, which is also the return value.
+    /// Gets a DateOnly field; saves its value into the parameter object, which is also the return value.
     /// </summary>
     /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public DateOnlyField GetField(DateOnlyField field)
     {
@@ -209,10 +215,15 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     }
 
     /// <summary>
-    /// Gets a time only field; saves its value into the parameter object, which is also the return value.
+    /// Gets a TimeOnly field; saves its value into the parameter object, which is also the return value.
+    /// Note: TimePrecision of <paramref name="field"/> will NOT be updated.
     /// </summary>
-    /// <param name="field">this field's tag is used to extract the value from the message; that value is saved back into this object</param>
+    /// <param name="field">
+    /// this field's tag is used to extract the value from the message;
+    /// that value is saved back into this object
+    /// </param>
     /// <exception cref="FieldNotFoundException">thrown if <paramref name="field"/> isn't found</exception>
+    /// <exception cref="FieldConvertError">thrown if string value in the message cannot be converted to this type</exception>
     /// <returns><paramref name="field"/></returns>
     public TimeOnlyField GetField(TimeOnlyField field)
     {
@@ -314,6 +325,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// <param name="tag">the FIX tag</param>
     /// <returns>the integer field value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public int GetInt(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
@@ -331,6 +343,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// <param name="tag">the FIX tag</param>
     /// <returns>the ulong field value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public ulong GetULong(int tag)
     {
         try
@@ -347,11 +360,12 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     }
 
     /// <summary>
-    /// Gets the DateTime value of a field
+    /// Gets the value of a field as a DateTime
     /// </summary>
     /// <param name="tag">the FIX tag</param>
     /// <returns>the DateTime value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public DateTime GetDateTime(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
@@ -359,47 +373,47 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
 
         return fld switch
         {
-            DateOnlyField dateOnlyField => dateOnlyField.Value.Date,
-            TimeOnlyField timeOnlyField => new DateTime(1980, 01, 01).Add(timeOnlyField.Value.TimeOfDay),
+            DateOnlyField dateOnlyField => dateOnlyField.Value.ToDateTime(new TimeOnly()),
+            TimeOnlyField timeOnlyField => new DateTime(1980, 01, 01).Add(timeOnlyField.Value.ToTimeSpan()),
             FieldBase<DateTime> dateTimeField => dateTimeField.Value,
             _ => DateTimeConverter.ParseToDateTime(fld.ToString())
         };
     }
 
     /// <summary>
-    /// Gets the DateOnly value of a field
+    /// Gets the value of a field as a DateOnly
     /// </summary>
     /// <param name="tag">the FIX tag</param>
-    /// <returns>the DateTime value</returns>
+    /// <returns>the DateOnly value</returns>
     /// <exception cref="FieldNotFoundException" />
-    public DateTime GetDateOnly(int tag)
+    /// <exception cref="FieldConvertError" />
+    public DateOnly GetDateOnly(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
             throw new FieldNotFoundException(tag);
 
         if (fld is FieldBase<DateTime> dateTimeField)
-            return dateTimeField.Value.Date;
+            return DateOnly.FromDateTime(dateTimeField.Value);
 
-        return DateTimeConverter.ParseToDateOnly(fld.ToString());
+        return DateOnlyConverter.Convert(fld.ToString());
     }
 
     /// <summary>
-    /// Gets the TimeOnly value of a field
-    /// as a DateTime WHERE ONLY THE TIME PARTS ARE MEANINGFUL.
-    /// (The date parts of the return value will always be set to 1980-01-01, DateTime.Kind==Unspecified.)
+    /// Gets the the value of a field as a TimeOnly
     /// </summary>
     /// <param name="tag">the FIX tag</param>
-    /// <returns>the DateTime value</returns>
+    /// <returns>the TimeOnly value</returns>
     /// <exception cref="FieldNotFoundException" />
-    public DateTime GetTimeOnly(int tag)
+    /// <exception cref="FieldConvertError" />
+    public TimeOnly GetTimeOnly(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
             throw new FieldNotFoundException(tag);
 
         if (fld is FieldBase<DateTime> dateTimeField)
-            return new DateTime(1980, 01, 01).Add(dateTimeField.Value.TimeOfDay);
+            return TimeOnly.FromDateTime(dateTimeField.Value);
 
-        return DateTimeConverter.InternalParseToTimeOnly(fld.ToString());
+        return TimeOnlyConverter.Convert(fld.ToString());
     }
 
     /// <summary>
@@ -408,6 +422,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// <param name="tag">the FIX tag</param>
     /// <returns>the bool value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public bool GetBoolean(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
@@ -439,6 +454,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// <param name="tag">the FIX tag</param>
     /// <returns>the char value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public char GetChar(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))
@@ -456,6 +472,7 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
     /// <param name="tag">the FIX tag</param>
     /// <returns>the decimal value</returns>
     /// <exception cref="FieldNotFoundException" />
+    /// <exception cref="FieldConvertError" />
     public decimal GetDecimal(int tag)
     {
         if (!_fields.TryGetValue(tag, out IField? fld))

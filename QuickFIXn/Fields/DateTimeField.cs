@@ -5,7 +5,8 @@ namespace QuickFix.Fields;
 
 public class DateTimeField : FieldBase<DateTime>
 {
-    protected readonly TimeStampPrecision TimePrecision = TimeStampPrecision.Millisecond;
+    protected readonly TimePrecision TimePrecision = TimePrecision.Millisecond;
+
     public DateTimeField(int tag)
         : base(tag, new DateTime()) {}
 
@@ -13,10 +14,10 @@ public class DateTimeField : FieldBase<DateTime>
         : base(tag, dt) {}
 
     public DateTimeField(int tag, DateTime dt, bool showMilliseconds)
-        : this(tag, dt, showMilliseconds ? TimeStampPrecision.Millisecond : TimeStampPrecision.Second ) { }
+        : this(tag, dt, showMilliseconds ? TimePrecision.Millisecond : TimePrecision.Second ) { }
 
-    public DateTimeField(int tag, DateTime dt, TimeStampPrecision timeFormatPrecision)
-        : base(tag, dt )
+    public DateTimeField(int tag, DateTime dt, TimePrecision timeFormatPrecision)
+        : base(tag, dt)
     {
         TimePrecision = timeFormatPrecision;
     }

@@ -193,14 +193,14 @@ public class SessionTest : SessionTestBase
     public void TestMillisecondsInSendingTimeStamp()
     {
         // MS in timestamp should default to Y
-        Assert.That(_session!.TimeStampPrecision == QuickFix.Fields.Converters.TimeStampPrecision.Millisecond );
+        Assert.That(_session!.TimeStampPrecision == TimePrecision.Millisecond );
 
         // Ms should show up
         Logon();
         AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
 
         // No ms
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Second;
+        _session.TimeStampPrecision = TimePrecision.Second;
         Logon();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 2);
         AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
@@ -208,7 +208,7 @@ public class SessionTest : SessionTestBase
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Millisecond;
+        _session.TimeStampPrecision = TimePrecision.Millisecond;
         Logon40();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 3);
         AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
@@ -218,14 +218,14 @@ public class SessionTest : SessionTestBase
     public void TestMicrosecondsInSendingTimeStamp()
     {
         // Microseconds in timestamp
-        _session!.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Microsecond;
+        _session!.TimeStampPrecision = TimePrecision.Microsecond;
 
         // Microseconds should show up
         Logon();
         AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
 
         // Milliseconds in timestamp
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Millisecond;
+        _session.TimeStampPrecision = TimePrecision.Millisecond;
         Logon();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 2);
         AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
@@ -233,7 +233,7 @@ public class SessionTest : SessionTestBase
         // Less than FIX42 - no microseconds in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
-        _session.TimeStampPrecision =  QuickFix.Fields.Converters.TimeStampPrecision.Microsecond;
+        _session.TimeStampPrecision =  TimePrecision.Microsecond;
         Logon40();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 3);
         AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
@@ -243,7 +243,7 @@ public class SessionTest : SessionTestBase
     public void TestMillisecondsInOrigSendingTimeStamp()
     {
         // MS in timestamp should default
-        Assert.That(_session!.TimeStampPrecision == QuickFix.Fields.Converters.TimeStampPrecision.Millisecond);
+        Assert.That(_session!.TimeStampPrecision == TimePrecision.Millisecond);
 
         // Logon first
         Logon();
@@ -253,14 +253,14 @@ public class SessionTest : SessionTestBase
         AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, true);
 
         // NO MS
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Second;
+        _session.TimeStampPrecision = TimePrecision.Second;
         SendResendRequest(0, 2);
         AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
 
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Millisecond;
+        _session.TimeStampPrecision = TimePrecision.Millisecond;
         SendResendRequest40(0, 2);
         AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
     }
@@ -269,7 +269,7 @@ public class SessionTest : SessionTestBase
     public void TestMicrosecondsInOrigSendingTimeStamp()
     {
         // Microsecond in timestamp
-        _session!.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Microsecond;
+        _session!.TimeStampPrecision = TimePrecision.Microsecond;
 
         // Logon first
         Logon();
@@ -279,14 +279,14 @@ public class SessionTest : SessionTestBase
         AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, true);
 
         // NO MS
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Second;
+        _session.TimeStampPrecision = TimePrecision.Second;
         SendResendRequest(0, 2);
         AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
 
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
-        _session.TimeStampPrecision = QuickFix.Fields.Converters.TimeStampPrecision.Microsecond;
+        _session.TimeStampPrecision = TimePrecision.Microsecond;
         SendResendRequest40(0, 2);
         AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
     }

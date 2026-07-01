@@ -94,7 +94,7 @@ public class FieldTests
     {
         DateTime val = TimeHelper.MakeDateTime(2009, 9, 4, 3, 44, 1, 100, 310, 300);
         DateTime newval = TimeHelper.MakeDateTime(2009, 9, 4, 3, 44, 1, 100, 310, 300);
-        DateTimeField field = new DateTimeField(200, val, QuickFix.Fields.Converters.TimeStampPrecision.Nanosecond);
+        DateTimeField field = new DateTimeField(200, val, TimePrecision.Nanosecond);
         Assert.That(field.Value, Is.EqualTo(val));
         Assert.That(field.Value, Is.EqualTo(val));
         Assert.That(field.Tag, Is.EqualTo(200));
@@ -169,18 +169,18 @@ public class FieldTests
     [Test]
     public void DateOnlyFieldTest()
     {
-        MDEntryDate d = new MDEntryDate(new DateTime(2011, 11, 30, 8, 9, 10, 555));
+        MDEntryDate d = new MDEntryDate(new DateOnly(2011, 11, 30));
         Assert.That(d.ToString(), Is.EqualTo("20111130"));
     }
 
     [Test]
     public void TimeOnlyFieldTest()
     {
-        MDEntryTime t = new MDEntryTime(new DateTime(2011, 11, 30, 8, 9, 10, 555), true);
-        Assert.That(t.ToString(), Is.EqualTo("08:09:10.555"));
+        MDEntryTime t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimePrecision.Second);
+        Assert.That(t.ToString(), Is.EqualTo("12:30:45"));
 
-        t = new MDEntryTime(new DateTime(2011, 11, 30, 8, 9, 10, 555), false);
-        Assert.That(t.ToString(), Is.EqualTo("08:09:10"));
+        t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimePrecision.Microsecond);
+        Assert.That(t.ToString(), Is.EqualTo("12:30:45.999050"));
     }
 
     [Test]

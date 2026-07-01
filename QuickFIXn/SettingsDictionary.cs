@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using QuickFix.Fields;
 using QuickFix.Fields.Converters;
 
 namespace QuickFix;
@@ -217,17 +218,17 @@ public class SettingsDictionary : System.Collections.IEnumerable
         };
     }
 
-    public TimeStampPrecision GetTimeStampPrecision(string key)
+    public TimePrecision GetTimeStampPrecision(string key)
     {
         string precision = GetString(key).ToUpperInvariant();
         if (precision.StartsWith("SECOND", StringComparison.InvariantCulture))
-            return TimeStampPrecision.Second;
+            return TimePrecision.Second;
         if (precision.StartsWith("MILLI", StringComparison.InvariantCulture))
-            return TimeStampPrecision.Millisecond;
+            return TimePrecision.Millisecond;
         if (precision.StartsWith("MICRO", StringComparison.InvariantCulture))
-            return TimeStampPrecision.Microsecond;
+            return TimePrecision.Microsecond;
         if (precision.StartsWith("NANO", StringComparison.InvariantCulture))
-            return TimeStampPrecision.Nanosecond;
+            return TimePrecision.Nanosecond;
         throw new ConfigError($"Illegal value {GetString(key)} for {key}");
     }
 

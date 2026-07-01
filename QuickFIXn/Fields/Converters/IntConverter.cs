@@ -2,7 +2,7 @@
 namespace QuickFix.Fields.Converters;
 
 /// <summary>
-///  convert Int64 to/from string
+/// convert Int64 to/from string
 /// </summary>
 public static class IntConverter
 {
@@ -11,6 +11,7 @@ public static class IntConverter
     /// </summary>
     /// <param name="i"></param>
     /// <returns></returns>
+    /// <exception cref="FieldConvertError"></exception>
     public static int Convert(string i)
     {
         try

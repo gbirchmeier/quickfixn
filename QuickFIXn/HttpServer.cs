@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
-using QuickFix.Fields.Converters;
+using QuickFix.Fields;
 using QuickFix.ObjectPooling;
 
 namespace QuickFix;
@@ -272,7 +272,7 @@ public class HttpServer : IDisposable {
         if (bool.TryParse(request.QueryString[ToggleParam.RefreshOnLogon], out var toRefreshOnLogon))
             session.RefreshOnLogon = toRefreshOnLogon;
         if (bool.TryParse(request.QueryString[ToggleParam.MsInTimestamp], out var toMsInTimestamp))
-            session.TimeStampPrecision = toMsInTimestamp ? TimeStampPrecision.Millisecond : TimeStampPrecision.Second;
+            session.TimeStampPrecision = toMsInTimestamp ? TimePrecision.Millisecond : TimePrecision.Second;
         if (bool.TryParse(request.QueryString[ToggleParam.PersistMessages], out var toPersistMessages))
             session.PersistMessages = toPersistMessages;
 
@@ -306,7 +306,7 @@ public class HttpServer : IDisposable {
         RenderDetailToggleRow(sb, sessionIdx, "ResetOnLogout", session.ResetOnLogout, ToggleParam.ResetOnLogout);
         RenderDetailToggleRow(sb, sessionIdx, "ResetOnDisconnect", session.ResetOnDisconnect, ToggleParam.ResetOnDisconnect);
         RenderDetailToggleRow(sb, sessionIdx, "RefreshOnLogon", session.RefreshOnLogon, ToggleParam.RefreshOnLogon);
-        RenderDetailToggleRow(sb, sessionIdx, "MillisecondsInTimestamp", session.TimeStampPrecision==TimeStampPrecision.Millisecond, ToggleParam.MsInTimestamp);
+        RenderDetailToggleRow(sb, sessionIdx, "MillisecondsInTimestamp", session.TimeStampPrecision==TimePrecision.Millisecond, ToggleParam.MsInTimestamp);
         RenderDetailToggleRow(sb, sessionIdx, "PersistMessages", session.PersistMessages, ToggleParam.PersistMessages);
         sb.AppendLine("    </table>");
     }

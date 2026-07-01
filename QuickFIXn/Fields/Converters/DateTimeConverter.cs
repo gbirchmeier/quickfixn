@@ -174,6 +174,7 @@ public static class DateTimeConverter
     /// fractional second precision to 100ns.
     /// </remarks>
     /// <exception cref="FieldConvertError">The conversion cannot be performed successfully.</exception>
+    [Obsolete("Will be removed in v1.16.  Only used by deprecated functions.")]
     public static TimeOnly ParseToTimeOnly(ReadOnlySpan<char> str, out TimeSpan? offset)
     {
         offset = null;
@@ -269,6 +270,7 @@ public static class DateTimeConverter
     /// Consider calling the latter for flexibility.
     /// </remarks>
     /// <exception cref="FieldConvertError">The conversion cannot be performed successfully.</exception>
+    [Obsolete("Will be removed in v1.16.  Only used by deprecated functions.")]
     internal static DateTime InternalParseToTimeOnly(string str) => new DateOnly(1980, 1, 1).ToDateTime(ParseToTimeOnly(str, out _));
 
     /// <summary>
@@ -418,6 +420,7 @@ public static class DateTimeConverter
     }
 
     [DoesNotReturn]
+    [Obsolete("Will be removed in v1.16.  Only used by deprecated functions.")]
     private static TimeOnly ThrowTimeOnly(ReadOnlySpan<char> s)
     {
         throw new FieldConvertError($"Could not convert string to TimeOnly: {s}");
@@ -432,6 +435,7 @@ public static class DateTimeConverter
     /// A value representing the date in <paramref name="str"/>.
     /// </returns>
     /// <exception cref="FieldConvertError">The conversion cannot be performed successfully.</exception>
+    [Obsolete("No longer needed.  Will be removed in v1.16.")]
     public static DateOnly ParseToDateOnly(ReadOnlySpan<char> str)
     {
         if (!DateOnly.TryParseExact(str, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateOnly dateOnly))
@@ -456,6 +460,7 @@ public static class DateTimeConverter
     /// Consider calling the latter for correctness.
     /// </remarks>
     /// <exception cref="FieldConvertError">The conversion cannot be performed successfully.</exception>
+    [Obsolete("No longer used.  Will be removed in v1.16.")]
     public static DateTime ParseToDateOnly(string str) => ParseToDateOnly((ReadOnlySpan<char>)str).ToDateTime(default);
 
     private static long SubsecondAsNanoseconds(DateTime dt)
@@ -463,6 +468,7 @@ public static class DateTimeConverter
         return (dt.Ticks % TimeSpan.TicksPerSecond) * TimeSpan.NanosecondsPerTick;
     }
 
+    [Obsolete("Only used by deprecated functions.  Will be removed in 1.16.")]
     private static long SubsecondAsNanoseconds(TimeOnly time)
     {
         return (time.Ticks % TimeSpan.TicksPerSecond) * TimeSpan.NanosecondsPerTick;
@@ -479,14 +485,14 @@ public static class DateTimeConverter
     /// and end in fractional seconds whose precision is determined by <paramref name="precision"/>.
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
-    public static string ToFIX(DateTime dt, TimeStampPrecision precision)
+    public static string ToFIX(DateTime dt, TimePrecision precision)
     {
         return precision switch
         {
-            TimeStampPrecision.Second => dt.ToString("yyyyMMdd-HH:mm:ss"),
-            TimeStampPrecision.Millisecond => dt.ToString("yyyyMMdd-HH:mm:ss.fff"),
-            TimeStampPrecision.Microsecond => dt.ToString("yyyyMMdd-HH:mm:ss.ffffff"),
-            TimeStampPrecision.Nanosecond => $"{dt:yyyyMMdd-HH:mm:ss}.{SubsecondAsNanoseconds(dt):000000000}",
+            TimePrecision.Second => dt.ToString("yyyyMMdd-HH:mm:ss"),
+            TimePrecision.Millisecond => dt.ToString("yyyyMMdd-HH:mm:ss.fff"),
+            TimePrecision.Microsecond => dt.ToString("yyyyMMdd-HH:mm:ss.ffffff"),
+            TimePrecision.Nanosecond => $"{dt:yyyyMMdd-HH:mm:ss}.{SubsecondAsNanoseconds(dt):000000000}",
             _ => throw new ArgumentOutOfRangeException(nameof(precision))
         };
     }
@@ -496,6 +502,7 @@ public static class DateTimeConverter
     /// </summary>
     /// <param name="date">The value to convert.</param>
     /// <returns>A value representing <paramref name="date"/> in the format "yyyyMMdd".</returns>
+    [Obsolete("Will be removed in 1.16. Use DateOnlyConverter.Convert(DateOnly) instead.")]
     public static string ToFIXDateOnly(DateOnly date)
     {
         return date.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
@@ -507,7 +514,8 @@ public static class DateTimeConverter
     /// </summary>
     /// <param name="dt">The value to convert.</param>
     /// <returns>A value representing the date component of <paramref name="dt"/> in the format "yyyyMMdd".</returns>
-    public static string ToFIXDateOnly(DateTime dt) => ToFIXDateOnly(DateOnly.FromDateTime(dt));
+    [Obsolete("Unused in QF/n, so it will be removed in 1.16. Use DateOnlyConverter.Convert(DateOnly.FromDateTime(dt)) instead.")]
+    public static string ToFIXDateOnly(DateTime dt) => DateOnlyConverter.Convert(DateOnly.FromDateTime(dt));
 
     /// <summary>
     /// Converts the specified <see cref="TimeOnly"/> to a <see cref="string"/>.
@@ -520,14 +528,15 @@ public static class DateTimeConverter
     /// and end in fractional seconds whose precision is determined by <paramref name="precision"/>.
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
-    public static string ToFIXTimeOnly(TimeOnly time, TimeStampPrecision precision)
+    [Obsolete("No longer needed.  Will be removed in 1.16.")]
+    public static string ToFIXTimeOnly(TimeOnly time, TimePrecision precision)
     {
         return precision switch
         {
-            TimeStampPrecision.Second => time.ToString("HH:mm:ss", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Millisecond => time.ToString("HH:mm:ss.fff", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Microsecond => time.ToString("HH:mm:ss.ffffff", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Nanosecond => $"{time:HH:mm:ss}.{SubsecondAsNanoseconds(time):000000000}",
+            TimePrecision.Second => time.ToString("HH:mm:ss", CultureInfo.InvariantCulture),
+            TimePrecision.Millisecond => time.ToString("HH:mm:ss.fff", CultureInfo.InvariantCulture),
+            TimePrecision.Microsecond => time.ToString("HH:mm:ss.ffffff", CultureInfo.InvariantCulture),
+            TimePrecision.Nanosecond => $"{time:HH:mm:ss}.{SubsecondAsNanoseconds(time):000000000}",
             _ => throw new ArgumentOutOfRangeException(nameof(precision))
         };
     }
@@ -544,7 +553,8 @@ public static class DateTimeConverter
     /// and end in fractional seconds whose precision is determined by <paramref name="precision"/>.
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
-    public static string ToFIXTimeOnly(DateTime dt, TimeStampPrecision precision)
+    [Obsolete("No longer needed.  Will be removed in 1.16.")]
+    public static string ToFIXTimeOnly(DateTime dt, TimePrecision precision)
         => ToFIXTimeOnly(TimeOnly.FromDateTime(dt), precision);
 
     [Obsolete("Don't use this function, it probably doesn't do what you think it does.  Will be removed in v1.16.")]

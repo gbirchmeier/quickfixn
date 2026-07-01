@@ -36,11 +36,13 @@ public static class GenFields {
             lines.Add("");
             switch (field.CsClass) {
                 case "DateTimeField":
+                    AppendDateTimeField(lines, field);
+                    break;
                 case "TimeOnlyField":
-                    AppendDateField(lines, field);
+                    AppendTimeOnlyField(lines, field);
                     break;
                 default:
-                    AppendNonDateField(lines, field);
+                    AppendVanillaField(lines, field);
                     break;
             }
         }
@@ -49,7 +51,7 @@ public static class GenFields {
         return string.Join(Environment.NewLine, lines);
     }
 
-    private static void AppendDateField(List<string> lines, DDField field) {
+    private static void AppendDateTimeField(List<string> lines, DDField field) {
         lines.Add("/// <summary>");
         lines.Add($"/// {field.Name} Field");
         lines.Add("/// </summary>");
@@ -62,19 +64,39 @@ public static class GenFields {
         lines.Add($"        : base(Tags.{field.Name}) {{}}");
         lines.Add($"    public {field.Name}({field.BaseType} val)");
         lines.Add($"        : base(Tags.{field.Name}, val) {{}}");
+        lines.Add("    [Obsolete(\"Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.\")]");
         lines.Add($"    public {field.Name}({field.BaseType} val, bool showMilliseconds)");
         lines.Add($"        : base(Tags.{field.Name}, val, showMilliseconds) {{}}");
-        lines.Add($"    public {field.Name}({field.BaseType} val, Converters.TimeStampPrecision precision)");
+        lines.Add($"    public {field.Name}({field.BaseType} val, TimePrecision precision)");
         lines.Add($"        : base(Tags.{field.Name}, val, precision) {{}}");
-        lines.Add("");
 
         AppendFieldEnumerations(lines, field);
 
         lines.Add("}");
-        lines.Add("");
     }
 
-    private static void AppendNonDateField(List<string> lines, DDField field) {
+    private static void AppendTimeOnlyField(List<string> lines, DDField field) {
+        lines.Add("/// <summary>");
+        lines.Add($"/// {field.Name} Field");
+        lines.Add("/// </summary>");
+        lines.Add($"public sealed class {field.Name} : {field.CsClass}");
+        lines.Add("{");
+        lines.Add($"    public const int TAG = {field.Tag};");
+        lines.Add("");
+
+        lines.Add($"    public {field.Name}()");
+        lines.Add($"        : base(Tags.{field.Name}) {{}}");
+        lines.Add($"    public {field.Name}({field.BaseType} val)");
+        lines.Add($"        : base(Tags.{field.Name}, val) {{}}");
+        lines.Add($"    public {field.Name}({field.BaseType} val, TimePrecision precision)");
+        lines.Add($"        : base(Tags.{field.Name}, val, precision) {{}}");
+
+        AppendFieldEnumerations(lines, field);
+
+        lines.Add("}");
+    }
+
+    private static void AppendVanillaField(List<string> lines, DDField field) {
         lines.Add("/// <summary>");
         lines.Add($"/// {field.Name} Field");
         lines.Add("/// </summary>");
@@ -88,12 +110,9 @@ public static class GenFields {
         lines.Add($"    public {field.Name}({field.BaseType} val)");
         lines.Add($"        : base(Tags.{field.Name}, val) {{}}");
 
-        if (lines.Count > 0) {
-            AppendFieldEnumerations(lines, field);
-        }
+        AppendFieldEnumerations(lines, field);
 
         lines.Add("}");
-        lines.Add("");
     }
 
     private static void AppendFieldEnumerations(List<string> lines, DDField field) {

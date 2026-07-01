@@ -1,6 +1,7 @@
 using System;
 using NUnit.Framework;
 using QuickFix;
+using QuickFix.Fields;
 using QuickFix.Fields.Converters;
 using UnitTests.TestHelpers;
 
@@ -8,8 +9,6 @@ namespace UnitTests.Fields.Converters;
 
 [TestFixture]
 public class DateTimeConverterTests {
-    
-    private const string TimeOnlyFormatWithMicroseconds = "{0:HH:mm:ss.ffffff}";
 
     [SetUp]
     public void SetUp() {
@@ -63,20 +62,26 @@ public class DateTimeConverterTests {
     [Test]
     public void ParseToDateOnlyTest_ReturnsDateOnly() {
         ReadOnlySpan<char> ros = "20100912";
+#pragma warning disable CS0618
         DateOnly rv = DateTimeConverter.ParseToDateOnly(ros);
+#pragma warning restore CS0618
         Assert.That(rv, Is.EqualTo(new DateOnly(2010, 9, 12)));
     }
 
     [Test]
     public void ParseToDateOnlyTest_ReturnsDateTime() {
+#pragma warning disable CS0618
         DateTime rv = DateTimeConverter.ParseToDateOnly("20100912");
+#pragma warning restore CS0618
         Assert.That(rv, Is.EqualTo(new DateTime(2010, 9, 12, 0, 0, 0, DateTimeKind.Utc)));
     }
 
     [Test]
     public void ParseToDateOnlyTest_Exceptions() {
+#pragma warning disable CS0618
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.ParseToDateOnly(""); });
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.ParseToDateOnly("20021201-11:03:00"); });
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -86,6 +91,7 @@ public class DateTimeConverterTests {
 
         TimeSpan? timeSpan;
 
+#pragma warning disable CS0618
         TimeOnly rv = DateTimeConverter.ParseToTimeOnly("04:22:01", out timeSpan);
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(timeSpan, Is.Null);
@@ -96,6 +102,7 @@ public class DateTimeConverterTests {
         rv = DateTimeConverter.ParseToTimeOnly("04:22:01-03:00", out timeSpan);
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(timeSpan, Is.EqualTo(new TimeSpan(-3, 0, 0)));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -103,17 +110,21 @@ public class DateTimeConverterTests {
         var targetTicks = new DateTime(1980, 1, 1, 4, 22, 1, 0, DateTimeKind.Utc).Ticks;
         Assert.That(targetTicks, Is.EqualTo(624511453210000000)); // for human reader reference
 
+#pragma warning disable CS0618
         DateTime rv = DateTimeConverter.InternalParseToTimeOnly("04:22:01");
 
         Assert.That(rv.Ticks, Is.EqualTo(targetTicks));
         Assert.That(DateTimeConverter.InternalParseToTimeOnly("04:22:01.123").Ticks, Is.EqualTo(targetTicks + 1230000));
         Assert.That(DateTimeConverter.InternalParseToTimeOnly("04:22:01.123456").Ticks, Is.EqualTo(targetTicks + 1234560));
+#pragma warning restore CS0618
     }
 
     [Test]
     public void ParseToTimeOnlyTest_Exceptions() {
+#pragma warning disable CS0618
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.InternalParseToTimeOnly(""); });
         Assert.Throws(typeof(FieldConvertError), delegate { DateTimeConverter.InternalParseToTimeOnly("20021201-11:03:00"); });
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -125,33 +136,34 @@ public class DateTimeConverterTests {
         var dtNano100 = DateTime.SpecifyKind(TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 000, 000, 100), DateTimeKind.Utc);
 
         // ToFIX(DateTime dt, TimeStampPrecision precision)
-        Assert.That(DateTimeConverter.ToFIX(dtSec, TimeStampPrecision.Second), Is.EqualTo("20021201-11:03:05"));
-        Assert.That(DateTimeConverter.ToFIX(dtMs, TimeStampPrecision.Second), Is.EqualTo("20021201-11:03:05"));
-        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimeStampPrecision.Second), Is.EqualTo("20021201-11:03:05"));
-        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimeStampPrecision.Second), Is.EqualTo("20021201-11:03:05"));
-        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimeStampPrecision.Second), Is.EqualTo("20021201-11:03:05"));
+        Assert.That(DateTimeConverter.ToFIX(dtSec, TimePrecision.Second), Is.EqualTo("20021201-11:03:05"));
+        Assert.That(DateTimeConverter.ToFIX(dtMs, TimePrecision.Second), Is.EqualTo("20021201-11:03:05"));
+        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimePrecision.Second), Is.EqualTo("20021201-11:03:05"));
+        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimePrecision.Second), Is.EqualTo("20021201-11:03:05"));
+        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimePrecision.Second), Is.EqualTo("20021201-11:03:05"));
 
-        Assert.That(DateTimeConverter.ToFIX(dtSec, TimeStampPrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIX(dtMs, TimeStampPrecision.Millisecond), Is.EqualTo("20021201-11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimeStampPrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimeStampPrecision.Millisecond), Is.EqualTo("20021201-11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimeStampPrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIX(dtSec, TimePrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIX(dtMs, TimePrecision.Millisecond), Is.EqualTo("20021201-11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimePrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimePrecision.Millisecond), Is.EqualTo("20021201-11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimePrecision.Millisecond), Is.EqualTo("20021201-11:03:05.000"));
 
-        Assert.That(DateTimeConverter.ToFIX(dtSec, TimeStampPrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000000"));
-        Assert.That(DateTimeConverter.ToFIX(dtMs, TimeStampPrecision.Microsecond), Is.EqualTo("20021201-11:03:05.123000"));
-        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimeStampPrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000654"));
-        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimeStampPrecision.Microsecond), Is.EqualTo("20021201-11:03:05.123654"));
-        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimeStampPrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIX(dtSec, TimePrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIX(dtMs, TimePrecision.Microsecond), Is.EqualTo("20021201-11:03:05.123000"));
+        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimePrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000654"));
+        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimePrecision.Microsecond), Is.EqualTo("20021201-11:03:05.123654"));
+        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimePrecision.Microsecond), Is.EqualTo("20021201-11:03:05.000000"));
 
-        Assert.That(DateTimeConverter.ToFIX(dtSec, TimeStampPrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000000000"));
-        Assert.That(DateTimeConverter.ToFIX(dtMs, TimeStampPrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.123000000"));
-        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimeStampPrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000654000"));
-        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimeStampPrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.123654700"));
-        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimeStampPrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000000100"));
+        Assert.That(DateTimeConverter.ToFIX(dtSec, TimePrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000000000"));
+        Assert.That(DateTimeConverter.ToFIX(dtMs, TimePrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.123000000"));
+        Assert.That(DateTimeConverter.ToFIX(dtMicro, TimePrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000654000"));
+        Assert.That(DateTimeConverter.ToFIX(dtNanoFull, TimePrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.123654700"));
+        Assert.That(DateTimeConverter.ToFIX(dtNano100, TimePrecision.Nanosecond), Is.EqualTo("20021201-11:03:05.000000100"));
     }
 
     [Test]
     public void ToFIXDateOnlyTest() {
+#pragma warning disable CS0618
         // ToFIXDateOnly(DateOnly)
         Assert.That(DateTimeConverter.ToFIXDateOnly(new DateOnly(2002, 12, 01)), Is.EqualTo("20021201"));
 
@@ -160,6 +172,7 @@ public class DateTimeConverterTests {
             TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 123, 654, 700),
             DateTimeKind.Utc);
         Assert.That(DateTimeConverter.ToFIXDateOnly(dt), Is.EqualTo("20021201"));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -170,30 +183,32 @@ public class DateTimeConverterTests {
         var tNanoFull = TimeHelper.MakeTimeOnly(11, 03, 05, 123, 654, 700);
         var tNano100 = TimeHelper.MakeTimeOnly(11, 03, 05, 000, 000, 100);
 
+#pragma warning disable CS0618
         // ToFIXTimeOnly(TimeOnly time, TimeStampPrecision precision)
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimePrecision.Second), Is.EqualTo("11:03:05"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimePrecision.Millisecond), Is.EqualTo("11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimePrecision.Millisecond), Is.EqualTo("11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.123000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000654"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.123654"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimePrecision.Microsecond), Is.EqualTo("11:03:05.123000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000654"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimePrecision.Microsecond), Is.EqualTo("11:03:05.123654"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tSec, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMs, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.123000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tMicro, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNanoFull, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(tNano100, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+#pragma warning restore CS0618
     }
 
     [Test]
@@ -204,29 +219,31 @@ public class DateTimeConverterTests {
         var dtNanoFull = DateTime.SpecifyKind(TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 123, 654, 700), DateTimeKind.Utc);
         var dtNano100 = DateTime.SpecifyKind(TimeHelper.MakeDateTime(2002, 12, 01, 11, 03, 05, 000, 000, 100), DateTimeKind.Utc);
 
-        // string ToFIXTimeOnly(DateTime dt, TimeStampPrecision precision)
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimeStampPrecision.Second), Is.EqualTo("11:03:05"));
+#pragma warning disable CS0618
+        // string ToFIXTimeOnly(DateTime dt, TimePrecision precision)
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimePrecision.Second), Is.EqualTo("11:03:05"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimePrecision.Second), Is.EqualTo("11:03:05"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.123"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimeStampPrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimePrecision.Millisecond), Is.EqualTo("11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimePrecision.Millisecond), Is.EqualTo("11:03:05.123"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimePrecision.Millisecond), Is.EqualTo("11:03:05.000"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.123000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000654"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.123654"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimeStampPrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimePrecision.Microsecond), Is.EqualTo("11:03:05.123000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000654"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimePrecision.Microsecond), Is.EqualTo("11:03:05.123654"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimePrecision.Microsecond), Is.EqualTo("11:03:05.000000"));
 
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123000000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
-        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimeStampPrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtSec, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMs, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.123000000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtMicro, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000654000"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNanoFull, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.123654700"));
+        Assert.That(DateTimeConverter.ToFIXTimeOnly(dtNano100, TimePrecision.Nanosecond), Is.EqualTo("11:03:05.000000100"));
+#pragma warning restore CS0618
     }
 }

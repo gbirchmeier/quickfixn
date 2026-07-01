@@ -10,6 +10,16 @@ What's New
 
 **IMPORTANT NOTICES:**  
 
+* **1.15 introduces breaking changes to `TimeOnlyField`/`DateOnlyField` classes and derived FIX fields.**
+    * These field types are now backed by C# `TimeOnly`/`DateOnly` instances instead of `DateTime`.
+      Some ctors/functions were deprecated as per usual procedure, but certain ctors/functions have
+      changed in ways where it is not practical to retain deprecated versions.
+    * We do not expect developers to have much trouble resolving these
+      changes with application code (in many cases you just need to convert a `DateTime` param to
+      `DateOnly` or `TimeOnly`), but we are happy to help anyone who has questions.
+    * `QuickFix.Fields.Converters.TimeStampPrecision` is now `QuickFix.Fields.TimePrecision`, but is otherwise
+      unchanged.  The `Converters` namespace wasn't really the right place for it.
+    * These changes are introduced in Issue #1015/Pull Request #1022.
 * **1.14.1 adds support for .NET 10, and will be the *final* version that supports .NET 8.**  
   [Microsoft is ending .NET 8/9 support on November 10, 2026](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
 
@@ -39,7 +49,9 @@ What's New
 
 
 ### v1.15.0
-* #1021 - remove .NET 8 support; remove expired deprecations
+* #1021 - remove .NET 8 support; remove expired deprecations (gbirchmeier)
+* #1015 - rework DateOnlyField/TimeOnlyField to be backed by DateOnly/TimeOnly types instead of DateTime (gbirchmeier)
+
 
 
 ### v1.14.1
