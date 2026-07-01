@@ -36,6 +36,6 @@ public class DateOnlyField : FieldBase<DateOnly>
         : this(tag, dt) { }
 
     [Obsolete("This ctor will be removed in 1.16 because it's unused (and doesn't even make sense)")]
-    public DateOnlyField(int tag, DateTime dt, TimeStampPrecision timeFormatPrecision)
+    public DateOnlyField(int tag, DateTime dt, TimePrecision timeFormatPrecision)
         : this(tag, dt) { }
 }

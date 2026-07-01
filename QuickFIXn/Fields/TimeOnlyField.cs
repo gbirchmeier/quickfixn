@@ -8,7 +8,7 @@ namespace QuickFix.Fields;
 /// </summary>
 public class TimeOnlyField : FieldBase<TimeOnly>
 {
-    public readonly TimeStampPrecision TimePrecision = TimeStampPrecision.Millisecond;
+    public readonly TimePrecision Precision = TimePrecision.Millisecond;
 
     /// <summary>
     /// Create a TimeOnlyField set to 00:00:00, i.e. midnight.  Displayed precision will be milliseconds.
@@ -31,15 +31,15 @@ public class TimeOnlyField : FieldBase<TimeOnly>
     /// <param name="tag"></param>
     /// <param name="timeOnly"></param>
     /// <param name="timeFormatPrecision"></param>
-    public TimeOnlyField(int tag, TimeOnly timeOnly, TimeStampPrecision timeFormatPrecision)
+    public TimeOnlyField(int tag, TimeOnly timeOnly, TimePrecision timeFormatPrecision)
         : base(tag, timeOnly)
     {
-        TimePrecision = timeFormatPrecision;
+        Precision = timeFormatPrecision;
     }
 
     protected override string MakeString()
     {
-        return TimeOnlyConverter.Convert(Value, TimePrecision);
+        return TimeOnlyConverter.Convert(Value, Precision);
     }
 
 
@@ -50,9 +50,9 @@ public class TimeOnlyField : FieldBase<TimeOnly>
     [Obsolete("This ctor will be removed in 1.16.  You should use the TimeOnly-based constructors.")]
     public TimeOnlyField(int tag, DateTime dt, bool showMilliseconds)
         : this(tag, TimeOnly.FromDateTime(dt),
-            showMilliseconds ? TimeStampPrecision.Millisecond : TimeStampPrecision.Second) { }
+            showMilliseconds ? TimePrecision.Millisecond : TimePrecision.Second) { }
 
     [Obsolete("This ctor will be removed in 1.16.  You should use the TimeOnly-based constructors.")]
-    public TimeOnlyField(int tag, DateTime dt, TimeStampPrecision timeFormatPrecision)
+    public TimeOnlyField(int tag, DateTime dt, TimePrecision timeFormatPrecision)
         : this(tag, TimeOnly.FromDateTime(dt), timeFormatPrecision) { }
 }

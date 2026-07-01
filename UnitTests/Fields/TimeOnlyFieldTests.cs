@@ -31,13 +31,13 @@ public class TimeOnlyFieldTests
     public void CtorWithPrecisionTest()
     {
         TimeOnlyField tofSec =
-            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimeStampPrecision.Second);
+            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimePrecision.Second);
         TimeOnlyField tofMilli =
-            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimeStampPrecision.Millisecond);
+            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimePrecision.Millisecond);
         TimeOnlyField tofMicro =
-            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimeStampPrecision.Microsecond);
+            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimePrecision.Microsecond);
         TimeOnlyField tofNano =
-            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimeStampPrecision.Nanosecond);
+            new(Tags.MDEntryTime, new TimeOnly(13, 30, 45, 999, 50), TimePrecision.Nanosecond);
 
         Assert.That(tofSec.ToString(),   Is.EqualTo("13:30:45"));
         Assert.That(tofMilli.ToString(), Is.EqualTo("13:30:45.999"));
@@ -63,15 +63,15 @@ public class TimeOnlyFieldTests
         Assert.That(tof.ToString(), Is.EqualTo("17:30:59.333"));
         Assert.That(tof.ToStringField(), Is.EqualTo("273=17:30:59.333"));
 
-        tof = new(273, dt, TimeStampPrecision.Second);
+        tof = new(273, dt, TimePrecision.Second);
         Assert.That(tof.ToString(), Is.EqualTo("17:30:59"));
         Assert.That(tof.ToStringField(), Is.EqualTo("273=17:30:59"));
 
-        tof = new(273, dt, TimeStampPrecision.Millisecond);
+        tof = new(273, dt, TimePrecision.Millisecond);
         Assert.That(tof.ToString(), Is.EqualTo("17:30:59.333"));
         Assert.That(tof.ToStringField(), Is.EqualTo("273=17:30:59.333"));
 
-        tof = new(273, dt, TimeStampPrecision.Nanosecond);
+        tof = new(273, dt, TimePrecision.Nanosecond);
         Assert.That(tof.ToString(), Is.EqualTo("17:30:59.333000000"));
         Assert.That(tof.ToStringField(), Is.EqualTo("273=17:30:59.333000000"));
 #pragma warning restore CS0618

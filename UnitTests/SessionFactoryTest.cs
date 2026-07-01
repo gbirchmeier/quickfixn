@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using QuickFix;
-using QuickFix.Fields.Converters;
+using QuickFix.Fields;
 using QuickFix.Store;
 
 namespace UnitTests;
@@ -92,7 +92,7 @@ public class SessionFactoryTest
 
         Assert.That(session.SendRedundantResendRequests);
         Assert.That(session.ResendSessionLevelRejects);
-        Assert.That(session.TimeStampPrecision, Is.EqualTo(TimeStampPrecision.Millisecond));
+        Assert.That(session.TimeStampPrecision, Is.EqualTo(TimePrecision.Millisecond));
 
         settings.SetString(SessionSettings.SEND_REDUNDANT_RESENDREQUESTS, "N");
         settings.SetString(SessionSettings.RESEND_SESSION_LEVEL_REJECTS, "N");
@@ -101,7 +101,7 @@ public class SessionFactoryTest
 
         Assert.That(!session.SendRedundantResendRequests);
         Assert.That(!session.ResendSessionLevelRejects);
-        Assert.That(session.TimeStampPrecision, Is.EqualTo(TimeStampPrecision.Nanosecond));
+        Assert.That(session.TimeStampPrecision, Is.EqualTo(TimePrecision.Nanosecond));
         Assert.That(session.EnableLastMsgSeqNumProcessed);
         Assert.That(session.MaxMessagesInResendRequest, Is.EqualTo(2500));
         Assert.That(session.SendLogoutBeforeTimeoutDisconnect);
@@ -120,35 +120,35 @@ public class SessionFactoryTest
 
         // check default precision
         Session session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Millisecond );
+        Assert.That(session.TimeStampPrecision == TimePrecision.Millisecond );
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "MiCrOsEcOnD");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Microsecond );
+        Assert.That(session.TimeStampPrecision == TimePrecision.Microsecond );
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Micro");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Microsecond);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Microsecond);
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Millisecond");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Millisecond);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Millisecond);
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Milli");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Millisecond);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Millisecond);
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Nanosecond");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Nanosecond);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Nanosecond);
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Nano");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Nanosecond);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Nanosecond);
 
         settings.SetString(SessionSettings.TIMESTAMP_PRECISION, "Second");
         session = factory.Create(sessionId, settings);
-        Assert.That(session.TimeStampPrecision == TimeStampPrecision.Second);
+        Assert.That(session.TimeStampPrecision == TimePrecision.Second);
     }
 
     [Test]

@@ -17,6 +17,8 @@ What's New
     * We do not expect developers to have much trouble resolving these
       changes with application code (in many cases you just need to convert a `DateTime` param to
       `DateOnly` or `TimeOnly`), but we are happy to help anyone who has questions.
+    * `QuickFix.Fields.Converters.TimeStampPrecision` is now `QuickFix.Fields.TimePrecision`, but is otherwise
+      unchanged.  The `Converters` namespace wasn't really the right place for it.
     * These changes are introduced in Issue #1015/Pull Request #1022.
 * **1.14.1 adds support for .NET 10, and will be the *final* version that supports .NET 8.**  
   [Microsoft is ending .NET 8/9 support on November 10, 2026](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).

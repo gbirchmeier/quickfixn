@@ -994,9 +994,10 @@ public sealed class OrigTime : DateTimeField
         : base(Tags.OrigTime) {}
     public OrigTime(DateTime val)
         : base(Tags.OrigTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public OrigTime(DateTime val, bool showMilliseconds)
         : base(Tags.OrigTime, val, showMilliseconds) {}
-    public OrigTime(DateTime val, Converters.TimeStampPrecision precision)
+    public OrigTime(DateTime val, TimePrecision precision)
         : base(Tags.OrigTime, val, precision) {}
 }
 
@@ -1182,9 +1183,10 @@ public sealed class SendingTime : DateTimeField
         : base(Tags.SendingTime) {}
     public SendingTime(DateTime val)
         : base(Tags.SendingTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public SendingTime(DateTime val, bool showMilliseconds)
         : base(Tags.SendingTime, val, showMilliseconds) {}
-    public SendingTime(DateTime val, Converters.TimeStampPrecision precision)
+    public SendingTime(DateTime val, TimePrecision precision)
         : base(Tags.SendingTime, val, precision) {}
 }
 
@@ -1328,9 +1330,10 @@ public sealed class TransactTime : DateTimeField
         : base(Tags.TransactTime) {}
     public TransactTime(DateTime val)
         : base(Tags.TransactTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TransactTime(DateTime val, bool showMilliseconds)
         : base(Tags.TransactTime, val, showMilliseconds) {}
-    public TransactTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TransactTime(DateTime val, TimePrecision precision)
         : base(Tags.TransactTime, val, precision) {}
 }
 
@@ -1365,9 +1368,10 @@ public sealed class ValidUntilTime : DateTimeField
         : base(Tags.ValidUntilTime) {}
     public ValidUntilTime(DateTime val)
         : base(Tags.ValidUntilTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ValidUntilTime(DateTime val, bool showMilliseconds)
         : base(Tags.ValidUntilTime, val, showMilliseconds) {}
-    public ValidUntilTime(DateTime val, Converters.TimeStampPrecision precision)
+    public ValidUntilTime(DateTime val, TimePrecision precision)
         : base(Tags.ValidUntilTime, val, precision) {}
 }
 
@@ -2390,9 +2394,10 @@ public sealed class OrigSendingTime : DateTimeField
         : base(Tags.OrigSendingTime) {}
     public OrigSendingTime(DateTime val)
         : base(Tags.OrigSendingTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public OrigSendingTime(DateTime val, bool showMilliseconds)
         : base(Tags.OrigSendingTime, val, showMilliseconds) {}
-    public OrigSendingTime(DateTime val, Converters.TimeStampPrecision precision)
+    public OrigSendingTime(DateTime val, TimePrecision precision)
         : base(Tags.OrigSendingTime, val, precision) {}
 }
 
@@ -2460,9 +2465,10 @@ public sealed class ExpireTime : DateTimeField
         : base(Tags.ExpireTime) {}
     public ExpireTime(DateTime val)
         : base(Tags.ExpireTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ExpireTime(DateTime val, bool showMilliseconds)
         : base(Tags.ExpireTime, val, showMilliseconds) {}
-    public ExpireTime(DateTime val, Converters.TimeStampPrecision precision)
+    public ExpireTime(DateTime val, TimePrecision precision)
         : base(Tags.ExpireTime, val, precision) {}
 }
 
@@ -3300,9 +3306,10 @@ public sealed class EffectiveTime : DateTimeField
         : base(Tags.EffectiveTime) {}
     public EffectiveTime(DateTime val)
         : base(Tags.EffectiveTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public EffectiveTime(DateTime val, bool showMilliseconds)
         : base(Tags.EffectiveTime, val, showMilliseconds) {}
-    public EffectiveTime(DateTime val, Converters.TimeStampPrecision precision)
+    public EffectiveTime(DateTime val, TimePrecision precision)
         : base(Tags.EffectiveTime, val, precision) {}
 }
 
@@ -4348,7 +4355,7 @@ public sealed class MDEntryTime : TimeOnlyField
         : base(Tags.MDEntryTime) {}
     public MDEntryTime(TimeOnly val)
         : base(Tags.MDEntryTime, val) {}
-    public MDEntryTime(TimeOnly val, Converters.TimeStampPrecision precision)
+    public MDEntryTime(TimeOnly val, TimePrecision precision)
         : base(Tags.MDEntryTime, val, precision) {}
 }
 
@@ -5692,9 +5699,10 @@ public sealed class TradSesStartTime : DateTimeField
         : base(Tags.TradSesStartTime) {}
     public TradSesStartTime(DateTime val)
         : base(Tags.TradSesStartTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TradSesStartTime(DateTime val, bool showMilliseconds)
         : base(Tags.TradSesStartTime, val, showMilliseconds) {}
-    public TradSesStartTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TradSesStartTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesStartTime, val, precision) {}
 }
 
@@ -5710,9 +5718,10 @@ public sealed class TradSesOpenTime : DateTimeField
         : base(Tags.TradSesOpenTime) {}
     public TradSesOpenTime(DateTime val)
         : base(Tags.TradSesOpenTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TradSesOpenTime(DateTime val, bool showMilliseconds)
         : base(Tags.TradSesOpenTime, val, showMilliseconds) {}
-    public TradSesOpenTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TradSesOpenTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesOpenTime, val, precision) {}
 }
 
@@ -5728,9 +5737,10 @@ public sealed class TradSesPreCloseTime : DateTimeField
         : base(Tags.TradSesPreCloseTime) {}
     public TradSesPreCloseTime(DateTime val)
         : base(Tags.TradSesPreCloseTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TradSesPreCloseTime(DateTime val, bool showMilliseconds)
         : base(Tags.TradSesPreCloseTime, val, showMilliseconds) {}
-    public TradSesPreCloseTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TradSesPreCloseTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesPreCloseTime, val, precision) {}
 }
 
@@ -5746,9 +5756,10 @@ public sealed class TradSesCloseTime : DateTimeField
         : base(Tags.TradSesCloseTime) {}
     public TradSesCloseTime(DateTime val)
         : base(Tags.TradSesCloseTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TradSesCloseTime(DateTime val, bool showMilliseconds)
         : base(Tags.TradSesCloseTime, val, showMilliseconds) {}
-    public TradSesCloseTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TradSesCloseTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesCloseTime, val, precision) {}
 }
 
@@ -5764,9 +5775,10 @@ public sealed class TradSesEndTime : DateTimeField
         : base(Tags.TradSesEndTime) {}
     public TradSesEndTime(DateTime val)
         : base(Tags.TradSesEndTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TradSesEndTime(DateTime val, bool showMilliseconds)
         : base(Tags.TradSesEndTime, val, showMilliseconds) {}
-    public TradSesEndTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TradSesEndTime(DateTime val, TimePrecision precision)
         : base(Tags.TradSesEndTime, val, precision) {}
 }
 
@@ -6082,9 +6094,10 @@ public sealed class QuoteSetValidUntilTime : DateTimeField
         : base(Tags.QuoteSetValidUntilTime) {}
     public QuoteSetValidUntilTime(DateTime val)
         : base(Tags.QuoteSetValidUntilTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public QuoteSetValidUntilTime(DateTime val, bool showMilliseconds)
         : base(Tags.QuoteSetValidUntilTime, val, showMilliseconds) {}
-    public QuoteSetValidUntilTime(DateTime val, Converters.TimeStampPrecision precision)
+    public QuoteSetValidUntilTime(DateTime val, TimePrecision precision)
         : base(Tags.QuoteSetValidUntilTime, val, precision) {}
 }
 
@@ -6144,9 +6157,10 @@ public sealed class OnBehalfOfSendingTime : DateTimeField
         : base(Tags.OnBehalfOfSendingTime) {}
     public OnBehalfOfSendingTime(DateTime val)
         : base(Tags.OnBehalfOfSendingTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public OnBehalfOfSendingTime(DateTime val, bool showMilliseconds)
         : base(Tags.OnBehalfOfSendingTime, val, showMilliseconds) {}
-    public OnBehalfOfSendingTime(DateTime val, Converters.TimeStampPrecision precision)
+    public OnBehalfOfSendingTime(DateTime val, TimePrecision precision)
         : base(Tags.OnBehalfOfSendingTime, val, precision) {}
 }
 
@@ -7308,9 +7322,10 @@ public sealed class ContraTradeTime : DateTimeField
         : base(Tags.ContraTradeTime) {}
     public ContraTradeTime(DateTime val)
         : base(Tags.ContraTradeTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ContraTradeTime(DateTime val, bool showMilliseconds)
         : base(Tags.ContraTradeTime, val, showMilliseconds) {}
-    public ContraTradeTime(DateTime val, Converters.TimeStampPrecision precision)
+    public ContraTradeTime(DateTime val, TimePrecision precision)
         : base(Tags.ContraTradeTime, val, precision) {}
 }
 
@@ -7388,9 +7403,10 @@ public sealed class StrikeTime : DateTimeField
         : base(Tags.StrikeTime) {}
     public StrikeTime(DateTime val)
         : base(Tags.StrikeTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public StrikeTime(DateTime val, bool showMilliseconds)
         : base(Tags.StrikeTime, val, showMilliseconds) {}
-    public StrikeTime(DateTime val, Converters.TimeStampPrecision precision)
+    public StrikeTime(DateTime val, TimePrecision precision)
         : base(Tags.StrikeTime, val, precision) {}
 }
 
@@ -8423,7 +8439,7 @@ public sealed class TotalVolumeTradedTime : TimeOnlyField
         : base(Tags.TotalVolumeTradedTime) {}
     public TotalVolumeTradedTime(TimeOnly val)
         : base(Tags.TotalVolumeTradedTime, val) {}
-    public TotalVolumeTradedTime(TimeOnly val, Converters.TimeStampPrecision precision)
+    public TotalVolumeTradedTime(TimeOnly val, TimePrecision precision)
         : base(Tags.TotalVolumeTradedTime, val, precision) {}
 }
 
@@ -9044,9 +9060,10 @@ public sealed class TransBkdTime : DateTimeField
         : base(Tags.TransBkdTime) {}
     public TransBkdTime(DateTime val)
         : base(Tags.TransBkdTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TransBkdTime(DateTime val, bool showMilliseconds)
         : base(Tags.TransBkdTime, val, showMilliseconds) {}
-    public TransBkdTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TransBkdTime(DateTime val, TimePrecision precision)
         : base(Tags.TransBkdTime, val, precision) {}
 }
 
@@ -9609,9 +9626,10 @@ public sealed class ExecValuationPoint : DateTimeField
         : base(Tags.ExecValuationPoint) {}
     public ExecValuationPoint(DateTime val)
         : base(Tags.ExecValuationPoint, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ExecValuationPoint(DateTime val, bool showMilliseconds)
         : base(Tags.ExecValuationPoint, val, showMilliseconds) {}
-    public ExecValuationPoint(DateTime val, Converters.TimeStampPrecision precision)
+    public ExecValuationPoint(DateTime val, TimePrecision precision)
         : base(Tags.ExecValuationPoint, val, precision) {}
 }
 
@@ -10910,9 +10928,10 @@ public sealed class OrigOrdModTime : DateTimeField
         : base(Tags.OrigOrdModTime) {}
     public OrigOrdModTime(DateTime val)
         : base(Tags.OrigOrdModTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public OrigOrdModTime(DateTime val, bool showMilliseconds)
         : base(Tags.OrigOrdModTime, val, showMilliseconds) {}
-    public OrigOrdModTime(DateTime val, Converters.TimeStampPrecision precision)
+    public OrigOrdModTime(DateTime val, TimePrecision precision)
         : base(Tags.OrigOrdModTime, val, precision) {}
 }
 
@@ -11560,9 +11579,10 @@ public sealed class HopSendingTime : DateTimeField
         : base(Tags.HopSendingTime) {}
     public HopSendingTime(DateTime val)
         : base(Tags.HopSendingTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public HopSendingTime(DateTime val, bool showMilliseconds)
         : base(Tags.HopSendingTime, val, showMilliseconds) {}
-    public HopSendingTime(DateTime val, Converters.TimeStampPrecision precision)
+    public HopSendingTime(DateTime val, TimePrecision precision)
         : base(Tags.HopSendingTime, val, precision) {}
 }
 
@@ -14038,9 +14058,10 @@ public sealed class TrdRegTimestamp : DateTimeField
         : base(Tags.TrdRegTimestamp) {}
     public TrdRegTimestamp(DateTime val)
         : base(Tags.TrdRegTimestamp, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TrdRegTimestamp(DateTime val, bool showMilliseconds)
         : base(Tags.TrdRegTimestamp, val, showMilliseconds) {}
-    public TrdRegTimestamp(DateTime val, Converters.TimeStampPrecision precision)
+    public TrdRegTimestamp(DateTime val, TimePrecision precision)
         : base(Tags.TrdRegTimestamp, val, precision) {}
 }
 
@@ -14206,9 +14227,10 @@ public sealed class LastUpdateTime : DateTimeField
         : base(Tags.LastUpdateTime) {}
     public LastUpdateTime(DateTime val)
         : base(Tags.LastUpdateTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public LastUpdateTime(DateTime val, bool showMilliseconds)
         : base(Tags.LastUpdateTime, val, showMilliseconds) {}
-    public LastUpdateTime(DateTime val, Converters.TimeStampPrecision precision)
+    public LastUpdateTime(DateTime val, TimePrecision precision)
         : base(Tags.LastUpdateTime, val, precision) {}
 }
 
@@ -17379,9 +17401,10 @@ public sealed class SideTimeInForce : DateTimeField
         : base(Tags.SideTimeInForce) {}
     public SideTimeInForce(DateTime val)
         : base(Tags.SideTimeInForce, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public SideTimeInForce(DateTime val, bool showMilliseconds)
         : base(Tags.SideTimeInForce, val, showMilliseconds) {}
-    public SideTimeInForce(DateTime val, Converters.TimeStampPrecision precision)
+    public SideTimeInForce(DateTime val, TimePrecision precision)
         : base(Tags.SideTimeInForce, val, precision) {}
 }
 
@@ -18112,9 +18135,10 @@ public sealed class SideTrdRegTimestamp : DateTimeField
         : base(Tags.SideTrdRegTimestamp) {}
     public SideTrdRegTimestamp(DateTime val)
         : base(Tags.SideTrdRegTimestamp, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public SideTrdRegTimestamp(DateTime val, bool showMilliseconds)
         : base(Tags.SideTrdRegTimestamp, val, showMilliseconds) {}
-    public SideTrdRegTimestamp(DateTime val, Converters.TimeStampPrecision precision)
+    public SideTrdRegTimestamp(DateTime val, TimePrecision precision)
         : base(Tags.SideTrdRegTimestamp, val, precision) {}
 }
 
@@ -19982,9 +20006,10 @@ public sealed class TZTransactTime : DateTimeField
         : base(Tags.TZTransactTime) {}
     public TZTransactTime(DateTime val)
         : base(Tags.TZTransactTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public TZTransactTime(DateTime val, bool showMilliseconds)
         : base(Tags.TZTransactTime, val, showMilliseconds) {}
-    public TZTransactTime(DateTime val, Converters.TimeStampPrecision precision)
+    public TZTransactTime(DateTime val, TimePrecision precision)
         : base(Tags.TZTransactTime, val, precision) {}
 }
 
@@ -20202,9 +20227,10 @@ public sealed class EventTime : DateTimeField
         : base(Tags.EventTime) {}
     public EventTime(DateTime val)
         : base(Tags.EventTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public EventTime(DateTime val, bool showMilliseconds)
         : base(Tags.EventTime, val, showMilliseconds) {}
-    public EventTime(DateTime val, Converters.TimeStampPrecision precision)
+    public EventTime(DateTime val, TimePrecision precision)
         : base(Tags.EventTime, val, precision) {}
 }
 
@@ -22277,9 +22303,10 @@ public sealed class DerivativeEventTime : DateTimeField
         : base(Tags.DerivativeEventTime) {}
     public DerivativeEventTime(DateTime val)
         : base(Tags.DerivativeEventTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public DerivativeEventTime(DateTime val, bool showMilliseconds)
         : base(Tags.DerivativeEventTime, val, showMilliseconds) {}
-    public DerivativeEventTime(DateTime val, Converters.TimeStampPrecision precision)
+    public DerivativeEventTime(DateTime val, TimePrecision precision)
         : base(Tags.DerivativeEventTime, val, precision) {}
 }
 
@@ -25564,9 +25591,10 @@ public sealed class ComplexEventStartDate : DateTimeField
         : base(Tags.ComplexEventStartDate) {}
     public ComplexEventStartDate(DateTime val)
         : base(Tags.ComplexEventStartDate, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ComplexEventStartDate(DateTime val, bool showMilliseconds)
         : base(Tags.ComplexEventStartDate, val, showMilliseconds) {}
-    public ComplexEventStartDate(DateTime val, Converters.TimeStampPrecision precision)
+    public ComplexEventStartDate(DateTime val, TimePrecision precision)
         : base(Tags.ComplexEventStartDate, val, precision) {}
 }
 
@@ -25582,9 +25610,10 @@ public sealed class ComplexEventEndDate : DateTimeField
         : base(Tags.ComplexEventEndDate) {}
     public ComplexEventEndDate(DateTime val)
         : base(Tags.ComplexEventEndDate, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public ComplexEventEndDate(DateTime val, bool showMilliseconds)
         : base(Tags.ComplexEventEndDate, val, showMilliseconds) {}
-    public ComplexEventEndDate(DateTime val, Converters.TimeStampPrecision precision)
+    public ComplexEventEndDate(DateTime val, TimePrecision precision)
         : base(Tags.ComplexEventEndDate, val, precision) {}
 }
 
@@ -25614,7 +25643,7 @@ public sealed class ComplexEventStartTime : TimeOnlyField
         : base(Tags.ComplexEventStartTime) {}
     public ComplexEventStartTime(TimeOnly val)
         : base(Tags.ComplexEventStartTime, val) {}
-    public ComplexEventStartTime(TimeOnly val, Converters.TimeStampPrecision precision)
+    public ComplexEventStartTime(TimeOnly val, TimePrecision precision)
         : base(Tags.ComplexEventStartTime, val, precision) {}
 }
 
@@ -25630,7 +25659,7 @@ public sealed class ComplexEventEndTime : TimeOnlyField
         : base(Tags.ComplexEventEndTime) {}
     public ComplexEventEndTime(TimeOnly val)
         : base(Tags.ComplexEventEndTime, val) {}
-    public ComplexEventEndTime(TimeOnly val, Converters.TimeStampPrecision precision)
+    public ComplexEventEndTime(TimeOnly val, TimePrecision precision)
         : base(Tags.ComplexEventEndTime, val, precision) {}
 }
 
@@ -25759,9 +25788,10 @@ public sealed class RelSymTransactTime : DateTimeField
         : base(Tags.RelSymTransactTime) {}
     public RelSymTransactTime(DateTime val)
         : base(Tags.RelSymTransactTime, val) {}
+    [Obsolete("Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.")]
     public RelSymTransactTime(DateTime val, bool showMilliseconds)
         : base(Tags.RelSymTransactTime, val, showMilliseconds) {}
-    public RelSymTransactTime(DateTime val, Converters.TimeStampPrecision precision)
+    public RelSymTransactTime(DateTime val, TimePrecision precision)
         : base(Tags.RelSymTransactTime, val, precision) {}
 }
 

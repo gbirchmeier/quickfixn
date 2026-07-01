@@ -485,14 +485,14 @@ public static class DateTimeConverter
     /// and end in fractional seconds whose precision is determined by <paramref name="precision"/>.
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
-    public static string ToFIX(DateTime dt, TimeStampPrecision precision)
+    public static string ToFIX(DateTime dt, TimePrecision precision)
     {
         return precision switch
         {
-            TimeStampPrecision.Second => dt.ToString("yyyyMMdd-HH:mm:ss"),
-            TimeStampPrecision.Millisecond => dt.ToString("yyyyMMdd-HH:mm:ss.fff"),
-            TimeStampPrecision.Microsecond => dt.ToString("yyyyMMdd-HH:mm:ss.ffffff"),
-            TimeStampPrecision.Nanosecond => $"{dt:yyyyMMdd-HH:mm:ss}.{SubsecondAsNanoseconds(dt):000000000}",
+            TimePrecision.Second => dt.ToString("yyyyMMdd-HH:mm:ss"),
+            TimePrecision.Millisecond => dt.ToString("yyyyMMdd-HH:mm:ss.fff"),
+            TimePrecision.Microsecond => dt.ToString("yyyyMMdd-HH:mm:ss.ffffff"),
+            TimePrecision.Nanosecond => $"{dt:yyyyMMdd-HH:mm:ss}.{SubsecondAsNanoseconds(dt):000000000}",
             _ => throw new ArgumentOutOfRangeException(nameof(precision))
         };
     }
@@ -529,14 +529,14 @@ public static class DateTimeConverter
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
     [Obsolete("No longer needed.  Will be removed in 1.16.")]
-    public static string ToFIXTimeOnly(TimeOnly time, TimeStampPrecision precision)
+    public static string ToFIXTimeOnly(TimeOnly time, TimePrecision precision)
     {
         return precision switch
         {
-            TimeStampPrecision.Second => time.ToString("HH:mm:ss", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Millisecond => time.ToString("HH:mm:ss.fff", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Microsecond => time.ToString("HH:mm:ss.ffffff", CultureInfo.InvariantCulture),
-            TimeStampPrecision.Nanosecond => $"{time:HH:mm:ss}.{SubsecondAsNanoseconds(time):000000000}",
+            TimePrecision.Second => time.ToString("HH:mm:ss", CultureInfo.InvariantCulture),
+            TimePrecision.Millisecond => time.ToString("HH:mm:ss.fff", CultureInfo.InvariantCulture),
+            TimePrecision.Microsecond => time.ToString("HH:mm:ss.ffffff", CultureInfo.InvariantCulture),
+            TimePrecision.Nanosecond => $"{time:HH:mm:ss}.{SubsecondAsNanoseconds(time):000000000}",
             _ => throw new ArgumentOutOfRangeException(nameof(precision))
         };
     }
@@ -554,7 +554,7 @@ public static class DateTimeConverter
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="precision"/> is an invalid value.</exception>
     [Obsolete("No longer needed.  Will be removed in 1.16.")]
-    public static string ToFIXTimeOnly(DateTime dt, TimeStampPrecision precision)
+    public static string ToFIXTimeOnly(DateTime dt, TimePrecision precision)
         => ToFIXTimeOnly(TimeOnly.FromDateTime(dt), precision);
 
     [Obsolete("Don't use this function, it probably doesn't do what you think it does.  Will be removed in v1.16.")]

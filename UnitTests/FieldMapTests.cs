@@ -130,12 +130,12 @@ public class FieldMapTests
     {
         FieldMap fm = new();
         fm.SetField(
-            new TimeOnlyField(Tags.MDEntryTime, new TimeOnly(15, 16, 17, 500, 999), TimeStampPrecision.Microsecond));
+            new TimeOnlyField(Tags.MDEntryTime, new TimeOnly(15, 16, 17, 500, 999), TimePrecision.Microsecond));
         MDEntryTime et = new MDEntryTime();
         fm.GetField(et);
         Assert.That(et.Value, Is.EqualTo(new TimeOnly(15, 16, 17, 500, 999)));
 
-        fm.SetField(new MDEntryTime(new TimeOnly(12, 30, 59), TimeStampPrecision.Second));
+        fm.SetField(new MDEntryTime(new TimeOnly(12, 30, 59), TimePrecision.Second));
         TimeOnlyField r = fm.GetField(et); // IMPORTANT!  et retains its original TimePrecision!
         Assert.That(r.ToString(), Is.EqualTo("12:30:59.000"));  // see?  TimePrecision is still milliseconds!
         Assert.That(et.Value, Is.EqualTo(new TimeOnly(12, 30, 59)));

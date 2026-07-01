@@ -53,14 +53,14 @@ public class TimeOnlyConverter
     /// <param name="precision"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static string Convert(TimeOnly timeOnly, TimeStampPrecision precision)
+    public static string Convert(TimeOnly timeOnly, TimePrecision precision)
     {
         return precision switch
         {
-            TimeStampPrecision.Second => timeOnly.ToString(SecondsFormat, CultureInfo.InvariantCulture),
-            TimeStampPrecision.Millisecond => timeOnly.ToString(MillisecFormat, CultureInfo.InvariantCulture),
-            TimeStampPrecision.Microsecond => timeOnly.ToString(MicrosecFormat, CultureInfo.InvariantCulture),
-            TimeStampPrecision.Nanosecond => timeOnly.ToString(MicrosecFormat, CultureInfo.InvariantCulture) + "000",
+            TimePrecision.Second => timeOnly.ToString(SecondsFormat, CultureInfo.InvariantCulture),
+            TimePrecision.Millisecond => timeOnly.ToString(MillisecFormat, CultureInfo.InvariantCulture),
+            TimePrecision.Microsecond => timeOnly.ToString(MicrosecFormat, CultureInfo.InvariantCulture),
+            TimePrecision.Nanosecond => timeOnly.ToString(MicrosecFormat, CultureInfo.InvariantCulture) + "000",
             _ => throw new ArgumentOutOfRangeException(nameof(precision))
         };
     }

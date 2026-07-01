@@ -64,9 +64,10 @@ public static class GenFields {
         lines.Add($"        : base(Tags.{field.Name}) {{}}");
         lines.Add($"    public {field.Name}({field.BaseType} val)");
         lines.Add($"        : base(Tags.{field.Name}, val) {{}}");
+        lines.Add("    [Obsolete(\"Use the ctor that takes TimePrecision instead.  This ctor will be removed in 1.15.\")]");
         lines.Add($"    public {field.Name}({field.BaseType} val, bool showMilliseconds)");
         lines.Add($"        : base(Tags.{field.Name}, val, showMilliseconds) {{}}");
-        lines.Add($"    public {field.Name}({field.BaseType} val, Converters.TimeStampPrecision precision)");
+        lines.Add($"    public {field.Name}({field.BaseType} val, TimePrecision precision)");
         lines.Add($"        : base(Tags.{field.Name}, val, precision) {{}}");
 
         AppendFieldEnumerations(lines, field);
@@ -88,7 +89,7 @@ public static class GenFields {
         lines.Add($"        : base(Tags.{field.Name}) {{}}");
         lines.Add($"    public {field.Name}({field.BaseType} val)");
         lines.Add($"        : base(Tags.{field.Name}, val) {{}}");
-        lines.Add($"    public {field.Name}({field.BaseType} val, Converters.TimeStampPrecision precision)");
+        lines.Add($"    public {field.Name}({field.BaseType} val, TimePrecision precision)");
         lines.Add($"        : base(Tags.{field.Name}, val, precision) {{}}");
 
         AppendFieldEnumerations(lines, field);

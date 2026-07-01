@@ -1,7 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
 using QuickFix.Fields;
-using QuickFix.Fields.Converters;
 using UnitTests.TestHelpers;
 using StringField = QuickFix.Fields.StringField;
 
@@ -95,7 +94,7 @@ public class FieldTests
     {
         DateTime val = TimeHelper.MakeDateTime(2009, 9, 4, 3, 44, 1, 100, 310, 300);
         DateTime newval = TimeHelper.MakeDateTime(2009, 9, 4, 3, 44, 1, 100, 310, 300);
-        DateTimeField field = new DateTimeField(200, val, QuickFix.Fields.Converters.TimeStampPrecision.Nanosecond);
+        DateTimeField field = new DateTimeField(200, val, TimePrecision.Nanosecond);
         Assert.That(field.Value, Is.EqualTo(val));
         Assert.That(field.Value, Is.EqualTo(val));
         Assert.That(field.Tag, Is.EqualTo(200));
@@ -177,10 +176,10 @@ public class FieldTests
     [Test]
     public void TimeOnlyFieldTest()
     {
-        MDEntryTime t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimeStampPrecision.Second);
+        MDEntryTime t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimePrecision.Second);
         Assert.That(t.ToString(), Is.EqualTo("12:30:45"));
 
-        t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimeStampPrecision.Microsecond);
+        t = new MDEntryTime(new TimeOnly(12, 30, 45, 999, 50), TimePrecision.Microsecond);
         Assert.That(t.ToString(), Is.EqualTo("12:30:45.999050"));
     }
 

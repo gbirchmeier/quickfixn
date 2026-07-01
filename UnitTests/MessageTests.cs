@@ -856,7 +856,7 @@ public class MessageTests
         grp.Currency = new Currency("EUR");
         grp.MDEntrySize = new MDEntrySize(1246000);
         grp.MDEntryDate = new MDEntryDate(new DateOnly(2012, 10, 24));
-        grp.MDEntryTime = new MDEntryTime(new TimeOnly(7, 30, 47), TimeStampPrecision.Second);
+        grp.MDEntryTime = new MDEntryTime(new TimeOnly(7, 30, 47), TimePrecision.Second);
         grp.QuoteCondition = new QuoteCondition(QuoteCondition.NON_FIRM);
         grp.MDEntryOriginator = new MDEntryOriginator("BEARGB21XXX");
         grp.QuoteEntryID = new QuoteEntryID("15478575");
@@ -868,7 +868,7 @@ public class MessageTests
         grp.Currency = new Currency("EUR");
         grp.MDEntrySize = new MDEntrySize(884000);
         grp.MDEntryDate = new MDEntryDate(new DateOnly(2012, 10, 24));
-        grp.MDEntryTime = new MDEntryTime(new TimeOnly(7, 30, 47), TimeStampPrecision.Second);
+        grp.MDEntryTime = new MDEntryTime(new TimeOnly(7, 30, 47), TimePrecision.Second);
         grp.QuoteCondition = new QuoteCondition(QuoteCondition.NON_FIRM);
         grp.MDEntryOriginator = new MDEntryOriginator("BEARGB21XXX");
         grp.QuoteEntryID = new QuoteEntryID("15467902");

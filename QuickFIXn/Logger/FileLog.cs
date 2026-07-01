@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
+using QuickFix.Fields;
 using QuickFix.Fields.Converters;
 using QuickFix.ObjectPooling;
 using QuickFix.Util;
@@ -117,7 +118,7 @@ public class FileLog : ILog
         {
             DisposedCheck();
             EnsureMessageLogInit();
-            _messageLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimeStampPrecision.Millisecond) + " : " + msg);
+            _messageLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimePrecision.Millisecond) + " : " + msg);
         }
     }
 
@@ -127,7 +128,7 @@ public class FileLog : ILog
         {
             DisposedCheck();
             EnsureMessageLogInit();
-            _messageLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimeStampPrecision.Millisecond) + " : " + msg);
+            _messageLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimePrecision.Millisecond) + " : " + msg);
         }
     }
 
@@ -137,7 +138,7 @@ public class FileLog : ILog
         {
             DisposedCheck();
             EnsureEventLogInit();
-            _eventLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimeStampPrecision.Millisecond) + " : " + s);
+            _eventLog.WriteLine(DateTimeConverter.ToFIX(DateTime.UtcNow, TimePrecision.Millisecond) + " : " + s);
         }
     }
 
