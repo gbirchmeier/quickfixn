@@ -75,6 +75,7 @@ public class SessionSettings
     public const string CME_ENHANCED_RESEND = "CmeEnhancedResend";
     public const string REDACT_FIELDS_IN_LOGS = "RedactFieldsInLogs";
     public const string REDACTION_LOG_TEXT = "RedactionLogText";
+    public const string FIELD_SEPARATOR_IN_MESSAGE_LOGS = "FieldSeparatorInMessageLogs";
 
     public const string SSL_ENABLE = "SSLEnable";
     public const string SSL_SERVERNAME = "SSLServerName";

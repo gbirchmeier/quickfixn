@@ -72,6 +72,16 @@ public class SettingsDictionary : System.Collections.IEnumerable
         return capitalize ? s.ToUpperInvariant() : s;
     }
 
+    public char GetChar(string key)
+    {
+        string s = GetString(key);
+        if (string.IsNullOrEmpty(s))
+            throw new ConfigError($"Value is empty for key: {key}");
+        if (s.Length > 1)
+            throw new ConfigError($"Value is not a char for key: {key}");
+        return s[0];
+    }
+
     public int GetInt(string key)
     {
         try

@@ -226,6 +226,8 @@ public class Session : IDisposable
     public int[] RedactFieldsInLogs { get; set; } = [];
     public string RedactionLogText { get; set; } = "<redacted>";
 
+    public char FieldSeparatorInMessageLogs { get; set; } = Message.SOH;
+
     #endregion
 
     internal Session(
@@ -375,7 +377,7 @@ public class Session : IDisposable
                        }))
                 {
                     Log.Log(MessagesLogLevel, LogEventIds.OutgoingMessage, "{Message}",
-                        LogAssist.RedactSensitiveFields(message, RedactFieldsInLogs, RedactionLogText));
+                        LogAssist.PrepareFixMessageForLog(message, this));
                 }
             }
 
@@ -549,13 +551,13 @@ public class Session : IDisposable
                        }))
                 {
                     Log.Log(MessagesLogLevel, LogEventIds.IncomingMessage, "{Message}",
-                        LogAssist.RedactSensitiveFields(msgStr, RedactFieldsInLogs, RedactionLogText));
+                        LogAssist.PrepareFixMessageForLog(msgStr, this));
                 }
             }
         } catch (Exception)
         {
             Log.Log(MessagesLogLevel, LogEventIds.IncomingMessage, "{Message}",
-                LogAssist.RedactSensitiveFields(msgStr, RedactFieldsInLogs, RedactionLogText));
+                LogAssist.PrepareFixMessageForLog(msgStr, this));
         }
 
         MessageBuilder msgBuilder = new MessageBuilder(

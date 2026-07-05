@@ -10,6 +10,48 @@ public class LogAssistTests {
         return s.Replace('|', QuickFix.Message.SOH);
     }
 
+    private static QuickFix.Session CreateTestSession()
+    {
+        QuickFix.SettingsDictionary config = new();
+        config.SetString(QuickFix.SessionSettings.START_TIME, "00:00:00");
+        config.SetString(QuickFix.SessionSettings.END_TIME, "00:00:00");
+
+        return new QuickFix.Session(
+            false,
+            new SessionTestSupport.MockApplication(),
+            new QuickFix.Store.MemoryStoreFactory(),
+            new QuickFix.SessionID("does", "not", "matter"),
+            new QuickFix.DataDictionaryProvider(),
+            new QuickFix.SessionSchedule(config),
+            0,
+            new QuickFix.Logger.LogFactoryAdapter(new QuickFix.Logger.NullLogFactory()),
+            new QuickFix.DefaultMessageFactory(),
+            "blah");
+    }
+
+    [Test]
+    public void PrepareFixMessageForLogTest()
+    {
+        QuickFix.Session sesh = CreateTestSession();
+        sesh.RedactFieldsInLogs = [49];
+        sesh.RedactionLogText = "<secret!>";
+        sesh.FieldSeparatorInMessageLogs = ',';
+
+        string inp = Sohize("8=FIX.4.3|9=100|35=B|34=2|49=ISLD|52=20260116-03:12:25.547|56=TW|148=blah|10=126|");
+        Assert.That(LogAssist.PrepareFixMessageForLog(inp, sesh), Is.EqualTo(
+            "8=FIX.4.3,9=100,35=B,34=2,49=<secret!>,52=20260116-03:12:25.547,56=TW,148=blah,10=126,"));
+    }
+
+    [Test]
+    public void SwapFieldSeparatorTest()
+    {
+        Assert.That(LogAssist.SwapFieldSeparator("foobar", 'x'), Is.EqualTo("foobar"));
+
+        string inp = Sohize("8=FIX.4.3|9=100|35=B|34=2|49=ISLD|52=20260116-03:12:25.547|56=TW|148=blah|10=126|");
+        Assert.That(LogAssist.SwapFieldSeparator(inp, 'x'), Is.EqualTo(
+            "8=FIX.4.3x9=100x35=Bx34=2x49=ISLDx52=20260116-03:12:25.547x56=TWx148=blahx10=126x"));
+    }
+
     [Test]
     public void RedactSensitiveFieldsTest()
     {
