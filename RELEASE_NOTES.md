@@ -51,7 +51,7 @@ What's New
 ### upcoming for v1.15.0
 * #1021 - remove .NET 8 support; remove expired deprecations (gbirchmeier)
 * #1015 - rework DateOnlyField/TimeOnlyField to be backed by DateOnly/TimeOnly types instead of DateTime (gbirchmeier)
-
+* #1023 - new config setting "FieldSeparatorInMessageLogs" (gbirchmeier)
 
 
 ### v1.14.1
