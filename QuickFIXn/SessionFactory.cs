@@ -166,6 +166,8 @@ internal class SessionFactory
             session.RedactFieldsInLogs = settings.GetIntArray(SessionSettings.REDACT_FIELDS_IN_LOGS);
         if (settings.Has(SessionSettings.REDACTION_LOG_TEXT))
             session.RedactionLogText = settings.GetString(SessionSettings.REDACTION_LOG_TEXT);
+        if (settings.Has(SessionSettings.FIELD_SEPARATOR_IN_MESSAGE_LOGS))
+            session.FieldSeparatorInMessageLogs = settings.GetChar(SessionSettings.FIELD_SEPARATOR_IN_MESSAGE_LOGS);
 
         return session;
     }

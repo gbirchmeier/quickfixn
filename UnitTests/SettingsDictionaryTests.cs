@@ -29,6 +29,26 @@ public class SettingsDictionaryTests
     }
 
     [Test]
+    public void TestGetChar()
+    {
+        SettingsDictionary d = new();
+        d.SetString("CHARKEY1", "x");
+        d.SetString("CHAR-TOOLONG", "xxxxxxx");
+        d.SetString("CHAR-EMPTY", "");
+
+        Assert.That(d.GetChar("cHaRkEy1"), Is.EqualTo('x'));
+
+        var ex = Assert.Throws<ConfigError>(delegate { d.GetChar("CHAR-TOOLONG"); })!;
+        Assert.That(ex.Message, Is.EqualTo("Configuration failed: Value is not a char for key: CHAR-TOOLONG"));
+
+        ex = Assert.Throws<ConfigError>(delegate { d.GetChar("CHAR-EMPTY"); })!;
+        Assert.That(ex.Message, Is.EqualTo("Configuration failed: Value is empty for key: CHAR-EMPTY"));
+
+        ex = Assert.Throws<ConfigError>(delegate { d.GetChar("NOTPRESENT"); })!;
+        Assert.That(ex.Message, Is.EqualTo("Configuration failed: No value for key: NOTPRESENT"));
+    }
+
+    [Test]
     public void TestSetGetLong()
     {
         SettingsDictionary d = new();
@@ -85,6 +105,26 @@ public class SettingsDictionaryTests
         Assert.That(d.GetBool("BOOLKEY2"), Is.False);
         Assert.Throws<ConfigError>(delegate { d.GetBool("BOOLKEY3"); });
         Assert.Throws<ConfigError>(delegate { d.GetBool("BADBOOLKEY2"); });
+    }
+
+    [Test]
+    public void TestGetInt()
+    {
+        SettingsDictionary d = new();
+        d.SetString("INTKEY1", "100");
+        d.SetString("INT-WRONG", "pants");
+        d.SetString("INT-EMPTY", "");
+
+        Assert.That(d.GetInt("InTkEy1"), Is.EqualTo(100));
+
+        var ex = Assert.Throws<ConfigError>(delegate { d.GetInt("INT-WRONG"); })!;
+        Assert.That(ex.Message, Is.EqualTo("Configuration failed: Incorrect data type"));
+
+        //ex = Assert.Throws<ConfigError>(delegate { d.GetInt("INT-EMPTY"); })!;
+        //Assert.That(ex.Message, Is.EqualTo("Value is empty for key: INT-EMPTY"));
+
+        ex = Assert.Throws<ConfigError>(delegate { d.GetInt("NOTPRESENT"); })!;
+        Assert.That(ex.Message, Is.EqualTo("Configuration failed: No value for key: NOTPRESENT"));
     }
 
     [Test]

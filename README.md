@@ -48,7 +48,7 @@ To run a specific suite, use ``--filter``, e.g.
 * `dotnet test --filter Fix44Test AcceptanceTest`
 (`Fix44Test` is the `TestCaseSource` function in Fix44.cs)
 
-AcceptanceTest logs are output to `bin/Debug/net8.0/log`.
+AcceptanceTest logs are output to `bin/Debug/net<NN>/log`.
 
 
 Credits

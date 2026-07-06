@@ -137,8 +137,7 @@ public class SocketReader : IDisposable
                 if (_qfSession.HasResponder)
                 {
                     _qfSession.Log.Log(LogLevel.Information, LogEventIds.IncomingMessage, "{Message}",
-                        LogAssist.RedactSensitiveFields(
-                            msg, _qfSession.RedactFieldsInLogs, _qfSession.RedactionLogText));
+                        LogAssist.PrepareFixMessageForLog(msg, _qfSession));
                     _qfSession.Log.Log(LogLevel.Error,
                         "Multiple logons/connections for this session are not allowed ({Endpoint})",
                         _tcpClient.Client.RemoteEndPoint);

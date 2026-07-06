@@ -3,9 +3,34 @@ using System.Text;
 
 namespace QuickFix.Util;
 
-public class LogAssist
+internal class LogAssist
 {
-    public static string RedactSensitiveFields(string msg, int[] tagsToRedact, string redactionText = "<redacted>")
+    internal static string PrepareFixMessageForLog(string msg, Session sesh)
+    {
+        if (string.IsNullOrEmpty(msg) || string.IsNullOrEmpty(msg))
+            return msg;
+        if (sesh.RedactFieldsInLogs.Length > 0)
+            msg = RedactSensitiveFields(msg, sesh.RedactFieldsInLogs, sesh.RedactionLogText);
+        msg = SwapFieldSeparator(msg, sesh.FieldSeparatorInMessageLogs);
+
+        return msg;
+    }
+
+    internal static string SwapFieldSeparator(string msg, char newSeparator)
+    {
+        if (newSeparator == Message.SOH)
+            return msg;
+        return msg.Replace(Message.SOH, newSeparator);
+    }
+
+    /// <summary>
+    /// Don't call this after SwapFieldSeparator!
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <param name="tagsToRedact"></param>
+    /// <param name="redactionText"></param>
+    /// <returns></returns>
+    internal static string RedactSensitiveFields(string msg, int[] tagsToRedact, string redactionText = "<redacted>")
     {
         // This long text processor is much faster than Regex.
         // Since this is used on every message log, it needs to be fast.
