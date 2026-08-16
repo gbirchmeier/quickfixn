@@ -52,12 +52,15 @@ public static class Program {
                        + "Your DD names are: [" + ddnames + "]");
         }
 
+        if (options.BrokerProject)
+            errors.AddRange(DDTool.Validations.BrokerProjectValidator.Check(dds));
 
         if (errors.Count > 0) {
             Console.WriteLine("============================");
             Console.WriteLine("Errors found.  Code generation (if commanded) will not run.");
             foreach (var err in errors)
                 Console.WriteLine($"* {err}");
+            Environment.Exit(1);
         }
 
         if (doGeneration) {
