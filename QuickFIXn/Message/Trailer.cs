@@ -5,7 +5,7 @@ using QuickFix.ObjectPooling;
 namespace QuickFix;
 
 public class Trailer : FieldMap {
-    public int[] TRAILER_FIELD_ORDER = [Tags.SignatureLength, Tags.Signature, Tags.CheckSum];
+    public int[] TRAILER_FIELD_ORDER = [CoreTags.SignatureLength, CoreTags.Signature, CoreTags.CheckSum];
 
     public Trailer()
         : base() {

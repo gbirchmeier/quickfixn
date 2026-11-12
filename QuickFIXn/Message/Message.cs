@@ -180,31 +180,31 @@ public class Message : FieldMap
     {
         switch (tag)
         {
-            case Tags.BeginString:
-            case Tags.BodyLength:
-            case Tags.MsgType:
-            case Tags.SenderCompID:
-            case Tags.TargetCompID:
-            case Tags.OnBehalfOfCompID:
-            case Tags.DeliverToCompID:
-            case Tags.SecureDataLen:
-            case Tags.MsgSeqNum:
-            case Tags.SenderSubID:
-            case Tags.SenderLocationID:
-            case Tags.TargetSubID:
-            case Tags.TargetLocationID:
-            case Tags.OnBehalfOfSubID:
-            case Tags.OnBehalfOfLocationID:
-            case Tags.DeliverToSubID:
-            case Tags.DeliverToLocationID:
-            case Tags.PossDupFlag:
-            case Tags.PossResend:
-            case Tags.SendingTime:
-            case Tags.OrigSendingTime:
-            case Tags.XmlDataLen:
-            case Tags.XmlData:
-            case Tags.MessageEncoding:
-            case Tags.LastMsgSeqNumProcessed:
+            case CoreTags.BeginString:
+            case CoreTags.BodyLength:
+            case CoreTags.MsgType:
+            case CoreTags.SenderCompID:
+            case CoreTags.TargetCompID:
+            case CoreTags.OnBehalfOfCompID:
+            case CoreTags.DeliverToCompID:
+            case CoreTags.SecureDataLen:
+            case CoreTags.MsgSeqNum:
+            case CoreTags.SenderSubID:
+            case CoreTags.SenderLocationID:
+            case CoreTags.TargetSubID:
+            case CoreTags.TargetLocationID:
+            case CoreTags.OnBehalfOfSubID:
+            case CoreTags.OnBehalfOfLocationID:
+            case CoreTags.DeliverToSubID:
+            case CoreTags.DeliverToLocationID:
+            case CoreTags.PossDupFlag:
+            case CoreTags.PossResend:
+            case CoreTags.SendingTime:
+            case CoreTags.OrigSendingTime:
+            case CoreTags.XmlDataLen:
+            case CoreTags.XmlData:
+            case CoreTags.MessageEncoding:
+            case CoreTags.LastMsgSeqNumProcessed:
                 // case Tags.OnBehalfOfSendingTime: TODO
                 return true;
             default:
@@ -233,9 +233,9 @@ public class Message : FieldMap
     {
         switch (tag)
         {
-            case Tags.SignatureLength:
-            case Tags.Signature:
-            case Tags.CheckSum:
+            case CoreTags.SignatureLength:
+            case CoreTags.Signature:
+            case CoreTags.CheckSum:
                 return true;
             default:
                 return false;
@@ -269,13 +269,13 @@ public class Message : FieldMap
     private static SessionID GetReverseSessionId(Message msg)
     {
         return new SessionID(
-            GetFieldOrDefault(msg.Header, Tags.BeginString, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.TargetCompID, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.TargetSubID, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.TargetLocationID, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.SenderCompID, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.SenderSubID, SessionID.NOT_SET),
-            GetFieldOrDefault(msg.Header, Tags.SenderLocationID, SessionID.NOT_SET)
+            GetFieldOrDefault(msg.Header, CoreTags.BeginString, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.TargetCompID, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.TargetSubID, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.TargetLocationID, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.SenderCompID, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.SenderSubID, SessionID.NOT_SET),
+            GetFieldOrDefault(msg.Header, CoreTags.SenderLocationID, SessionID.NOT_SET)
         );
     }
 
@@ -405,8 +405,8 @@ public class Message : FieldMap
         while (pos < msgstr.Length)
         {
             int fieldTag = ExtractFieldTag(msgstr, pos);
-            StringField f = fieldTag == Tags.XmlData
-                ? ExtractDataField(msgstr, Header.GetInt(Tags.XmlDataLen), ref pos)
+            StringField f = fieldTag == CoreTags.XmlData
+                ? ExtractDataField(msgstr, Header.GetInt(CoreTags.XmlDataLen), ref pos)
                 : ExtractField(msgstr, ref pos);
 
             if (validate && (count < 3) && (Header.HEADER_FIELD_ORDER[count++] != f.Tag))
@@ -421,7 +421,7 @@ public class Message : FieldMap
                     _isValid = false;
                 }
 
-                if (Tags.MsgType.Equals(f.Tag))
+                if (CoreTags.MsgType.Equals(f.Tag))
                 {
                     string msgType = f.Value;
                     if (appDict is not null)
@@ -650,13 +650,13 @@ public class Message : FieldMap
     {
         try
         {
-            int receivedBodyLength = Header.GetInt(Tags.BodyLength);
+            int receivedBodyLength = Header.GetInt(CoreTags.BodyLength);
             if (BodyLength() != receivedBodyLength)
-                throw new InvalidMessage("Expected BodyLength=" + BodyLength() + ", Received BodyLength=" + receivedBodyLength + ", Message.SeqNum=" + Header.GetULong(Tags.MsgSeqNum));
+                throw new InvalidMessage("Expected BodyLength=" + BodyLength() + ", Received BodyLength=" + receivedBodyLength + ", Message.SeqNum=" + Header.GetULong(CoreTags.MsgSeqNum));
 
-            int receivedCheckSum = Trailer.GetInt(Tags.CheckSum);
+            int receivedCheckSum = Trailer.GetInt(CoreTags.CheckSum);
             if (CheckSum() != receivedCheckSum)
-                throw new InvalidMessage("Expected CheckSum=" + CheckSum() + ", Received CheckSum=" + receivedCheckSum + ", Message.SeqNum=" + Header.GetULong(Tags.MsgSeqNum));
+                throw new InvalidMessage("Expected CheckSum=" + CheckSum() + ", Received CheckSum=" + receivedCheckSum + ", Message.SeqNum=" + Header.GetULong(CoreTags.MsgSeqNum));
         }
         catch (FieldNotFoundException e)
         {
@@ -671,42 +671,42 @@ public class Message : FieldMap
     public void ReverseRoute(Header header)
     {
         // required routing tags
-        Header.RemoveField(Tags.BeginString);
-        Header.RemoveField(Tags.SenderCompID);
-        Header.RemoveField(Tags.SenderSubID);
-        Header.RemoveField(Tags.SenderLocationID);
-        Header.RemoveField(Tags.TargetCompID);
-        Header.RemoveField(Tags.TargetSubID);
-        Header.RemoveField(Tags.TargetLocationID);
+        Header.RemoveField(CoreTags.BeginString);
+        Header.RemoveField(CoreTags.SenderCompID);
+        Header.RemoveField(CoreTags.SenderSubID);
+        Header.RemoveField(CoreTags.SenderLocationID);
+        Header.RemoveField(CoreTags.TargetCompID);
+        Header.RemoveField(CoreTags.TargetSubID);
+        Header.RemoveField(CoreTags.TargetLocationID);
 
-        if (header.IsSetField(Tags.BeginString))
+        if (header.IsSetField(CoreTags.BeginString))
         {
-            string beginString = header.GetString(Tags.BeginString);
+            string beginString = header.GetString(CoreTags.BeginString);
             if (beginString.Length > 0)
                 Header.SetField(new BeginString(beginString));
 
-            Header.RemoveField(Tags.OnBehalfOfLocationID);
-            Header.RemoveField(Tags.DeliverToLocationID);
+            Header.RemoveField(CoreTags.OnBehalfOfLocationID);
+            Header.RemoveField(CoreTags.DeliverToLocationID);
 
             if (string.CompareOrdinal(beginString, "FIX.4.1") >= 0)
             {
-                if (header.IsSetField(Tags.OnBehalfOfLocationID))
+                if (header.IsSetField(CoreTags.OnBehalfOfLocationID))
                 {
-                    string onBehalfOfLocationId = header.GetString(Tags.OnBehalfOfLocationID);
+                    string onBehalfOfLocationId = header.GetString(CoreTags.OnBehalfOfLocationID);
                     if (onBehalfOfLocationId.Length > 0)
                         Header.SetField(new DeliverToLocationID(onBehalfOfLocationId));
                 }
 
-                if (header.IsSetField(Tags.DeliverToLocationID))
+                if (header.IsSetField(CoreTags.DeliverToLocationID))
                 {
-                    string deliverToLocationId = header.GetString(Tags.DeliverToLocationID);
+                    string deliverToLocationId = header.GetString(CoreTags.DeliverToLocationID);
                     if (deliverToLocationId.Length > 0)
                         Header.SetField(new OnBehalfOfLocationID(deliverToLocationId));
                 }
             }
         }
 
-        if (header.IsSetField(Tags.SenderCompID))
+        if (header.IsSetField(CoreTags.SenderCompID))
         {
             SenderCompID senderCompId = new SenderCompID();
             header.GetField(senderCompId);
@@ -714,7 +714,7 @@ public class Message : FieldMap
                 Header.SetField(new TargetCompID(senderCompId.Value));
         }
 
-        if (header.IsSetField(Tags.SenderSubID))
+        if (header.IsSetField(CoreTags.SenderSubID))
         {
             SenderSubID senderSubId = new SenderSubID();
             header.GetField(senderSubId);
@@ -722,7 +722,7 @@ public class Message : FieldMap
                 Header.SetField(new TargetSubID(senderSubId.Value));
         }
 
-        if (header.IsSetField(Tags.SenderLocationID))
+        if (header.IsSetField(CoreTags.SenderLocationID))
         {
             SenderLocationID senderLocationId = new SenderLocationID();
             header.GetField(senderLocationId);
@@ -730,7 +730,7 @@ public class Message : FieldMap
                 Header.SetField(new TargetLocationID(senderLocationId.Value));
         }
 
-        if (header.IsSetField(Tags.TargetCompID))
+        if (header.IsSetField(CoreTags.TargetCompID))
         {
             TargetCompID targetCompId = new TargetCompID();
             header.GetField(targetCompId);
@@ -738,7 +738,7 @@ public class Message : FieldMap
                 Header.SetField(new SenderCompID(targetCompId.Value));
         }
 
-        if (header.IsSetField(Tags.TargetSubID))
+        if (header.IsSetField(CoreTags.TargetSubID))
         {
             TargetSubID targetSubId = new TargetSubID();
             header.GetField(targetSubId);
@@ -746,7 +746,7 @@ public class Message : FieldMap
                 Header.SetField(new SenderSubID(targetSubId.Value));
         }
 
-        if (header.IsSetField(Tags.TargetLocationID))
+        if (header.IsSetField(CoreTags.TargetLocationID))
         {
             TargetLocationID targetLocationId = new TargetLocationID();
             header.GetField(targetLocationId);
@@ -755,35 +755,35 @@ public class Message : FieldMap
         }
 
         // optional routing tags
-        Header.RemoveField(Tags.OnBehalfOfCompID);
-        Header.RemoveField(Tags.OnBehalfOfSubID);
-        Header.RemoveField(Tags.DeliverToCompID);
-        Header.RemoveField(Tags.DeliverToSubID);
+        Header.RemoveField(CoreTags.OnBehalfOfCompID);
+        Header.RemoveField(CoreTags.OnBehalfOfSubID);
+        Header.RemoveField(CoreTags.DeliverToCompID);
+        Header.RemoveField(CoreTags.DeliverToSubID);
 
-        if(header.IsSetField(Tags.OnBehalfOfCompID))
+        if(header.IsSetField(CoreTags.OnBehalfOfCompID))
         {
-            string onBehalfOfCompId = header.GetString(Tags.OnBehalfOfCompID);
+            string onBehalfOfCompId = header.GetString(CoreTags.OnBehalfOfCompID);
             if(onBehalfOfCompId.Length > 0)
                 Header.SetField(new DeliverToCompID(onBehalfOfCompId));
         }
 
-        if(header.IsSetField(Tags.OnBehalfOfSubID))
+        if(header.IsSetField(CoreTags.OnBehalfOfSubID))
         {
-            string onBehalfOfSubId = header.GetString(  Tags.OnBehalfOfSubID);
+            string onBehalfOfSubId = header.GetString(CoreTags.OnBehalfOfSubID);
             if(onBehalfOfSubId.Length > 0)
                 Header.SetField(new DeliverToSubID(onBehalfOfSubId));
         }
 
-        if(header.IsSetField(Tags.DeliverToCompID))
+        if(header.IsSetField(CoreTags.DeliverToCompID))
         {
-            string deliverToCompId = header.GetString(Tags.DeliverToCompID);
+            string deliverToCompId = header.GetString(CoreTags.DeliverToCompID);
             if(deliverToCompId.Length > 0)
                 Header.SetField(new OnBehalfOfCompID(deliverToCompId));
         }
 
-        if(header.IsSetField(Tags.DeliverToSubID))
+        if(header.IsSetField(CoreTags.DeliverToSubID))
         {
-            string deliverToSubId = header.GetString(Tags.DeliverToSubID);
+            string deliverToSubId = header.GetString(CoreTags.DeliverToSubID);
             if(deliverToSubId.Length > 0)
                 Header.SetField(new OnBehalfOfSubID(deliverToSubId));
         }
@@ -799,12 +799,12 @@ public class Message : FieldMap
 
     public bool IsAdmin()
     {
-        return Header.IsSetField(Tags.MsgType) && IsAdminMsgType(Header.GetString(Tags.MsgType));
+        return Header.IsSetField(CoreTags.MsgType) && IsAdminMsgType(Header.GetString(CoreTags.MsgType));
     }
 
     public bool IsApp()
     {
-        return Header.IsSetField(Tags.MsgType) && !IsAdminMsgType(Header.GetString(Tags.MsgType));
+        return Header.IsSetField(CoreTags.MsgType) && !IsAdminMsgType(Header.GetString(CoreTags.MsgType));
     }
 
     /// <summary>
@@ -828,25 +828,25 @@ public class Message : FieldMap
 
     public SessionID GetSessionID(Message m)
     {
-        bool isSetSenderSubId = m.Header.IsSetField(Tags.SenderSubID);
-        bool isSetSenderLocationId = m.Header.IsSetField(Tags.SenderLocationID);
-        bool isSetTargetSubId = m.Header.IsSetField(Tags.TargetSubID);
-        bool isSetTargetLocationId = m.Header.IsSetField(Tags.TargetLocationID);
+        bool isSetSenderSubId = m.Header.IsSetField(CoreTags.SenderSubID);
+        bool isSetSenderLocationId = m.Header.IsSetField(CoreTags.SenderLocationID);
+        bool isSetTargetSubId = m.Header.IsSetField(CoreTags.TargetSubID);
+        bool isSetTargetLocationId = m.Header.IsSetField(CoreTags.TargetLocationID);
 
         if (isSetSenderSubId && isSetSenderLocationId && isSetTargetSubId && isSetTargetLocationId)
-            return new SessionID(m.Header.GetString(Tags.BeginString),
-                m.Header.GetString(Tags.SenderCompID), m.Header.GetString(Tags.SenderSubID), m.Header.GetString(Tags.SenderLocationID),
-                m.Header.GetString(Tags.TargetCompID), m.Header.GetString(Tags.TargetSubID), m.Header.GetString(Tags.TargetLocationID));
+            return new SessionID(m.Header.GetString(CoreTags.BeginString),
+                m.Header.GetString(CoreTags.SenderCompID), m.Header.GetString(CoreTags.SenderSubID), m.Header.GetString(CoreTags.SenderLocationID),
+                m.Header.GetString(CoreTags.TargetCompID), m.Header.GetString(CoreTags.TargetSubID), m.Header.GetString(CoreTags.TargetLocationID));
 
         if (isSetSenderSubId && isSetTargetSubId)
-            return new SessionID(m.Header.GetString(Tags.BeginString),
-                m.Header.GetString(Tags.SenderCompID), m.Header.GetString(Tags.SenderSubID),
-                m.Header.GetString(Tags.TargetCompID), m.Header.GetString(Tags.TargetSubID));
+            return new SessionID(m.Header.GetString(CoreTags.BeginString),
+                m.Header.GetString(CoreTags.SenderCompID), m.Header.GetString(CoreTags.SenderSubID),
+                m.Header.GetString(CoreTags.TargetCompID), m.Header.GetString(CoreTags.TargetSubID));
 
         return new SessionID(
-            m.Header.GetString(Tags.BeginString),
-            m.Header.GetString(Tags.SenderCompID),
-            m.Header.GetString(Tags.TargetCompID));
+            m.Header.GetString(CoreTags.BeginString),
+            m.Header.GetString(CoreTags.SenderCompID),
+            m.Header.GetString(CoreTags.TargetCompID));
     }
 
     private readonly Object _lockConstructString = new Object();

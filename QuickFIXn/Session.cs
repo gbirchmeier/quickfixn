@@ -352,8 +352,8 @@ public class Session : IDisposable
     /// <returns>true if was sent successfully</returns>
     public virtual bool Send(Message message)
     {
-        message.Header.RemoveField(Fields.Tags.PossDupFlag);
-        message.Header.RemoveField(Fields.Tags.OrigSendingTime);
+        message.Header.RemoveField(CoreTags.PossDupFlag);
+        message.Header.RemoveField(CoreTags.OrigSendingTime);
         return SendRaw(message);
     }
 
@@ -604,7 +604,7 @@ public class Session : IDisposable
 
             if (MsgType.LOGON.Equals(msgType)) {
                 TargetDefaultApplVerId = SessionID.IsFIXT
-                    ? new ApplVerID(message.GetString(Fields.Tags.DefaultApplVerID))
+                    ? new ApplVerID(message.GetString(CoreTags.DefaultApplVerID))
                     : Message.GetApplVerID(beginString);
             }
 
@@ -751,7 +751,7 @@ public class Session : IDisposable
         Log.Log(LogLevel.Information, "Received logon");
         if (IsAcceptor)
         {
-            int heartBtInt = logon.GetInt(Fields.Tags.HeartBtInt);
+            int heartBtInt = logon.GetInt(CoreTags.HeartBtInt);
             _state.HeartBtInt = heartBtInt;
             GenerateLogon(logon);
             Log.Log(LogLevel.Information, "Responding to logon request; heartbeat is {HeartBtInt} seconds",
@@ -761,7 +761,7 @@ public class Session : IDisposable
         _state.SentReset = false;
         _state.ReceivedReset = false;
 
-        SeqNumType msgSeqNum = logon.Header.GetULong(Fields.Tags.MsgSeqNum);
+        SeqNumType msgSeqNum = logon.Header.GetULong(CoreTags.MsgSeqNum);
         if (IsTargetTooHigh(msgSeqNum) && !_state.ReceivedReset)
         {
             DoTargetTooHigh(logon, msgSeqNum);
@@ -789,10 +789,10 @@ public class Session : IDisposable
             return;
         try {
             SeqNumType msgSeqNum;
-            if (!(IgnorePossDupResendRequests && resendReq.Header.IsSetField(Tags.PossDupFlag)))
+            if (!(IgnorePossDupResendRequests && resendReq.Header.IsSetField(CoreTags.PossDupFlag)))
             {
-                SeqNumType begSeqNo = resendReq.GetULong(Fields.Tags.BeginSeqNo);
-                SeqNumType endSeqNo = resendReq.GetULong(Fields.Tags.EndSeqNo);
+                SeqNumType begSeqNo = resendReq.GetULong(CoreTags.BeginSeqNo);
+                SeqNumType endSeqNo = resendReq.GetULong(CoreTags.EndSeqNo);
                 Log.Log(LogLevel.Information, "Got resend request from {BeginSeqNo} to {EndSeqNo}",
                     begSeqNo, endSeqNo);
 
@@ -808,7 +808,7 @@ public class Session : IDisposable
                     if (endSeqNo > next)
                         endSeqNo = next;
                     GenerateSequenceReset(resendReq, begSeqNo, endSeqNo);
-                    msgSeqNum = resendReq.Header.GetULong(Tags.MsgSeqNum);
+                    msgSeqNum = resendReq.Header.GetULong(CoreTags.MsgSeqNum);
                     if (!IsTargetTooHigh(msgSeqNum) && !IsTargetTooLow(msgSeqNum))
                     {
                         _state.IncrNextTargetMsgSeqNum();
@@ -824,14 +824,14 @@ public class Session : IDisposable
                 {
                     Message msg = new Message();
                     msg.FromString(msgStr, true, SessionDataDictionary, ApplicationDataDictionary, _msgFactory, ignoreBody: false);
-                    msgSeqNum = msg.Header.GetULong(Tags.MsgSeqNum);
+                    msgSeqNum = msg.Header.GetULong(CoreTags.MsgSeqNum);
 
                     if (current != msgSeqNum && begin == 0)
                     {
                         begin = current;
                     }
 
-                    if (IsAdminMessage(msg) && !(ResendSessionLevelRejects && msg.Header.GetString(Tags.MsgType) == MsgType.REJECT))
+                    if (IsAdminMessage(msg) && !(ResendSessionLevelRejects && msg.Header.GetString(CoreTags.MsgType) == MsgType.REJECT))
                     {
                         if (begin == 0)
                         {
@@ -873,7 +873,7 @@ public class Session : IDisposable
                     GenerateSequenceReset(resendReq, begin, endSeqNo);
                 }
             }
-            msgSeqNum = resendReq.Header.GetULong(Tags.MsgSeqNum);
+            msgSeqNum = resendReq.Header.GetULong(CoreTags.MsgSeqNum);
             if (!IsTargetTooHigh(msgSeqNum) && !IsTargetTooLow(msgSeqNum))
             {
                 _state.IncrNextTargetMsgSeqNum();
@@ -956,10 +956,10 @@ public class Session : IDisposable
         _didHandleCmeEnhancedResendGapFill = false;
 
         bool isGapFill = false;
-        if (sequenceReset.IsSetField(Tags.GapFillFlag))
-            isGapFill = sequenceReset.GetBoolean(Tags.GapFillFlag);
+        if (sequenceReset.IsSetField(CoreTags.GapFillFlag))
+            isGapFill = sequenceReset.GetBoolean(CoreTags.GapFillFlag);
 
-        SeqNumType newSeqNo = sequenceReset.GetULong(Tags.NewSeqNo);
+        SeqNumType newSeqNo = sequenceReset.GetULong(CoreTags.NewSeqNo);
         Log.Log(LogLevel.Information, "Received SequenceRequest FROM: {NextTargetMsgSeqNum} TO: {NewSeqNo}",
             _state.NextTargetMsgSeqNum, newSeqNo);
 
@@ -989,7 +989,7 @@ public class Session : IDisposable
     private void HandleCmeEnhancedResendGapFill(Message seqReset)
     {
         ResendRange range = _state.GetResendRange();
-        SeqNumType newSeqNo = seqReset.GetULong(Tags.NewSeqNo);
+        SeqNumType newSeqNo = seqReset.GetULong(CoreTags.NewSeqNo);
 
         if (range.ChunkEndSeqNo == ResendRange.NOT_SET || range.ChunkEndSeqNo == range.EndSeqNo)
         {
@@ -1020,10 +1020,10 @@ public class Session : IDisposable
                 SeqNumType newStart = max;
                 SeqNumType newChunkEnd = Math.Min(range.EndSeqNo, newStart + MaxMessagesInResendRequest); // TODO we can +1 this
 
-                Message resendRequest = CreateResendRequest(seqReset.Header.GetString(Tags.BeginString),
+                Message resendRequest = CreateResendRequest(seqReset.Header.GetString(CoreTags.BeginString),
                     newStart, newChunkEnd);
                 if (EnableLastMsgSeqNumProcessed)
-                    resendRequest.Header.SetField(new LastMsgSeqNumProcessed(seqReset.Header.GetULong(Tags.MsgSeqNum)));
+                    resendRequest.Header.SetField(new LastMsgSeqNumProcessed(seqReset.Header.GetULong(CoreTags.MsgSeqNum)));
 
                 if (SendRaw(resendRequest))
                     Log.Log(LogLevel.Information, "Sent ResendRequest FROM: {NewStart} TO: {NewChunkEnd}", newStart, newChunkEnd);
@@ -1050,9 +1050,9 @@ public class Session : IDisposable
 
         try
         {
-            msgType = msg.Header.GetString(Fields.Tags.MsgType);
-            string senderCompId = msg.Header.GetString(Fields.Tags.SenderCompID);
-            string targetCompId = msg.Header.GetString(Fields.Tags.TargetCompID);
+            msgType = msg.Header.GetString(CoreTags.MsgType);
+            string senderCompId = msg.Header.GetString(CoreTags.SenderCompID);
+            string targetCompId = msg.Header.GetString(CoreTags.TargetCompID);
 
             if (!IsCorrectCompId(senderCompId, targetCompId))
             {
@@ -1063,7 +1063,7 @@ public class Session : IDisposable
 
             if (checkTooHigh || checkTooLow)
             {
-                SeqNumType msgSeqNum = msg.Header.GetULong(Fields.Tags.MsgSeqNum);
+                SeqNumType msgSeqNum = msg.Header.GetULong(CoreTags.MsgSeqNum);
 
                 if (checkTooHigh && IsTargetTooHigh(msgSeqNum))
                 {
@@ -1074,7 +1074,7 @@ public class Session : IDisposable
                 {
                     if (_state.LastProcessedMessageWasQueued
                         && msg.Header.GetString(35) == MsgType.SEQUENCE_RESET
-                        && msg.GetBoolean(Tags.GapFillFlag))
+                        && msg.GetBoolean(CoreTags.GapFillFlag))
                     {
                         Log.Log(LogLevel.Warning,
                             "SequenceReset-GapFill 34={MsgSeqNum} is too low (expected {NextTargetMsgSeqNum}), but in this case I'm going to obey it anyway",
@@ -1092,7 +1092,7 @@ public class Session : IDisposable
                 {
                     ResendRange range = _state.GetResendRange();
 
-                    if (CmeEnhancedResend && msgType == MsgType.SEQUENCE_RESET && msg.GetBoolean(Tags.GapFillFlag))
+                    if (CmeEnhancedResend && msgType == MsgType.SEQUENCE_RESET && msg.GetBoolean(CoreTags.GapFillFlag))
                     {
                         HandleCmeEnhancedResendGapFill(msg);
                     }
@@ -1111,7 +1111,7 @@ public class Session : IDisposable
                         SeqNumType newStart = range.ChunkEndSeqNo + 1;
                         SeqNumType newChunkEndSeqNo = Math.Min(range.EndSeqNo, range.ChunkEndSeqNo + MaxMessagesInResendRequest); // TODO we can +1 this
 
-                        Message resendRequest = CreateResendRequest(msg.Header.GetString(Tags.BeginString),
+                        Message resendRequest = CreateResendRequest(msg.Header.GetString(CoreTags.BeginString),
                             newStart, newChunkEndSeqNo);
                         if (EnableLastMsgSeqNumProcessed)
                             resendRequest.Header.SetField(new LastMsgSeqNumProcessed(msgSeqNum));
@@ -1196,7 +1196,7 @@ public class Session : IDisposable
     private void InitializeResendFields(Message message)
     {
         FieldMap header = message.Header;
-        DateTime sendingTime = header.GetDateTime(Fields.Tags.SendingTime);
+        DateTime sendingTime = header.GetDateTime(CoreTags.SendingTime);
         InsertOrigSendingTime(header, sendingTime);
         header.SetField(new Fields.PossDupFlag(true));
         InsertSendingTime(header);
@@ -1236,7 +1236,7 @@ public class Session : IDisposable
 
     protected void DoTargetTooHigh(Message msg, SeqNumType msgSeqNum)
     {
-        string beginString = msg.Header.GetString(Fields.Tags.BeginString);
+        string beginString = msg.Header.GetString(CoreTags.BeginString);
 
         Log.Log(LogLevel.Warning, "MsgSeqNum too high, expecting {NextSeqNum} but received {MsgSeqNum}", _state.NextTargetMsgSeqNum, msgSeqNum);
         _state.Queue(msgSeqNum, msg);
@@ -1265,8 +1265,8 @@ public class Session : IDisposable
     protected void DoTargetTooLow(Message msg, SeqNumType msgSeqNum)
     {
         bool possDupFlag = false;
-        if (msg.Header.IsSetField(Fields.Tags.PossDupFlag))
-            possDupFlag = msg.Header.GetBoolean(Fields.Tags.PossDupFlag);
+        if (msg.Header.IsSetField(CoreTags.PossDupFlag))
+            possDupFlag = msg.Header.GetBoolean(CoreTags.PossDupFlag);
 
         if (!possDupFlag)
         {
@@ -1286,20 +1286,20 @@ public class Session : IDisposable
     {
         // If config RequiresOrigSendingTime=N, then tolerate SequenceReset messages that lack OrigSendingTime (issue #102).
         // (This field doesn't really make sense in this message, so some parties omit it, even though spec requires it.)
-        string msgType = msg.Header.GetString(Fields.Tags.MsgType);
+        string msgType = msg.Header.GetString(CoreTags.MsgType);
         if (msgType == Fields.MsgType.SEQUENCE_RESET && RequiresOrigSendingTime == false)
             return;
 
         // Reject if messages don't have OrigSendingTime set
-        if (!msg.Header.IsSetField(Fields.Tags.OrigSendingTime))
+        if (!msg.Header.IsSetField(CoreTags.OrigSendingTime))
         {
-            GenerateReject(msg, FixValues.SessionRejectReason.REQUIRED_TAG_MISSING, Fields.Tags.OrigSendingTime);
+            GenerateReject(msg, FixValues.SessionRejectReason.REQUIRED_TAG_MISSING, CoreTags.OrigSendingTime);
             return;
         }
 
         // Ensure sendingTime is later than OrigSendingTime, else reject and logout
-        DateTime origSendingTime = msg.Header.GetDateTime(Fields.Tags.OrigSendingTime);
-        DateTime sendingTime = msg.Header.GetDateTime(Fields.Tags.SendingTime);
+        DateTime origSendingTime = msg.Header.GetDateTime(CoreTags.OrigSendingTime);
+        DateTime sendingTime = msg.Header.GetDateTime(CoreTags.SendingTime);
         System.TimeSpan tmSpan = origSendingTime - sendingTime;
 
         if (tmSpan.TotalSeconds > 0)
@@ -1311,8 +1311,8 @@ public class Session : IDisposable
 
     protected void GenerateBusinessMessageReject(Message message, int err, int field)
     {
-        string msgType = message.Header.GetString(Tags.MsgType);
-        SeqNumType msgSeqNum = message.Header.GetULong(Tags.MsgSeqNum);
+        string msgType = message.Header.GetString(CoreTags.MsgType);
+        SeqNumType msgSeqNum = message.Header.GetULong(CoreTags.MsgSeqNum);
         string reason = FixValues.BusinessRejectReason.RejText[err];
         Message reject;
         if (string.CompareOrdinal(SessionID.BeginString, FixValues.BeginString.FIX42) >= 0)
@@ -1412,12 +1412,12 @@ public class Session : IDisposable
     {
         Message logon = _msgFactory.Create(SessionID.BeginString, Fields.MsgType.LOGON);
         logon.SetField(new Fields.EncryptMethod(0));
-        logon.SetField(new Fields.HeartBtInt(otherLogon.GetInt(Tags.HeartBtInt)));
+        logon.SetField(new Fields.HeartBtInt(otherLogon.GetInt(CoreTags.HeartBtInt)));
 
         if (SessionID.IsFIXT)
             logon.SetField(new Fields.DefaultApplVerID(SenderDefaultApplVerID));
         if (EnableLastMsgSeqNumProcessed)
-            logon.Header.SetField(new Fields.LastMsgSeqNumProcessed(otherLogon.Header.GetULong(Tags.MsgSeqNum)));
+            logon.Header.SetField(new Fields.LastMsgSeqNumProcessed(otherLogon.Header.GetULong(CoreTags.MsgSeqNum)));
 
         InitializeHeader(logon);
         _state.SentLogon = SendRaw(logon);
@@ -1477,7 +1477,7 @@ public class Session : IDisposable
         {
             try
             {
-                logout.Header.SetField(new Fields.LastMsgSeqNumProcessed(other.Header.GetULong(Tags.MsgSeqNum)));
+                logout.Header.SetField(new Fields.LastMsgSeqNumProcessed(other.Header.GetULong(CoreTags.MsgSeqNum)));
             }
             catch (FieldNotFoundException e)
             {
@@ -1500,10 +1500,10 @@ public class Session : IDisposable
         InitializeHeader(heartbeat);
         try
         {
-            heartbeat.SetField(new Fields.TestReqID(testRequest.GetString(Fields.Tags.TestReqID)));
+            heartbeat.SetField(new Fields.TestReqID(testRequest.GetString(CoreTags.TestReqID)));
             if (EnableLastMsgSeqNumProcessed)
             {
-                heartbeat.Header.SetField(new Fields.LastMsgSeqNumProcessed(testRequest.Header.GetULong(Tags.MsgSeqNum)));
+                heartbeat.Header.SetField(new Fields.LastMsgSeqNumProcessed(testRequest.Header.GetULong(CoreTags.MsgSeqNum)));
             }
         }
         catch (FieldNotFoundException)
@@ -1524,15 +1524,15 @@ public class Session : IDisposable
         reject.ReverseRoute(message.Header);
         InitializeHeader(reject);
 
-        string msgType = message.Header.IsSetField(Fields.Tags.MsgType)
-            ? message.Header.GetString(Fields.Tags.MsgType) : "";
+        string msgType = message.Header.IsSetField(CoreTags.MsgType)
+            ? message.Header.GetString(CoreTags.MsgType) : "";
 
         SeqNumType msgSeqNum = 0;
-        if (message.Header.IsSetField(Fields.Tags.MsgSeqNum))
+        if (message.Header.IsSetField(CoreTags.MsgSeqNum))
         {
             try
             {
-                msgSeqNum = message.Header.GetULong(Fields.Tags.MsgSeqNum);
+                msgSeqNum = message.Header.GetULong(CoreTags.MsgSeqNum);
                 reject.SetField(new Fields.RefSeqNum(msgSeqNum));
             }
             catch (Exception ex)
@@ -1625,7 +1625,7 @@ public class Session : IDisposable
         else
             m.Header.SetField(new Fields.MsgSeqNum(_state.NextSenderMsgSeqNum));
 
-        if (EnableLastMsgSeqNumProcessed && !m.Header.IsSetField(Tags.LastMsgSeqNumProcessed))
+        if (EnableLastMsgSeqNumProcessed && !m.Header.IsSetField(CoreTags.LastMsgSeqNumProcessed))
             m.Header.SetField(new LastMsgSeqNumProcessed(NextTargetMsgSeqNum - 1));
 
         InsertSendingTime(m.Header);
@@ -1646,7 +1646,7 @@ public class Session : IDisposable
     {
         if (PersistMessages)
         {
-            SeqNumType msgSeqNum = message.Header.GetULong(Fields.Tags.MsgSeqNum);
+            SeqNumType msgSeqNum = message.Header.GetULong(CoreTags.MsgSeqNum);
             _state.SetAndIncrNextSenderMsgSeqNum(msgSeqNum, messageString);
         }
         else
@@ -1660,7 +1660,7 @@ public class Session : IDisposable
         if (!CheckLatency)
             return true;
 
-        var sendingTime = msg.Header.GetDateTime(Fields.Tags.SendingTime);
+        var sendingTime = msg.Header.GetDateTime(CoreTags.SendingTime);
         TimeSpan tmSpan = DateTime.UtcNow - sendingTime;
         return Math.Abs(tmSpan.TotalSeconds) <= MaxLatency;
     }
@@ -1672,7 +1672,7 @@ public class Session : IDisposable
         InitializeHeader(sequenceReset);
         SeqNumType newSeqNo = endSeqNo;
         sequenceReset.Header.SetField(new PossDupFlag(true));
-        InsertOrigSendingTime(sequenceReset.Header, sequenceReset.Header.GetDateTime(Tags.SendingTime));
+        InsertOrigSendingTime(sequenceReset.Header, sequenceReset.Header.GetDateTime(CoreTags.SendingTime));
 
         sequenceReset.Header.SetField(new MsgSeqNum(beginSeqNo));
         sequenceReset.SetField(new NewSeqNo(newSeqNo));
@@ -1681,7 +1681,7 @@ public class Session : IDisposable
         {
             try
             {
-                sequenceReset.Header.SetField(new Fields.LastMsgSeqNumProcessed(receivedMessage.Header.GetULong(Tags.MsgSeqNum)));
+                sequenceReset.Header.SetField(new Fields.LastMsgSeqNumProcessed(receivedMessage.Header.GetULong(CoreTags.MsgSeqNum)));
             }
             catch (FieldNotFoundException e)
             {
@@ -1715,7 +1715,7 @@ public class Session : IDisposable
         {
             Log.Log(LogLevel.Information, "Processing queued message: {Num}", num);
 
-            string msgType = msg.Header.GetString(Tags.MsgType);
+            string msgType = msg.Header.GetString(CoreTags.MsgType);
             if (msgType.Equals(MsgType.LOGON) || msgType.Equals(MsgType.RESEND_REQUEST))
             {
                 _state.IncrNextTargetMsgSeqNum();
@@ -1732,7 +1732,7 @@ public class Session : IDisposable
 
     private static bool IsAdminMessage(Message msg)
     {
-        var msgType = msg.Header.GetString(Fields.Tags.MsgType);
+        var msgType = msg.Header.GetString(CoreTags.MsgType);
         return AdminMsgTypes.Contains(msgType);
     }
 
@@ -1746,7 +1746,7 @@ public class Session : IDisposable
     {
         lock (_sync)
         {
-            string msgType = message.Header.GetString(Fields.Tags.MsgType);
+            string msgType = message.Header.GetString(CoreTags.MsgType);
 
             InitializeHeader(message, seqNum);
 

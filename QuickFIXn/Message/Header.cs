@@ -5,7 +5,7 @@ using QuickFix.ObjectPooling;
 namespace QuickFix;
 
 public class Header : FieldMap {
-    public int[] HEADER_FIELD_ORDER = [Tags.BeginString, Tags.BodyLength, Tags.MsgType];
+    public int[] HEADER_FIELD_ORDER = [CoreTags.BeginString, CoreTags.BodyLength, CoreTags.MsgType];
 
     public Header()
         : base() {

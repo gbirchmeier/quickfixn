@@ -1,4 +1,5 @@
 ﻿using System;
+using QuickFix.Fields;
 
 namespace QuickFix;
 
@@ -279,7 +280,7 @@ public class IncorrectDataFormat : TagException
 public class InvalidMessageType : TagException
 {
     public InvalidMessageType()
-        : base(QuickFix.Fields.Tags.MsgType, FixValues.SessionRejectReason.INVALID_MSGTYPE)
+        : base(CoreTags.MsgType, FixValues.SessionRejectReason.INVALID_MSGTYPE)
     { }
 
 }

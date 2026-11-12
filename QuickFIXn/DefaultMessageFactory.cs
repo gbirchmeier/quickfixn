@@ -77,7 +77,7 @@ public class DefaultMessageFactory : IMessageFactory
 
         // didn't find a factory, so return a generic Message object
         var message = new Message();
-        message.Header.SetField(new StringField(QuickFix.Fields.Tags.MsgType, msgType));
+        message.Header.SetField(new StringField(CoreTags.MsgType, msgType));
         return message;
     }
 

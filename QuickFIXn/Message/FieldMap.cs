@@ -572,13 +572,13 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
         int total = 0;
         foreach (IField field in _fields.Values)
         {
-            if (field.Tag != Fields.Tags.CheckSum)
+            if (field.Tag != CoreTags.CheckSum)
                 total += field.GetTotal();
         }
 
         foreach (IField field in this.RepeatedTags)
         {
-            if (field.Tag != Fields.Tags.CheckSum)
+            if (field.Tag != CoreTags.CheckSum)
                 total += field.GetTotal();
         }
 
@@ -595,9 +595,9 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
         int total = 0;
         foreach (IField field in _fields.Values)
         {
-            if (field.Tag != Tags.BeginString
-                && field.Tag != Tags.BodyLength
-                && field.Tag != Tags.CheckSum)
+            if (field.Tag != CoreTags.BeginString
+                && field.Tag != CoreTags.BodyLength
+                && field.Tag != CoreTags.CheckSum)
             {
                 total += field.GetLength();
             }
@@ -605,9 +605,9 @@ public class FieldMap : IEnumerable<KeyValuePair<int, IField>> {
 
         foreach (IField field in this.RepeatedTags)
         {
-            if (field.Tag != Tags.BeginString
-                && field.Tag != Tags.BodyLength
-                && field.Tag != Tags.CheckSum)
+            if (field.Tag != CoreTags.BeginString
+                && field.Tag != CoreTags.BodyLength
+                && field.Tag != CoreTags.CheckSum)
             {
                 total += field.GetLength();
             }
