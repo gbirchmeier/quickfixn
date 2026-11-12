@@ -102,8 +102,8 @@ public class ATApplication : MessageCracker, IApplication
         Message echo = new(message);
 
         bool possResend = false;
-        if (message.Header.IsSetField(Tags.PossResend))
-            possResend = message.Header.GetBoolean(Tags.PossResend);
+        if (message.Header.IsSetField(CoreTags.PossResend))
+            possResend = message.Header.GetBoolean(CoreTags.PossResend);
 
         KeyValuePair<string, SessionID> pair = new(message.GetString(Tags.ClOrdID), sessionId);
         if (possResend && _clOrdIDs.Contains(pair))
@@ -146,8 +146,8 @@ public class ATApplication : MessageCracker, IApplication
                 Match match = Regex.Match(headline, "echo: *(.*)");
                 Message reply = CreateNewsReply(msg, match.Groups[1].Value);
 
-                if (msg.Header.IsSetField(Tags.MessageEncoding))
-                    reply.Header.SetField(new MessageEncoding(msg.Header.GetString(Tags.MessageEncoding)));
+                if (msg.Header.IsSetField(CoreTags.MessageEncoding))
+                    reply.Header.SetField(new MessageEncoding(msg.Header.GetString(CoreTags.MessageEncoding)));
                 if (msg.IsSetField(Tags.EncodedHeadline))
                     reply.SetField(new EncodedHeadline(msg.GetString(Tags.EncodedHeadline)));
 

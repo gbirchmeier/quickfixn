@@ -10,7 +10,7 @@ public class UtcDateTimeFieldTests
     [Test]
     public void DefaultCtorTest()
     {
-        UtcDateTimeField f = new(Tags.SendingTime);
+        UtcDateTimeField f = new(CoreTags.SendingTime);
         Assert.That(f.Value.Kind, Is.EqualTo(DateTimeKind.Utc));
     }
 
@@ -20,7 +20,7 @@ public class UtcDateTimeFieldTests
     {
         // Unspecified is assumed to be UTC
         DateTime dt = new(2025, 10, 31, 17, 30, 59, kind);
-        UtcDateTimeField f = new(Tags.SendingTime, dt, TimePrecision.Millisecond);
+        UtcDateTimeField f = new(CoreTags.SendingTime, dt, TimePrecision.Millisecond);
 
         Assert.That(f.Value.Kind, Is.EqualTo(DateTimeKind.Utc));
         Assert.That(f.ToString(), Is.EqualTo("20251031-17:30:59.000"));
@@ -30,7 +30,7 @@ public class UtcDateTimeFieldTests
     public void CtorWithLocalKindTest()
     {
         DateTime local = DateTime.SpecifyKind(new DateTime(2025, 10, 31, 17, 30, 59), DateTimeKind.Local);
-        UtcDateTimeField f = new(Tags.SendingTime, local, TimePrecision.Millisecond);
+        UtcDateTimeField f = new(CoreTags.SendingTime, local, TimePrecision.Millisecond);
 
         // derive the expectation from TimeZoneInfo, not from ToUniversalTime, so this isn't just a
         // restatement of the implementation
@@ -47,7 +47,7 @@ public class UtcDateTimeFieldTests
     [TestCase(DateTimeKind.Utc)]
     public void ValueSetterUtcOrUnspecifiedTest(DateTimeKind kind)
     {
-        UtcDateTimeField f = new(Tags.SendingTime);
+        UtcDateTimeField f = new(CoreTags.SendingTime);
         f.Value = new DateTime(2025, 10, 31, 17, 30, 59, kind);
 
         Assert.That(f.Value.Kind, Is.EqualTo(DateTimeKind.Utc));
@@ -82,7 +82,7 @@ public class UtcDateTimeFieldTests
     [Test]
     public void ToStringTest()
     {
-        UtcDateTimeField f = new(Tags.SendingTime, new DateTime(2009, 9, 4, 3, 44, 1, DateTimeKind.Unspecified));
+        UtcDateTimeField f = new(CoreTags.SendingTime, new DateTime(2009, 9, 4, 3, 44, 1, DateTimeKind.Unspecified));
         Assert.That(f.ToString(), Is.EqualTo("20090904-03:44:01.000"));
         Assert.That(f.ToStringField(), Is.EqualTo("52=20090904-03:44:01.000"));
     }
@@ -91,7 +91,7 @@ public class UtcDateTimeFieldTests
     public void LegacyCtorThatTakesShowMillisecondsTest()
     {
         DateTime dt = new(2025, 10, 31, 17, 30, 59, DateTimeKind.Unspecified);
-        UtcDateTimeField f = new(Tags.SendingTime, dt, false);
+        UtcDateTimeField f = new(CoreTags.SendingTime, dt, false);
 
         Assert.That(f.Value.Kind, Is.EqualTo(DateTimeKind.Utc));
         Assert.That(f.ToString(), Is.EqualTo("20251031-17:30:59"));
@@ -101,7 +101,7 @@ public class UtcDateTimeFieldTests
     public void CtorWithTimePrecisionTest()
     {
         DateTime dt = new(2025, 10, 31, 17, 30, 59, DateTimeKind.Unspecified);
-        UtcDateTimeField f = new(Tags.SendingTime, dt, TimePrecision.Second);
+        UtcDateTimeField f = new(CoreTags.SendingTime, dt, TimePrecision.Second);
 
         Assert.That(f.Value.Kind, Is.EqualTo(DateTimeKind.Utc));
         Assert.That(f.ToString(), Is.EqualTo("20251031-17:30:59"));

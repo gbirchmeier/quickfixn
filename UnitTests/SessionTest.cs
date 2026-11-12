@@ -143,9 +143,9 @@ public class SessionTest : SessionTestBase
         int count = -1;
         foreach (QuickFix.Message sequenceResestMsg in _responder.MsgLookup[QuickFix.Fields.MsgType.SEQUENCE_RESET])
         {
-            Assert.That("Y", Is.EqualTo(sequenceResestMsg.GetString(QuickFix.Fields.Tags.GapFillFlag)));
-            Assert.That(gapStarts[++count], Is.EqualTo(sequenceResestMsg.Header.GetULong(QuickFix.Fields.Tags.MsgSeqNum)));
-            Assert.That(gapEnds[count], Is.EqualTo(sequenceResestMsg.GetInt(QuickFix.Fields.Tags.NewSeqNo)));
+            Assert.That("Y", Is.EqualTo(sequenceResestMsg.GetString(CoreTags.GapFillFlag)));
+            Assert.That(gapStarts[++count], Is.EqualTo(sequenceResestMsg.Header.GetULong(CoreTags.MsgSeqNum)));
+            Assert.That(gapEnds[count], Is.EqualTo(sequenceResestMsg.GetInt(CoreTags.NewSeqNo)));
         }
     }
 
@@ -197,13 +197,13 @@ public class SessionTest : SessionTestBase
 
         // Ms should show up
         Logon();
-        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
+        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, true);
 
         // No ms
         _session.TimeStampPrecision = TimePrecision.Second;
         Logon();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 2);
-        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
+        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, false);
 
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
@@ -211,7 +211,7 @@ public class SessionTest : SessionTestBase
         _session.TimeStampPrecision = TimePrecision.Millisecond;
         Logon40();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 3);
-        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
+        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, false);
     }
 
     [Test]
@@ -222,13 +222,13 @@ public class SessionTest : SessionTestBase
 
         // Microseconds should show up
         Logon();
-        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
+        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, true);
 
         // Milliseconds in timestamp
         _session.TimeStampPrecision = TimePrecision.Millisecond;
         Logon();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 2);
-        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, true);
+        AssertMsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, true);
 
         // Less than FIX42 - no microseconds in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
@@ -236,7 +236,7 @@ public class SessionTest : SessionTestBase
         _session.TimeStampPrecision =  TimePrecision.Microsecond;
         Logon40();
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Count == 3);
-        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, QuickFix.Fields.Tags.SendingTime, false);
+        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.LOGON, CoreTags.SendingTime, false);
     }
 
     [Test]
@@ -250,19 +250,19 @@ public class SessionTest : SessionTestBase
 
         // Do a resend request
         SendResendRequest(0, 2);
-        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, true);
+        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, true);
 
         // NO MS
         _session.TimeStampPrecision = TimePrecision.Second;
         SendResendRequest(0, 2);
-        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
+        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, false);
 
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
         _session.TimeStampPrecision = TimePrecision.Millisecond;
         SendResendRequest40(0, 2);
-        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
+        AssertMsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, false);
     }
 
     [Test]
@@ -276,19 +276,19 @@ public class SessionTest : SessionTestBase
 
         // Do a resend request
         SendResendRequest(0, 2);
-        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, true);
+        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, true);
 
         // NO MS
         _session.TimeStampPrecision = TimePrecision.Second;
         SendResendRequest(0, 2);
-        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
+        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, false);
 
         // Less than FIX42 - no ms in timestamp, even if you tell it to
         _sessionId = new QuickFix.SessionID(QuickFix.FixValues.BeginString.FIX40, "SENDER", "TARGET");
         _session.SessionID = _sessionId;
         _session.TimeStampPrecision = TimePrecision.Microsecond;
         SendResendRequest40(0, 2);
-        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, QuickFix.Fields.Tags.OrigSendingTime, false);
+        AssertMicrosecondsInTag(QuickFix.Fields.MsgType.SEQUENCERESET, CoreTags.OrigSendingTime, false);
     }
 
     [Test]
@@ -302,7 +302,7 @@ public class SessionTest : SessionTestBase
         // Logon
         Logon();
         QuickFix.Message msg = _responder.MsgLookup[QuickFix.Fields.MsgType.LOGON].Last();
-        SeqNumType lastSeqNumProcessed = msg.Header.GetULong(QuickFix.Fields.Tags.LastMsgSeqNumProcessed);
+        SeqNumType lastSeqNumProcessed = msg.Header.GetULong(CoreTags.LastMsgSeqNumProcessed);
         Assert.That(lastSeqNumProcessed == 1);
 
         // NOS
@@ -320,7 +320,7 @@ public class SessionTest : SessionTestBase
         _session.Send(order);
 
         msg = _responder.MsgLookup[QuickFix.Fields.MsgType.NEW_ORDER_D].Last();
-        lastSeqNumProcessed = msg.Header.GetULong(QuickFix.Fields.Tags.LastMsgSeqNumProcessed);
+        lastSeqNumProcessed = msg.Header.GetULong(CoreTags.LastMsgSeqNumProcessed);
         Assert.That(lastSeqNumProcessed == 1);
     }
 
@@ -341,7 +341,7 @@ public class SessionTest : SessionTestBase
         // Session responds with a ResendRequest
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.RESEND_REQUEST].Count, Is.EqualTo(1));
         QuickFix.Message rr = _responder.MsgLookup[QuickFix.Fields.MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(rr.Header.GetULong(QuickFix.Fields.Tags.LastMsgSeqNumProcessed), Is.EqualTo(800));
+        Assert.That(rr.Header.GetULong(CoreTags.LastMsgSeqNumProcessed), Is.EqualTo(800));
     }
 
     [Test]
@@ -376,8 +376,8 @@ public class SessionTest : SessionTestBase
 
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Count == 1);
         QuickFix.Message msg = _responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Dequeue();
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.BeginSeqNo), Is.EqualTo(2));
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.EndSeqNo), Is.EqualTo(2501));
+        Assert.That(msg.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(2));
+        Assert.That(msg.GetInt(CoreTags.EndSeqNo), Is.EqualTo(2501));
 
         // Jump forward to the end of the resend chunk with a fillgap reset message
         QuickFix.FIX42.SequenceReset reset = new QuickFix.FIX42.SequenceReset();
@@ -396,8 +396,8 @@ public class SessionTest : SessionTestBase
         //Console.WriteLine(responder.msgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Count);
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Count == 1);
         msg = _responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Dequeue();
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.BeginSeqNo), Is.EqualTo(2502));
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.EndSeqNo), Is.EqualTo(5001));
+        Assert.That(msg.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(2502));
+        Assert.That(msg.GetInt(CoreTags.EndSeqNo), Is.EqualTo(5001));
 
         // Jump forward to the end of the resend chunk with a fillgap reset message
         reset.Header.SetField(new QuickFix.Fields.MsgSeqNum(2502));
@@ -410,8 +410,8 @@ public class SessionTest : SessionTestBase
         //Console.WriteLine(responder.msgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Count);
         Assert.That(_responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Count == 1);
         msg = _responder.MsgLookup[QuickFix.Fields.MsgType.RESENDREQUEST].Dequeue();
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.BeginSeqNo), Is.EqualTo(5002));
-        Assert.That(msg.GetInt(QuickFix.Fields.Tags.EndSeqNo), Is.EqualTo(5004));
+        Assert.That(msg.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(5002));
+        Assert.That(msg.GetInt(CoreTags.EndSeqNo), Is.EqualTo(5004));
     }
 
     [Test]
@@ -665,30 +665,30 @@ public class SessionTest : SessionTestBase
         _session.GenerateResendRequest(QuickFix.FixValues.BeginString.FIX41, 125);
         Assert.That(_responder.GetCount(MsgType.RESEND_REQUEST), Is.EqualTo(1));
         var rr = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(rr.GetInt(Tags.BeginSeqNo), Is.EqualTo(100));
-        Assert.That(rr.GetInt(Tags.EndSeqNo), Is.EqualTo(999999));
+        Assert.That(rr.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(100));
+        Assert.That(rr.GetInt(CoreTags.EndSeqNo), Is.EqualTo(999999));
 
         // >= FIX42
         _session.GenerateResendRequest(QuickFix.FixValues.BeginString.FIX42, 125);
         Assert.That(_responder.GetCount(MsgType.RESEND_REQUEST), Is.EqualTo(1));
         rr = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(rr.GetInt(Tags.BeginSeqNo), Is.EqualTo(100));
-        Assert.That(rr.GetInt(Tags.EndSeqNo), Is.EqualTo(0));
+        Assert.That(rr.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(100));
+        Assert.That(rr.GetInt(CoreTags.EndSeqNo), Is.EqualTo(0));
 
         // Max resend is set: request is greater than max resend
         _session.MaxMessagesInResendRequest = 100;
         _session.GenerateResendRequest(QuickFix.FixValues.BeginString.FIX42, 225);
         Assert.That(_responder.GetCount(MsgType.RESEND_REQUEST), Is.EqualTo(1));
         rr = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(rr.GetInt(Tags.BeginSeqNo), Is.EqualTo(100));
-        Assert.That(rr.GetInt(Tags.EndSeqNo), Is.EqualTo(199));
+        Assert.That(rr.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(100));
+        Assert.That(rr.GetInt(CoreTags.EndSeqNo), Is.EqualTo(199));
 
         // Max resend is set: request is lesser than max resend
         _session.GenerateResendRequest(QuickFix.FixValues.BeginString.FIX42, 175);
         Assert.That(_responder.GetCount(MsgType.RESEND_REQUEST), Is.EqualTo(1));
         rr = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(rr.GetInt(Tags.BeginSeqNo), Is.EqualTo(100));
-        Assert.That(rr.GetInt(Tags.EndSeqNo), Is.EqualTo(174));
+        Assert.That(rr.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(100));
+        Assert.That(rr.GetInt(CoreTags.EndSeqNo), Is.EqualTo(174));
     }
 
     [Test]
@@ -871,8 +871,8 @@ public class SessionTest : SessionTestBase
         SendNOSMessage(8);
 
         var resendReq = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(resendReq.GetULong(Tags.BeginSeqNo), Is.EqualTo(3));
-        Assert.That(resendReq.GetULong(Tags.EndSeqNo), Is.EqualTo(0));
+        Assert.That(resendReq.GetULong(CoreTags.BeginSeqNo), Is.EqualTo(3));
+        Assert.That(resendReq.GetULong(CoreTags.EndSeqNo), Is.EqualTo(0));
         Assert.That(_session.IsResendRequested);
         Assert.That(_session.NextTargetMsgSeqNum, Is.EqualTo(3));
 
@@ -901,8 +901,8 @@ public class SessionTest : SessionTestBase
         SendNOSMessage(8);
 
         var resendReq = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(resendReq.GetULong(Tags.BeginSeqNo), Is.EqualTo(3));
-        Assert.That(resendReq.GetULong(Tags.EndSeqNo), Is.EqualTo(0));
+        Assert.That(resendReq.GetULong(CoreTags.BeginSeqNo), Is.EqualTo(3));
+        Assert.That(resendReq.GetULong(CoreTags.EndSeqNo), Is.EqualTo(0));
         Assert.That(_session.IsResendRequested);
         Assert.That(_session.NextTargetMsgSeqNum, Is.EqualTo(3));
 

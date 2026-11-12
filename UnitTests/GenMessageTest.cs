@@ -52,7 +52,7 @@ public class GenMessageTests
     public void TcrMsgTypeGetsSetTest()
     {
         QuickFix.FIX44.TradeCaptureReport tcr = new QuickFix.FIX44.TradeCaptureReport();
-        Assert.That(tcr.Header.IsSetField(Tags.MsgType), Is.True);
+        Assert.That(tcr.Header.IsSetField(CoreTags.MsgType), Is.True);
         MsgType msgType = new MsgType();
         tcr.Header.GetField(msgType);
         Assert.That(msgType.Value, Is.EqualTo("AE"));

@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 using QuickFix;
+using QuickFix.Fields;
 using QuickFix.Logger;
 using QuickFix.Store;
 using QuickFix.Transport;
@@ -214,8 +215,8 @@ public class SessionDynamicTest
             {
                 Message message = new Message(socketState.MessageFragment);
                 socketState.MessageFragment = string.Empty;
-                string targetCompId = message.Header.GetString(QuickFix.Fields.Tags.TargetCompID);
-                if (message.Header.GetString(QuickFix.Fields.Tags.MsgType) == QuickFix.Fields.MsgType.LOGON)
+                string targetCompId = message.Header.GetString(CoreTags.TargetCompID);
+                if (message.Header.GetString(CoreTags.MsgType) == "A")
                     lock (_sessions)
                     {
                         _sessions[targetCompId] = socketState;

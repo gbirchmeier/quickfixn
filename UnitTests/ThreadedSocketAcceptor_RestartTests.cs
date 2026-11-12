@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using NUnit.Framework;
 using QuickFix;
+using QuickFix.Fields;
 using QuickFix.Logger;
 using QuickFix.Store;
 
@@ -235,14 +236,14 @@ public class ThreadedSocketAcceptor_RestartTests
             {
                 Message message = new Message(socketState.MessageFragment);
                 socketState.MessageFragment = string.Empty;
-                string targetCompID = message.Header.GetString(QuickFix.Fields.Tags.TargetCompID);
-                if (message.Header.GetString(QuickFix.Fields.Tags.MsgType) == QuickFix.Fields.MsgType.LOGON)
+                string targetCompID = message.Header.GetString(CoreTags.TargetCompID);
+                if (message.Header.GetString(CoreTags.MsgType) == "A" /*Logon*/)
                     lock (_sessions)
                     {
                         _sessions[targetCompID] = socketState;
                         SafePulse(_sessions);
                     }
-                if (message.Header.GetString(QuickFix.Fields.Tags.MsgType) == QuickFix.Fields.MsgType.LOGOUT)
+                if (message.Header.GetString(CoreTags.MsgType) == "5" /*Logout*/)
                     lock (_sessions)
                     {
                         SendLogout(socketState.Socket, targetCompID );

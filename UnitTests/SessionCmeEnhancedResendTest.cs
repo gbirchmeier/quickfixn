@@ -83,10 +83,10 @@ public class SessionCmeEnhancedResendTest : SessionTestBase
         Assert.That(_responder.MsgLookup[MsgType.RESEND_REQUEST].Count, Is.EqualTo(1));
 
         QuickFix.Message originalReq = _responder.MsgLookup[MsgType.RESEND_REQUEST].Dequeue();
-        Assert.That(originalReq.Header.GetULong(Tags.MsgSeqNum), Is.EqualTo(2));
-        Assert.That(originalReq.GetInt(Tags.BeginSeqNo), Is.EqualTo(3));
-        Assert.That(originalReq.GetInt(Tags.EndSeqNo), Is.EqualTo(0));
-        Assert.That(originalReq.Header.GetInt(Tags.LastMsgSeqNumProcessed), Is.EqualTo(8));
+        Assert.That(originalReq.Header.GetULong(CoreTags.MsgSeqNum), Is.EqualTo(2));
+        Assert.That(originalReq.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(3));
+        Assert.That(originalReq.GetInt(CoreTags.EndSeqNo), Is.EqualTo(0));
+        Assert.That(originalReq.Header.GetInt(CoreTags.LastMsgSeqNumProcessed), Is.EqualTo(8));
 
         // Scenario Part 1: Server sends 2 not-resent messages.
         //                  Client does nothing.
@@ -123,9 +123,9 @@ public class SessionCmeEnhancedResendTest : SessionTestBase
         Assert.That(resendRequests.Count, Is.EqualTo(1));
 
         QuickFix.Message originalReq = resendRequests[0];
-        Assert.That(originalReq.GetInt(Tags.BeginSeqNo), Is.EqualTo(3));
-        Assert.That(originalReq.GetInt(Tags.EndSeqNo), Is.EqualTo(0));
-        Assert.That(originalReq.Header.GetInt(Tags.LastMsgSeqNumProcessed), Is.EqualTo(6));
+        Assert.That(originalReq.GetInt(CoreTags.BeginSeqNo), Is.EqualTo(3));
+        Assert.That(originalReq.GetInt(CoreTags.EndSeqNo), Is.EqualTo(0));
+        Assert.That(originalReq.Header.GetInt(CoreTags.LastMsgSeqNumProcessed), Is.EqualTo(6));
 
         // 7 is not a resend.  The rest are.
         // The client shouldn't have any problem with this.

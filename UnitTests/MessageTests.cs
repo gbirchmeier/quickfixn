@@ -13,6 +13,10 @@ public class MessageTests
 {
     private readonly IMessageFactory _defaultMsgFactory = new DefaultMessageFactory();
 
+    // vanilla non-header tags used in these tests
+    private const int AccountTag = 1;
+    private const int PriceTag = 44;
+
     [Test]
     public void IdentifyTypeTest()
     {
@@ -217,25 +221,25 @@ public class MessageTests
     [Test]
     public void IsHeaderFieldTest()
     {
-        Assert.That(Message.IsHeaderField(Tags.BeginString, null), Is.EqualTo(true));
-        Assert.That(Message.IsHeaderField(Tags.TargetCompID, null), Is.EqualTo(true));
-        Assert.That(Message.IsHeaderField(Tags.Account, null), Is.EqualTo(false));
+        Assert.That(Message.IsHeaderField(CoreTags.BeginString, null), Is.EqualTo(true));
+        Assert.That(Message.IsHeaderField(CoreTags.TargetCompID, null), Is.EqualTo(true));
+        Assert.That(Message.IsHeaderField(AccountTag, null), Is.EqualTo(false));
 
         var dd = new QuickFix.DataDictionary.DataDictionary();
         dd.LoadFIXSpec("FIX44");
         dd.Header.AddField(
             new QuickFix.DataDictionary.DDField(901109, "FakeField", new Dictionary<string, string>(), "STRING"));
 
-        Assert.That(Message.IsHeaderField(Tags.TargetCompID, dd), Is.EqualTo(true));
-        Assert.That(Message.IsHeaderField(Tags.Account, dd), Is.EqualTo(false));
-        Assert.That(Message.IsHeaderField(901109, dd), Is.EqualTo(true));
+        Assert.That(Message.IsHeaderField(CoreTags.TargetCompID, dd), Is.EqualTo(true));
+        Assert.That(Message.IsHeaderField(AccountTag, dd), Is.EqualTo(false));
+        Assert.That(Message.IsHeaderField(901109 /*nonsense*/, dd), Is.EqualTo(true));
     }
 
     [Test]
     public void IsTrailerFieldTest()
     {
-        Assert.That(Message.IsTrailerField(Tags.CheckSum), Is.EqualTo(true));
-        Assert.That(Message.IsTrailerField(Tags.Price), Is.EqualTo(false));
+        Assert.That(Message.IsTrailerField(CoreTags.CheckSum), Is.EqualTo(true));
+        Assert.That(Message.IsTrailerField(PriceTag), Is.EqualTo(false));
     }
 
     [Test]
@@ -400,19 +404,23 @@ public class MessageTests
         string data = "8=FIX.4.4|9=40|35=A|627=2|628=FOO|628=BAR|98=0|384=2|372=D|385=R|372=8|385=S|10=228|"
             .Replace('|', Message.SOH);
 
+        const int noHopsTag = 627;
+        const int hopCompIdTag = 628;
+
         QuickFix.DataDictionary.DataDictionary dd = new QuickFix.DataDictionary.DataDictionary();
         dd.LoadFIXSpec("FIX44");
         var nos = new QuickFix.FIX44.Logon();
         nos.FromString(data, false, dd, dd, _defaultMsgFactory);
-        Group hops = nos.Header.GetGroup(1, Tags.NoHops);
-        Assert.That(hops.GetString(Tags.HopCompID), Is.EqualTo("FOO"));
-        hops = nos.Header.GetGroup(2, Tags.NoHops);
-        Assert.That(hops.GetString(Tags.HopCompID), Is.EqualTo("BAR"));
+        Group hops = nos.Header.GetGroup(1, noHopsTag);
+        Assert.That(hops.GetString(hopCompIdTag), Is.EqualTo("FOO"));
+        hops = nos.Header.GetGroup(2, noHopsTag);
+        Assert.That(hops.GetString(hopCompIdTag), Is.EqualTo("BAR"));
     }
 
     [Test]
     public void TempExtraLogoutField()
     {
+        // Test that engine allows an extra non-standard field in Logout
         string data = "8=FIX.4.4|9=40|35=5|58=this is a logout|789=100|10=228|"
             .Replace('|', Message.SOH);
 
@@ -420,12 +428,13 @@ public class MessageTests
         dd.LoadFIXSpec("FIX44");
         var logout = new QuickFix.FIX44.Logout();
         logout.FromString(data, false, dd, dd, _defaultMsgFactory);
-        Assert.That(logout.GetInt(Tags.NextExpectedMsgSeqNum), Is.EqualTo(100));
+        Assert.That(logout.GetInt(789), Is.EqualTo(100));
     }
 
     [Test]
     public void TempExtraLogoutFieldFIX42()
     {
+        // Test that engine allows an extra non-standard field in Logout... but in FIX42
         string data = "8=FIX.4.2|9=40|35=5|58=this is a logout|789=100|10=228|"
             .Replace('|', Message.SOH);
 
@@ -433,7 +442,7 @@ public class MessageTests
         dd.LoadFIXSpec("FIX42");
         var logout = new QuickFix.FIX44.Logout();
         logout.FromString(data, false, dd, dd, _defaultMsgFactory);
-        Assert.That(logout.GetInt(Tags.NextExpectedMsgSeqNum), Is.EqualTo(100));
+        Assert.That(logout.GetInt(789), Is.EqualTo(100));
     }
 
     [Test]
@@ -571,13 +580,13 @@ public class MessageTests
 
         msg.ReverseRoute(header);
 
-        Assert.That(msg.Header.GetString(Tags.BeginString), Is.EqualTo("FIX.4.2"));
-        Assert.That(msg.Header.GetString(Tags.TargetCompID), Is.EqualTo("SENDER"));
-        Assert.That(msg.Header.GetString(Tags.TargetSubID), Is.EqualTo("SENDERSUB"));
-        Assert.That(msg.Header.GetString(Tags.TargetLocationID), Is.EqualTo("SENDERLOC"));
-        Assert.That(msg.Header.GetString(Tags.SenderCompID), Is.EqualTo("TARGET"));
-        Assert.That(msg.Header.GetString(Tags.SenderSubID), Is.EqualTo("TARGETSUB"));
-        Assert.That(msg.Header.GetString(Tags.SenderLocationID), Is.EqualTo("TARGETLOC"));
+        Assert.That(msg.Header.GetString(CoreTags.BeginString), Is.EqualTo("FIX.4.2"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetCompID), Is.EqualTo("SENDER"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetSubID), Is.EqualTo("SENDERSUB"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetLocationID), Is.EqualTo("SENDERLOC"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderCompID), Is.EqualTo("TARGET"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderSubID), Is.EqualTo("TARGETSUB"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderLocationID), Is.EqualTo("TARGETLOC"));
     }
 
     [Test]
@@ -588,13 +597,13 @@ public class MessageTests
 
         msg.SetSessionID(sessionId);
 
-        Assert.That(msg.Header.GetString(Tags.BeginString), Is.EqualTo("FIX.4.2"));
-        Assert.That(msg.Header.GetString(Tags.SenderCompID), Is.EqualTo("SENDER"));
-        Assert.That(msg.Header.GetString(Tags.SenderSubID), Is.EqualTo("SENDERSUB"));
-        Assert.That(msg.Header.GetString(Tags.SenderLocationID), Is.EqualTo("SENDERLOC"));
-        Assert.That(msg.Header.GetString(Tags.TargetCompID), Is.EqualTo("TARGET"));
-        Assert.That(msg.Header.GetString(Tags.TargetSubID), Is.EqualTo("TARGETSUB"));
-        Assert.That(msg.Header.GetString(Tags.TargetLocationID), Is.EqualTo("TARGETLOC"));
+        Assert.That(msg.Header.GetString(CoreTags.BeginString), Is.EqualTo("FIX.4.2"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderCompID), Is.EqualTo("SENDER"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderSubID), Is.EqualTo("SENDERSUB"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderLocationID), Is.EqualTo("SENDERLOC"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetCompID), Is.EqualTo("TARGET"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetSubID), Is.EqualTo("TARGETSUB"));
+        Assert.That(msg.Header.GetString(CoreTags.TargetLocationID), Is.EqualTo("TARGETLOC"));
 
         SessionID getSessionId = msg.GetSessionID(msg);
         Assert.That(getSessionId.BeginString, Is.EqualTo("FIX.4.2"));
@@ -611,13 +620,13 @@ public class MessageTests
 
         msg.SetSessionID(sessionId);
 
-        Assert.That(msg.Header.GetString(Tags.BeginString), Is.EqualTo("FIX.4.2"));
-        Assert.That(msg.Header.GetString(Tags.SenderCompID), Is.EqualTo("SENDER"));
-        Assert.That(msg.Header.IsSetField(Tags.SenderSubID), Is.False);
-        Assert.That(msg.Header.IsSetField(Tags.SenderLocationID), Is.False);
-        Assert.That(msg.Header.GetString(Tags.TargetCompID), Is.EqualTo("TARGET"));
-        Assert.That(msg.Header.IsSetField(Tags.TargetSubID), Is.False);
-        Assert.That(msg.Header.IsSetField(Tags.TargetLocationID), Is.False);
+        Assert.That(msg.Header.GetString(CoreTags.BeginString), Is.EqualTo("FIX.4.2"));
+        Assert.That(msg.Header.GetString(CoreTags.SenderCompID), Is.EqualTo("SENDER"));
+        Assert.That(msg.Header.IsSetField(CoreTags.SenderSubID), Is.False);
+        Assert.That(msg.Header.IsSetField(CoreTags.SenderLocationID), Is.False);
+        Assert.That(msg.Header.GetString(CoreTags.TargetCompID), Is.EqualTo("TARGET"));
+        Assert.That(msg.Header.IsSetField(CoreTags.TargetSubID), Is.False);
+        Assert.That(msg.Header.IsSetField(CoreTags.TargetLocationID), Is.False);
 
         getSessionId = msg.GetSessionID(msg);
         Assert.That(getSessionId.BeginString, Is.EqualTo("FIX.4.2"));
@@ -1064,9 +1073,9 @@ public class MessageTests
         //TestContext.Out.WriteLine(msg.ToString().Replace(Message.SOH, "|"));
 
         // Then the Header of the Message should contain:
-        Assert.That(msg.Header.GetString(Tags.BeginString), Is.EqualTo("FIX.4.4"));
-        Assert.That(msg.Header.GetString(Tags.MsgSeqNum),   Is.EqualTo("360"));
-        Assert.That(msg.Header.GetString(Tags.BodyLength),  Is.EqualTo("446"));
+        Assert.That(msg.Header.GetString(CoreTags.BeginString), Is.EqualTo("FIX.4.4"));
+        Assert.That(msg.Header.GetString(CoreTags.MsgSeqNum),   Is.EqualTo("360"));
+        Assert.That(msg.Header.GetString(CoreTags.BodyLength),  Is.EqualTo("446"));
 
         // And the Body of the Message should contain:
         Assert.That(msg.GetString(31337), Is.EqualTo("custom body field"));

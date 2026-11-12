@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using QuickFix.Fields;
 
 namespace UnitTests.SessionTestSupport;
 
@@ -22,6 +23,6 @@ class MockApplicationExt : QuickFix.IApplicationExt
 
     public void FromEarlyIntercept(QuickFix.Message message, QuickFix.SessionID sessionId)
     {
-        InterceptedMessageTypes.Add(message.Header.GetString(QuickFix.Fields.Tags.MsgType));
+        InterceptedMessageTypes.Add(message.Header.GetString(CoreTags.MsgType));
     }
 }
