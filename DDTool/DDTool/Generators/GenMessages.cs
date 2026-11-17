@@ -6,28 +6,30 @@ using DDTool.Structures;
 
 namespace DDTool.Generators;
 
-public static class GenMessages {
+public static class GenMessages
+{
 
     /// <summary>
     /// Write the message classes using the DD content
     /// </summary>
-    /// <param name="baseDir"></param>
     /// <param name="dd"></param>
+    /// <param name="outputDir"></param>
+    /// <param name="namespase"></param>
     /// <returns>List of filenames that were written</returns>
-    public static List<string> WriteFilesForDD(string baseDir, DataDictionary dd) {
+    public static List<string> WriteMessageClassFiles(DataDictionary dd, string outputDir, string namespase) {
         List<string> rv = [];
-        rv.Add(WriteBaseMessageFile(baseDir, dd));
+        rv.Add(WriteBaseMessageFile(dd, outputDir, namespase));
         foreach (var msg in dd.Messages.Values) {
-            rv.Add(WriteMessageFile(baseDir, msg, dd));
+            rv.Add(WriteMessageFile(msg, dd, outputDir, namespase));
         }
 
         rv.Sort();
         return rv;
     }
 
-    private static string WriteBaseMessageFile(string baseDir, DataDictionary dd) {
+    private static string WriteBaseMessageFile(DataDictionary dd, string outputDir, string namespase) {
         var beginString = dd.IdentifierNoDots.Contains("FIX50") ? "FIXT11" : dd.IdentifierNoDots;
-        string filePath = Path.Join($"{baseDir}", "Messages", dd.Name, "Message.cs");
+        string filePath = Path.Join(outputDir, "Message.cs");
         Directory.CreateDirectory(
             Path.GetDirectoryName(filePath)!);
 
@@ -35,7 +37,7 @@ public static class GenMessages {
         {
             "// This is a generated file.  Don't edit it directly!",
             "",
-            $"namespace QuickFix.{dd.Name};",
+            $"namespace {namespase};",
             "",
             "public abstract class Message : QuickFix.Message",
             "{",
@@ -52,8 +54,8 @@ public static class GenMessages {
         return filePath;
     }
 
-    private static string WriteMessageFile(string baseDir, DDMessage msg, DataDictionary dd) {
-        string filePath = Path.Join($"{baseDir}", "Messages", dd.Name, $"{msg.Name}.cs");
+    private static string WriteMessageFile(DDMessage msg, DataDictionary dd, string outputDir, string namespase) {
+        string filePath = Path.Join(outputDir, $"{msg.Name}.cs");
         Directory.CreateDirectory(
             Path.GetDirectoryName(filePath)!);
 
@@ -62,17 +64,18 @@ public static class GenMessages {
             "// This is a generated file.  Don't edit it directly!",
             "",
             "using System;",
-            "using QuickFix.Fields;",
+            "using QuickFix;",
+            $"using {namespase}.Fields;",
             "",
-            $"namespace QuickFix.{dd.Name};",
+            $"namespace {namespase};",
             "",
-            $"public class {msg.Name} : Message",
+            $"public class {msg.Name} : {namespase}.Message",
             "{",
             $"    public const string MsgType = \"{msg.MsgType}\";",
             "",
             $"    public {msg.Name}() : base()",
             "    {",
-            $"        Header.SetField(new MsgType(\"{msg.MsgType}\"));",
+            $"        Header.SetField(new QuickFix.Fields.MsgType(\"{msg.MsgType}\"));",
             "    }"
         };
 
@@ -97,8 +100,8 @@ public static class GenMessages {
             return rv;
         }
 
-        var reqArgs = requiredFields.Select(rf => $"{new string(' ', 12)}{rf.Name} a{rf.Name}");
-        var reqSetters = requiredFields.Select(rf => $"{new string(' ', 8)}{rf.Name} = a{rf.Name};");
+        var reqArgs = requiredFields.Select(rf => $"{new string(' ', 12)}{rf.Name} a{rf.Name}").ToList();
+        var reqSetters = requiredFields.Select(rf => $"{new string(' ', 8)}{rf.Name} = a{rf.Name};").ToList();
 
         rv.Add("");
         rv.Add($"    public {msg.Name}(");
@@ -162,7 +165,7 @@ public static class GenMessages {
             $"public void Set({fldClass} val) {{ {fldName} = val; }}",
             $"public {fldClass} Get({fldClass} val) {{ GetField(val); return val; }}",
             $"public bool IsSet({fldClass} val) {{ return IsSet{field.Name}(); }}",
-            $"public bool IsSet{field.Name}() {{ return IsSetField(Tags.{field.Name}); }}",
+            $"public bool IsSet{field.Name}() {{ return IsSetField(Fields.Tags.{field.Name}); }}",
         };
 
         var indent = new string(' ', indentSpaces);
@@ -181,7 +184,7 @@ public static class GenMessages {
     }
 
     private static List<string> GenerateSingleGroup(DDGroup group, int indentSpaces) {
-        List<string> fieldOrderStrings = group.Elements.Values.Select(ddf => $"Tags.{ddf.Name}").ToList();
+        List<string> fieldOrderStrings = group.Elements.Values.Select(ddf => $"Fields.Tags.{ddf.Name}").ToList();
         fieldOrderStrings.Add("0"); // TODO all QFs do this, I should figure out why
 
         var lines = new List<string>
@@ -195,7 +198,7 @@ public static class GenMessages {
             $"    public static int[] fieldOrder = {{{string.Join(", ", fieldOrderStrings)}}};",
             "",
             $"    public {group.Name}Group()",
-            $"      : base(Tags.{group.CounterField.Name}, Tags.{group.Delimiter.Name}, DefaultFieldOrder)",
+            $"      : base(Fields.Tags.{group.CounterField.Name}, Fields.Tags.{group.Delimiter.Name}, DefaultFieldOrder)",
             "    {",
             "    }",
             "",

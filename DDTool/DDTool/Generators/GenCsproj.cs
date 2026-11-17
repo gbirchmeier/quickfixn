@@ -6,7 +6,7 @@ namespace DDTool.Generators;
 
 public static class GenCsproj {
     private static string ProjFilePath(string outputDir, string ddName) {
-        return Path.Join(outputDir, "Messages", ddName, $"QuickFix.{ddName}.csproj");
+        return Path.Join(outputDir, $"{ddName}.csproj");
     }
 
     public static bool IsExistingCsproj(string outputDir, string ddName) {
@@ -14,22 +14,20 @@ public static class GenCsproj {
             ProjFilePath(outputDir, ddName));
     }
 
-    public static string WriteFile(string outputDir, string ddName, string repoRoot) {
+    public static string WriteFile(string outputDir, string ddName) {
         string csprojPath = ProjFilePath(outputDir, ddName);
-        File.WriteAllText(
-            csprojPath, Generate(ddName, repoRoot));
+        File.WriteAllText(csprojPath, Generate(ddName));
         return csprojPath;
     }
 
-    private static string Generate(string name, string repoRoot) {
-        string qfPath = Path.Join(repoRoot, "QuickFIXn", "QuickFix.csproj");
-
+    private static string Generate(string name) {
         var lines = new List<string>
         {
             "<Project Sdk=\"Microsoft.NET.Sdk\">",
             "  <!--",
-            "      This is a generated file.  HOWEVER, the generator won't clobber it if it exists.",
+            "      This is a generated file.  HOWEVER, it is only generated if it doesn't already exist.",
             "      If you want it regenerated, you must delete it.",
+            "      You can delete this message when you make changes.",
             "  -->",
             "",
             "  <PropertyGroup>",
@@ -39,7 +37,7 @@ public static class GenCsproj {
             "  </PropertyGroup>",
             "",
             "  <ItemGroup>",
-            $"    <ProjectReference Include=\"{qfPath}\" />",
+            $"    <ProjectReference Include=\"path/to/QuickFIXn/QuickFix.csproj\" />",
             "  </ItemGroup>",
             "</Project>",
             ""

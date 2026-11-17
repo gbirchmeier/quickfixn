@@ -6,33 +6,33 @@ using DDTool.Structures;
 
 namespace DDTool.Generators;
 
-public static class GenMessageFactories {
-    public static List<string> WriteFiles(string baseDir, List<DataDictionary> dds) {
-        List<string> rv = new();
-        foreach (var dd in dds.OrderBy(x => x.Identifier)) {
-            rv.Add(WriteFile(baseDir, dd));
-        }
-
-        return rv;
-    }
-
-    private static string WriteFile(string baseDir, DataDictionary dd) {
-        string filePath = Path.Join(baseDir, "Messages", dd.Name, "MessageFactory.cs");
-        Directory.CreateDirectory(
-            Path.GetDirectoryName(filePath)!);
-        File.WriteAllText(filePath, Generate(dd));
+public static class GenMessageFactory {
+    /// <summary>
+    /// Returns path of file that is written
+    /// </summary>
+    /// <param name="dd"></param>
+    /// <param name="outputDir"></param>
+    /// <param name="namespase"></param>
+    /// <returns></returns>
+    public static string WriteFile(DataDictionary dd, string outputDir, string namespase) {
+        string filePath = Path.Join(outputDir, "MessageFactory.cs");
+        File.WriteAllText(filePath, Generate(dd, namespase));
         return filePath;
     }
 
-    private static string Generate(DataDictionary dd) {
+    private static string Generate(DataDictionary dd, string namespase)
+    {
+        List<DDMessage> messages = dd.Messages.Values.OrderBy(m => m.Name).ToList();
+
         var lines = new List<string>
         {
             "// This is a generated file.  Don't edit it directly!",
             "",
             "using System.Collections.Generic;",
+            "using QuickFix;",
             "using QuickFix.FixValues;",
             "",
-            $"namespace QuickFix.{dd.Name};",
+            $"namespace {namespase};",
             "",
             "public class MessageFactory : IMessageFactory",
             "{",
@@ -52,9 +52,8 @@ public static class GenMessageFactories {
             "        {"
         };
 
-        // TODO: foreach order is technically non-deterministic (though not in practice)
-        foreach (var msg in dd.Messages.Values) {
-            var fullname = $"QuickFix.{dd.Name}.{msg.Name}";
+        foreach (DDMessage msg in messages) {
+            var fullname = $"{namespase}.{msg.Name}";
             lines.Add(new string(' ', 12) + $"{fullname}.MsgType => new {fullname}(),");
         }
 
@@ -68,22 +67,22 @@ public static class GenMessageFactories {
             "    {"
         });
 
-        // TODO: foreach order is technically non-deterministic (though not in practice)
-        foreach (var msg in dd.Messages.Values) {
+        foreach (DDMessage msg in messages) {
 
-            var groups = msg.Groups;
-            if (!groups.Any())
+            List<DDGroup> groups = msg.Groups.OrderBy(grp => grp.Name).ToList();
+            if (groups.Count == 0)
                 continue;
 
-            List<string> xLines = new();
-
-            xLines.Add($"if (QuickFix.{dd.Name}.{msg.Name}.MsgType.Equals(msgType))");
-            xLines.Add("{");
-            xLines.Add("    switch (correspondingFieldId)");
-            xLines.Add("    {");
+            List<string> xLines =
+            [
+                $"if ({namespase}.{msg.Name}.MsgType.Equals(msgType))",
+                "{",
+                "    switch (correspondingFieldId)",
+                "    {"
+            ];
 
             foreach (var group in groups) {
-                AppendGroupCases(xLines, group, $"QuickFix.{dd.Name}.{msg.Name}");
+                AppendGroupCases(xLines, group, $"{namespase}.{msg.Name}", namespase);
             }
 
             xLines.Add("    }");
@@ -104,14 +103,14 @@ public static class GenMessageFactories {
         return string.Join(Environment.NewLine, lines);
     }
 
-    private static void AppendGroupCases(List<string> lines, DDGroup group, string namePath) {
+    private static void AppendGroupCases(List<string> lines, DDGroup group, string namePath, string namespase) {
         var newNamePath = $"{namePath}.{group.Name}Group";
         lines.Add(
-            $"        case QuickFix.Fields.Tags.{group.Name}: return new {newNamePath}();");
+            $"        case {namespase}.Fields.Tags.{group.Name}: return new {newNamePath}();");
 
         var subgroups = group.Elements.Values.OfType<DDGroup>();
         foreach (var subgroup in subgroups) {
-            AppendGroupCases(lines, subgroup, newNamePath);
+            AppendGroupCases(lines, subgroup, newNamePath, namespase);
         }
     }
 }

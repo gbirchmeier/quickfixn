@@ -4,10 +4,11 @@ using DDTool.Exceptions;
 
 namespace DDTool.Structures;
 
-/* It was either this, or create an AbstractElementSequence class
-     and further muddy up the class hierarchy.
-   I'm still not sure which is less ugly.
-   */
+/// <summary>
+/// Common implementations for classes that implement IElementSequence.
+/// (It was either this, or create an AbstractElementSequence class.
+///  This option seemed less ugly.)
+/// </summary>
 public static class ElementSequenceImpl {
     public static void AddElement(IElementSequence seq, IElement element, bool required) {
         if (seq.Elements.ContainsKey(element.Tag))

@@ -9,154 +9,68 @@ using DDTool.Structures;
 namespace DDTool;
 
 public static class Program {
-    static void Main(string[] args) {
-        var options = new Options(args);
+    private static void Main(string[] args) {
+        Options options = Options.ConstructFromArgs(args);
 
-        if (options.DDFiles.Count < 1) {
-            Console.WriteLine("No input files.");
+        Console.WriteLine("Thank you for using the QuickFIX/n DDTool Ten-Thousand.");
+        Console.WriteLine("Inputs:");
+        Console.WriteLine("* command: " + options.Command);
+        Console.WriteLine("* ddfile: " + options.DDFile);
+        if (options.Command == Options.ToolCommand.Generate)
+        {
+            Console.WriteLine("* outputdir: " + options.OutputDir);
+            Console.WriteLine("* namespace: " + options.Namespace);
+        }
+
+        if (!File.Exists(options.DDFile))
+        {
+            Console.WriteLine("DD file does not exist: " + options.DDFile);
+            Environment.Exit(1);
+        }
+        if (options.Command == Options.ToolCommand.Generate && !Directory.Exists(options.OutputDir))
+        {
+            Console.WriteLine($"OutputDir does not exist, creating it: {options.OutputDir}");
+            Directory.CreateDirectory(options.OutputDir!);
+        }
+
+        DataDictionary? dd = null;
+        try {
+            dd = DDParser.ParseFile(options.DDFile);
+            Console.WriteLine($"Parsed! -- {dd.Identifier}");
+        } catch (ApplicationException ex) {
+            Console.WriteLine($"Error parsing {options.DDFile}:");
+            Console.WriteLine(ex.ToString());
             Environment.Exit(1);
         }
 
-        Console.WriteLine("Thank you for using the QuickFIX/n DDTool 9000.");
-        Console.WriteLine("DD inputs:");
-        foreach (var file in options.DDFiles)
-            Console.WriteLine($"* {file}");
-
-        bool doGeneration = options.HasOutputDir && options.HasRepoRoot;
-
-        if (!doGeneration) {
-            Console.WriteLine("Unspecified outputdir and/or reporoot params; I won't generate anything.");
-        } else if (!Directory.Exists(options.OutputDir)) {
-            Console.WriteLine($"OutputDir does not exist: {options.OutputDir}");
-            Environment.Exit(1);
-        } else {
-            Console.WriteLine($"Generated files will be written to: {options.OutputDir}");
-        }
-
-        var errors = new List<string>();
-
-        List<DataDictionary> dds = ParseDDs(options);
-        foreach (DataDictionary dd in dds) {
-            List<string> ddErrors = DDTool.Validations.FieldValidator.Check(dd);
-            foreach (string dde in ddErrors)
-                errors.Add($"{dd.SourceFile}: {dde}");
-        }
-
-        // Check that all DDs have unique names
-        if (dds.Count != dds.DistinctBy(dd => dd.Name).Count()) {
-            string ddnames = string.Join(',', dds.Select(dd => dd.Name));
-            errors.Add("Found duplicate DD names in your input set.  "
-                       + "All DDs must have unique names.  "
-                       + "If two DDs have identical Major/Minor/SP values, you can add a \"customname\" attribute "
-                       + "in the root <fix> tag to force a custom name instead.  "
-                       + "Your DD names are: [" + ddnames + "]");
-        }
-
+        List<string> errors = DDTool.Validations.FieldValidator.Check(dd);
+        Console.WriteLine($"No errors found.");
 
         if (errors.Count > 0) {
             Console.WriteLine("============================");
-            Console.WriteLine("Errors found.  Code generation (if commanded) will not run.");
+            Console.WriteLine("Errors found.  Aborting further actions.");
             foreach (var err in errors)
                 Console.WriteLine($"* {err}");
             Environment.Exit(1);
         }
 
-        if (doGeneration) {
-            List<DDField> aggFields = AggregateFields(dds);
-
+        if (options.Command == Options.ToolCommand.Generate) {
             Console.WriteLine("============================");
             Console.WriteLine("Writing files:");
 
-            Console.WriteLine($"* Wrote {GenFields.WriteFile(options.RepoRoot!, aggFields)}");
-            Console.WriteLine($"* Wrote {GenFieldTags.WriteFile(options.RepoRoot!, aggFields)}");
+            Console.WriteLine($"* Wrote " + GenFields.WriteFile(dd, options.OutputDir!, options.Namespace!));
+            Console.WriteLine($"* Wrote " + GenFieldTags.WriteFile(dd, options.OutputDir!, options.Namespace!));
+            Console.WriteLine($"* Wrote " + GenMessageFactory.WriteFile(dd, options.OutputDir!, options.Namespace!));
 
-            List<string> factoryFiles = GenMessageFactories.WriteFiles(options.OutputDir!, dds);
-            foreach (var ff in factoryFiles) {
-                Console.WriteLine($"* Wrote {ff}");
-            }
+            var msgFiles = GenMessages.WriteMessageClassFiles(dd, options.OutputDir!, options.Namespace!);
+            Console.WriteLine($"* Wrote {msgFiles.Count} message files");
+            Console.WriteLine($"  From {msgFiles.First()}");
+            Console.WriteLine($"    to {msgFiles.Last()}");
 
-            // Messages projects
-            foreach (var dd in dds.OrderBy(x => x.Identifier)) {
-                var msgFiles = GenMessages.WriteFilesForDD(options.OutputDir!, dd);
-                Console.WriteLine($"* Wrote {msgFiles.Count} message files for {dd.Name}");
-                Console.WriteLine($"  From {msgFiles.First()}");
-                Console.WriteLine($"    to {msgFiles.Last()}");
-
-                if (!GenCsproj.IsExistingCsproj(options.OutputDir!, dd.Name)) {
-                    string projFile = GenCsproj.WriteFile(options.OutputDir!, dd.Name, options.RepoRoot!);
-                    Console.WriteLine($"* Created new project file {projFile} (you will want to review this)");
-                }
+            if (!GenCsproj.IsExistingCsproj(options.OutputDir!, options.Namespace!)) {
+                string projFile = GenCsproj.WriteFile(options.OutputDir!, options.Namespace!);
+                Console.WriteLine($"* Created new project file {projFile} (you NEED to review this)");
             }
         }
-    }
-
-    static List<DataDictionary> ParseDDs(Options options) {
-        var dds = new List<DataDictionary>();
-        foreach (var path in options.DDFiles) {
-            try {
-                var dd = DDParser.ParseFile(path);
-                Console.WriteLine($"Parsed! -- {dd.Identifier}");
-                dds.Add(dd);
-            } catch (ApplicationException ex) {
-                Console.WriteLine($"Error parsing {path}:");
-                Console.WriteLine(ex.ToString());
-                Environment.Exit(1);
-            }
-        }
-
-        return dds;
-    }
-
-    /// <summary>
-    /// Consolidate fields across all DDs into a single list
-    /// </summary>
-    /// <param name="dds"></param>
-    /// <returns></returns>
-    static List<DDField> AggregateFields(List<DataDictionary> dds) {
-        // This impl is a little wierd, but it mirrors the weird Ruby design
-        // and produces the same output.
-        // Can probably write a cleaner version later.
-
-        var rv = new List<DDField>();
-
-        var fieldNames = new List<string>();
-        foreach (var dd in dds.OrderBy(x => x.Identifier)) {
-            foreach (var name in dd.FieldsByName.Keys) {
-                if (!fieldNames.Contains(name))
-                    fieldNames.Add(name);
-            }
-        }
-
-        foreach (var name in fieldNames)
-            rv.Add(MergedField(name, dds));
-
-        return rv;
-    }
-
-    private static DDField MergedField(string name, List<DataDictionary> dds) {
-        List<DDField> flds = [];
-
-        foreach (var dd in dds.OrderByDescending(x => x.Identifier)) {
-            if (dd.FieldsByName.TryGetValue(name, out DDField? fld)) {
-                flds.Add(fld);
-            }
-        }
-
-        if (flds.Count < 1)
-            throw new Exception($"couldn't find field: {name}"); // not likely
-
-        DDField rv = flds.First(); // favor the latest Fix ver
-
-        List<EnumValue> allEnumVals = new();
-        foreach (var fld in flds) {
-            foreach (var fldEnum in fld.Enums) {
-                if (allEnumVals.All(ev => ev.Desc != fldEnum.Desc)) {
-                    allEnumVals.Add(fldEnum);
-                }
-            }
-        }
-
-        rv.Enums = allEnumVals;
-        return rv;
     }
 }

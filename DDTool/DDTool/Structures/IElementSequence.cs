@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DDTool.Structures;
 
+/// <summary>
+/// Interface that defines the common parts of DDGroup and DDMessage
+/// </summary>
 public interface IElementSequence {
     public string Name { get; }
 

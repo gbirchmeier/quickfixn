@@ -9,16 +9,26 @@ namespace UnitTests.Generators;
 public class GenFieldsTests {
 
     [TestMethod]
+    public void GenerateNamespace()
+    {
+        List<DDField> fields = [];
+        string output = GenFields.Generate("MyNamespace", fields);
+        StringAssert.Contains(output, "namespace MyNamespace.Fields;");
+    }
+
+    [TestMethod]
     public void GenerateUtcTimestampHasUtcDateTimeFieldBaseClass()
     {
         var fields = new List<DDField> { new(52, "SendingTime", [], "UTCTIMESTAMP") };
-        StringAssert.Contains(GenFields.Generate(fields), "public sealed class SendingTime : UtcDateTimeField");
+        string output = GenFields.Generate("MyNamespace", fields);
+        StringAssert.Contains(output,"public sealed class SendingTime : UtcDateTimeField");
     }
 
     [TestMethod]
     public void GenerateTzTimestampHasDateTimeFieldBaseClass()
     {
         var fields = new List<DDField> { new(1132, "TZTransactTime", [], "TZTIMESTAMP") };
-        StringAssert.Contains(GenFields.Generate(fields), "public sealed class TZTransactTime : DateTimeField");
+        string output = GenFields.Generate("MyNamespace", fields);
+        StringAssert.Contains(output, "public sealed class TZTransactTime : DateTimeField");
     }
 }

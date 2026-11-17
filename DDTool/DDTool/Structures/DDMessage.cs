@@ -10,8 +10,8 @@ public class DDMessage : IElementSequence {
     public string Cat { get; private set; }
 
     public Dictionary<int, IElement> Elements { get; } = new();
-    public HashSet<int> RequiredTags { get; } = new();
-    public List<int> TagOrder { get; } = new();
+    public HashSet<int> RequiredTags { get; } = [];
+    public List<int> TagOrder { get; } = [];
 
     public List<DDField> RequiredFields => ElementSequenceImpl.RequiredFields(this);
 

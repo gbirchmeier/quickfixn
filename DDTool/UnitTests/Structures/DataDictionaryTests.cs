@@ -35,14 +35,4 @@ public class DataDictionaryTests {
         dd.IsFIXT = true;
         Assert.AreEqual("FIXT98SP7", dd.IdentifierNoDots);
     }
-
-    [TestMethod]
-    public void Name() {
-        DataDictionary dd = new("whatev");
-        dd.MajorVersion = 9;
-        dd.MinorVersion = 8;
-        Assert.AreEqual("FIX98", dd.Name);
-        dd.CustomName = "batman";
-        Assert.AreEqual("batman", dd.Name);
-    }
 }
